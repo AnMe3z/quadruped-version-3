@@ -16,4 +16,4 @@ pico_enable_stdio_usb(pwm_control 1)
 pico_enable_stdio_uart(pwm_control 0)
 pico_add_extra_outputs(pwm_control)
 
-target_link_libraries(pwm_control PRIVATE pico_stdlib hardware_pwm)
+target_link_libraries(pwm_control PRIVATE pico_stdlib hardware_pwm hardware_uart)
