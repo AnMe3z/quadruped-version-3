@@ -21,6 +21,16 @@ int main() {
 	pwm_set_enabled(slice_num, true);
 	// set wrap point
 	pwm_set_wrap(slice_num, wrapP);
+	
+	// set up pwm on GPIO 1
+	gpio_set_function(1, GPIO_FUNC_PWM);
+	// get PWM channel for that pin
+	uint slice_num1 = pwm_gpio_to_slice_num(1);
+	// enable PWM on that channel
+	pwm_set_enabled(slice_num1, true);
+	// set wrap point
+	pwm_set_wrap(slice_num1, wrapP);
+	
     	// Init UART communication
 	stdio_init_all();
 
@@ -35,6 +45,7 @@ int main() {
 		input /= 10;
 		// set the duty cycle
 		pwm_set_chan_level(slice_num, PWM_CHAN_A, wrapP * input);
+		pwm_set_chan_level(slice_num1, PWM_CHAN_B, wrapP * 0.9);
 		printf("Duty cycle: %d \n", wrapP * input);
 	}
 }
