@@ -1,0 +1,10 @@
+ENCODER resources:
+-phototransistor
+https://www.electronics-notes.com/articles/electronic_components/transistor/phototransistor-circuits-applications.php
+-dual phototransistor
+https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/902/PT2559B_L2-F.pdf
+-mouse encoder
+https://ve7it.cowlug.org/mouse.html
+-quadrature encoder
+-edge detection
+https://www.scilab.org/signal-edge-detection

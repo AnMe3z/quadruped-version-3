@@ -43,18 +43,25 @@ int main() {
     	while (true) {
 //        	gpio_put(25, 1);
 
-		printf("Enter driveValue Xx: \n");
-		input = getchar() - 48;
-		input *= 10;
+		//printf("Enter driveValue Xx: \n");
+		//input = getchar() - 48;
+		//input *= 10;
 		
-		driveMotor(input, true);
+		driveMotor(99, true);
+        	sleep_ms(1300);
+		driveMotor(0, true);
+        	sleep_ms(2000);
 		
-		printf("driveValue: %d \n", input);
-		printf("driveEnable: true \n");
+        	//sleep_ms(1000);
+		//driveMotor(-99, true);
+        	//sleep_ms(1000);
+		
+		//printf("driveValue: %d \n", input);
+		//printf("driveEnable: true \n");
 		
 		//pwm_set_chan_level(slice_num, PWM_CHAN_A, wrapP * 0.4 );
 		
-        	sleep_ms(2500);
+        	//sleep_ms(2500);
 		
 		
 	}
