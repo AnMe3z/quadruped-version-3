@@ -3,7 +3,7 @@
 #include "hardware/pwm.h"
 #include "pico/binary_info.h"
 
-#define resolution 8
+#define resolution 64
 int degreesPerHole = 360/resolution;
 int totalSpinDeg = 0;
 

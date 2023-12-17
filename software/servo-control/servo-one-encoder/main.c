@@ -10,6 +10,9 @@ uint wrapP = 12500;
 uint slice_num, slice_num1;
         
 void driveMotor(int driveValue, bool driveEnable);
+void servoDriveMotor(int degrees);
+
+int liveDegrees = 0;
 
 int main() {
 
@@ -40,23 +43,17 @@ int main() {
 
 	int input = 0;	
 
-	gpio_init(3);
-    	gpio_set_dir(3, GPIO_OUT);
-        gpio_put(3, 1);
-		
     	while (true) {
-        	gpio_put(25, 1);
+//        	gpio_put(25, 1);
 
-		//pwm_set_chan_level(slice_num, PWM_CHAN_A, wrapP * (90/100) );
 		//printf("Enter driveValue Xx: \n");
 		//input = getchar() - 48;
 		//input *= 10;
 		
-		driveMotor(70, true);
-		//driveMotor(99, true);
-        	//sleep_ms(1300);
-		//driveMotor(0, true);
-        	//sleep_ms(2000);
+		driveMotor(99, true);
+        	sleep_ms(1300);
+		driveMotor(0, true);
+        	sleep_ms(2000);
 		
         	//sleep_ms(1000);
 		//driveMotor(-99, true);
@@ -99,4 +96,22 @@ void driveMotor(int driveValue, bool driveEnable){
                 // pwmIn2
 		pwm_set_chan_level(slice_num1, PWM_CHAN_B, wrapP * (pwmIn2/100) );
         }
+}
+
+void servoDriveMotor(int degrees){
+  // get direction
+  int direction = (degrees != 0) ? ((degrees > 0) ? 1 : -1) : 0;
+  
+  if(direction != 0){
+    //calculate target degrees
+    int targetDegrees = liveDegrees + degrees;
+    
+    //while !target degrees move
+    while(liveDegrees != targetDegrees){
+      driveMotor(direction*100, true);  
+    }
+    
+    //brake
+    driveMotor(0, true);
+  }
 }

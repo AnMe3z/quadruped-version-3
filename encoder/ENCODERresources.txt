@@ -9,3 +9,5 @@ https://www.codrey.com/electronic-circuits/the-mysterious-laser-receiver-sensor-
 -quadrature encoder
 -edge detection
 https://www.scilab.org/signal-edge-detection
+
+isc2
