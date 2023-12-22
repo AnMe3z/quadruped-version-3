@@ -17,4 +17,4 @@ cmake .. -DPICO_BOARD=pico_w ..
 
 make -j4
 
-cp project.uf2 /media/andrey-shefa/RPI-RP2/
+cp pwm_control.uf2 /media/andrey-shefa/RPI-RP2/

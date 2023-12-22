@@ -40,6 +40,7 @@ int main() {
 
 	int input = 0;	
 
+        //VREF driver
 	gpio_init(3);
     	gpio_set_dir(3, GPIO_OUT);
         gpio_put(3, 1);
@@ -48,11 +49,12 @@ int main() {
         	gpio_put(25, 1);
 
 		//pwm_set_chan_level(slice_num, PWM_CHAN_A, wrapP * (90/100) );
-		//printf("Enter driveValue Xx: \n");
-		//input = getchar() - 48;
-		//input *= 10;
+		printf("Enter driveValue Xx: \n");
+		input = getchar() - 48;
+		input *= 10;
+		printf("driveValue: %d \n", input);
+		driveMotor(input, true);
 		
-		driveMotor(70, true);
 		//driveMotor(99, true);
         	//sleep_ms(1300);
 		//driveMotor(0, true);
@@ -62,7 +64,6 @@ int main() {
 		//driveMotor(-99, true);
         	//sleep_ms(1000);
 		
-		//printf("driveValue: %d \n", input);
 		//printf("driveEnable: true \n");
 		
 		//pwm_set_chan_level(slice_num, PWM_CHAN_A, wrapP * 0.4 );
