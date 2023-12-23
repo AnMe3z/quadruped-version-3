@@ -11,6 +11,34 @@ uint slice_num, slice_num1;
         
 void driveMotor(int driveValue, bool driveEnable);
 
+//encoder
+#define resolution 60
+int degreesPerHole = 360/resolution;
+int totalSpinDeg = 0;
+
+int time1 = 0;
+double time2 = 0;
+double rpm = 0;
+
+void gpio_callback(uint gpio, uint32_t events) {
+    if(gpio==2){
+	  printf("Interrupt\n");
+	  //get degrees
+          totalSpinDeg += degreesPerHole;
+	  printf("Total spin: %d \n", totalSpinDeg);
+	  //get rpm
+	  if (time1 != 0){  
+	    time2 = to_ms_since_boot (get_absolute_time());
+	    //the calculations are so cut because i couldn't make it in one expression
+	    rpm = (float) 1 / resolution;
+	    time2 = (float) (time2-time1) / 60000;
+	    rpm = (float) rpm / time2;
+	    printf("RPM: %f \n", rpm);
+          }
+          time1 = to_ms_since_boot (get_absolute_time());
+    }
+}
+
 int main() {
 
 	// set up the built-in led
@@ -44,18 +72,27 @@ int main() {
 	gpio_init(3);
     	gpio_set_dir(3, GPIO_OUT);
         gpio_put(3, 1);
+        
+        //set up the reading pin
+        gpio_init(2);
+        gpio_set_dir(2, GPIO_IN);
+        //gpio_set_irq_enabled_with_callback(2, GPIO_IRQ_EDGE_RISE | GPIO_IRQ_EDGE_FALL, true, &gpio_callback);
+        gpio_set_irq_enabled_with_callback(2, GPIO_IRQ_EDGE_RISE, true, &gpio_callback);
+		
+		driveMotor(99, true);
 		
     	while (true) {
-        	gpio_put(25, 1);
+        	gpio_put(25, 0);
 
 		//pwm_set_chan_level(slice_num, PWM_CHAN_A, wrapP * (90/100) );
-		printf("Enter driveValue Xx: \n");
-		input = getchar() - 48;
-		input *= 10;
-		printf("driveValue: %d \n", input);
-		driveMotor(input, true);
+		//printf("Enter driveValue Xx: \n");
+		//input = getchar() - 48;
+		//input *= 10;
+		//printf("driveValue: %d \n", input);
+		//driveMotor(input, true);
 		
-		//driveMotor(99, true);
+	        printf("Reading: %d \n", gpio_get(2));
+                sleep_ms(1000);
         	//sleep_ms(1300);
 		//driveMotor(0, true);
         	//sleep_ms(2000);
