@@ -3,15 +3,13 @@
 #include "hardware/pwm.h"
 #include "pico/binary_info.h"
 
-#define resolution 64
+#define resolution 62
 int degreesPerHole = 360/resolution;
 int totalSpinDeg = 0;
 
 int time1 = 0;
 double time2 = 0;
 double rpm = 0;
-// 360 / 60s
-// 45 za 30s e ? rpm --- 
 
 void gpio_callback(uint gpio, uint32_t events) {
     if(gpio==2){

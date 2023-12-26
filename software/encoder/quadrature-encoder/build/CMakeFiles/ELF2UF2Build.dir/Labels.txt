@@ -1,0 +1,13 @@
+# Target labels
+ ELF2UF2Build
+# Source files and their labels
+/home/andrey-shefa/Documents/repos/quadruped-version-3/software/encoder/quadrature-encoder/build/CMakeFiles/ELF2UF2Build
+/home/andrey-shefa/Documents/repos/quadruped-version-3/software/encoder/quadrature-encoder/build/CMakeFiles/ELF2UF2Build.rule
+/home/andrey-shefa/Documents/repos/quadruped-version-3/software/encoder/quadrature-encoder/build/CMakeFiles/ELF2UF2Build-complete.rule
+/home/andrey-shefa/Documents/repos/quadruped-version-3/software/encoder/quadrature-encoder/build/elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-build.rule
+/home/andrey-shefa/Documents/repos/quadruped-version-3/software/encoder/quadrature-encoder/build/elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-configure.rule
+/home/andrey-shefa/Documents/repos/quadruped-version-3/software/encoder/quadrature-encoder/build/elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-download.rule
+/home/andrey-shefa/Documents/repos/quadruped-version-3/software/encoder/quadrature-encoder/build/elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-install.rule
+/home/andrey-shefa/Documents/repos/quadruped-version-3/software/encoder/quadrature-encoder/build/elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-mkdir.rule
+/home/andrey-shefa/Documents/repos/quadruped-version-3/software/encoder/quadrature-encoder/build/elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-patch.rule
+/home/andrey-shefa/Documents/repos/quadruped-version-3/software/encoder/quadrature-encoder/build/elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-update.rule

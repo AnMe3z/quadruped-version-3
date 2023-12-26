@@ -22,20 +22,20 @@ double rpm = 0;
 
 void gpio_callback(uint gpio, uint32_t events) {
     if(gpio==2){
-	  printf("Interrupt\n");
-	  //get degrees
-          totalSpinDeg += degreesPerHole;
-	  printf("Total spin: %d \n", totalSpinDeg);
-	  //get rpm
-	  if (time1 != 0){  
-	    time2 = to_ms_since_boot (get_absolute_time());
-	    //the calculations are so cut because i couldn't make it in one expression
-	    rpm = (float) 1 / resolution;
-	    time2 = (float) (time2-time1) / 60000;
-	    rpm = (float) rpm / time2;
-	    printf("RPM: %f \n", rpm);
-          }
-          time1 = to_ms_since_boot (get_absolute_time());
+      if (events == GPIO_IRQ_EDGE_RISE){
+        gpio_put(6, 1);
+      }
+      else{
+        gpio_put(6, 0);
+      }
+    }
+    if(gpio==4){
+      if (events == GPIO_IRQ_EDGE_RISE){
+        gpio_put(7, 1);
+      }
+      else{
+        gpio_put(7, 0);
+      }
     }
 }
 
@@ -73,41 +73,32 @@ int main() {
     	gpio_set_dir(3, GPIO_OUT);
         gpio_put(3, 1);
         
-        //set up the reading pin
+        //set up the reading pin CHAN A
         gpio_init(2);
         gpio_set_dir(2, GPIO_IN);
-        //gpio_set_irq_enabled_with_callback(2, GPIO_IRQ_EDGE_RISE | GPIO_IRQ_EDGE_FALL, true, &gpio_callback);
-        gpio_set_irq_enabled_with_callback(2, GPIO_IRQ_EDGE_RISE, true, &gpio_callback);
+        gpio_set_irq_enabled_with_callback(2, GPIO_IRQ_EDGE_RISE | GPIO_IRQ_EDGE_FALL, true, &gpio_callback);
+        //digital output check
+	gpio_init(6);
+    	gpio_set_dir(6, GPIO_OUT);
+    	
+    	//set up the reading pin CHAN B
+        gpio_init(4);
+        gpio_set_dir(4, GPIO_IN);
+        gpio_set_irq_enabled_with_callback(4, GPIO_IRQ_EDGE_RISE | GPIO_IRQ_EDGE_FALL, true, &gpio_callback);
+        //digital output check
+	gpio_init(7);
+    	gpio_set_dir(7, GPIO_OUT);
 		
-		driveMotor(99, true);
+	driveMotor(99, true);
+        
+        gpio_put(25, 1);
 		
     	while (true) {
-        	gpio_put(25, 0);
-
-		//pwm_set_chan_level(slice_num, PWM_CHAN_A, wrapP * (90/100) );
-		//printf("Enter driveValue Xx: \n");
-		//input = getchar() - 48;
-		//input *= 10;
-		//printf("driveValue: %d \n", input);
-		//driveMotor(input, true);
-		
+                gpio_put(25, 1);
+                
 	        printf("Reading: %d \n", gpio_get(2));
+
                 sleep_ms(1000);
-        	//sleep_ms(1300);
-		//driveMotor(0, true);
-        	//sleep_ms(2000);
-		
-        	//sleep_ms(1000);
-		//driveMotor(-99, true);
-        	//sleep_ms(1000);
-		
-		//printf("driveEnable: true \n");
-		
-		//pwm_set_chan_level(slice_num, PWM_CHAN_A, wrapP * 0.4 );
-		
-        	//sleep_ms(2500);
-		
-		
 	}
 }
 
