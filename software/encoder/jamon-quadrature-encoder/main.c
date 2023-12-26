@@ -1,73 +1,77 @@
+//  SPDX-FileCopyrightText: 
+//2022 Jamon Terrell <github@jamonterrell.com>
+//2024 Arda Alıcı <ardayaozel@hotmail.com>
+//  SPDX-License-Identifier: MIT
+
 #include <stdio.h>
 #include "pico/stdlib.h"
 #include "hardware/pio.h"
 #include "hardware/pwm.h"
+#include "quadrature.pio.h"
 
 #define QUADRATURE_A_PIN 2
 #define QUADRATURE_B_PIN 4
 
-#define MOTOR_DRIVER_IN1 0
-#define MOTOR_DRIVER_IN2 1
-#define MOTOR_DRIVER_VREF 3
-
-//PWM 
+// PWM calculations
 uint freqHz = 10000;
 uint wrapP = 12500;
-uint slice_num, slice_num1;
 
-//QUADRATURE
-#define holes 38
-// Old * 4 + New
-int QEM [16] = {0,1,-1,2,-1,0,2,1,1,2,0,-1,2,-1,1,0};  // Quadrature Encoder Matrix
-int oldState = 0;
-int newState = 0;
-float position = 0;
-float step = 360/(holes*4);
+uint slice_num, slice_num1;
         
 void driveMotor(int driveValue, bool driveEnable);
 
-void gpio_callback(uint gpio, uint32_t events) {
-    oldState = newState;
-    if(gpio==QUADRATURE_A_PIN){
-    }
-    if(gpio==QUADRATURE_B_PIN){
-    }
-    newState = gpio_get(QUADRATURE_A_PIN)*2 + gpio_get(QUADRATURE_B_PIN);
-    position += step * QEM[oldState*4+newState];
-    printf("position: %d\n", position);
-}
 int main() {
     stdio_init_all();
     
+    //quadrature
+    PIO encoderPIO = pio0;
+
+    uint offsetA = pio_add_program(encoderPIO, &quadratureA_program);
+    uint smA = pio_claim_unused_sm(encoderPIO, true);
+
+    uint offsetB = pio_add_program(encoderPIO, &quadratureB_program);
+    uint smB = pio_claim_unused_sm(encoderPIO, true);
+
+    quadratureA_program_init(encoderPIO, smA, offsetA, QUADRATURE_A_PIN, QUADRATURE_B_PIN);
+    quadratureB_program_init(encoderPIO, smB, offsetB, QUADRATURE_A_PIN, QUADRATURE_B_PIN);
     
     //motor driver
-    // set up pwm on GPIO MOTOR_DRIVER_IN1
-    gpio_set_function(MOTOR_DRIVER_IN1, GPIO_FUNC_PWM);
+    // set up pwm on GPIO 0
+    gpio_set_function(0, GPIO_FUNC_PWM);
     // get PWM channel for that pin
-    slice_num = pwm_gpio_to_slice_num(MOTOR_DRIVER_IN1);
+    slice_num = pwm_gpio_to_slice_num(0);
     // enable PWM on that channel
     pwm_set_enabled(slice_num, true);
     // set wrap point
     pwm_set_wrap(slice_num, wrapP);
-    // set up pwm on GPIO MOTOR_DRIVER_IN2
-    gpio_set_function(MOTOR_DRIVER_IN2, GPIO_FUNC_PWM);
+    // set up pwm on GPIO 1
+    gpio_set_function(1, GPIO_FUNC_PWM);
     // get PWM channel for that pin
-    slice_num1 = pwm_gpio_to_slice_num(MOTOR_DRIVER_IN2);
+    slice_num1 = pwm_gpio_to_slice_num(1);
     // enable PWM on that channel
     pwm_set_enabled(slice_num1, true);
     // set wrap point
     pwm_set_wrap(slice_num1, wrapP);
     //VREF driver
-    gpio_init(MOTOR_DRIVER_VREF);
-    gpio_set_dir(MOTOR_DRIVER_VREF, GPIO_OUT);
-    gpio_put(MOTOR_DRIVER_VREF, 1);
+    gpio_init(3);
+    gpio_set_dir(3, GPIO_OUT);
+    gpio_put(3, 1);
     
     driveMotor(99, true);
  
     while (true) {
         sleep_ms(100);
-        
-        printf("%d\n", 696969);
+
+        pio_sm_exec_wait_blocking(encoderPIO, smA, pio_encode_in(pio_x, 32));
+        pio_sm_exec_wait_blocking(encoderPIO, smB, pio_encode_in(pio_x, 32));
+
+        int32_t countA = pio_sm_get_blocking(encoderPIO, smA);
+        int32_t countB = pio_sm_get_blocking(encoderPIO, smB);
+
+        int32_t x = countA + countB;
+
+        //uint x = pio_sm_get_blocking(pio, sm);
+        printf("%d\n", x);
     }
 }
 

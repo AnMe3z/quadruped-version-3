@@ -11,6 +11,7 @@ https://www.codrey.com/electronic-circuits/the-mysterious-laser-receiver-sensor-
 
 -quadrature encoder
 https://granitedevices.com/wiki/Quadrature
+https://cdn.sparkfun.com/datasheets/Robotics/How%20to%20use%20a%20quadrature%20encoder.pdf
 -quadrature encoder software
 https://github.com/jamon/pi-pico-pio-quadrature-encoder
 

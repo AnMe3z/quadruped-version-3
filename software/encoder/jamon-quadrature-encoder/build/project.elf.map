@@ -1134,9 +1134,9 @@ Discarded input sections
                 0x00000000       0xa8 CMakeFiles/project.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_pio/pio.c.obj
  .text.pio_sm_drain_tx_fifo
                 0x00000000       0x48 CMakeFiles/project.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_pio/pio.c.obj
- .text          0x00000000        0x0 /tmp/ccazJF3l.o
- .data          0x00000000        0x0 /tmp/ccazJF3l.o
- .bss           0x00000000        0x0 /tmp/ccazJF3l.o
+ .text          0x00000000        0x0 /tmp/ccCLKrT2.o
+ .data          0x00000000        0x0 /tmp/ccCLKrT2.o
+ .bss           0x00000000        0x0 /tmp/ccCLKrT2.o
  .data          0x00000000        0x0 /usr/lib/gcc/arm-none-eabi/12.2.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
  .bss           0x00000000        0x0 /usr/lib/gcc/arm-none-eabi/12.2.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
  .text          0x00000000       0x10 /usr/lib/gcc/arm-none-eabi/12.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-atexit.o)
@@ -1400,7 +1400,7 @@ LOAD /usr/lib/gcc/arm-none-eabi/12.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nof
 .boot2          0x10000000      0x100
                 0x10000000                        __boot2_start__ = .
  *(.boot2)
- .boot2         0x10000000      0x100 /tmp/ccazJF3l.o
+ .boot2         0x10000000      0x100 /tmp/ccCLKrT2.o
                 0x10000100                        __boot2_end__ = .
                 0x00000001                        ASSERT (((__boot2_end__ - __boot2_start__) == 0x100), ERROR: Pico second stage bootloader must be 256 bytes in size)
 
@@ -2545,7 +2545,7 @@ LOAD CMakeFiles/project.dir/home/andrey-shefa/pico/pico-sdk/lib/tinyusb/src/tusb
 LOAD CMakeFiles/project.dir/home/andrey-shefa/pico/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.obj
 LOAD CMakeFiles/project.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.obj
 LOAD CMakeFiles/project.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_pio/pio.c.obj
-LOAD /tmp/ccazJF3l.o
+LOAD /tmp/ccCLKrT2.o
 LOAD /usr/lib/gcc/arm-none-eabi/12.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libstdc++.a
 LOAD /usr/lib/gcc/arm-none-eabi/12.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libm.a
 START GROUP
@@ -2659,7 +2659,7 @@ LOAD linker stubs
  .ARM.attributes
                 0x00000780       0x2c CMakeFiles/project.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_pio/pio.c.obj
  .ARM.attributes
-                0x000007ac       0x22 /tmp/ccazJF3l.o
+                0x000007ac       0x22 /tmp/ccCLKrT2.o
  .ARM.attributes
                 0x000007ce       0x1e /usr/lib/gcc/arm-none-eabi/12.2.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
  .ARM.attributes

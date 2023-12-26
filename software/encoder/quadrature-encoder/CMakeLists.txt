@@ -12,17 +12,8 @@ add_executable(project
   main.c
 )
 
-# Create C header file with the name <pio program>.pio.h
-pico_generate_pio_header(${PROJECT_NAME}  
-        ${CMAKE_CURRENT_LIST_DIR}/quadrature-lib/quadrature.pio
-)
-
-# Enable usb output, disable uart output
 pico_enable_stdio_usb(project 1)
 pico_enable_stdio_uart(project 0)
-
-# Create map/bin/hex/uf2 files
 pico_add_extra_outputs(project)
 
-# Link to pico_stdlib (gpio, time, etc. functions)
-target_link_libraries(project PRIVATE pico_stdlib hardware_pwm hardware_uart hardware_pio)
+target_link_libraries(project PRIVATE pico_stdlib hardware_pwm hardware_uart)
