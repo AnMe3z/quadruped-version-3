@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include "pico/stdlib.h"
-#include "hardware/pio.h"
+//#include "hardware/pio.h"
 #include "hardware/pwm.h"
 
 #define QUADRATURE_A_PIN 2
@@ -22,23 +22,34 @@ int QEM [16] = {0,1,-1,2,-1,0,2,1,1,2,0,-1,2,-1,1,0};  // Quadrature Encoder Mat
 int oldState = 0;
 int newState = 0;
 float position = 0;
-float step = 360/(holes*4);
+float step = 2.368421053;//360/(holes*4);
         
 void driveMotor(int driveValue, bool driveEnable);
 
 void gpio_callback(uint gpio, uint32_t events) {
     oldState = newState;
     if(gpio==QUADRATURE_A_PIN){
+      if (events == GPIO_IRQ_EDGE_RISE){
+        gpio_put(6, 1);
+      }
+      else{
+        gpio_put(6, 0);
+      }
     }
     if(gpio==QUADRATURE_B_PIN){
+      if (events == GPIO_IRQ_EDGE_RISE){
+        gpio_put(7, 1);
+      }
+      else{
+        gpio_put(7, 0);
+      }
     }
     newState = gpio_get(QUADRATURE_A_PIN)*2 + gpio_get(QUADRATURE_B_PIN);
     position += step * QEM[oldState*4+newState];
-    printf("position: %d\n", position);
+    printf("position: %f\n", position);
 }
 int main() {
     stdio_init_all();
-    
     
     //motor driver
     // set up pwm on GPIO MOTOR_DRIVER_IN1
@@ -62,11 +73,28 @@ int main() {
     gpio_set_dir(MOTOR_DRIVER_VREF, GPIO_OUT);
     gpio_put(MOTOR_DRIVER_VREF, 1);
     
+    //set up the reading pin CHAN A
+    gpio_init(QUADRATURE_A_PIN);
+    gpio_set_dir(QUADRATURE_A_PIN, GPIO_IN);
+    gpio_set_irq_enabled_with_callback(QUADRATURE_A_PIN, GPIO_IRQ_EDGE_RISE | GPIO_IRQ_EDGE_FALL, true, &gpio_callback);
+    //digital output check
+    gpio_init(6);
+    gpio_set_dir(6, GPIO_OUT);
+
+    //set up the reading pin CHAN B
+    gpio_init(QUADRATURE_B_PIN);
+    gpio_set_dir(QUADRATURE_B_PIN, GPIO_IN);
+    gpio_set_irq_enabled_with_callback(QUADRATURE_B_PIN, GPIO_IRQ_EDGE_RISE | GPIO_IRQ_EDGE_FALL, true, &gpio_callback);
+    //digital output check
+    gpio_init(7);
+    gpio_set_dir(7, GPIO_OUT);
+    
     driveMotor(99, true);
  
     while (true) {
-        sleep_ms(100);
+        sleep_ms(1000);
         
+        printf("step: %f\n", step);
         printf("%d\n", 696969);
     }
 }
