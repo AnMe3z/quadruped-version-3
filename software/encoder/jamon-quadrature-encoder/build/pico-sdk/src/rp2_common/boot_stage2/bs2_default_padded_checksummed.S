@@ -1,4 +1,4 @@
-// Padded and checksummed version of: /home/andrey-shefa/Documents/repos/quadruped-version-3/software/encoder/quadrature-encoder/build/pico-sdk/src/rp2_common/boot_stage2/bs2_default.bin
+// Padded and checksummed version of: /home/andrey-shefa/Documents/repos/quadruped-version-3/software/encoder/jamon-quadrature-encoder/build/pico-sdk/src/rp2_common/boot_stage2/bs2_default.bin
 
 .cpu cortex-m0plus
 .thumb

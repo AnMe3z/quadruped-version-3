@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/andrey-shefa/Documents/repos/quadruped-version-3/software/encoder/quadrature-encoder
+CMAKE_SOURCE_DIR = /home/andrey-shefa/Documents/repos/quadruped-version-3/software/encoder/jamon-quadrature-encoder
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/andrey-shefa/Documents/repos/quadruped-version-3/software/encoder/quadrature-encoder/build
+CMAKE_BINARY_DIR = /home/andrey-shefa/Documents/repos/quadruped-version-3/software/encoder/jamon-quadrature-encoder/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,9 +87,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/andrey-shefa/Documents/repos/quadruped-version-3/software/encoder/quadrature-encoder/build/CMakeFiles /home/andrey-shefa/Documents/repos/quadruped-version-3/software/encoder/quadrature-encoder/build//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/andrey-shefa/Documents/repos/quadruped-version-3/software/encoder/jamon-quadrature-encoder/build/CMakeFiles /home/andrey-shefa/Documents/repos/quadruped-version-3/software/encoder/jamon-quadrature-encoder/build//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/andrey-shefa/Documents/repos/quadruped-version-3/software/encoder/quadrature-encoder/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/andrey-shefa/Documents/repos/quadruped-version-3/software/encoder/jamon-quadrature-encoder/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target

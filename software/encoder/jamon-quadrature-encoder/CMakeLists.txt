@@ -24,5 +24,10 @@ pico_enable_stdio_uart(project 0)
 # Create map/bin/hex/uf2 files
 pico_add_extra_outputs(project)
 
-# Link to pico_stdlib (gpio, time, etc. functions)
-target_link_libraries(project PRIVATE pico_stdlib hardware_pwm hardware_uart hardware_pio)
+# Links to pico_stdlib (gpio, time, etc. functions)
+target_link_libraries(project PRIVATE 
+	pico_stdlib 
+        pico_multicore
+	hardware_pwm 
+	hardware_uart 
+	hardware_pio)

@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/andrey-shefa/Documents/repos/quadruped-version-3/software/encoder/quadrature-encoder
+CMAKE_SOURCE_DIR = /home/andrey-shefa/Documents/repos/quadruped-version-3/software/encoder/jamon-quadrature-encoder
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/andrey-shefa/Documents/repos/quadruped-version-3/software/encoder/quadrature-encoder/build
+CMAKE_BINARY_DIR = /home/andrey-shefa/Documents/repos/quadruped-version-3/software/encoder/jamon-quadrature-encoder/build
 
 # Utility rule file for project_quadrature_pio_h.
 
@@ -68,9 +68,9 @@ include CMakeFiles/project_quadrature_pio_h.dir/progress.make
 
 CMakeFiles/project_quadrature_pio_h: quadrature.pio.h
 
-quadrature.pio.h: /home/andrey-shefa/Documents/repos/quadruped-version-3/software/encoder/quadrature-encoder/quadrature-lib/quadrature.pio
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/encoder/quadrature-encoder/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating quadrature.pio.h"
-	pioasm/pioasm -o c-sdk /home/andrey-shefa/Documents/repos/quadruped-version-3/software/encoder/quadrature-encoder/quadrature-lib/quadrature.pio /home/andrey-shefa/Documents/repos/quadruped-version-3/software/encoder/quadrature-encoder/build/quadrature.pio.h
+quadrature.pio.h: /home/andrey-shefa/Documents/repos/quadruped-version-3/software/encoder/jamon-quadrature-encoder/quadrature-lib/quadrature.pio
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/encoder/jamon-quadrature-encoder/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating quadrature.pio.h"
+	pioasm/pioasm -o c-sdk /home/andrey-shefa/Documents/repos/quadruped-version-3/software/encoder/jamon-quadrature-encoder/quadrature-lib/quadrature.pio /home/andrey-shefa/Documents/repos/quadruped-version-3/software/encoder/jamon-quadrature-encoder/build/quadrature.pio.h
 
 project_quadrature_pio_h: CMakeFiles/project_quadrature_pio_h
 project_quadrature_pio_h: quadrature.pio.h
@@ -86,6 +86,6 @@ CMakeFiles/project_quadrature_pio_h.dir/clean:
 .PHONY : CMakeFiles/project_quadrature_pio_h.dir/clean
 
 CMakeFiles/project_quadrature_pio_h.dir/depend:
-	cd /home/andrey-shefa/Documents/repos/quadruped-version-3/software/encoder/quadrature-encoder/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/andrey-shefa/Documents/repos/quadruped-version-3/software/encoder/quadrature-encoder /home/andrey-shefa/Documents/repos/quadruped-version-3/software/encoder/quadrature-encoder /home/andrey-shefa/Documents/repos/quadruped-version-3/software/encoder/quadrature-encoder/build /home/andrey-shefa/Documents/repos/quadruped-version-3/software/encoder/quadrature-encoder/build /home/andrey-shefa/Documents/repos/quadruped-version-3/software/encoder/quadrature-encoder/build/CMakeFiles/project_quadrature_pio_h.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/andrey-shefa/Documents/repos/quadruped-version-3/software/encoder/jamon-quadrature-encoder/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/andrey-shefa/Documents/repos/quadruped-version-3/software/encoder/jamon-quadrature-encoder /home/andrey-shefa/Documents/repos/quadruped-version-3/software/encoder/jamon-quadrature-encoder /home/andrey-shefa/Documents/repos/quadruped-version-3/software/encoder/jamon-quadrature-encoder/build /home/andrey-shefa/Documents/repos/quadruped-version-3/software/encoder/jamon-quadrature-encoder/build /home/andrey-shefa/Documents/repos/quadruped-version-3/software/encoder/jamon-quadrature-encoder/build/CMakeFiles/project_quadrature_pio_h.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/project_quadrature_pio_h.dir/depend
 

@@ -1,13 +1,13 @@
 # Target labels
  PioasmBuild
 # Source files and their labels
-/home/andrey-shefa/Documents/repos/quadruped-version-3/software/encoder/quadrature-encoder/build/pico-sdk/src/rp2_common/pico_cyw43_driver/CMakeFiles/PioasmBuild
-/home/andrey-shefa/Documents/repos/quadruped-version-3/software/encoder/quadrature-encoder/build/pico-sdk/src/rp2_common/pico_cyw43_driver/CMakeFiles/PioasmBuild.rule
-/home/andrey-shefa/Documents/repos/quadruped-version-3/software/encoder/quadrature-encoder/build/pico-sdk/src/rp2_common/pico_cyw43_driver/CMakeFiles/PioasmBuild-complete.rule
-/home/andrey-shefa/Documents/repos/quadruped-version-3/software/encoder/quadrature-encoder/build/pico-sdk/src/rp2_common/pico_cyw43_driver/pioasm/src/PioasmBuild-stamp/PioasmBuild-build.rule
-/home/andrey-shefa/Documents/repos/quadruped-version-3/software/encoder/quadrature-encoder/build/pico-sdk/src/rp2_common/pico_cyw43_driver/pioasm/src/PioasmBuild-stamp/PioasmBuild-configure.rule
-/home/andrey-shefa/Documents/repos/quadruped-version-3/software/encoder/quadrature-encoder/build/pico-sdk/src/rp2_common/pico_cyw43_driver/pioasm/src/PioasmBuild-stamp/PioasmBuild-download.rule
-/home/andrey-shefa/Documents/repos/quadruped-version-3/software/encoder/quadrature-encoder/build/pico-sdk/src/rp2_common/pico_cyw43_driver/pioasm/src/PioasmBuild-stamp/PioasmBuild-install.rule
-/home/andrey-shefa/Documents/repos/quadruped-version-3/software/encoder/quadrature-encoder/build/pico-sdk/src/rp2_common/pico_cyw43_driver/pioasm/src/PioasmBuild-stamp/PioasmBuild-mkdir.rule
-/home/andrey-shefa/Documents/repos/quadruped-version-3/software/encoder/quadrature-encoder/build/pico-sdk/src/rp2_common/pico_cyw43_driver/pioasm/src/PioasmBuild-stamp/PioasmBuild-patch.rule
-/home/andrey-shefa/Documents/repos/quadruped-version-3/software/encoder/quadrature-encoder/build/pico-sdk/src/rp2_common/pico_cyw43_driver/pioasm/src/PioasmBuild-stamp/PioasmBuild-update.rule
+/home/andrey-shefa/Documents/repos/quadruped-version-3/software/encoder/jamon-quadrature-encoder/build/pico-sdk/src/rp2_common/pico_cyw43_driver/CMakeFiles/PioasmBuild
+/home/andrey-shefa/Documents/repos/quadruped-version-3/software/encoder/jamon-quadrature-encoder/build/pico-sdk/src/rp2_common/pico_cyw43_driver/CMakeFiles/PioasmBuild.rule
+/home/andrey-shefa/Documents/repos/quadruped-version-3/software/encoder/jamon-quadrature-encoder/build/pico-sdk/src/rp2_common/pico_cyw43_driver/CMakeFiles/PioasmBuild-complete.rule
+/home/andrey-shefa/Documents/repos/quadruped-version-3/software/encoder/jamon-quadrature-encoder/build/pico-sdk/src/rp2_common/pico_cyw43_driver/pioasm/src/PioasmBuild-stamp/PioasmBuild-build.rule
+/home/andrey-shefa/Documents/repos/quadruped-version-3/software/encoder/jamon-quadrature-encoder/build/pico-sdk/src/rp2_common/pico_cyw43_driver/pioasm/src/PioasmBuild-stamp/PioasmBuild-configure.rule
+/home/andrey-shefa/Documents/repos/quadruped-version-3/software/encoder/jamon-quadrature-encoder/build/pico-sdk/src/rp2_common/pico_cyw43_driver/pioasm/src/PioasmBuild-stamp/PioasmBuild-download.rule
+/home/andrey-shefa/Documents/repos/quadruped-version-3/software/encoder/jamon-quadrature-encoder/build/pico-sdk/src/rp2_common/pico_cyw43_driver/pioasm/src/PioasmBuild-stamp/PioasmBuild-install.rule
+/home/andrey-shefa/Documents/repos/quadruped-version-3/software/encoder/jamon-quadrature-encoder/build/pico-sdk/src/rp2_common/pico_cyw43_driver/pioasm/src/PioasmBuild-stamp/PioasmBuild-mkdir.rule
+/home/andrey-shefa/Documents/repos/quadruped-version-3/software/encoder/jamon-quadrature-encoder/build/pico-sdk/src/rp2_common/pico_cyw43_driver/pioasm/src/PioasmBuild-stamp/PioasmBuild-patch.rule
+/home/andrey-shefa/Documents/repos/quadruped-version-3/software/encoder/jamon-quadrature-encoder/build/pico-sdk/src/rp2_common/pico_cyw43_driver/pioasm/src/PioasmBuild-stamp/PioasmBuild-update.rule

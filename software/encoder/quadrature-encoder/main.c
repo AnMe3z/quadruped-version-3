@@ -48,6 +48,7 @@ void gpio_callback(uint gpio, uint32_t events) {
     position += step * QEM[oldState*4+newState];
     printf("position: %f\n", position);
 }
+
 int main() {
     stdio_init_all();
     

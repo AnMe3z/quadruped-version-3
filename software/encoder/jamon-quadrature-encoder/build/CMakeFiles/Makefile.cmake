@@ -7,14 +7,14 @@ set(CMAKE_DEPENDS_GENERATOR "Unix Makefiles")
 # The top level Makefile was generated from the following files:
 set(CMAKE_MAKEFILE_DEPENDS
   "CMakeCache.txt"
-  "/home/andrey-shefa/Documents/repos/quadruped-version-3/software/encoder/quadrature-encoder/CMakeLists.txt"
+  "/home/andrey-shefa/Documents/repos/quadruped-version-3/software/encoder/jamon-quadrature-encoder/CMakeLists.txt"
   "CMakeFiles/3.25.1/CMakeASMCompiler.cmake"
   "CMakeFiles/3.25.1/CMakeCCompiler.cmake"
   "CMakeFiles/3.25.1/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.25.1/CMakeSystem.cmake"
   "elf2uf2/tmp/ELF2UF2Build-mkdirs.cmake"
   "pico-sdk/src/rp2_common/pico_cyw43_driver/pioasm/tmp/PioasmBuild-mkdirs.cmake"
-  "/home/andrey-shefa/Documents/repos/quadruped-version-3/software/encoder/quadrature-encoder/pico_sdk_import.cmake"
+  "/home/andrey-shefa/Documents/repos/quadruped-version-3/software/encoder/jamon-quadrature-encoder/pico_sdk_import.cmake"
   "/home/andrey-shefa/pico/pico-sdk/CMakeLists.txt"
   "/home/andrey-shefa/pico/pico-sdk/cmake/Platform/PICO.cmake"
   "/home/andrey-shefa/pico/pico-sdk/cmake/pico_pre_load_platform.cmake"

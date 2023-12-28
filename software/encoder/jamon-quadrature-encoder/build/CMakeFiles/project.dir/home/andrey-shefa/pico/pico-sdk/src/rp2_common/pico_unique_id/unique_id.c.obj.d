@@ -11,9 +11,9 @@ CMakeFiles/project.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_uniqu
  /usr/include/newlib/sys/features.h \
  /usr/lib/gcc/arm-none-eabi/12.2.1/include/stdint.h \
  /usr/lib/gcc/arm-none-eabi/12.2.1/include/stddef.h \
- /home/andrey-shefa/Documents/repos/quadruped-version-3/software/encoder/quadrature-encoder/build/generated/pico_base/pico/version.h \
+ /home/andrey-shefa/Documents/repos/quadruped-version-3/software/encoder/jamon-quadrature-encoder/build/generated/pico_base/pico/version.h \
  /home/andrey-shefa/pico/pico-sdk/src/common/pico_base/include/pico/config.h \
- /home/andrey-shefa/Documents/repos/quadruped-version-3/software/encoder/quadrature-encoder/build/generated/pico_base/pico/config_autogen.h \
+ /home/andrey-shefa/Documents/repos/quadruped-version-3/software/encoder/jamon-quadrature-encoder/build/generated/pico_base/pico/config_autogen.h \
  /home/andrey-shefa/pico/pico-sdk/src/boards/include/boards/pico_w.h \
  /home/andrey-shefa/pico/pico-sdk/src/rp2_common/cmsis/include/cmsis/rename_exceptions.h \
  /home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_platform/include/pico/platform.h \

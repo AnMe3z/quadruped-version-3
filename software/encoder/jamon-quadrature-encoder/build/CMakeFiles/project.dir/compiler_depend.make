@@ -2802,7 +2802,7 @@ CMakeFiles/project.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_uniqu
   /home/andrey-shefa/pico/pico-sdk/src/common/pico_base/include/pico/error.h \
   /home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_unique_id/include/pico/unique_id.h
 
-CMakeFiles/project.dir/main.c.obj: /home/andrey-shefa/Documents/repos/quadruped-version-3/software/encoder/quadrature-encoder/main.c \
+CMakeFiles/project.dir/main.c.obj: /home/andrey-shefa/Documents/repos/quadruped-version-3/software/encoder/jamon-quadrature-encoder/main.c \
   /usr/include/newlib/stdio.h \
   /usr/include/newlib/_ansi.h \
   /usr/include/newlib/newlib.h \
@@ -2992,6 +2992,8 @@ quadrature.pio.h:
 /home/andrey-shefa/pico/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/sio.h:
 
 /home/andrey-shefa/pico/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/xosc.h:
+
+/home/andrey-shefa/Documents/repos/quadruped-version-3/software/encoder/jamon-quadrature-encoder/main.c:
 
 /home/andrey-shefa/pico/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/pll.h:
 
@@ -3246,8 +3248,6 @@ generated/pico_base/pico/config_autogen.h:
 /home/andrey-shefa/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/m0plus.h:
 
 /home/andrey-shefa/pico/pico-sdk/src/common/pico_sync/include/pico/mutex.h:
-
-/home/andrey-shefa/Documents/repos/quadruped-version-3/software/encoder/quadrature-encoder/main.c:
 
 /home/andrey-shefa/pico/pico-sdk/lib/tinyusb/src/tusb.c:
 

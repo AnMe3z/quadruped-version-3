@@ -5,18 +5,18 @@ cmake_minimum_required(VERSION 3.5)
 
 file(MAKE_DIRECTORY
   "/home/andrey-shefa/pico/pico-sdk/tools/pioasm"
-  "/home/andrey-shefa/Documents/repos/quadruped-version-3/software/encoder/quadrature-encoder/build/pioasm"
-  "/home/andrey-shefa/Documents/repos/quadruped-version-3/software/encoder/quadrature-encoder/build/pico-sdk/src/rp2_common/pico_cyw43_driver/pioasm"
-  "/home/andrey-shefa/Documents/repos/quadruped-version-3/software/encoder/quadrature-encoder/build/pico-sdk/src/rp2_common/pico_cyw43_driver/pioasm/tmp"
-  "/home/andrey-shefa/Documents/repos/quadruped-version-3/software/encoder/quadrature-encoder/build/pico-sdk/src/rp2_common/pico_cyw43_driver/pioasm/src/PioasmBuild-stamp"
-  "/home/andrey-shefa/Documents/repos/quadruped-version-3/software/encoder/quadrature-encoder/build/pico-sdk/src/rp2_common/pico_cyw43_driver/pioasm/src"
-  "/home/andrey-shefa/Documents/repos/quadruped-version-3/software/encoder/quadrature-encoder/build/pico-sdk/src/rp2_common/pico_cyw43_driver/pioasm/src/PioasmBuild-stamp"
+  "/home/andrey-shefa/Documents/repos/quadruped-version-3/software/encoder/jamon-quadrature-encoder/build/pioasm"
+  "/home/andrey-shefa/Documents/repos/quadruped-version-3/software/encoder/jamon-quadrature-encoder/build/pico-sdk/src/rp2_common/pico_cyw43_driver/pioasm"
+  "/home/andrey-shefa/Documents/repos/quadruped-version-3/software/encoder/jamon-quadrature-encoder/build/pico-sdk/src/rp2_common/pico_cyw43_driver/pioasm/tmp"
+  "/home/andrey-shefa/Documents/repos/quadruped-version-3/software/encoder/jamon-quadrature-encoder/build/pico-sdk/src/rp2_common/pico_cyw43_driver/pioasm/src/PioasmBuild-stamp"
+  "/home/andrey-shefa/Documents/repos/quadruped-version-3/software/encoder/jamon-quadrature-encoder/build/pico-sdk/src/rp2_common/pico_cyw43_driver/pioasm/src"
+  "/home/andrey-shefa/Documents/repos/quadruped-version-3/software/encoder/jamon-quadrature-encoder/build/pico-sdk/src/rp2_common/pico_cyw43_driver/pioasm/src/PioasmBuild-stamp"
 )
 
 set(configSubDirs )
 foreach(subDir IN LISTS configSubDirs)
-    file(MAKE_DIRECTORY "/home/andrey-shefa/Documents/repos/quadruped-version-3/software/encoder/quadrature-encoder/build/pico-sdk/src/rp2_common/pico_cyw43_driver/pioasm/src/PioasmBuild-stamp/${subDir}")
+    file(MAKE_DIRECTORY "/home/andrey-shefa/Documents/repos/quadruped-version-3/software/encoder/jamon-quadrature-encoder/build/pico-sdk/src/rp2_common/pico_cyw43_driver/pioasm/src/PioasmBuild-stamp/${subDir}")
 endforeach()
 if(cfgdir)
-  file(MAKE_DIRECTORY "/home/andrey-shefa/Documents/repos/quadruped-version-3/software/encoder/quadrature-encoder/build/pico-sdk/src/rp2_common/pico_cyw43_driver/pioasm/src/PioasmBuild-stamp${cfgdir}") # cfgdir has leading slash
+  file(MAKE_DIRECTORY "/home/andrey-shefa/Documents/repos/quadruped-version-3/software/encoder/jamon-quadrature-encoder/build/pico-sdk/src/rp2_common/pico_cyw43_driver/pioasm/src/PioasmBuild-stamp${cfgdir}") # cfgdir has leading slash
 endif()

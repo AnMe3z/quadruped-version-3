@@ -3,7 +3,7 @@
 
 # Relative path conversion top directories.
 set(CMAKE_RELATIVE_PATH_TOP_SOURCE "/home/andrey-shefa/pico/pico-sdk")
-set(CMAKE_RELATIVE_PATH_TOP_BINARY "/home/andrey-shefa/Documents/repos/quadruped-version-3/software/encoder/quadrature-encoder/build")
+set(CMAKE_RELATIVE_PATH_TOP_BINARY "/home/andrey-shefa/Documents/repos/quadruped-version-3/software/encoder/jamon-quadrature-encoder/build")
 
 # Force unix paths in dependencies.
 set(CMAKE_FORCE_UNIX_PATHS 1)

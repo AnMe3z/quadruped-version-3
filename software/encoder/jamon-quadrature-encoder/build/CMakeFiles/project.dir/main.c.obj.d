@@ -1,5 +1,5 @@
 CMakeFiles/project.dir/main.c.obj: \
- /home/andrey-shefa/Documents/repos/quadruped-version-3/software/encoder/quadrature-encoder/main.c \
+ /home/andrey-shefa/Documents/repos/quadruped-version-3/software/encoder/jamon-quadrature-encoder/main.c \
  /usr/include/newlib/stdio.h /usr/include/newlib/_ansi.h \
  /usr/include/newlib/newlib.h /usr/include/newlib/_newlib_version.h \
  /usr/include/newlib/sys/config.h /usr/include/newlib/machine/ieeefp.h \
@@ -23,9 +23,9 @@ CMakeFiles/project.dir/main.c.obj: \
  /usr/lib/gcc/arm-none-eabi/12.2.1/include/stdbool.h \
  /usr/include/newlib/assert.h \
  /usr/lib/gcc/arm-none-eabi/12.2.1/include/stdint.h \
- /home/andrey-shefa/Documents/repos/quadruped-version-3/software/encoder/quadrature-encoder/build/generated/pico_base/pico/version.h \
+ /home/andrey-shefa/Documents/repos/quadruped-version-3/software/encoder/jamon-quadrature-encoder/build/generated/pico_base/pico/version.h \
  /home/andrey-shefa/pico/pico-sdk/src/common/pico_base/include/pico/config.h \
- /home/andrey-shefa/Documents/repos/quadruped-version-3/software/encoder/quadrature-encoder/build/generated/pico_base/pico/config_autogen.h \
+ /home/andrey-shefa/Documents/repos/quadruped-version-3/software/encoder/jamon-quadrature-encoder/build/generated/pico_base/pico/config_autogen.h \
  /home/andrey-shefa/pico/pico-sdk/src/boards/include/boards/pico_w.h \
  /home/andrey-shefa/pico/pico-sdk/src/rp2_common/cmsis/include/cmsis/rename_exceptions.h \
  /home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_platform/include/pico/platform.h \
@@ -62,4 +62,4 @@ CMakeFiles/project.dir/main.c.obj: \
  /home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_pwm/include/hardware/pwm.h \
  /home/andrey-shefa/pico/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/pwm.h \
  /home/andrey-shefa/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/pwm.h \
- /home/andrey-shefa/Documents/repos/quadruped-version-3/software/encoder/quadrature-encoder/build/quadrature.pio.h
+ /home/andrey-shefa/Documents/repos/quadruped-version-3/software/encoder/jamon-quadrature-encoder/build/quadrature.pio.h

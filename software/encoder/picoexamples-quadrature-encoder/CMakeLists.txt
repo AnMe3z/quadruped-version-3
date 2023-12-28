@@ -1,18 +1,33 @@
-add_executable(pio_quadrature_encoder)
+cmake_minimum_required(VERSION 3.13)
 
-pico_generate_pio_header(pio_quadrature_encoder ${CMAKE_CURRENT_LIST_DIR}/quadrature_encoder.pio)
+include(pico_sdk_import.cmake)
 
-target_sources(pio_quadrature_encoder PRIVATE quadrature_encoder.c)
+project(project C CXX ASM)
+set(CMAKE_C_STANDARD 11)
+set(CMAKE_CXX_STANDARD 17)
 
-target_link_libraries(pio_quadrature_encoder PRIVATE
-        pico_stdlib
+pico_sdk_init()
+
+add_executable(project
+  quadrature_encoder.c
+)
+
+# Create C header file with the name <pio program>.pio.h
+pico_generate_pio_header(${PROJECT_NAME}  
+        ${CMAKE_CURRENT_LIST_DIR}/quadrature_encoder.pio
+)
+
+# Enable usb output, disable uart output
+pico_enable_stdio_usb(project 1)
+pico_enable_stdio_uart(project 0)
+
+# Create map/bin/hex/uf2 files
+pico_add_extra_outputs(project)
+
+target_link_libraries(project PRIVATE 
+	pico_stdlib 
         pico_multicore
-        hardware_pio
-        )
+	hardware_pwm 
+	hardware_uart 
+	hardware_pio)
 
-pico_enable_stdio_usb(pio_quadrature_encoder 1)
-
-pico_add_extra_outputs(pio_quadrature_encoder)
-
-# add url via pico_set_program_url
-example_auto_set_url(pio_quadrature_encoder)
