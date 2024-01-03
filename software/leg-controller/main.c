@@ -28,66 +28,11 @@ int newState = 0;
 float position = 0;
 float step = 2.368421053;//360/(holes*4);
 
-    
-  //motor driver
-  // set up pwm on GPIO MOTOR_DRIVER_IN1
-  gpio_set_function(MOTOR_FEMUR_IN1_PIN, GPIO_FUNC_PWM);
-  // get PWM channel for that pin
-  const uint slice_num = pwm_gpio_to_slice_num(MOTOR_FEMUR_IN1_PIN);
-  // enable PWM on that channel
-  pwm_set_enabled(slice_num, true);
-  // set wrap point
-  pwm_set_wrap(slice_num, wrapP);
-  // set up pwm on GPIO MOTOR_DRIVER_IN2
-  gpio_set_function(MOTOR_FEMUR_IN2_PIN, GPIO_FUNC_PWM);
-  // get PWM channel for that pin
-  const uint slice_num1 = pwm_gpio_to_slice_num(MOTOR_FEMUR_IN2_PIN);
-  // enable PWM on that channel
-  pwm_set_enabled(slice_num1, true);
-  // set wrap point
-  pwm_set_wrap(slice_num1, wrapP);
-  //VREF driver
-  gpio_init(MOTOR_FEMUR_VREF_PIN);
-  gpio_set_dir(MOTOR_FEMUR_VREF_PIN, GPIO_OUT);
-  gpio_put(MOTOR_FEMUR_VREF_PIN, 1);
+uint motorPins[2][2] = { 
+  {0, 1}, 
+  {8, 9}
+};
   
-  //set up the reading pin CHAN A
-  gpio_init(FEMUR_ENCODER_A_PIN);
-  gpio_set_dir(FEMUR_ENCODER_A_PIN, GPIO_IN);
-  gpio_set_irq_enabled_with_callback(FEMUR_ENCODER_A_PIN, GPIO_IRQ_EDGE_RISE | GPIO_IRQ_EDGE_FALL, true, &gpio_callback);
-  //digital output check
-  gpio_init(6);
-  gpio_set_dir(6, GPIO_OUT);
-  //set up the reading pin CHAN B
-  gpio_init(FEMUR_ENCODER_B_PIN);
-  gpio_set_dir(FEMUR_ENCODER_B_PIN, GPIO_IN);
-  gpio_set_irq_enabled_with_callback(FEMUR_ENCODER_B_PIN, GPIO_IRQ_EDGE_RISE | GPIO_IRQ_EDGE_FALL, true, &gpio_callback);
-  //digital output check
-  gpio_init(7);
-  gpio_set_dir(7, GPIO_OUT);
-
-  // set up pwm on GPIO MOTOR_DRIVER_IN1
-  gpio_set_function(MOTOR_KNEE_IN1_PIN, GPIO_FUNC_PWM);
-  // get PWM channel for that pin
-  const uint slice_num2 = pwm_gpio_to_slice_num(MOTOR_KNEE_IN1_PIN);
-  // enable PWM on that channel
-  pwm_set_enabled(slice_num2, true);
-  // set wrap point
-  pwm_set_wrap(slice_num2, wrapP);
-  // set up pwm on GPIO MOTOR_DRIVER_IN2
-  gpio_set_function(MOTOR_KNEE_IN2_PIN, GPIO_FUNC_PWM);
-  // get PWM channel for that pin
-  const uint slice_num3 = pwm_gpio_to_slice_num(MOTOR_KNEE_IN2_PIN);
-  // enable PWM on that channel
-  pwm_set_enabled(slice_num3, true);
-  // set wrap point 
-  pwm_set_wrap(slice_num3, wrapP);
-  
-  uint motorSlices[2][2] = { 
-    {slice_num, slice_num1}, 
-    {slice_num2, slice_num3}
-  };
-    
 //MOTOR
 void driveMotor(int motorIndex, int driveValue, bool driveEnable);
 void servoDriveMotor(int motorIndex, int degrees);
@@ -117,6 +62,60 @@ void gpio_callback(uint gpio, uint32_t events) {
 int main() {
     stdio_init_all();
     
+    //motor driver
+    // set up pwm on GPIO MOTOR_DRIVER_IN1
+    gpio_set_function(MOTOR_FEMUR_IN1_PIN, GPIO_FUNC_PWM);
+    // get PWM channel for that pin
+    //uint slice_num = pwm_gpio_to_slice_num(MOTOR_FEMUR_IN1_PIN);
+    // enable PWM on that channel
+    pwm_set_enabled(pwm_gpio_to_slice_num(MOTOR_FEMUR_IN1_PIN), true);
+    // set wrap point
+    pwm_set_wrap(pwm_gpio_to_slice_num(MOTOR_FEMUR_IN1_PIN), wrapP);
+    // set up pwm on GPIO MOTOR_DRIVER_IN2
+    gpio_set_function(MOTOR_FEMUR_IN2_PIN, GPIO_FUNC_PWM);
+    // get PWM channel for that pin
+    //uint slice_num1 = pwm_gpio_to_slice_num(MOTOR_FEMUR_IN2_PIN);
+    // enable PWM on that channel
+    pwm_set_enabled(pwm_gpio_to_slice_num(MOTOR_FEMUR_IN2_PIN), true);
+    // set wrap point
+    pwm_set_wrap(pwm_gpio_to_slice_num(MOTOR_FEMUR_IN2_PIN), wrapP);
+    //VREF driver
+    gpio_init(MOTOR_FEMUR_VREF_PIN);
+    gpio_set_dir(MOTOR_FEMUR_VREF_PIN, GPIO_OUT);
+    gpio_put(MOTOR_FEMUR_VREF_PIN, 1);
+    
+    //set up the reading pin CHAN A
+    gpio_init(FEMUR_ENCODER_A_PIN);
+    gpio_set_dir(FEMUR_ENCODER_A_PIN, GPIO_IN);
+    gpio_set_irq_enabled_with_callback(FEMUR_ENCODER_A_PIN, GPIO_IRQ_EDGE_RISE | GPIO_IRQ_EDGE_FALL, true, &gpio_callback);
+    //digital output check
+    gpio_init(6);
+    gpio_set_dir(6, GPIO_OUT);
+    //set up the reading pin CHAN B
+    gpio_init(FEMUR_ENCODER_B_PIN);
+    gpio_set_dir(FEMUR_ENCODER_B_PIN, GPIO_IN);
+    gpio_set_irq_enabled_with_callback(FEMUR_ENCODER_B_PIN, GPIO_IRQ_EDGE_RISE | GPIO_IRQ_EDGE_FALL, true, &gpio_callback);
+    //digital output check
+    gpio_init(7);
+    gpio_set_dir(7, GPIO_OUT);
+
+    // set up pwm on GPIO MOTOR_DRIVER_IN1
+    gpio_set_function(MOTOR_KNEE_IN1_PIN, GPIO_FUNC_PWM);
+    // get PWM channel for that pin
+    //uint slice_num2 = pwm_gpio_to_slice_num(MOTOR_KNEE_IN1_PIN);
+    // enable PWM on that channel
+    pwm_set_enabled(pwm_gpio_to_slice_num(MOTOR_KNEE_IN1_PIN), true);
+    // set wrap point
+    pwm_set_wrap(pwm_gpio_to_slice_num(MOTOR_KNEE_IN1_PIN), wrapP);
+    // set up pwm on GPIO MOTOR_DRIVER_IN2
+    gpio_set_function(MOTOR_KNEE_IN2_PIN, GPIO_FUNC_PWM);
+    // get PWM channel for that pin
+    //uint slice_num3 = pwm_gpio_to_slice_num(MOTOR_KNEE_IN2_PIN);
+    // enable PWM on that channel
+    pwm_set_enabled(pwm_gpio_to_slice_num(MOTOR_KNEE_IN2_PIN), true);
+    // set wrap point 
+    pwm_set_wrap(pwm_gpio_to_slice_num(MOTOR_KNEE_IN2_PIN), wrapP);
+    
     int input = 0;
     
     driveMotor(0, 90, true);
@@ -136,8 +135,8 @@ int main() {
 
 void driveMotor(int motorIndex, int driveValue, bool driveEnable){
         // Get target PWM slices
-        uint femurSlice = motorSlices[motorIndex][0];
-        uint kneeSlice = motorSlices[motorIndex][1];
+        uint femurSlice = pwm_gpio_to_slice_num(motorPins[motorIndex][0]);
+        uint kneeSlice = pwm_gpio_to_slice_num(motorPins[motorIndex][1]);
         // Check if the motor should be moved
         if(driveEnable){
                 // Calculate input 1 & 2
