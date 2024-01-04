@@ -39,15 +39,17 @@ void servoDriveMotor(int motorIndex, int degrees);
 
 void gpio_callback(uint gpio, uint32_t events) {
     oldState = newState;
-    if(gpio==FEMUR_ENCODER_A_PIN){
+    if(gpio==KNEE_ENCODER_A_PIN){
+      printf("A\n");
       if (events == GPIO_IRQ_EDGE_RISE){
-        gpio_put(6, 1);
+        gpio_put(13, 1);
       }
       else{
-        gpio_put(6, 0);
+        gpio_put(13, 0);
       }
     }
-    if(gpio==FEMUR_ENCODER_B_PIN){
+    if(gpio==KNEE_ENCODER_B_PIN){
+      printf("B\n");
       if (events == GPIO_IRQ_EDGE_RISE){
         gpio_put(7, 1);
       }
@@ -62,7 +64,7 @@ void gpio_callback(uint gpio, uint32_t events) {
 int main() {
     stdio_init_all();
     
-    //motor driver
+    //MOTOR DRIVER 1
     // set up pwm on GPIO MOTOR_DRIVER_IN1
     gpio_set_function(MOTOR_FEMUR_IN1_PIN, GPIO_FUNC_PWM);
     // get PWM channel for that pin
@@ -84,21 +86,17 @@ int main() {
     gpio_set_dir(MOTOR_FEMUR_VREF_PIN, GPIO_OUT);
     gpio_put(MOTOR_FEMUR_VREF_PIN, 1);
     
+    //ENCODER 1
     //set up the reading pin CHAN A
     gpio_init(FEMUR_ENCODER_A_PIN);
     gpio_set_dir(FEMUR_ENCODER_A_PIN, GPIO_IN);
     gpio_set_irq_enabled_with_callback(FEMUR_ENCODER_A_PIN, GPIO_IRQ_EDGE_RISE | GPIO_IRQ_EDGE_FALL, true, &gpio_callback);
-    //digital output check
-    gpio_init(6);
-    gpio_set_dir(6, GPIO_OUT);
     //set up the reading pin CHAN B
     gpio_init(FEMUR_ENCODER_B_PIN);
     gpio_set_dir(FEMUR_ENCODER_B_PIN, GPIO_IN);
     gpio_set_irq_enabled_with_callback(FEMUR_ENCODER_B_PIN, GPIO_IRQ_EDGE_RISE | GPIO_IRQ_EDGE_FALL, true, &gpio_callback);
-    //digital output check
-    gpio_init(7);
-    gpio_set_dir(7, GPIO_OUT);
 
+    //MOTOR DRIVER 2
     // set up pwm on GPIO MOTOR_DRIVER_IN1
     gpio_set_function(MOTOR_KNEE_IN1_PIN, GPIO_FUNC_PWM);
     // get PWM channel for that pin
@@ -116,10 +114,30 @@ int main() {
     // set wrap point 
     pwm_set_wrap(pwm_gpio_to_slice_num(MOTOR_KNEE_IN2_PIN), wrapP);
     
+    //ENCODER 2
+    gpio_init(KNEE_ENCODER_3V_PIN);
+    gpio_set_dir(KNEE_ENCODER_3V_PIN, GPIO_OUT);
+    gpio_put(KNEE_ENCODER_3V_PIN, 1);
+    //set up the reading pin CHAN A
+    gpio_init(KNEE_ENCODER_A_PIN);
+    gpio_set_dir(KNEE_ENCODER_A_PIN, GPIO_IN);
+    gpio_set_irq_enabled_with_callback(KNEE_ENCODER_A_PIN, GPIO_IRQ_EDGE_RISE | GPIO_IRQ_EDGE_FALL, true, &gpio_callback);
+    //set up the reading pin CHAN B
+    gpio_init(KNEE_ENCODER_B_PIN);
+    gpio_set_dir(KNEE_ENCODER_B_PIN, GPIO_IN);
+    gpio_set_irq_enabled_with_callback(KNEE_ENCODER_B_PIN, GPIO_IRQ_EDGE_RISE | GPIO_IRQ_EDGE_FALL, true, &gpio_callback);
+    
+    //digital output check
+    gpio_init(13);
+    gpio_set_dir(13, GPIO_OUT);
+    //digital output check
+    gpio_init(7);
+    gpio_set_dir(7, GPIO_OUT);
+    
     int input = 0;
     
     driveMotor(0, 90, true);
-    driveMotor(1, 90, true);
+    //driveMotor(1, 90, true);
     
     	while (true) {
 		//printf("Enter angle Xx: \n");
@@ -129,7 +147,14 @@ int main() {
 		//driveMotor(input, true);
 		//servoDriveMotor(input);
 		
+                driveMotor(0, 90, true);
         	sleep_ms(500);
+                driveMotor(0, 0, true);
+        	sleep_ms(2000);
+                driveMotor(0, -90, true);
+        	sleep_ms(500);
+                driveMotor(0, 0, true);
+        	sleep_ms(2000);
 	}
 }
 
