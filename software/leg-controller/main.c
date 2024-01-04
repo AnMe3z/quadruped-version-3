@@ -136,7 +136,7 @@ int main() {
     
     int input = 0;
     
-    driveMotor(0, 90, true);
+    //driveMotor(0, 90, true);
     //driveMotor(1, 90, true);
     
     	while (true) {
@@ -147,13 +147,13 @@ int main() {
 		//driveMotor(input, true);
 		//servoDriveMotor(input);
 		
-                driveMotor(0, 90, true);
+                driveMotor(1, 90, true);
         	sleep_ms(500);
-                driveMotor(0, 0, true);
+                driveMotor(1, 0, true);
         	sleep_ms(2000);
-                driveMotor(0, -90, true);
+                driveMotor(1, -90, true);
         	sleep_ms(500);
-                driveMotor(0, 0, true);
+                driveMotor(1, 0, true);
         	sleep_ms(2000);
 	}
 }
