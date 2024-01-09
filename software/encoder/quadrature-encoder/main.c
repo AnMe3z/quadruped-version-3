@@ -3,12 +3,12 @@
 //#include "hardware/pio.h"
 #include "hardware/pwm.h"
 
-#define QUADRATURE_A_PIN 2
-#define QUADRATURE_B_PIN 4
+#define QUADRATURE_A_PIN 2//11
+#define QUADRATURE_B_PIN 4//12
 
-#define MOTOR_DRIVER_IN1 0
-#define MOTOR_DRIVER_IN2 1
-#define MOTOR_DRIVER_VREF 3
+#define MOTOR_DRIVER_IN1 0//8
+#define MOTOR_DRIVER_IN2 1//9
+#define MOTOR_DRIVER_VREF 3//10
 
 //PWM 
 uint freqHz = 10000;
@@ -30,10 +30,10 @@ void gpio_callback(uint gpio, uint32_t events) {
     oldState = newState;
     if(gpio==QUADRATURE_A_PIN){
       if (events == GPIO_IRQ_EDGE_RISE){
-        gpio_put(6, 1);
+        gpio_put(13, 1);
       }
       else{
-        gpio_put(6, 0);
+        gpio_put(13, 0);
       }
     }
     if(gpio==QUADRATURE_B_PIN){
@@ -45,6 +45,8 @@ void gpio_callback(uint gpio, uint32_t events) {
       }
     }
     newState = gpio_get(QUADRATURE_A_PIN)*2 + gpio_get(QUADRATURE_B_PIN);
+    printf("newState: %d\n", newState);
+    printf("QEM[oldState*4+newState]: %d\n", QEM[oldState*4+newState]);
     position += step * QEM[oldState*4+newState];
     printf("position: %f\n", position);
 }
@@ -79,8 +81,8 @@ int main() {
     gpio_set_dir(QUADRATURE_A_PIN, GPIO_IN);
     gpio_set_irq_enabled_with_callback(QUADRATURE_A_PIN, GPIO_IRQ_EDGE_RISE | GPIO_IRQ_EDGE_FALL, true, &gpio_callback);
     //digital output check
-    gpio_init(6);
-    gpio_set_dir(6, GPIO_OUT);
+    gpio_init(13);
+    gpio_set_dir(13, GPIO_OUT);
 
     //set up the reading pin CHAN B
     gpio_init(QUADRATURE_B_PIN);
@@ -90,13 +92,22 @@ int main() {
     gpio_init(7);
     gpio_set_dir(7, GPIO_OUT);
     
-    driveMotor(99, true);
+    //driveMotor(99, true);
  
     while (true) {
-        sleep_ms(1000);
+        //sleep_ms(1000);
         
-        printf("step: %f\n", step);
-        printf("%d\n", 696969);
+        //printf("step: %f\n", step);
+        //printf("%d\n", 696969);
+        
+        driveMotor(90, true);
+	sleep_ms(500);
+        driveMotor(0, true);
+	sleep_ms(2000);
+        driveMotor(-90, true);
+	sleep_ms(500);
+        driveMotor(0, true);
+	sleep_ms(2000);
     }
 }
 

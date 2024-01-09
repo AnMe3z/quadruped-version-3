@@ -1,4 +1,5 @@
 /home/andrey-shefa/Documents/repos/quadruped-version-3/software/leg-controller/build/CMakeFiles/pwm_control.dir
+/home/andrey-shefa/Documents/repos/quadruped-version-3/software/leg-controller/build/CMakeFiles/pwm_control_quadrature_encoder_pio_h.dir
 /home/andrey-shefa/Documents/repos/quadruped-version-3/software/leg-controller/build/CMakeFiles/ELF2UF2Build.dir
 /home/andrey-shefa/Documents/repos/quadruped-version-3/software/leg-controller/build/CMakeFiles/edit_cache.dir
 /home/andrey-shefa/Documents/repos/quadruped-version-3/software/leg-controller/build/CMakeFiles/rebuild_cache.dir

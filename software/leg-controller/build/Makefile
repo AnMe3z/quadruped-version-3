@@ -130,6 +130,19 @@ pwm_control/fast:
 .PHONY : pwm_control/fast
 
 #=============================================================================
+# Target rules for targets named pwm_control_quadrature_encoder_pio_h
+
+# Build rule for target.
+pwm_control_quadrature_encoder_pio_h: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 pwm_control_quadrature_encoder_pio_h
+.PHONY : pwm_control_quadrature_encoder_pio_h
+
+# fast build rule for target.
+pwm_control_quadrature_encoder_pio_h/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pwm_control_quadrature_encoder_pio_h.dir/build.make CMakeFiles/pwm_control_quadrature_encoder_pio_h.dir/build
+.PHONY : pwm_control_quadrature_encoder_pio_h/fast
+
+#=============================================================================
 # Target rules for targets named ELF2UF2Build
 
 # Build rule for target.
@@ -991,6 +1004,30 @@ home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_irq/irq_handler_chain.S.
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/pwm_control.dir/build.make CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_irq/irq_handler_chain.S.obj
 .PHONY : home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_irq/irq_handler_chain.S.obj
 
+home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_pio/pio.obj: home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_pio/pio.c.obj
+.PHONY : home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_pio/pio.obj
+
+# target to build an object file
+home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_pio/pio.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pwm_control.dir/build.make CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_pio/pio.c.obj
+.PHONY : home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_pio/pio.c.obj
+
+home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_pio/pio.i: home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_pio/pio.c.i
+.PHONY : home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_pio/pio.i
+
+# target to preprocess a source file
+home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_pio/pio.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pwm_control.dir/build.make CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_pio/pio.c.i
+.PHONY : home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_pio/pio.c.i
+
+home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_pio/pio.s: home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_pio/pio.c.s
+.PHONY : home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_pio/pio.s
+
+# target to generate assembly for a file
+home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_pio/pio.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pwm_control.dir/build.make CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_pio/pio.c.s
+.PHONY : home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_pio/pio.c.s
+
 home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_pll/pll.obj: home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_pll/pll.c.obj
 .PHONY : home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_pll/pll.obj
 
@@ -1391,6 +1428,30 @@ home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/pwm_control.dir/build.make CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj
 .PHONY : home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj
 
+home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_multicore/multicore.obj: home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_multicore/multicore.c.obj
+.PHONY : home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_multicore/multicore.obj
+
+# target to build an object file
+home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_multicore/multicore.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pwm_control.dir/build.make CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_multicore/multicore.c.obj
+.PHONY : home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_multicore/multicore.c.obj
+
+home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_multicore/multicore.i: home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_multicore/multicore.c.i
+.PHONY : home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_multicore/multicore.i
+
+# target to preprocess a source file
+home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_multicore/multicore.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pwm_control.dir/build.make CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_multicore/multicore.c.i
+.PHONY : home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_multicore/multicore.c.i
+
+home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_multicore/multicore.s: home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_multicore/multicore.c.s
+.PHONY : home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_multicore/multicore.s
+
+# target to generate assembly for a file
+home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_multicore/multicore.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pwm_control.dir/build.make CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_multicore/multicore.c.s
+.PHONY : home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_multicore/multicore.c.s
+
 home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_platform/platform.obj: home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_platform/platform.c.obj
 .PHONY : home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_platform/platform.obj
 
@@ -1700,6 +1761,7 @@ help:
 	@echo "... bs2_default_bin"
 	@echo "... bs2_default_padded_checksummed_asm"
 	@echo "... cyw43_driver_picow_cyw43_bus_pio_spi_pio_h"
+	@echo "... pwm_control_quadrature_encoder_pio_h"
 	@echo "... bs2_default"
 	@echo "... pwm_control"
 	@echo "... home/andrey-shefa/pico/pico-sdk/lib/tinyusb/src/class/audio/audio_device.obj"
@@ -1800,6 +1862,9 @@ help:
 	@echo "... home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_irq/irq.i"
 	@echo "... home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_irq/irq.s"
 	@echo "... home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_irq/irq_handler_chain.obj"
+	@echo "... home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_pio/pio.obj"
+	@echo "... home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_pio/pio.i"
+	@echo "... home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_pio/pio.s"
 	@echo "... home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_pll/pll.obj"
 	@echo "... home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_pll/pll.i"
 	@echo "... home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_pll/pll.s"
@@ -1850,6 +1915,9 @@ help:
 	@echo "... home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.i"
 	@echo "... home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.s"
 	@echo "... home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.obj"
+	@echo "... home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_multicore/multicore.obj"
+	@echo "... home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_multicore/multicore.i"
+	@echo "... home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_multicore/multicore.s"
 	@echo "... home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_platform/platform.obj"
 	@echo "... home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_platform/platform.i"
 	@echo "... home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_platform/platform.s"

@@ -3,6 +3,8 @@
 #include "hardware/pwm.h"
 #include "pico/binary_info.h"
 
+#include "quadrature_encoder.pio.h"
+
 #define MOTOR_FEMUR_IN1_PIN 0
 #define MOTOR_FEMUR_IN2_PIN 1
 #define MOTOR_FEMUR_VREF_PIN 3
@@ -39,8 +41,7 @@ void servoDriveMotor(int motorIndex, int degrees);
 
 void gpio_callback(uint gpio, uint32_t events) {
     oldState = newState;
-    if(gpio==KNEE_ENCODER_A_PIN){
-      printf("A\n");
+    if(gpio==FEMUR_ENCODER_A_PIN){
       if (events == GPIO_IRQ_EDGE_RISE){
         gpio_put(13, 1);
       }
@@ -48,8 +49,7 @@ void gpio_callback(uint gpio, uint32_t events) {
         gpio_put(13, 0);
       }
     }
-    if(gpio==KNEE_ENCODER_B_PIN){
-      printf("B\n");
+    if(gpio==FEMUR_ENCODER_B_PIN){
       if (events == GPIO_IRQ_EDGE_RISE){
         gpio_put(7, 1);
       }
@@ -59,6 +59,7 @@ void gpio_callback(uint gpio, uint32_t events) {
     }
     newState = gpio_get(FEMUR_ENCODER_A_PIN)*2 + gpio_get(FEMUR_ENCODER_B_PIN);
     position += step * QEM[oldState*4+newState];
+    printf("Position: %f\n", position);
 }
 
 int main() {
@@ -139,6 +140,22 @@ int main() {
     //driveMotor(0, 90, true);
     //driveMotor(1, 90, true);
     
+    int new_value, delta, old_value = 0;
+
+    // Base pin to connect the A phase of the encoder.
+    // The B phase must be connected to the next pin
+    const uint PIN_AB = 10;
+
+    stdio_init_all();
+
+    PIO pio = pio0;
+    const uint sm = 0;
+
+    // we don't really need to keep the offset, as this program must be loaded
+    // at offset 0
+    pio_add_program(pio, &quadrature_encoder_program);
+    quadrature_encoder_program_init(pio, sm, PIN_AB, 0);
+    
     	while (true) {
 		//printf("Enter angle Xx: \n");
 		//input = getchar() - 48;
@@ -147,14 +164,20 @@ int main() {
 		//driveMotor(input, true);
 		//servoDriveMotor(input);
 		
-                driveMotor(1, 90, true);
-        	sleep_ms(500);
-                driveMotor(1, 0, true);
-        	sleep_ms(2000);
-                driveMotor(1, -90, true);
-        	sleep_ms(500);
-                driveMotor(1, 0, true);
-        	sleep_ms(2000);
+	        driveMotor(0, 100, true);
+                sleep_ms(300);
+                driveMotor(0, 0, true);
+                sleep_ms(2000);
+                driveMotor(0, -100, true);
+                sleep_ms(300);
+                driveMotor(0, 0, true);
+                sleep_ms(2000);
+                
+                //servoDriveMotor(0, 90);
+                //sleep_ms(2000);
+                //servoDriveMotor(0, -90);
+                //sleep_ms(2000);
+                printf("ADSFWFS \n");
 	}
 }
 
@@ -201,10 +224,19 @@ void servoDriveMotor(int motorIndex, int degrees){
     //while !target degrees move
     int diff = position - direction*targetDegrees;
     printf("diff: %d \n", diff);
-    while(diff<=-5){
-      diff = position - direction*targetDegrees;
-      printf("diff: %d \n", diff);
-      sleep_ms(5);
+    if(direction){
+      while(diff<=-5){
+        diff = position - direction*targetDegrees;
+        printf("diff: %d \n", diff);
+        sleep_ms(5);
+      }
+    }
+    if(direction == -1){
+      while(diff>=5){
+        diff = position - direction*targetDegrees;
+        printf("diff: %d \n", diff);
+        sleep_ms(5);
+      }
     }
     
     //brake
