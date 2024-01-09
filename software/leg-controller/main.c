@@ -17,6 +17,11 @@
 #define KNEE_ENCODER_B_PIN 12
 #define KNEE_ENCODER_3V_PIN 10
 
+#define MAX_PWM 100
+#define MIN_PWM 60
+
+#define KP 5
+
 //PWM 
 uint freqHz = 10000;
 uint wrapP = 12500;
@@ -37,7 +42,9 @@ uint motorPins[2][2] = {
   
 //MOTOR
 void driveMotor(int motorIndex, int driveValue, bool driveEnable);
-void servoDriveMotor(int motorIndex, int degrees);
+void servoDriveMotor(int motorIndex, int setPoint);
+//BASIC
+long map(long x, long in_min, long in_max, long out_min, long outmax);
 
 void gpio_callback(uint gpio, uint32_t events) {
     oldState = newState;
@@ -59,7 +66,7 @@ void gpio_callback(uint gpio, uint32_t events) {
     }
     newState = gpio_get(FEMUR_ENCODER_A_PIN)*2 + gpio_get(FEMUR_ENCODER_B_PIN);
     position += step * QEM[oldState*4+newState];
-    printf("Position: %f\n", position);
+    //printf("Position: %f\n", position);
 }
 
 int main() {
@@ -164,19 +171,19 @@ int main() {
 		//driveMotor(input, true);
 		//servoDriveMotor(input);
 		
-	        driveMotor(0, 100, true);
-                sleep_ms(300);
-                driveMotor(0, 0, true);
-                sleep_ms(2000);
-                driveMotor(0, -100, true);
-                sleep_ms(300);
-                driveMotor(0, 0, true);
-                sleep_ms(2000);
+	        //driveMotor(0, 100, true);
+                //sleep_ms(300);
+                //driveMotor(0, 0, true);
+                //sleep_ms(2000);
+                //driveMotor(0, -100, true);
+                //sleep_ms(300);
+                //driveMotor(0, 0, true);
+                //sleep_ms(2000);
                 
-                //servoDriveMotor(0, 90);
-                //sleep_ms(2000);
-                //servoDriveMotor(0, -90);
-                //sleep_ms(2000);
+                servoDriveMotor(0, 90);
+                sleep_ms(2000);
+                servoDriveMotor(0, -90);
+                sleep_ms(2000);
                 printf("ADSFWFS \n");
 	}
 }
@@ -212,34 +219,40 @@ void driveMotor(int motorIndex, int driveValue, bool driveEnable){
         }
 }
 
-void servoDriveMotor(int motorIndex, int degrees){
+void servoDriveMotor(int motorIndex, int setPoint){
   // get direction
-  int direction = (degrees != 0) ? ((degrees > 0) ? 1 : -1) : 0;
-  printf("direction: %d \n", direction);
-  if(direction != 0){
-    //calculate target degrees
-    int targetDegrees = position + direction*degrees;
-    printf("targetDegrees: %d \n", targetDegrees);
-    driveMotor(motorIndex, direction*99, true);  
-    //while !target degrees move
-    int diff = position - direction*targetDegrees;
-    printf("diff: %d \n", diff);
-    if(direction){
-      while(diff<=-5){
-        diff = position - direction*targetDegrees;
-        printf("diff: %d \n", diff);
-        sleep_ms(5);
-      }
-    }
-    if(direction == -1){
-      while(diff>=5){
-        diff = position - direction*targetDegrees;
-        printf("diff: %d \n", diff);
-        sleep_ms(5);
-      }
-    }
+  int direction = (setPoint != 0) ? ((setPoint > 0) ? 1 : -1) : 0;
+  int error, P;
+  int startPoint = position; 
+  
+  error = setPoint - position;
+  printf("error: %d \n", error);
+  //if(direction != 0){
+  
+  setPoint*=direction;
     
-    //brake
-    driveMotor(motorIndex, 0, true);
+  while ( error != 0 ) {
+    error = setPoint - position;
+    printf("error: %d \n", error);
+    P = KP * error;
+    if(P >= setPoint){
+            P = MAX_PWM;
+    }
+    else{
+            P = map(P, startPoint, setPoint, MIN_PWM, MAX_PWM);
+    }
+    P*=direction;
+    printf("P: %d \n", P);
+    driveMotor(motorIndex, P, true); 
   }
+  
+  
+  //brake
+  driveMotor(motorIndex, 0, true);
+  //}
 }
+
+long map(long x, long in_min, long in_max, long out_min, long out_max)
+{
+  return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
+} 
