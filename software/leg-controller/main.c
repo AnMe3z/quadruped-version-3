@@ -232,7 +232,7 @@ void servoDriveMotor(int motorIndex, int setPoint){
   setPoint*=direction;
     
   while ( error != 0 ) {
-    error = setPoint - position;
+    error = setPoint - direction*position;
     printf("error: %d \n", error);
     P = KP * error;
     if(P >= setPoint){
