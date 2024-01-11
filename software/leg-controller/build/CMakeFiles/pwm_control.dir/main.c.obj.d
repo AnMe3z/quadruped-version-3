@@ -61,12 +61,4 @@ CMakeFiles/pwm_control.dir/main.c.obj: \
  /home/andrey-shefa/pico/pico-sdk/src/common/pico_binary_info/include/pico/binary_info.h \
  /home/andrey-shefa/pico/pico-sdk/src/common/pico_binary_info/include/pico/binary_info/defs.h \
  /home/andrey-shefa/pico/pico-sdk/src/common/pico_binary_info/include/pico/binary_info/structure.h \
- /home/andrey-shefa/pico/pico-sdk/src/common/pico_binary_info/include/pico/binary_info/code.h \
- /home/andrey-shefa/Documents/repos/quadruped-version-3/software/leg-controller/build/quadrature_encoder.pio.h \
- /home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_pio/include/hardware/pio.h \
- /home/andrey-shefa/pico/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/pio.h \
- /home/andrey-shefa/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/pio.h \
- /home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_pio/include/hardware/pio_instructions.h \
- /home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_clocks/include/hardware/clocks.h \
- /home/andrey-shefa/pico/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/clocks.h \
- /home/andrey-shefa/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/clocks.h
+ /home/andrey-shefa/pico/pico-sdk/src/common/pico_binary_info/include/pico/binary_info/code.h

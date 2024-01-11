@@ -3,8 +3,6 @@
 #include "hardware/pwm.h"
 #include "pico/binary_info.h"
 
-#include "quadrature_encoder.pio.h"
-
 #define MOTOR_FEMUR_IN1_PIN 0
 #define MOTOR_FEMUR_IN2_PIN 1
 #define MOTOR_FEMUR_VREF_PIN 3
@@ -24,7 +22,7 @@
 
 //PWM 
 uint freqHz = 10000;
-uint wrapP = 12500;
+uint wrapP = 12500;//311;//402kHz
 
 //QUADRATURE
 #define holes 38
@@ -43,6 +41,7 @@ uint motorPins[2][2] = {
 //MOTOR
 void driveMotor(int motorIndex, int driveValue, bool driveEnable);
 void servoDriveMotor(int motorIndex, int setPoint);
+void servoHoldMotor(int motorIndex, int setPoint);
 //BASIC
 long map(long x, long in_min, long in_max, long out_min, long outmax);
 
@@ -134,7 +133,10 @@ int main() {
     gpio_init(KNEE_ENCODER_B_PIN);
     gpio_set_dir(KNEE_ENCODER_B_PIN, GPIO_IN);
     gpio_set_irq_enabled_with_callback(KNEE_ENCODER_B_PIN, GPIO_IRQ_EDGE_RISE | GPIO_IRQ_EDGE_FALL, true, &gpio_callback);
-    
+    //3V pin
+    gpio_init(KNEE_ENCODER_3V_PIN);
+    gpio_set_dir(KNEE_ENCODER_3V_PIN, GPIO_OUT);
+    gpio_put(KNEE_ENCODER_3V_PIN, 1);
     //digital output check
     gpio_init(13);
     gpio_set_dir(13, GPIO_OUT);
@@ -144,48 +146,79 @@ int main() {
     
     int input = 0;
     
-    //driveMotor(0, 90, true);
-    //driveMotor(1, 90, true);
-    
-    int new_value, delta, old_value = 0;
-
-    // Base pin to connect the A phase of the encoder.
-    // The B phase must be connected to the next pin
     const uint PIN_AB = 10;
 
     stdio_init_all();
-
-    PIO pio = pio0;
-    const uint sm = 0;
-
-    // we don't really need to keep the offset, as this program must be loaded
-    // at offset 0
-    pio_add_program(pio, &quadrature_encoder_program);
-    quadrature_encoder_program_init(pio, sm, PIN_AB, 0);
     
-    	while (true) {
-		//printf("Enter angle Xx: \n");
-		//input = getchar() - 48;
-		//input *= 10;
-		//printf("Target angle: %d \n", input);
-		//driveMotor(input, true);
-		//servoDriveMotor(input);
-		
-	        //driveMotor(0, 100, true);
-                //sleep_ms(300);
-                //driveMotor(0, 0, true);
-                //sleep_ms(2000);
-                //driveMotor(0, -100, true);
-                //sleep_ms(300);
-                //driveMotor(0, 0, true);
-                //sleep_ms(2000);
-                
-                servoDriveMotor(0, 90);
-                sleep_ms(2000);
-                servoDriveMotor(0, -90);
-                sleep_ms(2000);
-                printf("ADSFWFS \n");
-	}
+    //driveMotor(1, 100, true); 
+    
+    while (true) {
+        printf("Enter angle Xx: \n");
+        input = getchar() - 48;
+        input *= 10;
+        printf("Target angle: %d \n", input);
+        //driveMotor(input, true);
+        servoDriveMotor(0, input);
+
+        //driveMotor(0, 100, true);
+        //sleep_ms(300);
+        //driveMotor(0, 0, true);
+        //sleep_ms(2000);
+        //driveMotor(0, -100, true);
+        //sleep_ms(300);
+        //driveMotor(0, 0, true);
+        //sleep_ms(2000);
+        
+        //servoDriveMotor(0, 90);
+        //sleep_ms(2000);
+        //servoDriveMotor(0, -90);
+        //sleep_ms(2000);
+        //printf("position %f \n", position);
+        //printf("setHold %f \n", setHold);
+        //if(position - setHold != 0){
+        //  correction = (position - setHold > 0) ? 1 : -1;
+        //  printf("correction %f \n", correction);
+        //  correction*=position - setHold;
+        //  printf("correction %f \n", correction);
+        //  servoDriveMotor(0, correction);
+        //} 
+        
+        sleep_ms(2000);
+        printf("ADSFWFS \n");
+    } 
+}
+
+void servoDriveMotor(int motorIndex, int setPoint){
+  // get direction
+  int direction = (setPoint != 0) ? ((setPoint > 0) ? 1 : -1) : 0;
+  int error, P;
+  int startPoint = position; 
+  
+  error = setPoint - position;
+  //printf("error: %d \n", error);
+  //if(direction != 0){
+  
+  setPoint*=direction;
+    
+  while ( error != 0 ) {
+    error = setPoint - direction*position;
+    //printf("error: %d \n", error);
+    P = KP * error;
+    if(P >= setPoint){
+            P = MAX_PWM;
+    }
+    else{
+            P = map(P, startPoint, setPoint, MIN_PWM, MAX_PWM);
+    }
+    P*=direction;
+    printf("P: %d \n", P);
+    driveMotor(motorIndex, P, true); 
+  }
+  
+  
+  //brake
+  driveMotor(motorIndex, 0, true);
+  //}
 }
 
 void driveMotor(int motorIndex, int driveValue, bool driveEnable){
@@ -217,39 +250,6 @@ void driveMotor(int motorIndex, int driveValue, bool driveEnable){
                 // pwmIn2
 		pwm_set_chan_level(kneeSlice, PWM_CHAN_B, wrapP * (pwmIn2/100) );
         }
-}
-
-void servoDriveMotor(int motorIndex, int setPoint){
-  // get direction
-  int direction = (setPoint != 0) ? ((setPoint > 0) ? 1 : -1) : 0;
-  int error, P;
-  int startPoint = position; 
-  
-  error = setPoint - position;
-  printf("error: %d \n", error);
-  //if(direction != 0){
-  
-  setPoint*=direction;
-    
-  while ( error != 0 ) {
-    error = setPoint - direction*position;
-    printf("error: %d \n", error);
-    P = KP * error;
-    if(P >= setPoint){
-            P = MAX_PWM;
-    }
-    else{
-            P = map(P, startPoint, setPoint, MIN_PWM, MAX_PWM);
-    }
-    P*=direction;
-    printf("P: %d \n", P);
-    driveMotor(motorIndex, P, true); 
-  }
-  
-  
-  //brake
-  driveMotor(motorIndex, 0, true);
-  //}
 }
 
 long map(long x, long in_min, long in_max, long out_min, long out_max)

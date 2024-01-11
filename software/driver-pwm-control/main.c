@@ -3,6 +3,18 @@
 #include "hardware/pwm.h"
 #include "pico/binary_info.h"
 
+#define MOTOR_FEMUR_IN1_PIN 0
+#define MOTOR_FEMUR_IN2_PIN 1
+#define MOTOR_FEMUR_VREF_PIN 3
+#define FEMUR_ENCODER_A_PIN 2
+#define FEMUR_ENCODER_B_PIN 4
+
+#define MOTOR_KNEE_IN1_PIN 8
+#define MOTOR_KNEE_IN2_PIN 9
+#define KNEE_ENCODER_A_PIN 11
+#define KNEE_ENCODER_B_PIN 12
+#define KNEE_ENCODER_3V_PIN 10
+
 // PWM calculations
 uint freqHz = 10000;
 uint wrapP = 12500;
@@ -46,18 +58,18 @@ int main() {
     	gpio_set_dir(25, GPIO_OUT);
 
         // set up pwm on GPIO 0
-        gpio_set_function(0, GPIO_FUNC_PWM);
+        gpio_set_function(MOTOR_KNEE_IN1_PIN, GPIO_FUNC_PWM);
         // get PWM channel for that pin
-        slice_num = pwm_gpio_to_slice_num(0);
+        slice_num = pwm_gpio_to_slice_num(MOTOR_KNEE_IN1_PIN);
         // enable PWM on that channel
         pwm_set_enabled(slice_num, true);
         // set wrap point
         pwm_set_wrap(slice_num, wrapP);
 
         // set up pwm on GPIO 1
-        gpio_set_function(1, GPIO_FUNC_PWM);
+        gpio_set_function(MOTOR_KNEE_IN2_PIN, GPIO_FUNC_PWM);
         // get PWM channel for that pin
-        slice_num1 = pwm_gpio_to_slice_num(1);
+        slice_num1 = pwm_gpio_to_slice_num(MOTOR_KNEE_IN2_PIN);
         // enable PWM on that channel
         pwm_set_enabled(slice_num1, true);
         // set wrap point
@@ -89,16 +101,17 @@ int main() {
 	gpio_init(7);
     	gpio_set_dir(7, GPIO_OUT);
 		
-	driveMotor(99, true);
+	//driveMotor(99, true);
         
         gpio_put(25, 1);
 		
     	while (true) {
-                gpio_put(25, 1);
-                
-	        printf("Reading: %d \n", gpio_get(2));
-
-                sleep_ms(1000);
+		printf("Enter angle Xx: \n");
+		input = getchar() - 48;
+		input *= 10;
+		printf("Target angle: %d \n", input);
+		driveMotor(input, true);
+		//servoDriveMotor(input);
 	}
 }
 
