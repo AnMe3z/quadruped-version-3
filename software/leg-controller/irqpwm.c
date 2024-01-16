@@ -68,11 +68,19 @@ int main() {
     // Init UART communication
     stdio_init_all();
     
+    uint freqHz = 10000;
+    uint wrapP = 12500;
+
     // Tell the LED pin that the PWM is in charge of its value.
     gpio_set_function(PICO_DEFAULT_LED_PIN, GPIO_FUNC_PWM);
     // Figure out which slice we just connected to the LED pin
     uint slice_num = pwm_gpio_to_slice_num(PICO_DEFAULT_LED_PIN);
-
+    
+    // enable PWM on that channel
+    pwm_set_enabled(slice_num, true);
+    // set wrap point
+    pwm_set_wrap(pwm_gpio_to_slice_num(PICO_DEFAULT_LED_PIN), wrapP);
+    
     // Mask our slice's IRQ output into the PWM block's single interrupt line,
     // and register our interrupt handler
     pwm_clear_irq(slice_num);

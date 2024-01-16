@@ -68,32 +68,44 @@ void gpio_callback(uint gpio, uint32_t events) {
     //printf("Position: %f\n", position);
 }
 
-int setPoint, startPoint, direction, error, P;
+int setPoint, startPoint, direction;
+float error, P;
+bool moving = false;
 
 void on_pwm_wrap() {
-      	printf("interrupt \n");
+      	//printf("interrupt \n");
         // Clear the interrupt flag that brought us here
         pwm_clear_irq(pwm_gpio_to_slice_num(MOTOR_FEMUR_IN1_PIN));
-				
- 	direction = (setPoint != 0) ? ((setPoint > 0) ? 1 : -1) : 0;
-  	startPoint = position; 
+	if (moving){			
+ 		direction = (setPoint != 0) ? ((setPoint > 0) ? 1 : -1) : 0;
   
-  	setPoint*=direction;
+   	 	printf("direction: %d \n", direction);
+   	 	printf("setPoint: %d \n", setPoint);
+   	 	printf("startPoint: %d \n", startPoint);
+   	 	printf("POSITION: %f \n", position);
+  		setPoint*=direction;
     
-    	error = setPoint - direction*position;
-    	//printf("error: %d \n", error);
-    	P = KP * error;
-    	if(P >= setPoint){
-            	P = MAX_PWM;
-    	}
-    	else{
-        	P = map(P, startPoint, setPoint, MIN_PWM, MAX_PWM);
-   	}
-    	P*=direction;
- 	printf("P: %d \n", P);
- 	driveMotor(0, P, true); 
-  
-  	//brake
+   	 	error = setPoint - direction*position;
+   	 	printf("error: %f \n", error);
+   	 	P = KP * error;
+   	 	if(P >= setPoint){
+   	         	P = MAX_PWM;
+   	 	}
+   	 	else{
+   		     	P = map(P, startPoint-startPoint, setPoint-startPoint, MIN_PWM, MAX_PWM);
+   		}
+    		P*=direction;
+ 		printf("P: %f \n", P);
+ 		driveMotor(0, P, true); 
+		
+		if (error<=step*2){
+			moving = false;
+			//brake
+ 			printf("BRAKE\n");
+			driveMotor(0, 0, true);
+  			startPoint = position; 
+		}
+ 	}
 }
 
 int main() {
@@ -102,22 +114,20 @@ int main() {
     //MOTOR DRIVER 1
     // set up pwm on GPIO MOTOR_DRIVER_IN1
     gpio_set_function(MOTOR_FEMUR_IN1_PIN, GPIO_FUNC_PWM);
-    gpio_init(MOTOR_FEMUR_VREF_PIN);
-    // get PWM channel for that pin
-    //uint slice_num = pwm_gpio_to_slice_num(MOTOR_FEMUR_IN1_PIN);
     // enable PWM on that channel
     pwm_set_enabled(pwm_gpio_to_slice_num(MOTOR_FEMUR_IN1_PIN), true);
     // set wrap point
     pwm_set_wrap(pwm_gpio_to_slice_num(MOTOR_FEMUR_IN1_PIN), wrapP);
+    
     // set up pwm on GPIO MOTOR_DRIVER_IN2
     gpio_set_function(MOTOR_FEMUR_IN2_PIN, GPIO_FUNC_PWM);
-    // get PWM channel for that pin
-    //uint slice_num1 = pwm_gpio_to_slice_num(MOTOR_FEMUR_IN2_PIN);
     // enable PWM on that channel
     pwm_set_enabled(pwm_gpio_to_slice_num(MOTOR_FEMUR_IN2_PIN), true);
     // set wrap point
     pwm_set_wrap(pwm_gpio_to_slice_num(MOTOR_FEMUR_IN2_PIN), wrapP);
+    
     //VREF driver
+    gpio_init(MOTOR_FEMUR_VREF_PIN);
     gpio_set_dir(MOTOR_FEMUR_VREF_PIN, GPIO_OUT);
     gpio_put(MOTOR_FEMUR_VREF_PIN, 1);
     
@@ -193,7 +203,10 @@ int main() {
         input = getchar() - 48;
         input *= 10;
         printf("Target angle: %d \n", input);
-        
+
+	setPoint = startPoint + input;        
+	moving = true;
+
         sleep_ms(2000);
         printf("ADSFWFS \n");
     } 
