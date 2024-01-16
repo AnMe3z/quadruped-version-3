@@ -41,7 +41,6 @@ uint motorPins[2][2] = {
   
 //MOTOR
 void driveMotor(int motorIndex, int driveValue, bool driveEnable);
-void servoDriveMotor(int motorIndex, int setPoint);
 void servoHoldMotor(int motorIndex, int setPoint);
 //BASIC
 long map(long x, long in_min, long in_max, long out_min, long outmax);
@@ -73,6 +72,8 @@ int setPoint, startPoint, direction, error, P;
 
 void on_pwm_wrap() {
       	printf("interrupt \n");
+        // Clear the interrupt flag that brought us here
+        pwm_clear_irq(pwm_gpio_to_slice_num(MOTOR_FEMUR_IN1_PIN));
 				
  	direction = (setPoint != 0) ? ((setPoint > 0) ? 1 : -1) : 0;
   	startPoint = position; 
@@ -175,8 +176,6 @@ int main() {
     
     const uint PIN_AB = 10;
 
-    stdio_init_all();
-
     //servo control interrupt 
     pwm_clear_irq(pwm_gpio_to_slice_num(MOTOR_FEMUR_IN1_PIN));
     pwm_set_irq_enabled(pwm_gpio_to_slice_num(MOTOR_FEMUR_IN1_PIN), true);
@@ -184,7 +183,7 @@ int main() {
     irq_set_enabled(PWM_IRQ_WRAP, true);
 
     pwm_config config = pwm_get_default_config();
-    pwm_config_set_clkdiv(&config, 4.f);
+    pwm_config_set_clkdiv(&config, 32.f);
     pwm_init(pwm_gpio_to_slice_num(MOTOR_FEMUR_IN1_PIN), &config, true);
     
     //driveMotor(1, 100, true); 
@@ -194,69 +193,10 @@ int main() {
         input = getchar() - 48;
         input *= 10;
         printf("Target angle: %d \n", input);
-        setPoint = input;
-	//driveMotor(input, true);
-       	//servoDriveMotor(0, input);
-
-        //driveMotor(0, 100, true);
-        //sleep_ms(300);
-        //driveMotor(0, 0, true);
-        //sleep_ms(2000);
-        //driveMotor(0, -100, true);
-        //sleep_ms(300);
-        //driveMotor(0, 0, true);
-        //sleep_ms(2000);
-        
-        //servoDriveMotor(0, 90);
-        //sleep_ms(2000);
-        //servoDriveMotor(0, -90);
-        //sleep_ms(2000);
-        //printf("position %f \n", position);
-        //printf("setHold %f \n", setHold);
-        //if(position - setHold != 0){
-        //  correction = (position - setHold > 0) ? 1 : -1;
-        //  printf("correction %f \n", correction);
-        //  correction*=position - setHold;
-        //  printf("correction %f \n", correction);
-        //  servoDriveMotor(0, correction);
-        //} 
         
         sleep_ms(2000);
         printf("ADSFWFS \n");
     } 
-}
-
-void servoDriveMotor(int motorIndex, int setPoint){
-  // get direction
-  int direction = (setPoint != 0) ? ((setPoint > 0) ? 1 : -1) : 0;
-  int error, P;
-  int startPoint = position; 
-  
-  error = setPoint - position;
-  //printf("error: %d \n", error);
-  //if(direction != 0){
-  
-  setPoint*=direction;
-    
-  while ( error != 0 ) {
-    error = setPoint - direction*position;
-    //printf("error: %d \n", error);
-    P = KP * error;
-    if(P >= setPoint){
-            P = MAX_PWM;
-    }
-    else{
-            P = map(P, startPoint, setPoint, MIN_PWM, MAX_PWM);
-    }
-    P*=direction;
-    printf("P: %d \n", P);
-    driveMotor(motorIndex, P, true); 
-  }
-  
-  
-  //brake
-  driveMotor(motorIndex, 0, true);
-  //}
 }
 
 void driveMotor(int motorIndex, int driveValue, bool driveEnable){
