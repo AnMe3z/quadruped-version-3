@@ -73,20 +73,14 @@ float error, P;
 bool moving = false;
 
 void on_pwm_wrap() {
-      	//printf("interrupt \n");
         // Clear the interrupt flag that brought us here
         pwm_clear_irq(pwm_gpio_to_slice_num(MOTOR_FEMUR_IN1_PIN));
 	if (moving){			
  		direction = (setPoint != 0) ? ((setPoint > 0) ? 1 : -1) : 0;
   
-   	 	printf("direction: %d \n", direction);
-   	 	printf("setPoint: %d \n", setPoint);
-   	 	printf("startPoint: %d \n", startPoint);
-   	 	printf("POSITION: %f \n", position);
   		setPoint*=direction;
     
    	 	error = setPoint - direction*position;
-   	 	printf("error: %f \n", error);
    	 	P = KP * error;
    	 	if(P >= setPoint){
    	         	P = MAX_PWM;
@@ -95,13 +89,11 @@ void on_pwm_wrap() {
    		     	P = map(P, startPoint-startPoint, setPoint-startPoint, MIN_PWM, MAX_PWM);
    		}
     		P*=direction;
- 		printf("P: %f \n", P);
  		driveMotor(0, P, true); 
 		
-		if (error<=step*2){
+		if (error<=step){
 			moving = false;
 			//brake
- 			printf("BRAKE\n");
 			driveMotor(0, 0, true);
   			startPoint = position; 
 		}
