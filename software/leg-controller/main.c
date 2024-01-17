@@ -29,9 +29,12 @@ uint wrapP = 12500;//311;//402kHz
 #define holes 38
 // Old * 4 + New
 int QEM [16] = {0,1,-1,2,-1,0,2,1,1,2,0,-1,2,-1,1,0};  // Quadrature Encoder Matrix
-int oldState = 0;
-int newState = 0;
-float position = 0;
+int oldState0 = 0;
+int newState0 = 0;
+float position0 = 0;
+int oldState1 = 0;
+int newState1 = 0;
+float position1 = 0;
 float step = 2.368421053;//360/(holes*4);
 
 uint motorPins[2][2] = { 
@@ -45,57 +48,97 @@ void servoHoldMotor(int motorIndex, int setPoint);
 //BASIC
 long map(long x, long in_min, long in_max, long out_min, long outmax);
 
-void gpio_callback(uint gpio, uint32_t events) {
-    oldState = newState;
-    if(gpio==FEMUR_ENCODER_A_PIN){
-      if (events == GPIO_IRQ_EDGE_RISE){
-        gpio_put(13, 1);
-      }
-      else{
-        gpio_put(13, 0);
-      }
-    }
-    if(gpio==FEMUR_ENCODER_B_PIN){
-      if (events == GPIO_IRQ_EDGE_RISE){
-        gpio_put(7, 1);
-      }
-      else{
-        gpio_put(7, 0);
-      }
-    }
-    newState = gpio_get(FEMUR_ENCODER_A_PIN)*2 + gpio_get(FEMUR_ENCODER_B_PIN);
-    position += step * QEM[oldState*4+newState];
-    //printf("Position: %f\n", position);
+void encoderCallback(uint gpio, uint32_t events) {
+    if (gpio == FEMUR_ENCODER_A_PIN || gpio == FEMUR_ENCODER_B_PIN){
+	oldState0 = newState0;
+    	newState0 = gpio_get(FEMUR_ENCODER_A_PIN)*2 + gpio_get(FEMUR_ENCODER_B_PIN);
+    	position0 += step * QEM[oldState0*4+newState0];
+    	printf("Position0: %f\n", position0);
+    }    
+    if (gpio == KNEE_ENCODER_A_PIN || gpio == KNEE_ENCODER_B_PIN){
+    	oldState1 = newState1;
+		if(gpio==KNEE_ENCODER_A_PIN){
+		      if (events == GPIO_IRQ_EDGE_RISE){
+		        gpio_put(13, 1);
+		      }
+		      else{
+		        gpio_put(13, 0);
+		      }
+		    }
+		    if(gpio==KNEE_ENCODER_B_PIN){
+		      if (events == GPIO_IRQ_EDGE_RISE){
+		        gpio_put(7, 1);
+		      }
+		      else{
+		        gpio_put(7, 0);
+		      }
+		    }
+	//The encoder that is clockwise left (this case 10 o'clock) need to be first
+	//the secont encoder (pin a) is at 12 o'clock
+    	newState1 = gpio_get(KNEE_ENCODER_B_PIN)*2 + gpio_get(KNEE_ENCODER_A_PIN);
+    	position1 += step * QEM[oldState1*4+newState1];
+    	printf("Position1: %f\n", position1);
+    }    
 }
 
-int setPoint, startPoint, direction;
-float error, P;
-bool moving = false;
+int setPoint0, startPoint0, direction0;
+float error0, P0;
+bool moving0 = false;
+int setPoint1, startPoint1, direction1;
+float error1, P1;
+bool moving1 = false;
 
 void on_pwm_wrap() {
         // Clear the interrupt flag that brought us here
         pwm_clear_irq(pwm_gpio_to_slice_num(MOTOR_FEMUR_IN1_PIN));
-	if (moving){			
- 		direction = (setPoint != 0) ? ((setPoint > 0) ? 1 : -1) : 0;
+	if (moving0){			
+ 		direction0 = (setPoint0 != 0) ? ((setPoint0 > 0) ? 1 : -1) : 0;
   
-  		setPoint*=direction;
+  		setPoint0*=direction0;
     
-   	 	error = setPoint - direction*position;
-   	 	P = KP * error;
-   	 	if(P >= setPoint){
-   	         	P = MAX_PWM;
+   	 	error0 = setPoint0 - direction0*position0;
+   	 	P0 = KP * error0;
+   	 	if(P0 >= setPoint0){
+   	         	P0 = MAX_PWM;
    	 	}
    	 	else{
-   		     	P = map(P, startPoint-startPoint, setPoint-startPoint, MIN_PWM, MAX_PWM);
+   		     	P0 = map(P0,
+				 startPoint0-startPoint0, setPoint0-startPoint0,
+				 MIN_PWM, MAX_PWM);
    		}
-    		P*=direction;
- 		driveMotor(0, P, true); 
+    		P0*=direction0;
+ 		driveMotor(0, P0, true); 
 		
-		if (error<=step){
-			moving = false;
+		if (error0<=step){
+			moving0 = false;
 			//brake
 			driveMotor(0, 0, true);
-  			startPoint = position; 
+  			startPoint0 = position0; 
+		}
+ 	}
+	if (moving1){			
+ 		direction1 = (setPoint1 != 0) ? ((setPoint1 > 0) ? 1 : -1) : 0;
+  
+  		setPoint1*=direction1;
+    
+   	 	error1 = setPoint1 - direction1*position1;
+   	 	P1 = KP * error1;
+   	 	if(P1 >= setPoint1){
+   	         	P1 = MAX_PWM;
+   	 	}
+   	 	else{
+   		     	P1 = map(P1,
+				 startPoint1-startPoint1, setPoint1-startPoint1,
+				 MIN_PWM, MAX_PWM);
+   		}
+    		P1*=direction1;
+ 		driveMotor(1, P1, true); 
+		
+		if (error1<=step){
+			moving1 = false;
+			//brake
+			driveMotor(1, 0, true);
+  			startPoint1 = position1; 
 		}
  	}
 }
@@ -127,11 +170,11 @@ int main() {
     //set up the reading pin CHAN A
     gpio_init(FEMUR_ENCODER_A_PIN);
     gpio_set_dir(FEMUR_ENCODER_A_PIN, GPIO_IN);
-    gpio_set_irq_enabled_with_callback(FEMUR_ENCODER_A_PIN, GPIO_IRQ_EDGE_RISE | GPIO_IRQ_EDGE_FALL, true, &gpio_callback);
+    gpio_set_irq_enabled_with_callback(FEMUR_ENCODER_A_PIN, GPIO_IRQ_EDGE_RISE | GPIO_IRQ_EDGE_FALL, true, &encoderCallback);
     //set up the reading pin CHAN B
     gpio_init(FEMUR_ENCODER_B_PIN);
     gpio_set_dir(FEMUR_ENCODER_B_PIN, GPIO_IN);
-    gpio_set_irq_enabled_with_callback(FEMUR_ENCODER_B_PIN, GPIO_IRQ_EDGE_RISE | GPIO_IRQ_EDGE_FALL, true, &gpio_callback);
+    gpio_set_irq_enabled_with_callback(FEMUR_ENCODER_B_PIN, GPIO_IRQ_EDGE_RISE | GPIO_IRQ_EDGE_FALL, true, &encoderCallback);
 
     //MOTOR DRIVER 2
     // set up pwm on GPIO MOTOR_DRIVER_IN1
@@ -158,11 +201,11 @@ int main() {
     //set up the reading pin CHAN A
     gpio_init(KNEE_ENCODER_A_PIN);
     gpio_set_dir(KNEE_ENCODER_A_PIN, GPIO_IN);
-    gpio_set_irq_enabled_with_callback(KNEE_ENCODER_A_PIN, GPIO_IRQ_EDGE_RISE | GPIO_IRQ_EDGE_FALL, true, &gpio_callback);
+    gpio_set_irq_enabled_with_callback(KNEE_ENCODER_A_PIN, GPIO_IRQ_EDGE_RISE | GPIO_IRQ_EDGE_FALL, true, &encoderCallback);
     //set up the reading pin CHAN B
     gpio_init(KNEE_ENCODER_B_PIN);
     gpio_set_dir(KNEE_ENCODER_B_PIN, GPIO_IN);
-    gpio_set_irq_enabled_with_callback(KNEE_ENCODER_B_PIN, GPIO_IRQ_EDGE_RISE | GPIO_IRQ_EDGE_FALL, true, &gpio_callback);
+    gpio_set_irq_enabled_with_callback(KNEE_ENCODER_B_PIN, GPIO_IRQ_EDGE_RISE | GPIO_IRQ_EDGE_FALL, true, &encoderCallback);
     //3V pin
     gpio_init(KNEE_ENCODER_3V_PIN);
     gpio_set_dir(KNEE_ENCODER_3V_PIN, GPIO_OUT);
@@ -183,11 +226,12 @@ int main() {
     pwm_set_irq_enabled(pwm_gpio_to_slice_num(MOTOR_FEMUR_IN1_PIN), true);
     irq_set_exclusive_handler(PWM_IRQ_WRAP, on_pwm_wrap);
     irq_set_enabled(PWM_IRQ_WRAP, true);
-
     pwm_config config = pwm_get_default_config();
     pwm_config_set_clkdiv(&config, 32.f);
     pwm_init(pwm_gpio_to_slice_num(MOTOR_FEMUR_IN1_PIN), &config, true);
-    
+
+    //sleep_ms(3000);
+    //driveMotor(0, 100, true); 
     //driveMotor(1, 100, true); 
     
     while (true) {
@@ -196,10 +240,13 @@ int main() {
         input *= 10;
         printf("Target angle: %d \n", input);
 
-	setPoint = startPoint + input;        
-	moving = true;
+	//setPoint0 = startPoint0 + input;        
+	//moving0 = true;
 
-        sleep_ms(2000);
+	setPoint1 = startPoint1 + input;        
+	moving1 = true;
+        
+	sleep_ms(2000);
         printf("ADSFWFS \n");
     } 
 }
