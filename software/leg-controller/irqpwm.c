@@ -23,6 +23,7 @@
 int time1 = 0;
 #ifdef PICO_DEFAULT_LED_PIN 
 void on_pwm_wrap() {
+    gpio_put(0, 1);
     //printf("Interrupt \n");
     static int fade = 0;
     static bool going_up = true;
@@ -52,6 +53,7 @@ void on_pwm_wrap() {
             going_up = true;
         }
     }
+    gpio_put(0, 0);
 
     //printf("fade %d \n", fade);
 
@@ -67,6 +69,9 @@ int main() {
 #else
     // Init UART communication
     stdio_init_all();
+    
+    gpio_init(0);
+    gpio_set_dir(0, GPIO_OUT);
     
     uint freqHz = 10000;
     uint wrapP = 12500;
@@ -92,7 +97,7 @@ int main() {
     // counter is allowed to wrap over its maximum range (0 to 2**16-1)
     pwm_config config = pwm_get_default_config();
     // Set divider, reduces counter clock to sysclock/this value
-    pwm_config_set_clkdiv(&config, 32.f);
+    //pwm_config_set_clkdiv(&config, 4.f);
     // Load the configuration into our PWM slice, and set it running.
     pwm_init(slice_num, &config, true);
 

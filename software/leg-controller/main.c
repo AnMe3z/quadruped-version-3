@@ -57,22 +57,6 @@ void encoderCallback(uint gpio, uint32_t events) {
     }    
     if (gpio == KNEE_ENCODER_A_PIN || gpio == KNEE_ENCODER_B_PIN){
     	oldState1 = newState1;
-		if(gpio==KNEE_ENCODER_A_PIN){
-		      if (events == GPIO_IRQ_EDGE_RISE){
-		        gpio_put(13, 1);
-		      }
-		      else{
-		        gpio_put(13, 0);
-		      }
-		    }
-		    if(gpio==KNEE_ENCODER_B_PIN){
-		      if (events == GPIO_IRQ_EDGE_RISE){
-		        gpio_put(7, 1);
-		      }
-		      else{
-		        gpio_put(7, 0);
-		      }
-		    }
 	//The encoder that is clockwise left (this case 10 o'clock) need to be first
 	//the secont encoder (pin a) is at 12 o'clock
     	newState1 = gpio_get(KNEE_ENCODER_B_PIN)*2 + gpio_get(KNEE_ENCODER_A_PIN);
@@ -87,8 +71,17 @@ bool moving0 = false;
 int setPoint1, startPoint1, direction1;
 float error1, P1;
 bool moving1 = false;
-
+int i = 1;
 void on_pwm_wrap() {
+        gpio_put(7, 1);
+        if(i){
+          gpio_put(13, 1);
+          i = 0;
+        }
+        else{
+          gpio_put(13, 0);
+          i = 1;
+        }
         // Clear the interrupt flag that brought us here
         pwm_clear_irq(pwm_gpio_to_slice_num(MOTOR_FEMUR_IN1_PIN));
 	if (moving0){			
@@ -141,6 +134,7 @@ void on_pwm_wrap() {
   			startPoint1 = position1; 
 		}
  	}
+        gpio_put(7, 0);
 }
 
 int main() {
@@ -227,7 +221,7 @@ int main() {
     irq_set_exclusive_handler(PWM_IRQ_WRAP, on_pwm_wrap);
     irq_set_enabled(PWM_IRQ_WRAP, true);
     pwm_config config = pwm_get_default_config();
-    pwm_config_set_clkdiv(&config, 32.f);
+    pwm_config_set_clkdiv(&config, 1.f);
     pwm_init(pwm_gpio_to_slice_num(MOTOR_FEMUR_IN1_PIN), &config, true);
 
     //sleep_ms(3000);
