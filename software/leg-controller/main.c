@@ -53,7 +53,7 @@ void encoderCallback(uint gpio, uint32_t events) {
 	oldState0 = newState0;
     	newState0 = gpio_get(FEMUR_ENCODER_A_PIN)*2 + gpio_get(FEMUR_ENCODER_B_PIN);
     	position0 += step * QEM[oldState0*4+newState0];
-    	printf("Position0: %f\n", position0);
+    	//printf("Position0: %f\n", position0);
     }    
     if (gpio == KNEE_ENCODER_A_PIN || gpio == KNEE_ENCODER_B_PIN){
     	oldState1 = newState1;
@@ -61,7 +61,7 @@ void encoderCallback(uint gpio, uint32_t events) {
 	//the secont encoder (pin a) is at 12 o'clock
     	newState1 = gpio_get(KNEE_ENCODER_B_PIN)*2 + gpio_get(KNEE_ENCODER_A_PIN);
     	position1 += step * QEM[oldState1*4+newState1];
-    	printf("Position1: %f\n", position1);
+    	//printf("Position1: %f\n", position1);
     }    
 }
 
@@ -179,6 +179,7 @@ int main() {
     pwm_set_enabled(pwm_gpio_to_slice_num(MOTOR_KNEE_IN1_PIN), true);
     // set wrap point
     pwm_set_wrap(pwm_gpio_to_slice_num(MOTOR_KNEE_IN1_PIN), wrapP);
+
     // set up pwm on GPIO MOTOR_DRIVER_IN2
     gpio_set_function(MOTOR_KNEE_IN2_PIN, GPIO_FUNC_PWM);
     // get PWM channel for that pin
@@ -221,11 +222,10 @@ int main() {
     irq_set_exclusive_handler(PWM_IRQ_WRAP, on_pwm_wrap);
     irq_set_enabled(PWM_IRQ_WRAP, true);
     pwm_config config = pwm_get_default_config();
-    pwm_config_set_clkdiv(&config, 1.f);
-    pwm_init(pwm_gpio_to_slice_num(MOTOR_FEMUR_IN1_PIN), &config, true);
+    //no need to init the pwm slice again (breaks the pwm)
 
     //sleep_ms(3000);
-    //driveMotor(0, 100, true); 
+    //driveMotor(0, 80, true); 
     //driveMotor(1, 100, true); 
     
     while (true) {
@@ -233,15 +233,15 @@ int main() {
         input = getchar() - 48;
         input *= 10;
         printf("Target angle: %d \n", input);
-
-	//setPoint0 = startPoint0 + input;        
-	//moving0 = true;
+        
+	setPoint0 = startPoint0 + input;        
+	moving0 = true;
 
 	setPoint1 = startPoint1 + input;        
 	moving1 = true;
         
-	sleep_ms(2000);
-        printf("ADSFWFS \n");
+	sleep_ms(20);
+        //printf("ADSFWFS \n");
     } 
 }
 
@@ -270,6 +270,7 @@ void driveMotor(int motorIndex, int driveValue, bool driveEnable){
 		//printf("pwmIn1: %d \n", pwmIn1);
 		//printf("pwmIn2: %d \n", pwmIn2);
                 // pwmIn1
+                //TODO: use pwm_set_gpio_level()
 		pwm_set_chan_level(femurSlice, PWM_CHAN_A, wrapP * (pwmIn1/100) );
                 // pwmIn2
 		pwm_set_chan_level(kneeSlice, PWM_CHAN_B, wrapP * (pwmIn2/100) );

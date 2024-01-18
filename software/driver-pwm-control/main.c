@@ -58,18 +58,18 @@ int main() {
     	gpio_set_dir(25, GPIO_OUT);
 
         // set up pwm on GPIO 0
-        gpio_set_function(MOTOR_KNEE_IN1_PIN, GPIO_FUNC_PWM);
+        gpio_set_function(MOTOR_FEMUR_IN1_PIN, GPIO_FUNC_PWM);
         // get PWM channel for that pin
-        slice_num = pwm_gpio_to_slice_num(MOTOR_KNEE_IN1_PIN);
+        slice_num = pwm_gpio_to_slice_num(MOTOR_FEMUR_IN1_PIN);
         // enable PWM on that channel
         pwm_set_enabled(slice_num, true);
         // set wrap point
         pwm_set_wrap(slice_num, wrapP);
 
         // set up pwm on GPIO 1
-        gpio_set_function(MOTOR_KNEE_IN2_PIN, GPIO_FUNC_PWM);
+        gpio_set_function(MOTOR_FEMUR_IN2_PIN, GPIO_FUNC_PWM);
         // get PWM channel for that pin
-        slice_num1 = pwm_gpio_to_slice_num(MOTOR_KNEE_IN2_PIN);
+        slice_num1 = pwm_gpio_to_slice_num(MOTOR_FEMUR_IN2_PIN);
         // enable PWM on that channel
         pwm_set_enabled(slice_num1, true);
         // set wrap point
