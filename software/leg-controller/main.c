@@ -93,10 +93,13 @@ float error1, P1;
 bool moving1 = false;
 int i = 1;
 void on_pwm_wrap() {
+//NO PRINT F INSIDE OF THIS FUNCTION!
+//there is not enough time to execute and clogs the program!
+
         // Clear the interrupt flag that brought us here
         pwm_clear_irq(pwm_gpio_to_slice_num(MOTOR_FEMUR_IN1_PIN));
 	if (moving0){
- 		direction0 = (setPoint0-startPoint0 != 0) ? ((setPoint0-startPoint0 > 0) ? 1 : -1) : 0;
+ 		direction0 = (setPoint0-startPoint0 != 0) ? ((setPoint0-startPoint0 > 0) ? 1 : -1) : 0; 
     		if(direction0!=0){
 		  
                         //setPoint0*=direction0;
@@ -127,7 +130,7 @@ void on_pwm_wrap() {
                                 P0*=-1;
                         }
                         
-                        printf("stP: %d sP%d dir %d er %f P %f\n", startPoint0, setPoint0, direction0, error0, P0);
+                        //printf("stP: %d sP%d dir %d er %f P %f\n", startPoint0, setPoint0, direction0, error0, P0);
 
                         driveMotor(0, P0, true); 
 
@@ -246,8 +249,8 @@ int main() {
     pwm_config config = pwm_get_default_config();
     //no need to init the pwm slice again (breaks the pwm)
     //DEBUG ONLY
-    pwm_config_set_clkdiv(&config, 32.f);
-    pwm_init(pwm_gpio_to_slice_num(MOTOR_FEMUR_IN1_PIN), &config, true);
+    //pwm_config_set_clkdiv(&config, 32.f);
+    //pwm_init(pwm_gpio_to_slice_num(MOTOR_FEMUR_IN1_PIN), &config, true);
 
 	nextHole();
 
@@ -262,7 +265,7 @@ int main() {
         printf("Target angle: %d \n", input);
         
         startPoint0 = position0;
-	setPoint0 = startPoint0 + input;        
+	setPoint0 = startPoint0 + input;       
 	moving0 = true;
 
         printf("Enter angle -Xx: \n");
@@ -271,7 +274,7 @@ int main() {
         printf("Target angle: %d \n", input);
         
         startPoint0 = position0;
-	setPoint0 = startPoint0 + input;        
+	setPoint0 = startPoint0 + input;      
 	moving0 = true;
         
     } 
