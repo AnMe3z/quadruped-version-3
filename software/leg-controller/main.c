@@ -72,8 +72,8 @@ void encoderCallback(uint gpio, uint32_t events) {
     	newState0 = gpio_get(FEMUR_ENCODER_A_PIN)*2 + gpio_get(FEMUR_ENCODER_B_PIN);
     	position0 += step * QEM[oldState0*4+newState0];
 	hole += -1*QEM[oldState0*4+newState0];
-    	printf("hole: %d\n", hole);
-    	//printf("Position0: %f\n", position0);
+    	//printf("hole: %d\n", hole);
+    	printf("Position0: %f\n", position0);
     }    
     if (gpio == KNEE_ENCODER_A_PIN || gpio == KNEE_ENCODER_B_PIN){
     	oldState1 = newState1;
@@ -96,66 +96,53 @@ void on_pwm_wrap() {
         // Clear the interrupt flag that brought us here
         pwm_clear_irq(pwm_gpio_to_slice_num(MOTOR_FEMUR_IN1_PIN));
 	if (moving0){
- 		direction0 = (setPoint0-startPoint0 != 0) ? ((setPoint0 > 0) ? 1 : -1) : 0;
-    		if(direction0 == 1 || direction0 == -1){
- 
-			if(17*4 < holes && holes < 0){
-  	
-			setPoint0*=direction0;
-    
-   	 		error0 = setPoint0 - direction0*position0;
-   	 	
-   	 		P0 = KP * error0;
-   	 		if(P0 >= setPoint0){
-   	        	 	P0 = MAX_PWM;
-   	 		}
-   		 	else{
-   			     	P0 = map(P0,
-					 startPoint0-startPoint0, setPoint0-startPoint0,
-					 MIN_PWM, MAX_PWM);
-   			}
-    			P0*=direction0;
-	    		//printf("sP: %d strP%d dir %d er %f P %f\n", startPoint0, setPoint0, direction0, error0, P0);
-    		
- 			driveMotor(0, P0, true); 
-			
-			if (error0<=step){
-				moving0 = false;
-				//brake
-				driveMotor(0, 0, true);
-  				startPoint0 = position0; 
-			}
+ 		direction0 = (setPoint0-startPoint0 != 0) ? ((setPoint0-startPoint0 > 0) ? 1 : -1) : 0;
+    		if(direction0!=0){
+		  
+                        //setPoint0*=direction0;
 
-			}
-			else{
-				driveMotor(0, 0, true);
-			}
+                        error0 = setPoint0 - position0;// direction0*position0;
+
+                        P0 = KP * error0;
+                        
+                        if(direction0 == 1){             
+                                if(P0 >= setPoint0-startPoint0){
+                                        P0 = MAX_PWM;
+                                }
+                                else{
+                                        P0 = map(P0,
+                                        0, setPoint0-startPoint0,
+                                        MIN_PWM, MAX_PWM);
+                                }
+                        }
+                        else if(direction0 == -1){         
+                                if(P0 <= setPoint0-startPoint0){
+                                        P0 = MAX_PWM;
+                                }
+                                else{
+                                        P0 = map(P0,
+                                        0, setPoint0-startPoint0,
+                                        MIN_PWM, MAX_PWM);
+                                }
+                                P0*=-1;
+                        }
+                        
+                        printf("stP: %d sP%d dir %d er %f P %f\n", startPoint0, setPoint0, direction0, error0, P0);
+
+                        driveMotor(0, P0, true); 
+
+                        if (error0*direction0<=step){
+                                printf("brake\n");
+                                moving0 = false;
+                                //brake
+                                driveMotor(0, 0, true);
+                        }
+		}
+		else{
+		  moving0 = false;
 		}
  	}
-	if (moving1){			
- 		direction1 = (setPoint1 != 0) ? ((setPoint1 > 0) ? 1 : -1) : 0;
-  
-  		setPoint1*=direction1;
-    
-   	 	error1 = setPoint1 - direction1*position1;
-   	 	P1 = KP * error1;
-   	 	if(P1 >= setPoint1){
-   	         	P1 = MAX_PWM;
-   	 	}
-   	 	else{
-   		     	P1 = map(P1,
-				 startPoint1-startPoint1, setPoint1-startPoint1,
-				 MIN_PWM, MAX_PWM);
-   		}
-    		P1*=direction1;
- 		//driveMotor(1, P1, true); 
-		
-		if (error1<=step){
-			moving1 = false;
-			//brake
-			//driveMotor(1, 0, true);
-  			startPoint1 = position1; 
-		}
+	if (moving1){	
  	}
 }
 
@@ -259,8 +246,8 @@ int main() {
     pwm_config config = pwm_get_default_config();
     //no need to init the pwm slice again (breaks the pwm)
     //DEBUG ONLY
-    //pwm_config_set_clkdiv(&config, 32.f);
-    //pwm_init(pwm_gpio_to_slice_num(MOTOR_FEMUR_IN1_PIN), &config, true);
+    pwm_config_set_clkdiv(&config, 32.f);
+    pwm_init(pwm_gpio_to_slice_num(MOTOR_FEMUR_IN1_PIN), &config, true);
 
 	nextHole();
 
@@ -274,6 +261,7 @@ int main() {
         input *= 10;
         printf("Target angle: %d \n", input);
         
+        startPoint0 = position0;
 	setPoint0 = startPoint0 + input;        
 	moving0 = true;
 
@@ -282,10 +270,9 @@ int main() {
         input *= -10;
         printf("Target angle: %d \n", input);
         
+        startPoint0 = position0;
 	setPoint0 = startPoint0 + input;        
 	moving0 = true;
-	//setPoint1 = startPoint1 + input;        
-	//moving1 = true;
         
     } 
 }
