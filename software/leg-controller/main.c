@@ -19,6 +19,9 @@
 #define MAX_PWM 100
 #define MIN_PWM 60
 
+#define MAX_ANGLE 100
+#define MIN_ANGLE 0
+
 #define KP 5
 
 //PWM 
@@ -38,7 +41,7 @@ float position1 = 0;
 float step = 2.368421053;//360/(holes*4);
 
 uint motorPins[2][2] = { 
-  {0, 1}, 
+  {1, 0}, //reversed
   {8, 9}
 };
   
@@ -50,7 +53,30 @@ long map(long x, long in_min, long in_max, long out_min, long outmax);
 
 int hole, prevS;
 
+float errorMargin = 0;
+
+int direction0;
+float setPoint0, startPoint0, error0, P0;
+bool moving0 = false;
+int setPoint1, startPoint1, direction1;
+float error1, P1;
+bool moving1 = false;
+
+void angleLimitCheck() {
+	//femur
+	if (MAX_ANGLE - errorMargin < position0 || position0 < MIN_ANGLE + errorMargin) {
+		driveMotor(0, 0, true);
+		moving0 = false;
+	}
+	//knee
+	if (MAX_ANGLE - errorMargin < position1 || position1 < MIN_ANGLE + errorMargin) {
+		driveMotor(1, 0, true);
+		moving1 = false;
+	}
+}
+
 void encoderCallback(uint gpio, uint32_t events) {
+	angleLimitCheck();
     if (gpio == FEMUR_ENCODER_A_PIN || gpio == FEMUR_ENCODER_B_PIN){
         if(gpio==FEMUR_ENCODER_A_PIN){
           if (events == GPIO_IRQ_EDGE_RISE){
@@ -71,7 +97,7 @@ void encoderCallback(uint gpio, uint32_t events) {
 	oldState0 = newState0;
     	newState0 = gpio_get(FEMUR_ENCODER_A_PIN)*2 + gpio_get(FEMUR_ENCODER_B_PIN);
     	position0 += step * QEM[oldState0*4+newState0];
-	hole += -1*QEM[oldState0*4+newState0];
+	//hole += -1*QEM[oldState0*4+newState0];
     	//printf("hole: %d\n", hole);
     	printf("Position0: %f\n", position0);
     }    
@@ -81,16 +107,10 @@ void encoderCallback(uint gpio, uint32_t events) {
 	//the secont encoder (pin a) is at 12 o'clock
     	newState1 = gpio_get(KNEE_ENCODER_B_PIN)*2 + gpio_get(KNEE_ENCODER_A_PIN);
     	position1 += step * QEM[oldState1*4+newState1];
-    	//printf("Position1: %f\n", position1);
+    	printf("Position1: %f\n", position1);
     }    
 }
 
-int setPoint0, startPoint0, direction0;
-float error0, P0;
-bool moving0 = false;
-int setPoint1, startPoint1, direction1;
-float error1, P1;
-bool moving1 = false;
 int i = 1;
 void on_pwm_wrap() {
 //NO PRINT F INSIDE OF THIS FUNCTION!
@@ -145,7 +165,52 @@ void on_pwm_wrap() {
 		  moving0 = false;
 		}
  	}
-	if (moving1){	
+	if (moving1){
+ 		direction1 = (setPoint1-startPoint1 != 0) ? ((setPoint1-startPoint1 > 0) ? 1 : -1) : 0; 
+    		if(direction1!=0){
+		  
+                        //setPoint0*=direction0;
+
+                        error1 = setPoint1 - position1;// direction0*position0;
+
+                        P1 = KP * error1;
+                        
+                        if(direction1 == 1){             
+                                if(P1 >= setPoint1-startPoint1){
+                                        P1 = MAX_PWM;
+                                }
+                                else{
+                                        P1 = map(P1,
+                                        0, setPoint1-startPoint1,
+                                        MIN_PWM, MAX_PWM);
+                                }
+                        }
+                        else if(direction1 == -1){         
+                                if(P1 <= setPoint1-startPoint1){
+                                        P1 = MAX_PWM;
+                                }
+                                else{
+                                        P1 = map(P1,
+                                        0, setPoint1-startPoint1,
+                                        MIN_PWM, MAX_PWM);
+                                }
+                                P1*=-1;
+                        }
+                        
+                        //printf("stP: %d sP%d dir %d er %f P %f\n", startPoint0, setPoint0, direction0, error0, P0);
+
+                        driveMotor(1, P1, true); 
+
+                        if (error1*direction1<=step){
+                                printf("brake\n");
+                                moving1 = false;
+                                //brake
+                                driveMotor(1, 0, true);
+                        }
+		}
+		else{
+		  moving1 = false;
+		}	
  	}
 }
 
@@ -156,8 +221,7 @@ void nextHole(){
 	}
   }
 	driveMotor(0, 0, true);
-	hole=0;
-	prevS=1;
+	position0=0;
 }
 
 int main() {
@@ -255,28 +319,59 @@ int main() {
 	nextHole();
 
     //sleep_ms(3000);
-    //driveMotor(0, 80, true); 
+    //driveMotor(0, -70, true); 
     //driveMotor(1, 100, true); 
     
     while (true) {
-        printf("Enter angle Xx: \n");
+        printf("Enter angle motor index [0 || 1]: \n");
         input = getchar() - 48;
-        input *= 10;
-        printf("Target angle: %d \n", input);
-        
-        startPoint0 = position0;
-	setPoint0 = startPoint0 + input;       
-	moving0 = true;
 
-        printf("Enter angle -Xx: \n");
-        input = getchar() - 48;
-        input *= -10;
-        printf("Target angle: %d \n", input);
-        
-        startPoint0 = position0;
-	setPoint0 = startPoint0 + input;      
-	moving0 = true;
-        
+	if (input == 0) {
+        	printf("FEMUR \n");
+        		
+		printf("Enter direction [0 || 1] (1 = -1): \n");
+        	input = getchar() - 48;
+		
+ 		input = (input == 0 || input == 1) ? ((input == 0) ? 1 : -1) : 0; 
+	
+		printf("Enter angle Xx: \n");
+        	input = input*(getchar() - 48)*10;
+        	
+        	printf("Enter angle xX: \n");
+        	input += getchar() - 48;
+
+        	printf("Target angle: %d \n", input);
+        	
+		startPoint0 = position0;
+		setPoint0 = startPoint0 + input; 
+		if(MAX_ANGLE > setPoint0 && setPoint0 > MIN_ANGLE){
+      	  		moving0 = true;
+		}
+	}
+	else if(input == 1) {
+        	printf("KNEE \n");
+        	
+		printf("Enter direction [0 || 1] (1 = -1): \n");
+        	input = getchar() - 48;
+		
+ 		input = (input == 0 || input == 1) ? ((input == 0) ? 1 : -1) : 0; 
+	
+		printf("Enter angle Xx: \n");
+        	input = input*(getchar() - 48)*10;
+        	
+        	printf("Enter angle xX: \n");
+        	input += getchar() - 48;
+
+        	printf("Target angle: %d \n", input);
+        	
+		startPoint1 = position1;
+		setPoint1 = startPoint1 + input; 
+		if(MAX_ANGLE > setPoint1 && setPoint1 > MIN_ANGLE){
+      	  		moving1 = true;
+		}
+	}
+
+	sleep_ms(1111);
     } 
 }
 
