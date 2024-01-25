@@ -62,21 +62,12 @@ int setPoint1, startPoint1, direction1;
 float error1, P1;
 bool moving1 = false;
 
-void angleLimitCheck() {
-	//femur
-	if (MAX_ANGLE - errorMargin < position0 || position0 < MIN_ANGLE + errorMargin) {
-		driveMotor(0, 0, true);
-		moving0 = false;
-	}
-	//knee
-	if (MAX_ANGLE - errorMargin < position1 || position1 < MIN_ANGLE + errorMargin) {
-		driveMotor(1, 0, true);
-		moving1 = false;
-	}
+void resetPosition(){
+	position0 = 0;
+	position1 = 0;
 }
 
 void encoderCallback(uint gpio, uint32_t events) {
-	angleLimitCheck();
     if (gpio == FEMUR_ENCODER_A_PIN || gpio == FEMUR_ENCODER_B_PIN){
         if(gpio==FEMUR_ENCODER_A_PIN){
           if (events == GPIO_IRQ_EDGE_RISE){
@@ -111,7 +102,6 @@ void encoderCallback(uint gpio, uint32_t events) {
     }    
 }
 
-int i = 1;
 void on_pwm_wrap() {
 //NO PRINT F INSIDE OF THIS FUNCTION!
 //there is not enough time to execute and clogs the program!
@@ -214,16 +204,6 @@ void on_pwm_wrap() {
  	}
 }
 
-void nextHole(){
-  if(gpio_get(FEMUR_ENCODER_A_PIN) == 0){
-	while(gpio_get(FEMUR_ENCODER_A_PIN) == 0){
-		driveMotor(0, -70, true);
-	}
-  }
-	driveMotor(0, 0, true);
-	position0=0;
-}
-
 int main() {
     stdio_init_all();
     sleep_ms(2000);
@@ -301,8 +281,6 @@ int main() {
     gpio_set_dir(7, GPIO_OUT);
     
     int input = 0;
-    
-    const uint PIN_AB = 10;
 
     //servo control interrupt 
     // the interrupt is with the pwm wrap frequency
@@ -316,12 +294,12 @@ int main() {
     //pwm_config_set_clkdiv(&config, 32.f);
     //pwm_init(pwm_gpio_to_slice_num(MOTOR_FEMUR_IN1_PIN), &config, true);
 
-	nextHole();
-
     //sleep_ms(3000);
     //driveMotor(0, -70, true); 
     //driveMotor(1, 100, true); 
-    
+   
+	resetPosition();
+ 
     while (true) {
         printf("Enter angle motor index [0 || 1]: \n");
         input = getchar() - 48;
