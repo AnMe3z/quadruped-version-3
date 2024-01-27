@@ -295,7 +295,7 @@ int main() {
     //pwm_init(pwm_gpio_to_slice_num(MOTOR_FEMUR_IN1_PIN), &config, true);
 
     //sleep_ms(3000);
-    //driveMotor(0, -70, true); 
+    driveMotor(0, 70, true); 
     //driveMotor(1, 100, true); 
    
 	resetPosition();
