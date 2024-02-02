@@ -85,6 +85,7 @@ void encoderCallback(uint gpio, uint32_t events) {
             gpio_put(7, 0);
           }
         }
+        
 	oldState0 = newState0;
     	newState0 = gpio_get(FEMUR_ENCODER_A_PIN)*2 + gpio_get(FEMUR_ENCODER_B_PIN);
     	position0 += step * QEM[oldState0*4+newState0];
@@ -301,55 +302,6 @@ int main() {
 	resetPosition();
  
     while (true) {
-        printf("Enter angle motor index [0 || 1]: \n");
-        input = getchar() - 48;
-
-	if (input == 0) {
-        	printf("FEMUR \n");
-        		
-		printf("Enter direction [0 || 1] (1 = -1): \n");
-        	input = getchar() - 48;
-		
- 		input = (input == 0 || input == 1) ? ((input == 0) ? 1 : -1) : 0; 
-	
-		printf("Enter angle Xx: \n");
-        	input = input*(getchar() - 48)*10;
-        	
-        	printf("Enter angle xX: \n");
-        	input += getchar() - 48;
-
-        	printf("Target angle: %d \n", input);
-        	
-		startPoint0 = position0;
-		setPoint0 = startPoint0 + input; 
-		if(MAX_ANGLE > setPoint0 && setPoint0 > MIN_ANGLE){
-      	  		moving0 = true;
-		}
-	}
-	else if(input == 1) {
-        	printf("KNEE \n");
-        	
-		printf("Enter direction [0 || 1] (1 = -1): \n");
-        	input = getchar() - 48;
-		
- 		input = (input == 0 || input == 1) ? ((input == 0) ? 1 : -1) : 0; 
-	
-		printf("Enter angle Xx: \n");
-        	input = input*(getchar() - 48)*10;
-        	
-        	printf("Enter angle xX: \n");
-        	input += getchar() - 48;
-
-        	printf("Target angle: %d \n", input);
-        	
-		startPoint1 = position1;
-		setPoint1 = startPoint1 + input; 
-		if(MAX_ANGLE > setPoint1 && setPoint1 > MIN_ANGLE){
-      	  		moving1 = true;
-		}
-	}
-
-	sleep_ms(1111);
     } 
 }
 
