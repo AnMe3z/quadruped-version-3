@@ -1,0 +1,3 @@
+https://app.ultralibrarian.com/details/e938f7e1-4622-11ed-b159-0a34d6323d74/Toshiba-Electronic-Devices-Storage-Corp-/TB67H450AFNG-EL?exports=KiCADv6&open=exports
+https://app.ultralibrarian.com/details/ca52ef32-0283-11ed-b159-0a34d6323d74/Raspberry-Pi/SC0917?uid=129877558
+

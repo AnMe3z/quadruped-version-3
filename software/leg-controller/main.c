@@ -24,6 +24,12 @@
 
 #define KP 5
 
+void keyboardControl();
+
+//HARDCODED IK
+int femurPs[] = {41, 8, 17, -17, -8, -41};
+int kneePs[] = {81, 16, 19, -19, -16, -81};
+
 //PWM 
 uint freqHz = 10000;
 uint wrapP = 12500;//311;//402kHz
@@ -73,10 +79,21 @@ void encoderCallback(uint gpio, uint32_t events) {
         
 	oldState0 = newState0;
     	newState0 = gpio_get(FEMUR_ENCODER_B_PIN)*2 + gpio_get(FEMUR_ENCODER_A_PIN);
-    	position0 += step * QEM[oldState0*4+newState0];
-	//hole += -1*QEM[oldState0*4+newState0];
-    	//printf("hole: %d\n", hole);
-    	printf("Position0: %f\n", position0);
+    	
+    	//illegal case check
+    	if(QEM[oldState0*4+newState0] == 2){
+                //brake
+                moving0 = false;
+                driveMotor(0, 0, true);
+                moving1 = false;
+                driveMotor(1, 0, true);
+    	}
+    	else{
+            	position0 += step * QEM[oldState0*4+newState0];
+	        //hole += -1*QEM[oldState0*4+newState0];
+            	//printf("hole: %d\n", hole);
+            	printf("Position0: %f\n", position0);
+    	}
     }    
     if (gpio == KNEE_ENCODER_A_PIN || gpio == KNEE_ENCODER_B_PIN){
         if(gpio==KNEE_ENCODER_A_PIN){
@@ -98,9 +115,21 @@ void encoderCallback(uint gpio, uint32_t events) {
     	oldState1 = newState1;
 	//The encoder that is clockwise left (this case 10 o'clock) need to be first
 	//the secont encoder (pin a) is at 12 o'clock
-    	newState1 = gpio_get(KNEE_ENCODER_B_PIN)*2 + gpio_get(KNEE_ENCODER_A_PIN);
-    	position1 += step * QEM[oldState1*4+newState1];
-    	printf("Position1: %f\n", position1);
+	
+	//illegal case check
+    	if(QEM[oldState0*4+newState0] == 2){
+                //brake
+                moving0 = false;
+                driveMotor(0, 0, true);
+                moving1 = false;
+                driveMotor(1, 0, true);
+    	}
+    	else{
+        	newState1 = gpio_get(KNEE_ENCODER_B_PIN)*2 + gpio_get(KNEE_ENCODER_A_PIN);
+        	position1 += step * QEM[oldState1*4+newState1];
+        	printf("Position1: %f\n", position1);
+    	}
+    	
     }    
 }
 
@@ -282,8 +311,6 @@ int main() {
     gpio_init(7);
     gpio_set_dir(7, GPIO_OUT);
     
-    int input = 0;
-
     //servo control interrupt 
     // the interrupt is with the pwm wrap frequency
     pwm_clear_irq(pwm_gpio_to_slice_num(MOTOR_FEMUR_IN1_PIN));
@@ -303,6 +330,76 @@ int main() {
 	resetPosition();
  
     while (true) {
+	
+	// Determine the size of the array
+    	int arraySize = sizeof(femurPs) / sizeof(femurPs[0]);
+
+    	// Loop through the array and print each element
+    	for (int i = 0; i < arraySize; i++) {
+        	printf("Femur P: %d \n", femurPs[i]);
+        	printf("Knee P: %d \n", kneePs[i]);
+
+		startPoint0 = position0;
+		setPoint0 = startPoint0 + femurPs[i]; 
+		if(MAX_ANGLE > setPoint0 && setPoint0 > MIN_ANGLE){
+       			moving0 = true;
+		}
+
+		startPoint1 = position1;
+		setPoint1 = startPoint1 + kneePs[i]; 
+		if(MAX_ANGLE > setPoint1 && setPoint1 > MIN_ANGLE){
+      	  		moving1 = true;
+		}
+
+		sleep_ms(1000);	
+	}
+
+	sleep_ms(2000);	
+        // keyboardControl();
+    } 
+}
+
+void driveMotor(int motorIndex, int driveValue, bool driveEnable){
+        // Get target PWM slices
+        uint femurSlice = pwm_gpio_to_slice_num(motorPins[motorIndex][0]);
+        uint kneeSlice = pwm_gpio_to_slice_num(motorPins[motorIndex][1]);
+        // Check if the motor should be moved
+        if(driveEnable){
+                // Calculate input 1 & 2
+                double pwmIn1, pwmIn2;
+                if(driveValue == 0){
+                        // Brake
+                        pwmIn1 = 100;
+                        pwmIn2 = 100;
+                }
+                else if(driveValue > 0){
+                        pwmIn1 = driveValue;
+                        pwmIn2 = 0;
+                }
+                else{
+                        pwmIn1 = 0;
+                        pwmIn2 = driveValue*-1;
+                }
+                // Write to pins
+		//printf("pwmIn1: %d \n", pwmIn1);
+		//printf("pwmIn2: %d \n", pwmIn2);
+                // pwmIn1
+                //TODO: use pwm_set_gpio_level()
+		pwm_set_chan_level(femurSlice, PWM_CHAN_A, wrapP * (pwmIn1/100) );
+                // pwmIn2
+		pwm_set_chan_level(kneeSlice, PWM_CHAN_B, wrapP * (pwmIn2/100) );
+        }
+}
+
+long map(long x, long in_min, long in_max, long out_min, long out_max)
+{
+  return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
+} 
+
+//-------------------------------
+
+void keyboardControl(){
+        int input = 0;
         printf("Enter angle motor index [0 || 1]: \n");
         input = getchar() - 48;
 
@@ -352,42 +449,4 @@ int main() {
 	}
 
 	sleep_ms(1111);
-    } 
 }
-
-void driveMotor(int motorIndex, int driveValue, bool driveEnable){
-        // Get target PWM slices
-        uint femurSlice = pwm_gpio_to_slice_num(motorPins[motorIndex][0]);
-        uint kneeSlice = pwm_gpio_to_slice_num(motorPins[motorIndex][1]);
-        // Check if the motor should be moved
-        if(driveEnable){
-                // Calculate input 1 & 2
-                double pwmIn1, pwmIn2;
-                if(driveValue == 0){
-                        // Brake
-                        pwmIn1 = 100;
-                        pwmIn2 = 100;
-                }
-                else if(driveValue > 0){
-                        pwmIn1 = driveValue;
-                        pwmIn2 = 0;
-                }
-                else{
-                        pwmIn1 = 0;
-                        pwmIn2 = driveValue*-1;
-                }
-                // Write to pins
-		//printf("pwmIn1: %d \n", pwmIn1);
-		//printf("pwmIn2: %d \n", pwmIn2);
-                // pwmIn1
-                //TODO: use pwm_set_gpio_level()
-		pwm_set_chan_level(femurSlice, PWM_CHAN_A, wrapP * (pwmIn1/100) );
-                // pwmIn2
-		pwm_set_chan_level(kneeSlice, PWM_CHAN_B, wrapP * (pwmIn2/100) );
-        }
-}
-
-long map(long x, long in_min, long in_max, long out_min, long out_max)
-{
-  return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
-} 
