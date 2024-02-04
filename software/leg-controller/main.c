@@ -31,6 +31,7 @@ uint wrapP = 12500;//311;//402kHz
 //QUADRATURE
 #define holes 38
 // Old * 4 + New
+//state machine
 int QEM [16] = {0,1,-1,2,-1,0,2,1,1,2,0,-1,2,-1,1,0};  // Quadrature Encoder Matrix
 int oldState0 = 0;
 int newState0 = 0;
@@ -69,7 +70,16 @@ void resetPosition(){
 
 void encoderCallback(uint gpio, uint32_t events) {
     if (gpio == FEMUR_ENCODER_A_PIN || gpio == FEMUR_ENCODER_B_PIN){
-        if(gpio==FEMUR_ENCODER_A_PIN){
+        
+	oldState0 = newState0;
+    	newState0 = gpio_get(FEMUR_ENCODER_B_PIN)*2 + gpio_get(FEMUR_ENCODER_A_PIN);
+    	position0 += step * QEM[oldState0*4+newState0];
+	//hole += -1*QEM[oldState0*4+newState0];
+    	//printf("hole: %d\n", hole);
+    	printf("Position0: %f\n", position0);
+    }    
+    if (gpio == KNEE_ENCODER_A_PIN || gpio == KNEE_ENCODER_B_PIN){
+        if(gpio==KNEE_ENCODER_A_PIN){
           if (events == GPIO_IRQ_EDGE_RISE){
             gpio_put(13, 1);
           }
@@ -77,7 +87,7 @@ void encoderCallback(uint gpio, uint32_t events) {
             gpio_put(13, 0);
           }
         }
-        if(gpio==FEMUR_ENCODER_B_PIN){
+        if(gpio==KNEE_ENCODER_B_PIN){
           if (events == GPIO_IRQ_EDGE_RISE){
             gpio_put(7, 1);
           }
@@ -85,15 +95,6 @@ void encoderCallback(uint gpio, uint32_t events) {
             gpio_put(7, 0);
           }
         }
-        
-	oldState0 = newState0;
-    	newState0 = gpio_get(FEMUR_ENCODER_A_PIN)*2 + gpio_get(FEMUR_ENCODER_B_PIN);
-    	position0 += step * QEM[oldState0*4+newState0];
-	//hole += -1*QEM[oldState0*4+newState0];
-    	//printf("hole: %d\n", hole);
-    	printf("Position0: %f\n", position0);
-    }    
-    if (gpio == KNEE_ENCODER_A_PIN || gpio == KNEE_ENCODER_B_PIN){
     	oldState1 = newState1;
 	//The encoder that is clockwise left (this case 10 o'clock) need to be first
 	//the secont encoder (pin a) is at 12 o'clock
