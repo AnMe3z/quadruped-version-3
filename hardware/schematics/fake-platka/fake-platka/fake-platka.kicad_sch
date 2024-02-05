@@ -274,127 +274,13 @@
         )
       )
     )
-    (symbol "library:TB67H450AFNG_EL" (pin_names (offset 0.254)) (in_bom yes) (on_board yes)
-      (property "Reference" "U" (id 0) (at 20.32 10.16 0)
-        (effects (font (size 1.524 1.524)))
-      )
-      (property "Value" "TB67H450AFNG_EL" (id 1) (at 20.32 7.62 0)
-        (effects (font (size 1.524 1.524)))
-      )
-      (property "Footprint" "P-HSOP8-0405-1.27-002_TOS" (id 2) (at 0 0 0)
-        (effects (font (size 1.27 1.27) italic) hide)
-      )
-      (property "Datasheet" "TB67H450AFNG_EL" (id 3) (at 0 0 0)
-        (effects (font (size 1.27 1.27) italic) hide)
-      )
-      (property "ki_locked" "" (id 4) (at 0 0 0)
-        (effects (font (size 1.27 1.27)))
-      )
-      (property "ki_keywords" "TB67H450AFNG,EL" (id 5) (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "ki_fp_filters" "P-HSOP8-0405-1.27-002_TOS P-HSOP8-0405-1.27-002_TOS-M P-HSOP8-0405-1.27-002_TOS-L" (id 6) (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (symbol "TB67H450AFNG_EL_0_1"
-        (polyline
-          (pts
-            (xy 7.62 -12.7)
-            (xy 33.02 -12.7)
-          )
-          (stroke (width 0.127) (type default) (color 0 0 0 0))
-          (fill (type none))
-        )
-        (polyline
-          (pts
-            (xy 7.62 5.08)
-            (xy 7.62 -12.7)
-          )
-          (stroke (width 0.127) (type default) (color 0 0 0 0))
-          (fill (type none))
-        )
-        (polyline
-          (pts
-            (xy 33.02 -12.7)
-            (xy 33.02 5.08)
-          )
-          (stroke (width 0.127) (type default) (color 0 0 0 0))
-          (fill (type none))
-        )
-        (polyline
-          (pts
-            (xy 33.02 5.08)
-            (xy 7.62 5.08)
-          )
-          (stroke (width 0.127) (type default) (color 0 0 0 0))
-          (fill (type none))
-        )
-        (pin power_out line (at 0 0 0) (length 7.62)
-          (name "GND" (effects (font (size 1.27 1.27))))
-          (number "1" (effects (font (size 1.27 1.27))))
-        )
-        (pin input line (at 0 -2.54 0) (length 7.62)
-          (name "IN2" (effects (font (size 1.27 1.27))))
-          (number "2" (effects (font (size 1.27 1.27))))
-        )
-        (pin input line (at 0 -5.08 0) (length 7.62)
-          (name "IN1" (effects (font (size 1.27 1.27))))
-          (number "3" (effects (font (size 1.27 1.27))))
-        )
-        (pin unspecified line (at 0 -7.62 0) (length 7.62)
-          (name "VREF" (effects (font (size 1.27 1.27))))
-          (number "4" (effects (font (size 1.27 1.27))))
-        )
-        (pin power_in line (at 40.64 -7.62 180) (length 7.62)
-          (name "VM" (effects (font (size 1.27 1.27))))
-          (number "5" (effects (font (size 1.27 1.27))))
-        )
-        (pin output line (at 40.64 -5.08 180) (length 7.62)
-          (name "OUT1" (effects (font (size 1.27 1.27))))
-          (number "6" (effects (font (size 1.27 1.27))))
-        )
-        (pin unspecified line (at 40.64 -2.54 180) (length 7.62)
-          (name "RS" (effects (font (size 1.27 1.27))))
-          (number "7" (effects (font (size 1.27 1.27))))
-        )
-        (pin output line (at 40.64 0 180) (length 7.62)
-          (name "OUT2" (effects (font (size 1.27 1.27))))
-          (number "8" (effects (font (size 1.27 1.27))))
-        )
-      )
-    )
   )
 
-
-  (symbol (lib_id "library:TB67H450AFNG_EL") (at 26.67 62.23 0) (unit 1)
-    (in_bom yes) (on_board yes) (fields_autoplaced)
-    (uuid 8fb184cb-a30e-452c-a16d-f9ccf514f31d)
-    (property "Reference" "U?" (id 0) (at 46.99 50.8 0)
-      (effects (font (size 1.524 1.524)))
-    )
-    (property "Value" "TB67H450AFNG_EL" (id 1) (at 46.99 54.61 0)
-      (effects (font (size 1.524 1.524)))
-    )
-    (property "Footprint" "P-HSOP8-0405-1.27-002_TOS" (id 2) (at 26.67 62.23 0)
-      (effects (font (size 1.27 1.27) italic) hide)
-    )
-    (property "Datasheet" "TB67H450AFNG_EL" (id 3) (at 26.67 62.23 0)
-      (effects (font (size 1.27 1.27) italic) hide)
-    )
-    (pin "1" (uuid efd23f7f-6b8a-4c24-9aed-c0ef1205761e))
-    (pin "2" (uuid d3485e48-c757-4f4f-bb01-75ac321e4d5a))
-    (pin "3" (uuid 24674a1e-774b-4e3f-aa5f-83a556b52625))
-    (pin "4" (uuid 590328d4-58d3-420e-b756-51c022302e31))
-    (pin "5" (uuid d3163be6-5cc8-4253-9f48-f1dc6a34b965))
-    (pin "6" (uuid 0a9b4542-4b31-46e7-ba4a-fc567e1039cb))
-    (pin "7" (uuid feedd1bf-e86e-4728-a954-e3ef1fec87a3))
-    (pin "8" (uuid b164f537-4647-4fb7-ba2a-881443d59ba3))
-  )
 
   (symbol (lib_id "library:SC0915-pico-w-board") (at 85.09 54.61 0) (unit 1)
     (in_bom yes) (on_board yes) (fields_autoplaced)
     (uuid a4c00936-958a-40db-a115-f8b7c70a8af8)
-    (property "Reference" "U?" (id 0) (at 148.59 43.18 0)
+    (property "Reference" "U1" (id 0) (at 148.59 43.18 0)
       (effects (font (size 1.524 1.524)))
     )
     (property "Value" "SC0915-pico-w-board" (id 1) (at 148.59 46.99 0)
@@ -461,31 +347,6 @@
     (pin "TP6" (uuid 7d6548c2-5d32-48a1-8305-8e795275d291))
   )
 
-  (symbol (lib_id "library:TB67H450AFNG_EL") (at 26.67 34.29 0) (unit 1)
-    (in_bom yes) (on_board yes) (fields_autoplaced)
-    (uuid d9208dc9-d948-488b-b812-4427d4c94df1)
-    (property "Reference" "U?" (id 0) (at 46.99 22.86 0)
-      (effects (font (size 1.524 1.524)))
-    )
-    (property "Value" "TB67H450AFNG_EL" (id 1) (at 46.99 26.67 0)
-      (effects (font (size 1.524 1.524)))
-    )
-    (property "Footprint" "P-HSOP8-0405-1.27-002_TOS" (id 2) (at 26.67 34.29 0)
-      (effects (font (size 1.27 1.27) italic) hide)
-    )
-    (property "Datasheet" "TB67H450AFNG_EL" (id 3) (at 26.67 34.29 0)
-      (effects (font (size 1.27 1.27) italic) hide)
-    )
-    (pin "1" (uuid 9a7099a2-c713-494e-a1ab-3f83635210f6))
-    (pin "2" (uuid 559fece2-667a-4d11-8a4b-b9e1672e6cfb))
-    (pin "3" (uuid 09d30959-a273-467c-b522-c8e819f7f18e))
-    (pin "4" (uuid 505bce1d-be91-4b35-80c8-c84fa2b9f4d6))
-    (pin "5" (uuid c276cbb0-235a-4713-b509-76000fdc1c38))
-    (pin "6" (uuid 5c184e50-3262-4277-8c05-40eadbe4559b))
-    (pin "7" (uuid 589c45a5-fb61-42d3-801c-28bcead05e9f))
-    (pin "8" (uuid dd92bb7f-543b-47f8-8583-3b168abff86c))
-  )
-
   (sheet (at -187.96 0) (size 187.96 210.82) (fields_autoplaced)
     (stroke (width 0.1524) (type solid) (color 0 0 0 0))
     (fill (color 0 0 0 0.0000))
@@ -504,98 +365,92 @@
   )
 
   (symbol_instances
-    (path "/312790c8-5be5-4b7d-904f-ae4d957d0ad2/09dc13d2-6e6b-48b3-b8d5-4ffd4f7e7c8d"
-      (reference "#PWR?") (unit 1) (value "GND") (footprint "")
+    (path "/312790c8-5be5-4b7d-904f-ae4d957d0ad2/270dee1c-94e5-492d-9e2d-266214957af7"
+      (reference "#PWR01") (unit 1) (value "GND") (footprint "")
     )
     (path "/312790c8-5be5-4b7d-904f-ae4d957d0ad2/1da8f8ed-35e6-47e0-954d-d10c58becab0"
-      (reference "#PWR?") (unit 1) (value "GND") (footprint "")
+      (reference "#PWR02") (unit 1) (value "GND") (footprint "")
     )
-    (path "/312790c8-5be5-4b7d-904f-ae4d957d0ad2/270dee1c-94e5-492d-9e2d-266214957af7"
-      (reference "#PWR?") (unit 1) (value "GND") (footprint "")
+    (path "/312790c8-5be5-4b7d-904f-ae4d957d0ad2/09dc13d2-6e6b-48b3-b8d5-4ffd4f7e7c8d"
+      (reference "#PWR03") (unit 1) (value "GND") (footprint "")
     )
     (path "/312790c8-5be5-4b7d-904f-ae4d957d0ad2/3d4d4144-760c-42e1-9f6c-22a48b7fcab1"
-      (reference "#PWR?") (unit 1) (value "GND") (footprint "")
-    )
-    (path "/312790c8-5be5-4b7d-904f-ae4d957d0ad2/8dc19215-8132-4aaa-b2e0-e554859d488d"
-      (reference "#PWR?") (unit 1) (value "GND") (footprint "")
+      (reference "#PWR04") (unit 1) (value "GND") (footprint "")
     )
     (path "/312790c8-5be5-4b7d-904f-ae4d957d0ad2/c49d1a9e-6c60-4c2f-b54b-dc566395fbb3"
-      (reference "#PWR?") (unit 1) (value "GND") (footprint "")
+      (reference "#PWR05") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/312790c8-5be5-4b7d-904f-ae4d957d0ad2/8dc19215-8132-4aaa-b2e0-e554859d488d"
+      (reference "#PWR06") (unit 1) (value "GND") (footprint "")
     )
     (path "/312790c8-5be5-4b7d-904f-ae4d957d0ad2/c6c124f0-8643-4c9c-a0c7-f5ab9a4e9479"
-      (reference "#PWR?") (unit 1) (value "GND") (footprint "")
-    )
-    (path "/312790c8-5be5-4b7d-904f-ae4d957d0ad2/0cc0bcab-3246-403d-92cb-7bd1e7a383d6"
-      (reference "D?") (unit 1) (value "LED") (footprint "")
-    )
-    (path "/312790c8-5be5-4b7d-904f-ae4d957d0ad2/5a206cf5-8059-4a43-92b8-b252b57137cb"
-      (reference "D?") (unit 1) (value "DIODE") (footprint "")
-    )
-    (path "/312790c8-5be5-4b7d-904f-ae4d957d0ad2/9eaf570a-5855-4e85-a1ac-faecfa5f15cb"
-      (reference "D?") (unit 1) (value "LED") (footprint "")
-    )
-    (path "/312790c8-5be5-4b7d-904f-ae4d957d0ad2/ad7ac648-3c69-4e61-888b-c18654ec6544"
-      (reference "D?") (unit 1) (value "LED") (footprint "")
+      (reference "#PWR07") (unit 1) (value "GND") (footprint "")
     )
     (path "/312790c8-5be5-4b7d-904f-ae4d957d0ad2/b33e1e39-4fcb-4c70-a5b7-950cce8fd52f"
-      (reference "D?") (unit 1) (value "LED") (footprint "")
+      (reference "D1") (unit 1) (value "LED") (footprint "")
+    )
+    (path "/312790c8-5be5-4b7d-904f-ae4d957d0ad2/ad7ac648-3c69-4e61-888b-c18654ec6544"
+      (reference "D2") (unit 1) (value "LED") (footprint "")
+    )
+    (path "/312790c8-5be5-4b7d-904f-ae4d957d0ad2/9eaf570a-5855-4e85-a1ac-faecfa5f15cb"
+      (reference "D3") (unit 1) (value "LED") (footprint "")
     )
     (path "/312790c8-5be5-4b7d-904f-ae4d957d0ad2/bd15084c-d28d-4357-8ce0-224860e81fe6"
-      (reference "D?") (unit 1) (value "DIODE") (footprint "")
+      (reference "D4") (unit 1) (value "DIODE") (footprint "")
+    )
+    (path "/312790c8-5be5-4b7d-904f-ae4d957d0ad2/5a206cf5-8059-4a43-92b8-b252b57137cb"
+      (reference "D5") (unit 1) (value "DIODE") (footprint "")
+    )
+    (path "/312790c8-5be5-4b7d-904f-ae4d957d0ad2/0cc0bcab-3246-403d-92cb-7bd1e7a383d6"
+      (reference "D6") (unit 1) (value "LED") (footprint "")
     )
     (path "/312790c8-5be5-4b7d-904f-ae4d957d0ad2/d3eb533d-915a-471a-b13e-c166bc749890"
-      (reference "M?") (unit 1) (value "Motor_DC") (footprint "")
+      (reference "M1") (unit 1) (value "Motor_DC") (footprint "")
     )
     (path "/312790c8-5be5-4b7d-904f-ae4d957d0ad2/e5ef54c8-1fc5-4f24-842c-7563b926a8bf"
-      (reference "M?") (unit 1) (value "Motor_DC") (footprint "")
-    )
-    (path "/312790c8-5be5-4b7d-904f-ae4d957d0ad2/1a27bcb6-cfc2-4f4c-8edb-35fc62da837b"
-      (reference "Q?") (unit 1) (value "Q_P_CE") (footprint "")
+      (reference "M2") (unit 1) (value "Motor_DC") (footprint "")
     )
     (path "/312790c8-5be5-4b7d-904f-ae4d957d0ad2/48f4a3b8-d748-415c-8cf9-9c0f08cb4457"
-      (reference "Q?") (unit 1) (value "Q_P_CE") (footprint "")
+      (reference "Q1") (unit 1) (value "Q_P_CE") (footprint "")
     )
     (path "/312790c8-5be5-4b7d-904f-ae4d957d0ad2/6c896e30-cec7-4174-93bc-cc38be802db6"
-      (reference "Q?") (unit 1) (value "Q_P_CE") (footprint "")
+      (reference "Q2") (unit 1) (value "Q_P_CE") (footprint "")
+    )
+    (path "/312790c8-5be5-4b7d-904f-ae4d957d0ad2/1a27bcb6-cfc2-4f4c-8edb-35fc62da837b"
+      (reference "Q3") (unit 1) (value "Q_P_CE") (footprint "")
     )
     (path "/312790c8-5be5-4b7d-904f-ae4d957d0ad2/a49934b8-dccf-4991-8197-42235eb105dd"
-      (reference "Q?") (unit 1) (value "Q_P_CE") (footprint "")
-    )
-    (path "/312790c8-5be5-4b7d-904f-ae4d957d0ad2/01f9fa9c-1dd1-4320-ab69-43c53361f4fe"
-      (reference "R?") (unit 1) (value "R") (footprint "")
-    )
-    (path "/312790c8-5be5-4b7d-904f-ae4d957d0ad2/2287cd09-8efa-443a-928a-af74ff890729"
-      (reference "R?") (unit 1) (value "5K") (footprint "")
-    )
-    (path "/312790c8-5be5-4b7d-904f-ae4d957d0ad2/22b3c0d7-bcef-42bf-a8e4-0c2b3ebcb444"
-      (reference "R?") (unit 1) (value "5K") (footprint "")
-    )
-    (path "/312790c8-5be5-4b7d-904f-ae4d957d0ad2/43d3db60-6a31-4f3d-8d33-2da72bd0bc6a"
-      (reference "R?") (unit 1) (value "150R") (footprint "")
-    )
-    (path "/312790c8-5be5-4b7d-904f-ae4d957d0ad2/4c7edf32-83f3-46ee-a3b1-c7b2786655a8"
-      (reference "R?") (unit 1) (value "R") (footprint "")
-    )
-    (path "/312790c8-5be5-4b7d-904f-ae4d957d0ad2/9158a7dc-fcee-4525-8b22-2f67c9ca7fbe"
-      (reference "R?") (unit 1) (value "5K") (footprint "")
+      (reference "Q4") (unit 1) (value "Q_P_CE") (footprint "")
     )
     (path "/312790c8-5be5-4b7d-904f-ae4d957d0ad2/d0d16136-e6fe-423c-a19a-9caaee03e982"
-      (reference "R?") (unit 1) (value "5K") (footprint "")
+      (reference "R1") (unit 1) (value "5K") (footprint "")
     )
-    (path "/312790c8-5be5-4b7d-904f-ae4d957d0ad2/712291eb-8659-4fad-bb67-905db2cadc6c"
-      (reference "U?") (unit 1) (value "TB67H450AFNG_EL") (footprint "P-HSOP8-0405-1.27-002_TOS")
+    (path "/312790c8-5be5-4b7d-904f-ae4d957d0ad2/43d3db60-6a31-4f3d-8d33-2da72bd0bc6a"
+      (reference "R2") (unit 1) (value "150R") (footprint "")
     )
-    (path "/8fb184cb-a30e-452c-a16d-f9ccf514f31d"
-      (reference "U?") (unit 1) (value "TB67H450AFNG_EL") (footprint "P-HSOP8-0405-1.27-002_TOS")
+    (path "/312790c8-5be5-4b7d-904f-ae4d957d0ad2/22b3c0d7-bcef-42bf-a8e4-0c2b3ebcb444"
+      (reference "R3") (unit 1) (value "5K") (footprint "")
     )
-    (path "/312790c8-5be5-4b7d-904f-ae4d957d0ad2/97eb0a7d-991a-4ff5-86d4-c9bbb84f839a"
-      (reference "U?") (unit 1) (value "TB67H450AFNG_EL") (footprint "P-HSOP8-0405-1.27-002_TOS")
+    (path "/312790c8-5be5-4b7d-904f-ae4d957d0ad2/9158a7dc-fcee-4525-8b22-2f67c9ca7fbe"
+      (reference "R4") (unit 1) (value "5K") (footprint "")
+    )
+    (path "/312790c8-5be5-4b7d-904f-ae4d957d0ad2/01f9fa9c-1dd1-4320-ab69-43c53361f4fe"
+      (reference "R5") (unit 1) (value "R") (footprint "")
+    )
+    (path "/312790c8-5be5-4b7d-904f-ae4d957d0ad2/4c7edf32-83f3-46ee-a3b1-c7b2786655a8"
+      (reference "R6") (unit 1) (value "R") (footprint "")
+    )
+    (path "/312790c8-5be5-4b7d-904f-ae4d957d0ad2/2287cd09-8efa-443a-928a-af74ff890729"
+      (reference "R7") (unit 1) (value "5K") (footprint "")
     )
     (path "/a4c00936-958a-40db-a115-f8b7c70a8af8"
-      (reference "U?") (unit 1) (value "SC0915-pico-w-board") (footprint "SC0915_RPI")
+      (reference "U1") (unit 1) (value "SC0915-pico-w-board") (footprint "SC0915_RPI")
     )
-    (path "/d9208dc9-d948-488b-b812-4427d4c94df1"
-      (reference "U?") (unit 1) (value "TB67H450AFNG_EL") (footprint "P-HSOP8-0405-1.27-002_TOS")
+    (path "/312790c8-5be5-4b7d-904f-ae4d957d0ad2/712291eb-8659-4fad-bb67-905db2cadc6c"
+      (reference "U2") (unit 1) (value "TB67H450AFNG_EL") (footprint "P-HSOP8-0405-1.27-002_TOS")
+    )
+    (path "/312790c8-5be5-4b7d-904f-ae4d957d0ad2/97eb0a7d-991a-4ff5-86d4-c9bbb84f839a"
+      (reference "U3") (unit 1) (value "TB67H450AFNG_EL") (footprint "P-HSOP8-0405-1.27-002_TOS")
     )
   )
 )

@@ -175,12 +175,12 @@ void on_pwm_wrap() {
 
                         driveMotor(0, P0, true); 
 
-                        if (error0*direction0<=step){
-                                printf("brake\n");
-                                moving0 = false;
-                                //brake
-                                driveMotor(0, 0, true);
-                        }
+                        //if (error0*direction0<=step){
+                        //        printf("brake\n");
+                        //        moving0 = false;
+                        //        //brake
+                        //        driveMotor(0, 0, true);
+                        //}
 		}
 		else{
 		  moving0 = false;
@@ -330,29 +330,9 @@ int main() {
 	resetPosition();
  
     while (true) {
+		keyboardControl();
 	
-	// Determine the size of the array
-    	int arraySize = sizeof(femurPs) / sizeof(femurPs[0]);
 
-    	// Loop through the array and print each element
-    	for (int i = 0; i < arraySize; i++) {
-        	printf("Femur P: %d \n", femurPs[i]);
-        	printf("Knee P: %d \n", kneePs[i]);
-
-		startPoint0 = position0;
-		setPoint0 = startPoint0 + femurPs[i]; 
-		if(MAX_ANGLE > setPoint0 && setPoint0 > MIN_ANGLE){
-       			moving0 = true;
-		}
-
-		startPoint1 = position1;
-		setPoint1 = startPoint1 + kneePs[i]; 
-		if(MAX_ANGLE > setPoint1 && setPoint1 > MIN_ANGLE){
-      	  		moving1 = true;
-		}
-
-		sleep_ms(1000);	
-	}
 
 	sleep_ms(2000);	
         // keyboardControl();
