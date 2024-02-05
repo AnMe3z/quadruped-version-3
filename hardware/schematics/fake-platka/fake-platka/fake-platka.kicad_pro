@@ -48,7 +48,13 @@
           "min_clearance": 0.508
         }
       },
-      "diff_pair_dimensions": [],
+      "diff_pair_dimensions": [
+        {
+          "gap": 0.0,
+          "via_gap": 0.0,
+          "width": 0.0
+        }
+      ],
       "drc_exclusions": [],
       "meta": {
         "version": 2
@@ -112,8 +118,15 @@
         "solder_mask_min_width": 0.0,
         "use_height_for_length_calcs": true
       },
-      "track_widths": [],
-      "via_dimensions": [],
+      "track_widths": [
+        0.0
+      ],
+      "via_dimensions": [
+        {
+          "diameter": 0.0,
+          "drill": 0.0
+        }
+      ],
       "zones_allow_external_fillets": false,
       "zones_use_no_outline": true
     },
@@ -365,7 +378,7 @@
     "last_paths": {
       "gencad": "",
       "idf": "",
-      "netlist": "",
+      "netlist": "fake-platka.net",
       "specctra_dsn": "",
       "step": "",
       "vrml": ""
@@ -393,7 +406,7 @@
     "meta": {
       "version": 1
     },
-    "net_format_name": "",
+    "net_format_name": "KiCad",
     "ngspice": {
       "fix_include_paths": true,
       "fix_passive_vals": false,
@@ -416,8 +429,32 @@
       ""
     ],
     [
-      "312790c8-5be5-4b7d-904f-ae4d957d0ad2",
-      "leg-electronics"
+      "de768ca1-34a8-483a-a4c8-060dddfe052f",
+      "Power Supply"
+    ],
+    [
+      "ed18e3f1-270b-4239-9d84-fdcbc5ed3274",
+      "Left Controller "
+    ],
+    [
+      "9b712438-4f12-4651-a1e5-5b5fd6f08f63",
+      "Right Controller"
+    ],
+    [
+      "b9729da1-83cd-46e4-9640-46cc1799dcb8",
+      "Leg Back Left"
+    ],
+    [
+      "62b0d172-d9b2-4e28-b0b7-ce687b217478",
+      "Leg Fornt Left"
+    ],
+    [
+      "79f7bb11-13c3-435a-b9d5-e1cf9480adeb",
+      "Leg Front Right"
+    ],
+    [
+      "5b44027f-780b-461c-ac9a-c4fccf41f116",
+      "Leg Back Right"
     ]
   ],
   "text_variables": {}

@@ -1,3 +1,8 @@
 https://app.ultralibrarian.com/details/e938f7e1-4622-11ed-b159-0a34d6323d74/Toshiba-Electronic-Devices-Storage-Corp-/TB67H450AFNG-EL?exports=KiCADv6&open=exports
 https://app.ultralibrarian.com/details/ca52ef32-0283-11ed-b159-0a34d6323d74/Raspberry-Pi/SC0917?uid=129877558
-
+https://grabcad.com/library/xl4005-1
+https://grabcad.com/library/raspberry-pi-pico-w-rp2040-no-pins-pins-and-socketed-1
+https://app.ultralibrarian.com/details/f9dd745b-0f3c-11ec-9033-0a34d6323d74/Amass/XT60PW-F?open=backlink
+https://github.com/sarfat96/KiCad/blob/master/library/Module/XL4005/XL4005_DC-DC.lib
+https://app.ultralibrarian.com/details/4b3352ef-44e3-11eb-9033-0a34d6323d74/JST/B7B-XH-A-LF-SN-?uid=7501607
+https://app.ultralibrarian.com/details/34553c35-1aab-11e9-ab3a-0a3560a4cccc/JST/B2B-EH-A-LF-SN-?uid=248775&open=exports&exports=KiCADv6
