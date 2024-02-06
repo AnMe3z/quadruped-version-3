@@ -417,7 +417,7 @@
       "workbook_filename": ""
     },
     "page_layout_descr_file": "",
-    "plot_directory": "",
+    "plot_directory": "../plot/",
     "spice_adjust_passive_values": false,
     "spice_external_command": "spice \"%I\"",
     "subpart_first_id": 65,
@@ -441,12 +441,12 @@
       "Right Controller"
     ],
     [
-      "b9729da1-83cd-46e4-9640-46cc1799dcb8",
-      "Leg Back Left"
-    ],
-    [
       "62b0d172-d9b2-4e28-b0b7-ce687b217478",
       "Leg Fornt Left"
+    ],
+    [
+      "b9729da1-83cd-46e4-9640-46cc1799dcb8",
+      "Leg Back Left"
     ],
     [
       "79f7bb11-13c3-435a-b9d5-e1cf9480adeb",
