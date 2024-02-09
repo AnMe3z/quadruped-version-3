@@ -4,6 +4,13 @@
 
   (paper "A4")
 
+  (title_block
+    (title "First pcb for quadruped robot v3")
+    (date "2024-02-06")
+    (rev "0")
+    (company "By Andrey Shefa")
+  )
+
   (lib_symbols
     (symbol "library:SC0915-pico-w-board" (pin_names (offset 0.254)) (in_bom yes) (on_board yes)
       (property "Reference" "U3" (id 0) (at 63.5 11.43 0)

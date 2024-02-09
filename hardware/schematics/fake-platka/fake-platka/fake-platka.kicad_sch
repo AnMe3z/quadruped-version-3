@@ -4,6 +4,13 @@
 
   (paper "A4")
 
+  (title_block
+    (title "First pcb for quadruped robot v3")
+    (date "2024-02-06")
+    (rev "0")
+    (company "By Andrey Shefa")
+  )
+
   (lib_symbols
   )
 
@@ -997,7 +1004,7 @@
     (path "/62b0d172-d9b2-4e28-b0b7-ce687b217478/0b44f47c-b329-41e1-bfea-a7a15c570259"
       (reference "J4") (unit 1) (value "B2B-EH-A") (footprint "quadruped-lib-footprints:CONN_B2B-EH-A LFSN_JST")
     )
-    (path "/62b0d172-d9b2-4e28-b0b7-ce687b217478/c9005eb5-6888-44be-895a-94ca89765e9e"
+    (path "/62b0d172-d9b2-4e28-b0b7-ce687b217478/c94ff8b0-3cd3-4943-a7e9-95656222931c"
       (reference "J5") (unit 1) (value "B2B-EH-A") (footprint "quadruped-lib-footprints:CONN_B2B-EH-A LFSN_JST")
     )
     (path "/62b0d172-d9b2-4e28-b0b7-ce687b217478/12ac2215-6790-4276-98ab-69c235c9d262"
@@ -1018,7 +1025,7 @@
     (path "/b9729da1-83cd-46e4-9640-46cc1799dcb8/505958db-5e1d-46c3-b84c-3f485f326fac"
       (reference "J11") (unit 1) (value "B2B-EH-A") (footprint "quadruped-lib-footprints:CONN_B2B-EH-A LFSN_JST")
     )
-    (path "/b9729da1-83cd-46e4-9640-46cc1799dcb8/a81d3b16-a6aa-41a6-b00e-67cb06b3cb7d"
+    (path "/b9729da1-83cd-46e4-9640-46cc1799dcb8/1c0f6c01-adfc-4c4a-9d3b-2fc74a2062a4"
       (reference "J12") (unit 1) (value "B2B-EH-A") (footprint "quadruped-lib-footprints:CONN_B2B-EH-A LFSN_JST")
     )
     (path "/b9729da1-83cd-46e4-9640-46cc1799dcb8/d5919fc9-e31c-45ff-83e0-e8625a8fc890"
@@ -1039,7 +1046,7 @@
     (path "/79f7bb11-13c3-435a-b9d5-e1cf9480adeb/32a9ac63-bb28-43ad-867a-7723a11daca6"
       (reference "J18") (unit 1) (value "B2B-EH-A") (footprint "quadruped-lib-footprints:CONN_B2B-EH-A LFSN_JST")
     )
-    (path "/79f7bb11-13c3-435a-b9d5-e1cf9480adeb/9ef99685-0bca-481b-9e69-640861986b4a"
+    (path "/79f7bb11-13c3-435a-b9d5-e1cf9480adeb/1fabcd83-df40-4d26-844f-63aa0ae1c4a1"
       (reference "J19") (unit 1) (value "B2B-EH-A") (footprint "quadruped-lib-footprints:CONN_B2B-EH-A LFSN_JST")
     )
     (path "/79f7bb11-13c3-435a-b9d5-e1cf9480adeb/52dba86d-448d-48f5-999b-3dd747eff2fe"
@@ -1060,7 +1067,7 @@
     (path "/5b44027f-780b-461c-ac9a-c4fccf41f116/2b3884cc-a722-4d32-a177-0cc638a32bc7"
       (reference "J25") (unit 1) (value "B2B-EH-A") (footprint "quadruped-lib-footprints:CONN_B2B-EH-A LFSN_JST")
     )
-    (path "/5b44027f-780b-461c-ac9a-c4fccf41f116/2494c4d4-65e2-462b-9b63-9ecad69af53e"
+    (path "/5b44027f-780b-461c-ac9a-c4fccf41f116/cd631f09-8b89-44a2-a320-da3e07b54a95"
       (reference "J26") (unit 1) (value "B2B-EH-A") (footprint "quadruped-lib-footprints:CONN_B2B-EH-A LFSN_JST")
     )
     (path "/5b44027f-780b-461c-ac9a-c4fccf41f116/5b39f500-ed4f-4497-8fd6-f05b8bb11773"
@@ -1087,7 +1094,7 @@
     (path "/62b0d172-d9b2-4e28-b0b7-ce687b217478/5857da07-1aeb-4858-99bb-e60bdbbfa29d"
       (reference "R4") (unit 1) (value "5K") (footprint "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal")
     )
-    (path "/62b0d172-d9b2-4e28-b0b7-ce687b217478/6ac3e022-3370-4440-ad90-896845020c26"
+    (path "/62b0d172-d9b2-4e28-b0b7-ce687b217478/22e5db91-302a-4f7d-8f54-6bee881fc29a"
       (reference "R5") (unit 1) (value "150R") (footprint "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal")
     )
     (path "/62b0d172-d9b2-4e28-b0b7-ce687b217478/c8134a7e-6f46-4173-bd93-fe500292595c"
@@ -1114,7 +1121,7 @@
     (path "/b9729da1-83cd-46e4-9640-46cc1799dcb8/6ee058f8-0323-499f-9a6d-90bf799ca9d6"
       (reference "R13") (unit 1) (value "5K") (footprint "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal")
     )
-    (path "/b9729da1-83cd-46e4-9640-46cc1799dcb8/746f9e15-8287-48b7-ba7e-d41f125888f3"
+    (path "/b9729da1-83cd-46e4-9640-46cc1799dcb8/f99d87d1-2b02-4f25-a04b-de2660fbf270"
       (reference "R14") (unit 1) (value "150R") (footprint "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal")
     )
     (path "/b9729da1-83cd-46e4-9640-46cc1799dcb8/636fab5f-a6cb-446a-aa71-79fdd9d06818"
@@ -1141,7 +1148,7 @@
     (path "/79f7bb11-13c3-435a-b9d5-e1cf9480adeb/7b4de151-99d6-4934-9234-828d04010d8a"
       (reference "R22") (unit 1) (value "5K") (footprint "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal")
     )
-    (path "/79f7bb11-13c3-435a-b9d5-e1cf9480adeb/6f2f92f7-1a1d-46a8-b2ee-3a54f42b9979"
+    (path "/79f7bb11-13c3-435a-b9d5-e1cf9480adeb/3ba21b93-41e4-4b7c-9eed-1b381845351f"
       (reference "R23") (unit 1) (value "150R") (footprint "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal")
     )
     (path "/79f7bb11-13c3-435a-b9d5-e1cf9480adeb/798aac36-b599-4b00-82b0-169c49e49c8f"
@@ -1168,7 +1175,7 @@
     (path "/5b44027f-780b-461c-ac9a-c4fccf41f116/22b3c0d7-bcef-42bf-a8e4-0c2b3ebcb444"
       (reference "R31") (unit 1) (value "5K") (footprint "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal")
     )
-    (path "/5b44027f-780b-461c-ac9a-c4fccf41f116/a5a2a0ba-6c48-4895-b180-a74d8619e334"
+    (path "/5b44027f-780b-461c-ac9a-c4fccf41f116/789e2e1a-2b2f-4ea8-861a-bcd4d295ae3b"
       (reference "R32") (unit 1) (value "150R") (footprint "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal")
     )
     (path "/5b44027f-780b-461c-ac9a-c4fccf41f116/9158a7dc-fcee-4525-8b22-2f67c9ca7fbe"

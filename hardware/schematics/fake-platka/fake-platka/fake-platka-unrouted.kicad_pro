@@ -119,18 +119,12 @@
         "use_height_for_length_calcs": true
       },
       "track_widths": [
-        0.0,
-        0.091948,
-        3.302
+        0.0
       ],
       "via_dimensions": [
         {
           "diameter": 0.0,
           "drill": 0.0
-        },
-        {
-          "diameter": 3.302,
-          "drill": 3.302
         }
       ],
       "zones_allow_external_fillets": false,
@@ -372,70 +366,6 @@
         "track_width": 0.25,
         "via_diameter": 0.8,
         "via_drill": 0.4,
-        "wire_width": 6.0
-      },
-      {
-        "bus_width": 12.0,
-        "clearance": 1.0,
-        "diff_pair_gap": 0.25,
-        "diff_pair_via_gap": 0.25,
-        "diff_pair_width": 0.2,
-        "line_style": 0,
-        "microvia_diameter": 0.3,
-        "microvia_drill": 0.1,
-        "name": "Power12",
-        "nets": [
-          "/Leg Back Left/12V"
-        ],
-        "pcb_color": "rgba(0, 0, 0, 0.000)",
-        "schematic_color": "rgba(0, 0, 0, 0.000)",
-        "track_width": 3.302,
-        "via_diameter": 3.302,
-        "via_drill": 3.302,
-        "wire_width": 6.0
-      },
-      {
-        "bus_width": 12.0,
-        "clearance": 0.091948,
-        "diff_pair_gap": 0.25,
-        "diff_pair_via_gap": 0.25,
-        "diff_pair_width": 0.2,
-        "line_style": 0,
-        "microvia_diameter": 0.3,
-        "microvia_drill": 0.1,
-        "name": "Power12Thin",
-        "nets": [
-          "/Leg Back Right/GND12V",
-          "Net-(D1-Pad2)",
-          "Net-(D2-Pad2)",
-          "Net-(D3-Pad2)",
-          "Net-(D4-Pad2)",
-          "Net-(D5-Pad2)",
-          "Net-(D6-Pad2)",
-          "Net-(D7-Pad2)",
-          "Net-(D8-Pad2)",
-          "Net-(J14-Pad1)",
-          "Net-(J14-Pad2)",
-          "Net-(J15-Pad1)",
-          "Net-(J15-Pad2)",
-          "Net-(J21-Pad1)",
-          "Net-(J21-Pad2)",
-          "Net-(J22-Pad1)",
-          "Net-(J22-Pad2)",
-          "Net-(J28-Pad1)",
-          "Net-(J28-Pad2)",
-          "Net-(J29-Pad1)",
-          "Net-(J29-Pad2)",
-          "Net-(J7-Pad1)",
-          "Net-(J7-Pad2)",
-          "Net-(J8-Pad1)",
-          "Net-(J8-Pad2)"
-        ],
-        "pcb_color": "rgba(0, 0, 0, 0.000)",
-        "schematic_color": "rgba(0, 0, 0, 0.000)",
-        "track_width": 0.091948,
-        "via_diameter": 0.8,
-        "via_drill": 0.5,
         "wire_width": 6.0
       }
     ],

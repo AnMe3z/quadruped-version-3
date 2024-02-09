@@ -120,8 +120,10 @@
       },
       "track_widths": [
         0.0,
-        0.091948,
-        3.302
+        0.4064,
+        0.6604,
+        1.27,
+        1.905
       ],
       "via_dimensions": [
         {
@@ -129,8 +131,12 @@
           "drill": 0.0
         },
         {
-          "diameter": 3.302,
-          "drill": 3.302
+          "diameter": 1.905,
+          "drill": 1.905
+        },
+        {
+          "diameter": 50.0,
+          "drill": 0.5
         }
       ],
       "zones_allow_external_fillets": false,
@@ -376,7 +382,7 @@
       },
       {
         "bus_width": 12.0,
-        "clearance": 1.0,
+        "clearance": 0.4,
         "diff_pair_gap": 0.25,
         "diff_pair_via_gap": 0.25,
         "diff_pair_width": 0.2,
@@ -385,18 +391,19 @@
         "microvia_drill": 0.1,
         "name": "Power12",
         "nets": [
-          "/Leg Back Left/12V"
+          "/Leg Back Left/12V",
+          "/Leg Back Right/GND12V"
         ],
         "pcb_color": "rgba(0, 0, 0, 0.000)",
         "schematic_color": "rgba(0, 0, 0, 0.000)",
-        "track_width": 3.302,
-        "via_diameter": 3.302,
-        "via_drill": 3.302,
+        "track_width": 1.905,
+        "via_diameter": 1.905,
+        "via_drill": 0.75,
         "wire_width": 6.0
       },
       {
         "bus_width": 12.0,
-        "clearance": 0.091948,
+        "clearance": 0.3,
         "diff_pair_gap": 0.25,
         "diff_pair_via_gap": 0.25,
         "diff_pair_width": 0.2,
@@ -405,7 +412,6 @@
         "microvia_drill": 0.1,
         "name": "Power12Thin",
         "nets": [
-          "/Leg Back Right/GND12V",
           "Net-(D1-Pad2)",
           "Net-(D2-Pad2)",
           "Net-(D3-Pad2)",
@@ -433,8 +439,8 @@
         ],
         "pcb_color": "rgba(0, 0, 0, 0.000)",
         "schematic_color": "rgba(0, 0, 0, 0.000)",
-        "track_width": 0.091948,
-        "via_diameter": 0.8,
+        "track_width": 1.27,
+        "via_diameter": 1.27,
         "via_drill": 0.5,
         "wire_width": 6.0
       }

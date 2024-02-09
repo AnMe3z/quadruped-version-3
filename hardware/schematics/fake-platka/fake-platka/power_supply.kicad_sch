@@ -4,6 +4,13 @@
 
   (paper "A4")
 
+  (title_block
+    (title "First pcb for quadruped robot v3")
+    (date "2024-02-06")
+    (rev "0")
+    (company "By Andrey Shefa")
+  )
+
   (lib_symbols
     (symbol "Device:R" (pin_numbers hide) (pin_names (offset 0)) (in_bom yes) (on_board yes)
       (property "Reference" "R" (id 0) (at 2.032 0 90)
@@ -549,10 +556,10 @@
   )
 
   (symbol (lib_id "Device:R") (at 100.33 54.61 90) (unit 1)
-    (in_bom yes) (on_board yes) (fields_autoplaced)
+    (in_bom yes) (on_board yes)
     (uuid aebdcf9e-4402-4924-bdfc-8b0704802a0a)
-    (property "Reference" "R1" (id 0) (at 100.33 48.26 90))
-    (property "Value" "R1" (id 1) (at 100.33 50.8 90))
+    (property "Reference" "R1" (id 0) (at 100.33 49.53 90))
+    (property "Value" "R1" (id 1) (at 100.33 52.07 90))
     (property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" (id 2) (at 100.33 56.388 90)
       (effects (font (size 1.27 1.27)) hide)
     )
@@ -564,10 +571,10 @@
   )
 
   (symbol (lib_id "Device:R") (at 101.6 78.74 90) (unit 1)
-    (in_bom yes) (on_board yes) (fields_autoplaced)
+    (in_bom yes) (on_board yes)
     (uuid b04e5550-2830-412e-8965-f2a609c60075)
-    (property "Reference" "R2" (id 0) (at 101.6 72.39 90))
-    (property "Value" "R1" (id 1) (at 101.6 74.93 90))
+    (property "Reference" "R2" (id 0) (at 101.6 73.66 90))
+    (property "Value" "R1" (id 1) (at 101.6 76.2 90))
     (property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" (id 2) (at 101.6 80.518 90)
       (effects (font (size 1.27 1.27)) hide)
     )
