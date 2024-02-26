@@ -325,7 +325,7 @@ int main() {
 
     //sleep_ms(3000);
     //driveMotor(0, 70, true); 
-    //driveMotor(1, 100, true); 
+    driveMotor(1, 100, true); 
    
 	resetPosition();
  
