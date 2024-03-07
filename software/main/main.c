@@ -56,6 +56,7 @@ uint motorIndexToServoControlVariables[4][6] = {
 };
 
 //ENCODERS
+#define holes 38
 float step = 2.368421053;//360/(holes*4);
 // Motor index to position
 float motorIndexToPosition[4] = {0};
@@ -64,8 +65,13 @@ float motorIndexToPosition[4] = {0};
     	// The B phase must be connected to the next pin
 uint motorIndexToEncoderPinAB[4] = {8, 10, 12, 14};
 // MOTOR INDEX = SM INDEX (ENCODER STATE MACHINE INDEX)
+//PIO
+PIO pio = pio0;
 	
+//SERVO CONTROL
+#define KP 5
 int moving, direction, setPoint, startPoint, error, P;
+
 //FUNCTIONS
 //MOTOR
 void driveMotor(int motorIndex, int driveValue, bool driveEnable);
@@ -73,6 +79,58 @@ void driveMotor(int motorIndex, int driveValue, bool driveEnable);
 long map(long x, long in_min, long in_max, long out_min, long outmax);
 
 void resetPosition();
+
+// FIXME: MANUAL ANGLE TESTING
+void keyboardControl();
+
+void on_pwm_wrap() {
+//NO PRINT F INSIDE OF THIS FUNCTION!
+//there is not enough time to execute and clogs the program!
+
+        // Clear the interrupt flag that brought us here
+        pwm_clear_irq(pwm_gpio_to_slice_num(motorIndexToPins[0][0]));
+        
+        // FIXME: POSITION GETTING
+        motorIndexToPosition[0] = quadrature_encoder_get_count(pio, 0);
+        motorIndexToPosition[0] *= step;
+        	
+	if (moving){
+ 		direction = (setPoint-startPoint != 0) ? ((setPoint-startPoint > 0) ? 1 : -1) : 0; 
+    		if(direction!=0){
+
+                        error = setPoint - motorIndexToPosition[0];
+
+                        P = KP * error;
+                        
+                        if(direction == 1){             
+                                if(P >= setPoint-startPoint){
+                                        P = MAX_PWM;
+                                }
+                                else{
+                                        P = map(P,
+                                        0, setPoint-startPoint,
+                                        MIN_PWM, MAX_PWM);
+                                }
+                        }
+                        else if(direction == -1){         
+                                if(P <= setPoint-startPoint){
+                                        P = MAX_PWM;
+                                }
+                                else{
+                                        P = map(P,
+                                        0, setPoint-startPoint,
+                                        MIN_PWM, MAX_PWM);
+                                }
+                                P*=-1;
+                        }
+                        // P IS INVERTED; BECAUSE THE ENCODER SIGNALS A AND B ARE SWAPPED
+                        driveMotor(0, -P, true); 
+		}
+		else{
+		  moving = false;
+		}
+ 	}
+}
 
 //FIXME: FOR TESTING PHOTO COUPLES
 void encoderCallback(uint gpio, uint32_t events) {   
@@ -109,28 +167,24 @@ int main() {
         gpio_init(19);
         gpio_set_dir(19, GPIO_OUT);
 	//FIXME: FOR TESTING MOTOR DRIVER
-	driveMotor(0, 100, true);
+	//driveMotor(0, 100, true);
 	
-	PIO pio = pio0;
 	pio_add_program(pio, &quadrature_encoder_program);
         for (int i = 0; i < 4; i++) {
                 quadrature_encoder_program_init(pio, i, motorIndexToEncoderPinAB[i], 0);
         }
  
-        // Resets the main.c position variables
         resetPosition();
-        // Resets the position counts in the pio machines
-        for (int i = 0; i < 4; i++) {
-                // Reset the encoder count
-                reset_encoder_count(pio, i);
-        }
  
     	while (true) {
-        	motorIndexToPosition[0] = quadrature_encoder_get_count(pio, 0);
+        	//motorIndexToPosition[0] = quadrature_encoder_get_count(pio, 0);
 
-        	printf("position %f\n", motorIndexToPosition[0]*step);
+        	//printf("position %f\n", motorIndexToPosition[0]*step);
         	
-        	sleep_ms(100);
+        	keyboardControl();
+        	
+        	sleep_ms(2000);
+        	//sleep_ms(100);
     	} 
 }
 
@@ -176,6 +230,11 @@ void resetPosition(){
         for (int i = 0; i < 4; i++) {
                 motorIndexToPosition[i] = 0;
         }
+        // Resets the position counts in the pio machines
+        for (int i = 0; i < 4; i++) {
+                // Reset the encoder count
+                reset_encoder_count(pio, i);
+        }
 }
 
 //  ---------------          INIT          ---------------
@@ -210,9 +269,41 @@ void initPins(){
     
     //servo control interrupt 
     // the interrupt is with the pwm wrap frequency
-    //pwm_clear_irq(pwm_gpio_to_slice_num(motorIndexToPins[0][0]));
-    //pwm_set_irq_enabled(pwm_gpio_to_slice_num(motorIndexToPins[0][0]), true);
-    //irq_set_exclusive_handler(PWM_IRQ_WRAP, on_pwm_wrap);
-    //irq_set_enabled(PWM_IRQ_WRAP, true);
-    //pwm_config config = pwm_get_default_config();
+    pwm_clear_irq(pwm_gpio_to_slice_num(motorIndexToPins[0][0]));
+    pwm_set_irq_enabled(pwm_gpio_to_slice_num(motorIndexToPins[0][0]), true);
+    irq_set_exclusive_handler(PWM_IRQ_WRAP, on_pwm_wrap);
+    irq_set_enabled(PWM_IRQ_WRAP, true);
+    pwm_config config = pwm_get_default_config();
+}
+
+//-------------------------------
+
+void keyboardControl(){
+        int input = 0;
+        printf("Enter angle motor index [0 || 1]: \n");
+        input = getchar() - 48;
+
+	if (input == 0) {
+        	printf("FEMUR \n");
+        		
+		printf("Enter direction [0 || 1] (1 = -1): \n");
+        	input = getchar() - 48;
+		
+ 		input = (input == 0 || input == 1) ? ((input == 0) ? 1 : -1) : 0; 
+	
+		printf("Enter angle Xx: \n");
+        	input = input*(getchar() - 48)*10;
+        	
+        	printf("Enter angle xX: \n");
+        	input += getchar() - 48;
+
+        	printf("Target angle: %d \n", input);
+        	
+		startPoint = motorIndexToPosition[0];
+		setPoint = startPoint + input; 
+		if(MAX_ANGLE > setPoint && setPoint > MIN_ANGLE){
+      	  		moving = true;
+		}
+	}
+	sleep_ms(1111);
 }
