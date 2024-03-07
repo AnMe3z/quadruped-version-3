@@ -59,6 +59,7 @@ static inline pio_sm_config quadrature_encoder_program_get_default_config(uint o
 
 #include "hardware/clocks.h"
 #include "hardware/gpio.h"
+#include "hardware/pio.h"
 // max_step_rate is used to lower the clock of the state machine to save power
 // if the application doesn't require a very high sampling rate. Passing zero
 // will set the clock to the maximum
@@ -97,6 +98,10 @@ static inline int32_t quadrature_encoder_get_count(PIO pio, uint sm)
         n--;
     }
     return ret;
+}
+// Function to reset the encoder count
+static inline void reset_encoder_count(PIO pio, uint sm) {
+    pio_sm_exec(pio, sm, pio_encode_mov(pio_y, pio_null));
 }
 
 #endif

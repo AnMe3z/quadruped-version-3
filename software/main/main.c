@@ -2,6 +2,7 @@
 #include "pico/stdlib.h"
 #include "hardware/pwm.h"
 #include "hardware/irq.h"
+#include "hardware/pio.h"
 #include "pico/binary_info.h"
 
 #include "quadrature_encoder.pio.h"
@@ -116,10 +117,19 @@ int main() {
                 quadrature_encoder_program_init(pio, i, motorIndexToEncoderPinAB[i], 0);
         }
  
+        // Resets the main.c position variables
+        resetPosition();
+        // Resets the position counts in the pio machines
+        for (int i = 0; i < 4; i++) {
+                // Reset the encoder count
+                reset_encoder_count(pio, i);
+        }
+ 
     	while (true) {
         	motorIndexToPosition[0] = quadrature_encoder_get_count(pio, 0);
 
         	printf("position %f\n", motorIndexToPosition[0]*step);
+        	
         	sleep_ms(100);
     	} 
 }
@@ -160,6 +170,13 @@ long map(long x, long in_min, long in_max, long out_min, long out_max)
 {
   	return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
 } 
+
+//  ---------------       VARIABLES       ---------------
+void resetPosition(){
+        for (int i = 0; i < 4; i++) {
+                motorIndexToPosition[i] = 0;
+        }
+}
 
 //  ---------------          INIT          ---------------
 void initPins(){
