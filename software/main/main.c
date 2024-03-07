@@ -46,15 +46,6 @@ const uint motorIndexToPins[4][4] = {
   {BACK_KNEE_IN1_PIN, BACK_KNEE_IN2_PIN, BACK_KNEE_EA_PIN, BACK_KNEE_EB_PIN}
 };
 
-// Motor index to servo control variables
-uint motorIndexToServoControlVariables[4][6] = { 
-// {moving0, direction0, setPoint0, startPoint0, error0, P0 }
-  {0, 0, 0, 0, 0, 0}, 
-  {0, 0, 0, 0, 0, 0}, 
-  {0, 0, 0, 0, 0, 0}, 
-  {0, 0, 0, 0, 0, 0}
-};
-
 //ENCODERS
 #define holes 38
 float step = 2.368421053;//360/(holes*4);
@@ -70,6 +61,14 @@ PIO pio = pio0;
 	
 //SERVO CONTROL
 #define KP 5
+// Motor index to servo control variables
+uint motorIndexToServoControlVariables[4][6] = { 
+// {moving0, direction0, setPoint0, startPoint0, error0, P0 }
+  {0, 0, 0, 0, 0, 0}, 
+  {0, 0, 0, 0, 0, 0}, 
+  {0, 0, 0, 0, 0, 0}, 
+  {0, 0, 0, 0, 0, 0}
+};
 int moving, direction, setPoint, startPoint, error, P;
 
 //FUNCTIONS
@@ -91,44 +90,56 @@ void on_pwm_wrap() {
         pwm_clear_irq(pwm_gpio_to_slice_num(motorIndexToPins[0][0]));
         
         // FIXME: POSITION GETTING
-        motorIndexToPosition[0] = quadrature_encoder_get_count(pio, 0);
-        motorIndexToPosition[0] *= step;
-        	
-	if (moving){
- 		direction = (setPoint-startPoint != 0) ? ((setPoint-startPoint > 0) ? 1 : -1) : 0; 
-    		if(direction!=0){
+        for (int i = 0; i < 4; i++) {
+                moving = motorIndexToServoControlVariables[i][0];
+                direction = motorIndexToServoControlVariables[i][1];
+                setPoint = motorIndexToServoControlVariables[i][2];
+                startPoint = motorIndexToServoControlVariables[i][3];
+                error = motorIndexToServoControlVariables[i][4];
+                P = motorIndexToServoControlVariables[i][5];
+                
+                motorIndexToPosition[i] = quadrature_encoder_get_count(pio, i);
+                motorIndexToPosition[i] *= step;
+                	
+	        if (moving){
+         		direction = (setPoint-startPoint != 0) ? ((setPoint-startPoint > 0) ? 1 : -1) : 0; 
+            		if(direction!=0){
 
-                        error = setPoint - motorIndexToPosition[0];
+                                error = setPoint - motorIndexToPosition[0];
 
-                        P = KP * error;
-                        
-                        if(direction == 1){             
-                                if(P >= setPoint-startPoint){
-                                        P = MAX_PWM;
+                                P = KP * error;
+                                
+                                if(direction == 1){             
+                                        if(P >= setPoint-startPoint){
+                                                P = MAX_PWM;
+                                        }
+                                        else{
+                                                P = map(P,
+                                                0, setPoint-startPoint,
+                                                MIN_PWM, MAX_PWM);
+                                        }
                                 }
-                                else{
-                                        P = map(P,
-                                        0, setPoint-startPoint,
-                                        MIN_PWM, MAX_PWM);
+                                else if(direction == -1){         
+                                        if(P <= setPoint-startPoint){
+                                                P = MAX_PWM;
+                                        }
+                                        else{
+                                                P = map(P,
+                                                0, setPoint-startPoint,
+                                                MIN_PWM, MAX_PWM);
+                                        }
+                                        P*=-1;
                                 }
-                        }
-                        else if(direction == -1){         
-                                if(P <= setPoint-startPoint){
-                                        P = MAX_PWM;
-                                }
-                                else{
-                                        P = map(P,
-                                        0, setPoint-startPoint,
-                                        MIN_PWM, MAX_PWM);
-                                }
-                                P*=-1;
-                        }
-                        // P IS INVERTED; BECAUSE THE ENCODER SIGNALS A AND B ARE SWAPPED
-                        driveMotor(0, -P, true); 
-		}
-		else{
-		  moving = false;
-		}
+                                // P IS INVERTED; BECAUSE THE ENCODER SIGNALS A AND B ARE SWAPPED
+                                driveMotor(0, -P, true); 
+		        }
+		        else{
+		          moving = false;
+		        }
+         	}
+                motorIndexToServoControlVariables[i][1] = direction;
+                motorIndexToServoControlVariables[i][4] = error;
+                motorIndexToServoControlVariables[i][5] = P;
  	}
 }
 
@@ -298,12 +309,16 @@ void keyboardControl(){
         	input += getchar() - 48;
 
         	printf("Target angle: %d \n", input);
-        	
+                
 		startPoint = motorIndexToPosition[0];
 		setPoint = startPoint + input; 
 		if(MAX_ANGLE > setPoint && setPoint > MIN_ANGLE){
       	  		moving = true;
 		}
+		
+                motorIndexToServoControlVariables[0][0] = moving;
+                motorIndexToServoControlVariables[0][2] = setPoint;
+                motorIndexToServoControlVariables[0][3] = startPoint;
 	}
 	sleep_ms(1111);
 }
