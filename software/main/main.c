@@ -44,21 +44,7 @@ const uint motorIndexToPins[4][4] = {
   {BACK_FEMUR_IN1_PIN, BACK_FEMUR_IN2_PIN, BACK_FEMUR_EA_PIN, BACK_FEMUR_EB_PIN}, 
   {BACK_KNEE_IN1_PIN, BACK_KNEE_IN2_PIN, BACK_KNEE_EA_PIN, BACK_KNEE_EB_PIN}
 };
-// Motor index to old or new state used for calculating position change 
-uint motorIndexToOldNewState[4][2] = { 
-//    {     oldState  ,     newState    }
-  {0, 0}, 
-  {0, 0}, 
-  {0, 0}, 
-  {0, 0}
-};
-// Motor index to position  
-uint motorIndexToPosition[4] = { 
-  0, 
-  0, 
-  0, 
-  0
-}; 
+
 // Motor index to servo control variables
 uint motorIndexToServoControlVariables[4][6] = { 
 // {moving0, direction0, setPoint0, startPoint0, error0, P0 }
@@ -70,7 +56,14 @@ uint motorIndexToServoControlVariables[4][6] = {
 
 //ENCODERS
 float step = 2.368421053;//360/(holes*4);
-
+// Motor index to position
+float motorIndexToPosition[4] = {0};
+// Motor index to encoder pins | pin AB
+    	// Base pin to connect the A phase of the encoder.
+    	// The B phase must be connected to the next pin
+uint motorIndexToEncoderPinAB[4] = {8, 10, 12, 14};
+// MOTOR INDEX = SM INDEX (ENCODER STATE MACHINE INDEX)
+	
 int moving, direction, setPoint, startPoint, error, P;
 //FUNCTIONS
 //MOTOR
@@ -116,32 +109,18 @@ int main() {
         gpio_set_dir(19, GPIO_OUT);
 	//FIXME: FOR TESTING MOTOR DRIVER
 	driveMotor(0, 100, true);
-	//FIXME: FOR TESTING PIO
-	int new_value, delta, old_value = 0;
-    	// Base pin to connect the A phase of the encoder.
-    	// The B phase must be connected to the next pin
-    	const uint PIN_AB = 8;
+	
 	PIO pio = pio0;
-	const uint sm = 0;
-	// we don't really need to keep the offset, as this program must be loaded
-	// at offset 0
 	pio_add_program(pio, &quadrature_encoder_program);
-	quadrature_encoder_program_init(pio, sm, PIN_AB, 0);
-
+        for (int i = 0; i < 4; i++) {
+                quadrature_encoder_program_init(pio, i, motorIndexToEncoderPinAB[i], 0);
+        }
  
     	while (true) {
-		// note: thanks to two's complement arithmetic delta will always
-		// be correct even when new_value wraps around MAXINT / MININT
-        	new_value = quadrature_encoder_get_count(pio, sm);
-        	delta = new_value - old_value;
-        	old_value = new_value;
+        	motorIndexToPosition[0] = quadrature_encoder_get_count(pio, 0);
 
-        	printf("position %f, delta %6d\n", new_value*step, delta);
+        	printf("position %f\n", motorIndexToPosition[0]*step);
         	sleep_ms(100);
-
-//        	printf("PIN 8: %d \n", gpio_get(8));
-//        	printf("PIN 9: %d \n", gpio_get(9));
-//		sleep_ms(200);	
     	} 
 }
 
