@@ -75,16 +75,47 @@ long map(long x, long in_min, long in_max, long out_min, long outmax);
 
 void resetPosition();
 
+//FIXME: FOR TESTING PHOTO COUPLES
+void encoderCallback(uint gpio, uint32_t events) {   
+    if (gpio == motorIndexToPins[0][2] || gpio == motorIndexToPins[0][3]){
+        if(gpio==motorIndexToPins[0][2]){
+          if (events == GPIO_IRQ_EDGE_RISE){
+            gpio_put(18, 1);
+          }
+          else{
+            gpio_put(18, 0);
+          }
+        }
+        if(gpio==motorIndexToPins[0][3]){
+          if (events == GPIO_IRQ_EDGE_RISE){
+            gpio_put(19, 1);
+          }
+          else{
+            gpio_put(19, 0);
+          }
+        }
+    	
+    }    
+}
+
 int main() {
    	stdio_init_all();
     	sleep_ms(2000);
 
 	initPins();
+	  
+        //FIXME: FOR TESTING PHOTO COUPLES
+        gpio_init(18);
+        gpio_set_dir(18, GPIO_OUT);
+        gpio_init(19);
+        gpio_set_dir(19, GPIO_OUT);
 
 	driveMotor(0, 100, true);
  
     	while (true) {
-		sleep_ms(2000);	
+        	printf("PIN 8: %d \n", gpio_get(8));
+        	printf("PIN 9: %d \n", gpio_get(9));
+		sleep_ms(200);	
     	} 
 }
 
@@ -146,13 +177,13 @@ void initPins(){
                 
                 // Encoder pubs
                 // Set up the reading pin CHAN A
-                //gpio_init(motorIndexToPins[i][2]);
-                //gpio_set_dir(motorIndexToPins[i][2], GPIO_IN);
-                //gpio_set_irq_enabled_with_callback(motorIndexToPins[i][2], GPIO_IRQ_EDGE_RISE | GPIO_IRQ_EDGE_FALL, true, &encoderCallback);
+                gpio_init(motorIndexToPins[i][2]);
+                gpio_set_dir(motorIndexToPins[i][2], GPIO_IN);
+                gpio_set_irq_enabled_with_callback(motorIndexToPins[i][2], GPIO_IRQ_EDGE_RISE | GPIO_IRQ_EDGE_FALL, true, &encoderCallback);
                 // Set up the reading pin CHAN B
-                //gpio_init(motorIndexToPins[i][3]);
-                //gpio_set_dir(motorIndexToPins[i][3], GPIO_IN);
-                //gpio_set_irq_enabled_with_callback(motorIndexToPins[i][3], GPIO_IRQ_EDGE_RISE | GPIO_IRQ_EDGE_FALL, true, &encoderCallback);
+                gpio_init(motorIndexToPins[i][3]);
+                gpio_set_dir(motorIndexToPins[i][3], GPIO_IN);
+                gpio_set_irq_enabled_with_callback(motorIndexToPins[i][3], GPIO_IRQ_EDGE_RISE | GPIO_IRQ_EDGE_FALL, true, &encoderCallback);
         }
     
     //servo control interrupt 
