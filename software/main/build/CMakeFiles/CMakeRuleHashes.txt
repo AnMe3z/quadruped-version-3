@@ -1,6 +1,7 @@
 # Hashes of file build rules.
 4e33c5ba1450ee5548ca0394b1a61ebc CMakeFiles/ELF2UF2Build
 01f85fe95ad2d5e9817d8b3bad75e539 CMakeFiles/ELF2UF2Build-complete
+4e33c5ba1450ee5548ca0394b1a61ebc CMakeFiles/pwm_control_quadrature_encoder_pio_h
 6ab9a00834c19230996b300977490a63 elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-build
 0aef13630fe6b4ad9935278e599ed123 elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-configure
 2ddb9e4ae4dffa9e573ff267d76ba54a elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-download
@@ -23,3 +24,4 @@ cce30d0f218e9793e480cf2fa73efbe0 pico-sdk/src/rp2_common/pico_cyw43_driver/cyw43
 dfa6617c41508c94f11e81d8d2838157 pico-sdk/src/rp2_common/pico_cyw43_driver/pioasm/src/PioasmBuild-stamp/PioasmBuild-mkdir
 86049e8bf0541ed3267edf5bd120b5dc pico-sdk/src/rp2_common/pico_cyw43_driver/pioasm/src/PioasmBuild-stamp/PioasmBuild-patch
 5967e16d35e573143bdfb371334da77e pico-sdk/src/rp2_common/pico_cyw43_driver/pioasm/src/PioasmBuild-stamp/PioasmBuild-update
+9075d1b4310733f4c4bad2489532522d quadrature_encoder.pio.h

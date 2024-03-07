@@ -74,6 +74,7 @@ preinstall: pico-sdk/preinstall
 
 # The main recursive "clean" target.
 clean: CMakeFiles/pwm_control.dir/clean
+clean: CMakeFiles/pwm_control_quadrature_encoder_pio_h.dir/clean
 clean: CMakeFiles/ELF2UF2Build.dir/clean
 clean: pico-sdk/clean
 .PHONY : clean
@@ -1503,6 +1504,7 @@ pico-sdk/tools/clean:
 # Target rules for target CMakeFiles/pwm_control.dir
 
 # All Build rule for target.
+CMakeFiles/pwm_control.dir/all: CMakeFiles/pwm_control_quadrature_encoder_pio_h.dir/all
 CMakeFiles/pwm_control.dir/all: CMakeFiles/ELF2UF2Build.dir/all
 CMakeFiles/pwm_control.dir/all: pico-sdk/src/rp2_common/boot_stage2/CMakeFiles/bs2_default_padded_checksummed_asm.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/pwm_control.dir/build.make CMakeFiles/pwm_control.dir/depend
@@ -1512,7 +1514,7 @@ CMakeFiles/pwm_control.dir/all: pico-sdk/src/rp2_common/boot_stage2/CMakeFiles/b
 
 # Build rule for subdir invocation for target.
 CMakeFiles/pwm_control.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles 84
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles 93
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/pwm_control.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles 0
 .PHONY : CMakeFiles/pwm_control.dir/rule
@@ -1525,6 +1527,32 @@ pwm_control: CMakeFiles/pwm_control.dir/rule
 CMakeFiles/pwm_control.dir/clean:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/pwm_control.dir/build.make CMakeFiles/pwm_control.dir/clean
 .PHONY : CMakeFiles/pwm_control.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/pwm_control_quadrature_encoder_pio_h.dir
+
+# All Build rule for target.
+CMakeFiles/pwm_control_quadrature_encoder_pio_h.dir/all: pico-sdk/src/rp2_common/pico_cyw43_driver/CMakeFiles/PioasmBuild.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pwm_control_quadrature_encoder_pio_h.dir/build.make CMakeFiles/pwm_control_quadrature_encoder_pio_h.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pwm_control_quadrature_encoder_pio_h.dir/build.make CMakeFiles/pwm_control_quadrature_encoder_pio_h.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=95 "Built target pwm_control_quadrature_encoder_pio_h"
+.PHONY : CMakeFiles/pwm_control_quadrature_encoder_pio_h.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/pwm_control_quadrature_encoder_pio_h.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles 9
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/pwm_control_quadrature_encoder_pio_h.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles 0
+.PHONY : CMakeFiles/pwm_control_quadrature_encoder_pio_h.dir/rule
+
+# Convenience name for target.
+pwm_control_quadrature_encoder_pio_h: CMakeFiles/pwm_control_quadrature_encoder_pio_h.dir/rule
+.PHONY : pwm_control_quadrature_encoder_pio_h
+
+# clean rule for target.
+CMakeFiles/pwm_control_quadrature_encoder_pio_h.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pwm_control_quadrature_encoder_pio_h.dir/build.make CMakeFiles/pwm_control_quadrature_encoder_pio_h.dir/clean
+.PHONY : CMakeFiles/pwm_control_quadrature_encoder_pio_h.dir/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/ELF2UF2Build.dir

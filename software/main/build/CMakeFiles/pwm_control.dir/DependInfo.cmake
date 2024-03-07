@@ -71,6 +71,7 @@ set(CMAKE_TARGET_DEFINITIONS_ASM
 
 # The include file search paths:
 set(CMAKE_ASM_TARGET_INCLUDE_PATH
+  "."
   "/home/andrey-shefa/pico/pico-sdk/src/common/pico_stdlib/include"
   "/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_gpio/include"
   "/home/andrey-shefa/pico/pico-sdk/src/common/pico_base/include"

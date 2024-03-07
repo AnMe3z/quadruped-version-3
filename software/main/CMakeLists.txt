@@ -1,6 +1,5 @@
 cmake_minimum_required(VERSION 3.13)
 
-
 include(pico_sdk_import.cmake)
 
 project(pwm_control C CXX ASM)
@@ -13,8 +12,11 @@ add_executable(pwm_control
   main.c
 )
 
-#pio
-#pico_generate_pio_header(pwm_control ${CMAKE_CURRENT_LIST_DIR}/quadrature_encoder.pio)
+
+# Create C header file with the name <pio program>.pio.h
+pico_generate_pio_header(${PROJECT_NAME}  
+        ${CMAKE_CURRENT_LIST_DIR}/quadrature_encoder.pio
+)
 
 pico_enable_stdio_usb(pwm_control 1)
 pico_enable_stdio_uart(pwm_control 0)

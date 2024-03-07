@@ -4,6 +4,8 @@
 #include "hardware/irq.h"
 #include "pico/binary_info.h"
 
+#include "quadrature_encoder.pio.h"
+
 //  PIN DEFINITIONS
 //  FRONT LEG
 #define FRONT_FEMUR_IN1_PIN 0
@@ -66,6 +68,9 @@ uint motorIndexToServoControlVariables[4][6] = {
   {0, 0, 0, 0, 0, 0}
 };
 
+//ENCODERS
+float step = 2.368421053;//360/(holes*4);
+
 int moving, direction, setPoint, startPoint, error, P;
 //FUNCTIONS
 //MOTOR
@@ -109,13 +114,34 @@ int main() {
         gpio_set_dir(18, GPIO_OUT);
         gpio_init(19);
         gpio_set_dir(19, GPIO_OUT);
-
+	//FIXME: FOR TESTING MOTOR DRIVER
 	driveMotor(0, 100, true);
+	//FIXME: FOR TESTING PIO
+	int new_value, delta, old_value = 0;
+    	// Base pin to connect the A phase of the encoder.
+    	// The B phase must be connected to the next pin
+    	const uint PIN_AB = 8;
+	PIO pio = pio0;
+	const uint sm = 0;
+	// we don't really need to keep the offset, as this program must be loaded
+	// at offset 0
+	pio_add_program(pio, &quadrature_encoder_program);
+	quadrature_encoder_program_init(pio, sm, PIN_AB, 0);
+
  
     	while (true) {
-        	printf("PIN 8: %d \n", gpio_get(8));
-        	printf("PIN 9: %d \n", gpio_get(9));
-		sleep_ms(200);	
+		// note: thanks to two's complement arithmetic delta will always
+		// be correct even when new_value wraps around MAXINT / MININT
+        	new_value = quadrature_encoder_get_count(pio, sm);
+        	delta = new_value - old_value;
+        	old_value = new_value;
+
+        	printf("position %f, delta %6d\n", new_value*step, delta);
+        	sleep_ms(100);
+
+//        	printf("PIN 8: %d \n", gpio_get(8));
+//        	printf("PIN 9: %d \n", gpio_get(9));
+//		sleep_ms(200);	
     	} 
 }
 
