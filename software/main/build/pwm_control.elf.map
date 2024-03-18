@@ -64,6 +64,10 @@ Discarded input sections
  .text.map      0x00000000       0x18 CMakeFiles/pwm_control.dir/main.c.obj
  .text.resetPosition
                 0x00000000       0x30 CMakeFiles/pwm_control.dir/main.c.obj
+ .rodata.keyboardControl.str1.4
+                0x00000000       0x8b CMakeFiles/pwm_control.dir/main.c.obj
+ .text.keyboardControl
+                0x00000000       0xc4 CMakeFiles/pwm_control.dir/main.c.obj
  .data.freqHz   0x00000000        0x4 CMakeFiles/pwm_control.dir/main.c.obj
  .text          0x00000000        0x0 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.obj
  .data          0x00000000        0x0 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.obj
@@ -264,6 +268,8 @@ Discarded input sections
                 0x00000000       0x34 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/common/pico_time/time.c.obj
  .text.sleep_us
                 0x00000000       0x28 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/common/pico_time/time.c.obj
+ .rodata.at_the_end_of_time
+                0x00000000        0x8 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/common/pico_time/time.c.obj
  .rodata.nil_time
                 0x00000000        0x8 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/common/pico_time/time.c.obj
  .text          0x00000000        0x0 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/common/pico_time/timeout_helper.c.obj
@@ -293,6 +299,8 @@ Discarded input sections
                 0x00000000       0x24 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
  .text.busy_wait_us_32
                 0x00000000       0x7c CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
+ .text.busy_wait_us
+                0x00000000       0x68 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
  .text.busy_wait_ms
                 0x00000000       0x98 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
  .text.hardware_alarm_force_irq
@@ -853,6 +861,8 @@ Discarded input sections
  .text._isatty  0x00000000        0xc CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
  .text.stdio_flush
                 0x00000000       0x28 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
+ .text.__wrap_getchar
+                0x00000000       0x7c CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
  .text.getchar_timeout_us
                 0x00000000       0x98 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
  .text.stdio_filter_driver
@@ -1154,9 +1164,9 @@ Discarded input sections
  .text.pio_sm_drain_tx_fifo
                 0x00000000       0x48 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_pio/pio.c.obj
  .bss.claimed   0x00000000        0x1 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_pio/pio.c.obj
- .text          0x00000000        0x0 /tmp/cclJHjzU.o
- .data          0x00000000        0x0 /tmp/cclJHjzU.o
- .bss           0x00000000        0x0 /tmp/cclJHjzU.o
+ .text          0x00000000        0x0 /tmp/cc3Su0kC.o
+ .data          0x00000000        0x0 /tmp/cc3Su0kC.o
+ .bss           0x00000000        0x0 /tmp/cc3Su0kC.o
  .data          0x00000000        0x0 /usr/lib/gcc/arm-none-eabi/12.2.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
  .bss           0x00000000        0x0 /usr/lib/gcc/arm-none-eabi/12.2.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
  .text          0x00000000       0x10 /usr/lib/gcc/arm-none-eabi/12.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-atexit.o)
@@ -1420,11 +1430,11 @@ LOAD /usr/lib/gcc/arm-none-eabi/12.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nof
 .boot2          0x10000000      0x100
                 0x10000000                        __boot2_start__ = .
  *(.boot2)
- .boot2         0x10000000      0x100 /tmp/cclJHjzU.o
+ .boot2         0x10000000      0x100 /tmp/cc3Su0kC.o
                 0x10000100                        __boot2_end__ = .
                 0x00000001                        ASSERT (((__boot2_end__ - __boot2_start__) == 0x100), ERROR: Pico second stage bootloader must be 256 bytes in size)
 
-.text           0x10000100     0x7058
+.text           0x10000100     0x6ee8
                 0x10000100                        __logical_binary_start = .
  *(.vectors)
  .vectors       0x10000100       0xd4 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_standard_link/crt0.S.obj
@@ -1497,590 +1507,581 @@ LOAD /usr/lib/gcc/arm-none-eabi/12.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nof
  .text.initPins
                 0x10000674      0x110 CMakeFiles/pwm_control.dir/main.c.obj
                 0x10000674                initPins
- .text.keyboardControl
-                0x10000784       0xc4 CMakeFiles/pwm_control.dir/main.c.obj
-                0x10000784                keyboardControl
  .text.startup.main
-                0x10000848      0x124 CMakeFiles/pwm_control.dir/main.c.obj
-                0x10000848                main
+                0x10000784      0x15c CMakeFiles/pwm_control.dir/main.c.obj
+                0x10000784                main
  .text.gpio_default_irq_handler
-                0x1000096c      0x204 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj
+                0x100008e0      0x204 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj
  .text.gpio_set_function
-                0x10000b70       0x30 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj
-                0x10000b70                gpio_set_function
+                0x10000ae4       0x30 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj
+                0x10000ae4                gpio_set_function
  .text.gpio_set_pulls
-                0x10000ba0       0x24 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj
-                0x10000ba0                gpio_set_pulls
+                0x10000b14       0x24 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj
+                0x10000b14                gpio_set_pulls
  .text.gpio_set_irq_enabled_with_callback
-                0x10000bc4       0xc4 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj
-                0x10000bc4                gpio_set_irq_enabled_with_callback
+                0x10000b38       0xc4 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj
+                0x10000b38                gpio_set_irq_enabled_with_callback
  .text.gpio_init
-                0x10000c88       0x3c CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj
-                0x10000c88                gpio_init
+                0x10000bfc       0x3c CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj
+                0x10000bfc                gpio_init
  .text.running_on_fpga
-                0x10000cc4       0x10 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_platform/platform.c.obj
-                0x10000cc4                running_on_fpga
+                0x10000c38       0x10 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_platform/platform.c.obj
+                0x10000c38                running_on_fpga
  .text.hw_claim_lock
-                0x10000cd4       0x18 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_claim/claim.c.obj
-                0x10000cd4                hw_claim_lock
+                0x10000c48       0x18 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_claim/claim.c.obj
+                0x10000c48                hw_claim_lock
  .text.hw_claim_unlock
-                0x10000cec       0x14 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_claim/claim.c.obj
-                0x10000cec                hw_claim_unlock
+                0x10000c60       0x14 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_claim/claim.c.obj
+                0x10000c60                hw_claim_unlock
  .text.hw_claim_or_assert
-                0x10000d00       0x44 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_claim/claim.c.obj
-                0x10000d00                hw_claim_or_assert
+                0x10000c74       0x44 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_claim/claim.c.obj
+                0x10000c74                hw_claim_or_assert
  .text.hw_claim_unused_from_range
-                0x10000d44       0x9c CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_claim/claim.c.obj
-                0x10000d44                hw_claim_unused_from_range
+                0x10000cb8       0x9c CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_claim/claim.c.obj
+                0x10000cb8                hw_claim_unused_from_range
  .text.spin_locks_reset
-                0x10000de0       0x1c CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj
-                0x10000de0                spin_locks_reset
+                0x10000d54       0x1c CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj
+                0x10000d54                spin_locks_reset
  .text.next_striped_spin_lock_num
-                0x10000dfc       0x18 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj
-                0x10000dfc                next_striped_spin_lock_num
+                0x10000d70       0x18 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj
+                0x10000d70                next_striped_spin_lock_num
  .text.spin_lock_claim_unused
-                0x10000e14       0x24 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj
-                0x10000e14                spin_lock_claim_unused
+                0x10000d88       0x24 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj
+                0x10000d88                spin_lock_claim_unused
  .text.irq_set_enabled
-                0x10000e38       0x24 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
-                0x10000e38                irq_set_enabled
+                0x10000dac       0x24 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
+                0x10000dac                irq_set_enabled
  .text.irq_set_pending
-                0x10000e5c       0x10 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
-                0x10000e5c                irq_set_pending
+                0x10000dd0       0x10 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
+                0x10000dd0                irq_set_pending
  .text.irq_has_shared_handler
-                0x10000e6c       0x2c CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
-                0x10000e6c                irq_has_shared_handler
+                0x10000de0       0x2c CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
+                0x10000de0                irq_has_shared_handler
  .text.irq_get_vtable_handler
-                0x10000e98       0x10 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
-                0x10000e98                irq_get_vtable_handler
+                0x10000e0c       0x10 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
+                0x10000e0c                irq_get_vtable_handler
  .text.irq_set_exclusive_handler
-                0x10000ea8       0x54 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
-                0x10000ea8                irq_set_exclusive_handler
+                0x10000e1c       0x54 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
+                0x10000e1c                irq_set_exclusive_handler
  .text.irq_add_shared_handler
-                0x10000efc      0x1f4 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
-                0x10000efc                irq_add_shared_handler
+                0x10000e70      0x1f4 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
+                0x10000e70                irq_add_shared_handler
  .text.irq_remove_handler
-                0x100010f0      0x1c4 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
-                0x100010f0                irq_remove_handler
+                0x10001064      0x1c4 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
+                0x10001064                irq_remove_handler
  .text.irq_add_tail_to_free_list
-                0x100012b4       0xb4 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
-                0x100012b4                irq_add_tail_to_free_list
+                0x10001228       0xb4 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
+                0x10001228                irq_add_tail_to_free_list
  .text.irq_init_priorities
-                0x10001368       0x24 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
-                0x10001368                irq_init_priorities
+                0x100012dc       0x24 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
+                0x100012dc                irq_init_priorities
  .text.user_irq_claim_unused
-                0x1000138c       0x2c CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
-                0x1000138c                user_irq_claim_unused
+                0x10001300       0x2c CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
+                0x10001300                user_irq_claim_unused
  .text.lock_init
-                0x100013b8       0x10 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/common/pico_sync/lock_core.c.obj
-                0x100013b8                lock_init
+                0x1000132c       0x10 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/common/pico_sync/lock_core.c.obj
+                0x1000132c                lock_init
  .text.mutex_init
-                0x100013c8       0x1c CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/common/pico_sync/mutex.c.obj
-                0x100013c8                mutex_init
+                0x1000133c       0x1c CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/common/pico_sync/mutex.c.obj
+                0x1000133c                mutex_init
  .text.recursive_mutex_init
-                0x100013e4       0x1c CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/common/pico_sync/mutex.c.obj
-                0x100013e4                recursive_mutex_init
+                0x10001358       0x1c CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/common/pico_sync/mutex.c.obj
+                0x10001358                recursive_mutex_init
  .text.critical_section_init
-                0x10001400       0x1c CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/common/pico_sync/critical_section.c.obj
-                0x10001400                critical_section_init
+                0x10001374       0x1c CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/common/pico_sync/critical_section.c.obj
+                0x10001374                critical_section_init
  .text.critical_section_init_with_lock_num
-                0x1000141c       0x14 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/common/pico_sync/critical_section.c.obj
-                0x1000141c                critical_section_init_with_lock_num
+                0x10001390       0x14 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/common/pico_sync/critical_section.c.obj
+                0x10001390                critical_section_init_with_lock_num
  .text.timer_pool_entry_comparator
-                0x10001430       0x34 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/common/pico_time/time.c.obj
-                0x10001430                timer_pool_entry_comparator
+                0x100013a4       0x34 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/common/pico_time/time.c.obj
+                0x100013a4                timer_pool_entry_comparator
  .text.sleep_until_callback
-                0x10001464       0x30 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/common/pico_time/time.c.obj
+                0x100013d8       0x30 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/common/pico_time/time.c.obj
  .text.add_alarm_under_lock.isra.0
-                0x10001494      0x100 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/common/pico_time/time.c.obj
+                0x10001408      0x100 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/common/pico_time/time.c.obj
  .text.alarm_pool_alarm_callback
-                0x10001594      0x1c0 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/common/pico_time/time.c.obj
+                0x10001508      0x1c0 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/common/pico_time/time.c.obj
  .text.alarm_pool_init_default
-                0x10001754       0x6c CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/common/pico_time/time.c.obj
-                0x10001754                alarm_pool_init_default
+                0x100016c8       0x6c CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/common/pico_time/time.c.obj
+                0x100016c8                alarm_pool_init_default
  .text.alarm_pool_get_default
-                0x100017c0        0x8 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/common/pico_time/time.c.obj
-                0x100017c0                alarm_pool_get_default
+                0x10001734        0x8 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/common/pico_time/time.c.obj
+                0x10001734                alarm_pool_get_default
  .text.alarm_pool_add_alarm_at
-                0x100017c8      0x188 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/common/pico_time/time.c.obj
-                0x100017c8                alarm_pool_add_alarm_at
+                0x1000173c      0x188 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/common/pico_time/time.c.obj
+                0x1000173c                alarm_pool_add_alarm_at
  .text.alarm_pool_core_num
-                0x10001950        0x4 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/common/pico_time/time.c.obj
-                0x10001950                alarm_pool_core_num
+                0x100018c4        0x4 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/common/pico_time/time.c.obj
+                0x100018c4                alarm_pool_core_num
  .text.sleep_until
-                0x10001954       0xc4 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/common/pico_time/time.c.obj
-                0x10001954                sleep_until
+                0x100018c8       0xc4 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/common/pico_time/time.c.obj
+                0x100018c8                sleep_until
  .text.sleep_ms
-                0x10001a18       0x38 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/common/pico_time/time.c.obj
-                0x10001a18                sleep_ms
+                0x1000198c       0x38 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/common/pico_time/time.c.obj
+                0x1000198c                sleep_ms
  .text.best_effort_wfe_or_timeout
-                0x10001a50       0xec CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/common/pico_time/time.c.obj
-                0x10001a50                best_effort_wfe_or_timeout
+                0x100019c4       0xec CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/common/pico_time/time.c.obj
+                0x100019c4                best_effort_wfe_or_timeout
  .text.hardware_alarm_irq_handler
-                0x10001b3c       0xbc CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
+                0x10001ab0       0xbc CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
  .text.hardware_alarm_claim
-                0x10001bf8       0x18 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
-                0x10001bf8                hardware_alarm_claim
+                0x10001b6c       0x18 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
+                0x10001b6c                hardware_alarm_claim
  .text.time_us_64
-                0x10001c10       0x14 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
-                0x10001c10                time_us_64
- .text.busy_wait_us
-                0x10001c24       0x68 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
-                0x10001c24                busy_wait_us
+                0x10001b84       0x14 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
+                0x10001b84                time_us_64
  .text.busy_wait_until
-                0x10001c8c       0x20 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
-                0x10001c8c                busy_wait_until
+                0x10001b98       0x20 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
+                0x10001b98                busy_wait_until
  .text.hardware_alarm_set_callback
-                0x10001cac       0x8c CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
-                0x10001cac                hardware_alarm_set_callback
+                0x10001bb8       0x8c CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
+                0x10001bb8                hardware_alarm_set_callback
  .text.hardware_alarm_set_target
-                0x10001d38       0xd0 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
-                0x10001d38                hardware_alarm_set_target
+                0x10001c44       0xd0 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
+                0x10001c44                hardware_alarm_set_target
  .text.hardware_alarm_cancel
-                0x10001e08       0x3c CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
-                0x10001e08                hardware_alarm_cancel
+                0x10001d14       0x3c CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
+                0x10001d14                hardware_alarm_cancel
  .text.ph_merge_nodes
-                0x10001e44       0x64 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/common/pico_util/pheap.c.obj
+                0x10001d50       0x64 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/common/pico_util/pheap.c.obj
  .text.ph_post_alloc_init
-                0x10001ea8       0x3c CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/common/pico_util/pheap.c.obj
-                0x10001ea8                ph_post_alloc_init
+                0x10001db4       0x3c CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/common/pico_util/pheap.c.obj
+                0x10001db4                ph_post_alloc_init
  .text.ph_merge_two_pass
-                0x10001ee4       0x98 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/common/pico_util/pheap.c.obj
-                0x10001ee4                ph_merge_two_pass
+                0x10001df0       0x98 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/common/pico_util/pheap.c.obj
+                0x10001df0                ph_merge_two_pass
  .text.ph_remove_any_head
-                0x10001f7c      0x100 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/common/pico_util/pheap.c.obj
+                0x10001e88      0x100 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/common/pico_util/pheap.c.obj
  .text.ph_remove_head
-                0x1000207c      0x104 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/common/pico_util/pheap.c.obj
-                0x1000207c                ph_remove_head
+                0x10001f88      0x104 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/common/pico_util/pheap.c.obj
+                0x10001f88                ph_remove_head
  .text.ph_remove_and_free_node
-                0x10002180       0x78 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/common/pico_util/pheap.c.obj
-                0x10002180                ph_remove_and_free_node
+                0x1000208c       0x78 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/common/pico_util/pheap.c.obj
+                0x1000208c                ph_remove_and_free_node
  .text.clocks_init
-                0x100021f8      0x2c8 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj
-                0x100021f8                clocks_init
+                0x10002104      0x2c8 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj
+                0x10002104                clocks_init
  .text.pll_init
-                0x100024c0       0xa0 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_pll/pll.c.obj
-                0x100024c0                pll_init
+                0x100023cc       0xa0 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_pll/pll.c.obj
+                0x100023cc                pll_init
  .text.watchdog_start_tick
-                0x10002560       0x10 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.obj
-                0x10002560                watchdog_start_tick
+                0x1000246c       0x10 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.obj
+                0x1000246c                watchdog_start_tick
  .text.watchdog_reboot
-                0x10002570       0x9c CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.obj
-                0x10002570                watchdog_reboot
+                0x1000247c       0x9c CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.obj
+                0x1000247c                watchdog_reboot
  .text.xosc_init
-                0x1000260c       0x28 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.obj
-                0x1000260c                xosc_init
+                0x10002518       0x28 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.obj
+                0x10002518                xosc_init
  .text.runtime_init
-                0x10002634       0xf0 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
-                0x10002634                runtime_init
- .text._exit    0x10002724        0x4 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
-                0x10002724                _exit
- .text.exit     0x10002728        0x8 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
-                0x10002728                exit
- .text.panic    0x10002730       0x30 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
-                0x10002730                panic
+                0x10002540       0xf0 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
+                0x10002540                runtime_init
+ .text._exit    0x10002630        0x4 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
+                0x10002630                _exit
+ .text.exit     0x10002634        0x8 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
+                0x10002634                exit
+ .text.panic    0x1000263c       0x30 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
+                0x1000263c                panic
  .text.hard_assertion_failure
-                0x10002760        0xc CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
-                0x10002760                hard_assertion_failure
+                0x1000266c        0xc CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
+                0x1000266c                hard_assertion_failure
  .text._out_null
-                0x1000276c        0x4 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
+                0x10002678        0x4 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
  .text._out_rev
-                0x10002770       0x90 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
+                0x1000267c       0x90 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
  .text._ntoa_format
-                0x10002800      0x1f4 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
+                0x1000270c      0x1f4 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
  .text._out_char
-                0x100029f4       0x10 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
+                0x10002900       0x10 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
  .text._out_fct
-                0x10002a04       0x10 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
- .text._etoa    0x10002a14      0x454 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
- .text._ftoa    0x10002e68      0x3c4 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
+                0x10002910       0x10 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
+ .text._etoa    0x10002920      0x454 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
+ .text._ftoa    0x10002d74      0x3c4 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
  .text._vsnprintf
-                0x1000322c      0xb24 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
+                0x10003138      0xb24 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
  .text.vfctprintf
-                0x10003d50       0x20 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
-                0x10003d50                vfctprintf
+                0x10003c5c       0x20 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
+                0x10003c5c                vfctprintf
  .text.weak_raw_vprintf
-                0x10003d70       0x30 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
-                0x10003d70                weak_raw_vprintf
- .text          0x10003da0       0x10 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.obj
+                0x10003c7c       0x30 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
+                0x10003c7c                weak_raw_vprintf
+ .text          0x10003cac       0x10 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.obj
  .text.rom_func_lookup
-                0x10003db0       0x10 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.obj
-                0x10003db0                rom_func_lookup
+                0x10003cbc       0x10 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.obj
+                0x10003cbc                rom_func_lookup
  .text.rom_data_lookup
-                0x10003dc0       0x10 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.obj
-                0x10003dc0                rom_data_lookup
+                0x10003ccc       0x10 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.obj
+                0x10003ccc                rom_data_lookup
  .text.rom_funcs_lookup
-                0x10003dd0       0x44 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.obj
-                0x10003dd0                rom_funcs_lookup
+                0x10003cdc       0x44 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.obj
+                0x10003cdc                rom_funcs_lookup
  .text.__wrap___aeabi_idiv
-                0x10003e14       0x50 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_divider/divider.S.obj
-                0x10003e14                __wrap___aeabi_idivmod
-                0x10003e14                divmod_s32s32
-                0x10003e14                div_s32s32
-                0x10003e14                __wrap___aeabi_idiv
-                0x10003e1c                divmod_s32s32_unsafe
-                0x10003e48                divmod_s32s32_savestate
+                0x10003d20       0x50 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_divider/divider.S.obj
+                0x10003d20                __wrap___aeabi_idivmod
+                0x10003d20                divmod_s32s32
+                0x10003d20                div_s32s32
+                0x10003d20                __wrap___aeabi_idiv
+                0x10003d28                divmod_s32s32_unsafe
+                0x10003d54                divmod_s32s32_savestate
  .text.__wrap___aeabi_uidiv
-                0x10003e64       0x4c CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_divider/divider.S.obj
-                0x10003e64                __wrap___aeabi_uidiv
-                0x10003e64                __wrap___aeabi_uidivmod
-                0x10003e64                div_u32u32
-                0x10003e64                divmod_u32u32
-                0x10003e6c                divmod_u32u32_unsafe
-                0x10003e94                divmod_u32u32_savestate
+                0x10003d70       0x4c CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_divider/divider.S.obj
+                0x10003d70                __wrap___aeabi_uidiv
+                0x10003d70                __wrap___aeabi_uidivmod
+                0x10003d70                div_u32u32
+                0x10003d70                divmod_u32u32
+                0x10003d78                divmod_u32u32_unsafe
+                0x10003da0                divmod_u32u32_savestate
  .text.__wrap___aeabi_ldiv
-                0x10003eb0      0x424 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_divider/divider.S.obj
-                0x10003eb0                div_s64s64
-                0x10003eb0                divmod_s64s64
-                0x10003eb0                __wrap___aeabi_ldivmod
-                0x10003ee0                div_u64u64
-                0x10003ee0                divmod_u64u64
-                0x10003ee0                __wrap___aeabi_uldivmod
-                0x10003ef0                divmod_u64u64_savestate
-                0x10003f10                divmod_s64s64_unsafe
-                0x10003f98                divmod_u64u64_unsafe
+                0x10003dbc      0x424 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_divider/divider.S.obj
+                0x10003dbc                div_s64s64
+                0x10003dbc                divmod_s64s64
+                0x10003dbc                __wrap___aeabi_ldivmod
+                0x10003dec                div_u64u64
+                0x10003dec                divmod_u64u64
+                0x10003dec                __wrap___aeabi_uldivmod
+                0x10003dfc                divmod_u64u64_savestate
+                0x10003e1c                divmod_s64s64_unsafe
+                0x10003ea4                divmod_u64u64_unsafe
  .text.__wrap___aeabi_darithmetic
-                0x100042d4       0x60 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
-                0x100042d4                __wrap___aeabi_drsub
-                0x100042da                __wrap___aeabi_dsub
-                0x100042e4                __wrap___aeabi_dadd
-                0x100042ee                __wrap___aeabi_ddiv
-                0x10004322                __wrap___aeabi_dmul
+                0x100041e0       0x60 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
+                0x100041e0                __wrap___aeabi_drsub
+                0x100041e6                __wrap___aeabi_dsub
+                0x100041f0                __wrap___aeabi_dadd
+                0x100041fa                __wrap___aeabi_ddiv
+                0x1000422e                __wrap___aeabi_dmul
  .text.__wrap___aeabi_cdcmple
-                0x10004334       0x6c CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
-                0x10004334                __wrap___aeabi_cdrcmple
-                0x10004344                __wrap___aeabi_cdcmple
-                0x10004344                __wrap___aeabi_cdcmpeq
+                0x10004240       0x6c CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
+                0x10004240                __wrap___aeabi_cdrcmple
+                0x10004250                __wrap___aeabi_cdcmple
+                0x10004250                __wrap___aeabi_cdcmpeq
  .text.__wrap___aeabi_dcmplt
-                0x100043a0        0xc CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
-                0x100043a0                __wrap___aeabi_dcmplt
+                0x100042ac        0xc CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
+                0x100042ac                __wrap___aeabi_dcmplt
  .text.__wrap___aeabi_dcmpge
-                0x100043ac       0x10 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
-                0x100043ac                __wrap___aeabi_dcmpge
+                0x100042b8       0x10 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
+                0x100042b8                __wrap___aeabi_dcmpge
  .text.__wrap___aeabi_dcmpgt
-                0x100043bc        0xa CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
-                0x100043bc                __wrap___aeabi_dcmpgt
+                0x100042c8        0xa CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
+                0x100042c8                __wrap___aeabi_dcmpgt
  .text.__wrap___aeabi_dcmpun
-                0x100043c6       0x1c CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
-                0x100043c6                __wrap___aeabi_dcmpun
- *fill*         0x100043e2        0x2 
+                0x100042d2       0x1c CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
+                0x100042d2                __wrap___aeabi_dcmpun
+ *fill*         0x100042ee        0x2 
  .text.__wrap___aeabi_i2d
-                0x100043e4       0x38 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
-                0x100043e4                __wrap___aeabi_ui2d
-                0x100043ec                __wrap___aeabi_i2d
+                0x100042f0       0x38 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
+                0x100042f0                __wrap___aeabi_ui2d
+                0x100042f8                __wrap___aeabi_i2d
  .text.__wrap___aeabi_d2iz
-                0x1000441c       0x48 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
-                0x1000441c                __wrap___aeabi_d2iz
-                0x1000441c                double2int_z
+                0x10004328       0x48 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
+                0x10004328                __wrap___aeabi_d2iz
+                0x10004328                double2int_z
  .text.__wrap___aeabi_d2uiz
-                0x10004464       0x10 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
-                0x10004464                double2uint
-                0x10004464                __wrap___aeabi_d2uiz
+                0x10004370       0x10 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
+                0x10004370                double2uint
+                0x10004370                __wrap___aeabi_d2uiz
  .text.missing_double_func_shim
-                0x10004474        0xc CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.obj
+                0x10004380        0xc CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.obj
  .text.__aeabi_double_init
-                0x10004480       0x94 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.obj
-                0x10004480                __aeabi_double_init
+                0x1000438c       0x94 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.obj
+                0x1000438c                __aeabi_double_init
  .text.double_table_shim_on_use_helper
-                0x10004514       0x2c CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
-                0x10004514                double_table_shim_on_use_helper
+                0x10004420       0x2c CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
+                0x10004420                double_table_shim_on_use_helper
  .text.__aeabi_lmul
-                0x10004540       0x32 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.S.obj
-                0x10004540                __wrap___aeabi_lmul
- *fill*         0x10004572        0x2 
+                0x1000444c       0x32 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.S.obj
+                0x1000444c                __wrap___aeabi_lmul
+ *fill*         0x1000447e        0x2 
  .text.__wrap___aeabi_farithmetic
-                0x10004574       0x48 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_float/float_aeabi.S.obj
-                0x10004574                __wrap___aeabi_frsub
-                0x1000457a                __wrap___aeabi_fsub
-                0x10004580                __wrap___aeabi_fadd
-                0x10004586                __wrap___aeabi_fdiv
-                0x100045ae                __wrap___aeabi_fmul
+                0x10004480       0x48 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_float/float_aeabi.S.obj
+                0x10004480                __wrap___aeabi_frsub
+                0x10004486                __wrap___aeabi_fsub
+                0x1000448c                __wrap___aeabi_fadd
+                0x10004492                __wrap___aeabi_fdiv
+                0x100044ba                __wrap___aeabi_fmul
  .text.__wrap___aeabi_i2f
-                0x100045bc       0x44 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_float/float_aeabi.S.obj
-                0x100045bc                __wrap___aeabi_i2f
+                0x100044c8       0x44 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_float/float_aeabi.S.obj
+                0x100044c8                __wrap___aeabi_i2f
  .text.__wrap___aeabi_f2iz
-                0x10004600       0x4e CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_float/float_aeabi.S.obj
-                0x10004600                __wrap___aeabi_f2iz
-                0x10004600                float2int_z
- *fill*         0x1000464e        0x2 
+                0x1000450c       0x4e CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_float/float_aeabi.S.obj
+                0x1000450c                __wrap___aeabi_f2iz
+                0x1000450c                float2int_z
+ *fill*         0x1000455a        0x2 
  .text.float2int
-                0x10004650        0xc CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_float/float_aeabi.S.obj
-                0x10004650                float2int
+                0x1000455c        0xc CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_float/float_aeabi.S.obj
+                0x1000455c                float2int
  .text.__wrap___aeabi_f2uiz
-                0x1000465c        0xc CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_float/float_aeabi.S.obj
-                0x1000465c                __wrap___aeabi_f2uiz
+                0x10004568        0xc CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_float/float_aeabi.S.obj
+                0x10004568                __wrap___aeabi_f2uiz
  .text.missing_float_func_shim
-                0x10004668        0xc CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.obj
+                0x10004574        0xc CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.obj
  .text.__aeabi_float_init
-                0x10004674       0x5c CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.obj
-                0x10004674                __aeabi_float_init
- .text          0x100046d0       0x10 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj
-                0x100046d0                __aeabi_mem_init
- .text.memset   0x100046e0        0xc CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj
-                0x100046e0                __wrap_memset
- .text.memcpy   0x100046ec        0xc CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj
-                0x100046ec                __wrap___aeabi_memcpy
-                0x100046ec                __wrap_memcpy
+                0x10004580       0x5c CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.obj
+                0x10004580                __aeabi_float_init
+ .text          0x100045dc       0x10 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj
+                0x100045dc                __aeabi_mem_init
+ .text.memset   0x100045ec        0xc CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj
+                0x100045ec                __wrap_memset
+ .text.memcpy   0x100045f8        0xc CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj
+                0x100045f8                __wrap___aeabi_memcpy
+                0x100045f8                __wrap_memcpy
  .text.stdio_out_chars_crlf
-                0x100046f8       0xbc CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
+                0x10004604       0xbc CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
  .text.stdio_buffered_printer
-                0x100047b4       0x64 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
+                0x100046c0       0x64 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
  .text.__wrap_putchar
-                0x10004818       0x98 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
-                0x10004818                __wrap_putchar
+                0x10004724       0x98 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
+                0x10004724                __wrap_putchar
  .text.__wrap_puts
-                0x100048b0       0xe0 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
-                0x100048b0                __wrap_puts
+                0x100047bc       0xe0 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
+                0x100047bc                __wrap_puts
  .text.stdio_set_driver_enabled
-                0x10004990       0x30 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
-                0x10004990                stdio_set_driver_enabled
+                0x1000489c       0x30 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
+                0x1000489c                stdio_set_driver_enabled
  .text.__wrap_vprintf
-                0x100049c0       0xd4 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
-                0x100049c0                __wrap_vprintf
+                0x100048cc       0xd4 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
+                0x100048cc                __wrap_vprintf
  .text.__wrap_printf
-                0x10004a94       0x18 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
-                0x10004a94                __wrap_printf
+                0x100049a0       0x18 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
+                0x100049a0                __wrap_printf
  .text.stdio_init_all
-                0x10004aac        0x8 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
-                0x10004aac                stdio_init_all
- .text.__wrap_getchar
-                0x10004ab4       0x7c CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
-                0x10004ab4                __wrap_getchar
+                0x100049b8        0x8 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
+                0x100049b8                stdio_init_all
  .text.resetd_init
-                0x10004b30        0x4 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.obj
+                0x100049c0        0x4 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.obj
  .text.resetd_reset
-                0x10004b34        0xc CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.obj
+                0x100049c4        0xc CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.obj
  .text.resetd_open
-                0x10004b40       0x28 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.obj
+                0x100049d0       0x28 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.obj
  .text.resetd_xfer_cb
-                0x10004b68        0x4 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.obj
+                0x100049f8        0x4 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.obj
  .text.resetd_control_xfer_cb
-                0x10004b6c       0x60 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.obj
+                0x100049fc       0x60 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.obj
  .text.usbd_app_driver_get_cb
-                0x10004bcc        0xc CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.obj
-                0x10004bcc                usbd_app_driver_get_cb
+                0x10004a5c        0xc CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.obj
+                0x10004a5c                usbd_app_driver_get_cb
  .text.tud_cdc_line_coding_cb
-                0x10004bd8       0x34 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.obj
-                0x10004bd8                tud_cdc_line_coding_cb
+                0x10004a68       0x34 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.obj
+                0x10004a68                tud_cdc_line_coding_cb
  .text.stdio_usb_set_chars_available_callback
-                0x10004c0c       0x14 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj
-                0x10004c0c                stdio_usb_set_chars_available_callback
- .text.usb_irq  0x10004c20       0x10 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj
+                0x10004a9c       0x14 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj
+                0x10004a9c                stdio_usb_set_chars_available_callback
+ .text.usb_irq  0x10004ab0       0x10 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj
  .text.timer_task
-                0x10004c30       0x54 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj
+                0x10004ac0       0x54 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj
  .text.stdio_usb_in_chars
-                0x10004c84       0x90 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj
-                0x10004c84                stdio_usb_in_chars
+                0x10004b14       0x90 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj
+                0x10004b14                stdio_usb_in_chars
  .text.stdio_usb_out_chars
-                0x10004d14      0x104 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj
+                0x10004ba4      0x104 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj
  .text.low_priority_worker_irq
-                0x10004e18       0xa8 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj
+                0x10004ca8       0xa8 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj
  .text.tud_cdc_rx_cb
-                0x10004ec0       0x20 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj
-                0x10004ec0                tud_cdc_rx_cb
+                0x10004d50       0x20 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj
+                0x10004d50                tud_cdc_rx_cb
  .text.stdio_usb_init
-                0x10004ee0       0xe0 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj
-                0x10004ee0                stdio_usb_init
+                0x10004d70       0xe0 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj
+                0x10004d70                stdio_usb_init
  .text.tud_descriptor_device_cb
-                0x10004fc0        0x8 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.obj
-                0x10004fc0                tud_descriptor_device_cb
+                0x10004e50        0x8 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.obj
+                0x10004e50                tud_descriptor_device_cb
  .text.tud_descriptor_configuration_cb
-                0x10004fc8        0x8 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.obj
-                0x10004fc8                tud_descriptor_configuration_cb
+                0x10004e58        0x8 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.obj
+                0x10004e58                tud_descriptor_configuration_cb
  .text.tud_descriptor_string_cb
-                0x10004fd0       0x78 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.obj
-                0x10004fd0                tud_descriptor_string_cb
+                0x10004e60       0x78 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.obj
+                0x10004e60                tud_descriptor_string_cb
  .text.startup._retrieve_unique_id_on_boot
-                0x10005048       0x10 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.obj
+                0x10004ed8       0x10 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.obj
  .text.pico_get_unique_board_id_string
-                0x10005058      0x1a8 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.obj
-                0x10005058                pico_get_unique_board_id_string
+                0x10004ee8      0x1a8 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.obj
+                0x10004ee8                pico_get_unique_board_id_string
  .text.flash_get_unique_id
-                0x10005200       0x40 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.obj
-                0x10005200                flash_get_unique_id
+                0x10005090       0x40 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.obj
+                0x10005090                flash_get_unique_id
  .text.dcd_int_enable
-                0x10005240        0xc CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
-                0x10005240                dcd_int_enable
+                0x100050d0        0xc CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
+                0x100050d0                dcd_int_enable
  .text.dcd_set_address
-                0x1000524c       0x14 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
-                0x1000524c                dcd_set_address
+                0x100050dc       0x14 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
+                0x100050dc                dcd_set_address
  .text.dcd_connect
-                0x10005260       0x10 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
-                0x10005260                dcd_connect
+                0x100050f0       0x10 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
+                0x100050f0                dcd_connect
  .text.dcd_init
-                0x10005270       0x98 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
-                0x10005270                dcd_init
+                0x10005100       0x98 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
+                0x10005100                dcd_init
  .text.dcd_edpt0_status_complete
-                0x10005308       0x1c CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
-                0x10005308                dcd_edpt0_status_complete
+                0x10005198       0x1c CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
+                0x10005198                dcd_edpt0_status_complete
  .text.dcd_edpt_open
-                0x10005324      0x108 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
-                0x10005324                dcd_edpt_open
+                0x100051b4      0x108 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
+                0x100051b4                dcd_edpt_open
  .text.dcd_edpt_close_all
-                0x1000542c        0x8 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
-                0x1000542c                dcd_edpt_close_all
+                0x100052bc        0x8 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
+                0x100052bc                dcd_edpt_close_all
  .text.dcd_edpt_xfer
-                0x10005434       0x24 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
-                0x10005434                dcd_edpt_xfer
+                0x100052c4       0x24 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
+                0x100052c4                dcd_edpt_xfer
  .text.dcd_edpt_stall
-                0x10005458       0x38 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
-                0x10005458                dcd_edpt_stall
+                0x100052e8       0x38 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
+                0x100052e8                dcd_edpt_stall
  .text.dcd_edpt_clear_stall
-                0x10005490       0x30 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
-                0x10005490                dcd_edpt_clear_stall
+                0x10005320       0x30 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
+                0x10005320                dcd_edpt_clear_stall
  .text.rp2040_usb_init
-                0x100054c0       0x4c CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.obj
-                0x100054c0                rp2040_usb_init
+                0x10005350       0x4c CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.obj
+                0x10005350                rp2040_usb_init
  .text.hw_endpoint_xfer_start
-                0x1000550c       0x40 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.obj
-                0x1000550c                hw_endpoint_xfer_start
+                0x1000539c       0x40 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.obj
+                0x1000539c                hw_endpoint_xfer_start
  .text.tud_mounted
-                0x1000554c       0x10 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
-                0x1000554c                tud_mounted
+                0x100053dc       0x10 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
+                0x100053dc                tud_mounted
  .text.tud_suspended
-                0x1000555c       0x10 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
-                0x1000555c                tud_suspended
+                0x100053ec       0x10 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
+                0x100053ec                tud_suspended
  .text.tud_inited
-                0x1000556c       0x14 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
-                0x1000556c                tud_inited
+                0x100053fc       0x14 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
+                0x100053fc                tud_inited
  .text.tud_init
-                0x10005580       0xd8 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
-                0x10005580                tud_init
+                0x10005410       0xd8 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
+                0x10005410                tud_init
  .text.tud_task_ext
-                0x10005658      0x8a8 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
-                0x10005658                tud_task_ext
+                0x100054e8      0x8a8 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
+                0x100054e8                tud_task_ext
  .text.usbd_open_edpt_pair
-                0x10005f00       0x9c CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
-                0x10005f00                usbd_open_edpt_pair
+                0x10005d90       0x9c CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
+                0x10005d90                usbd_open_edpt_pair
  .text.usbd_defer_func
-                0x10005f9c       0x48 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
-                0x10005f9c                usbd_defer_func
+                0x10005e2c       0x48 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
+                0x10005e2c                usbd_defer_func
  .text.usbd_edpt_open
-                0x10005fe4       0x34 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
-                0x10005fe4                usbd_edpt_open
+                0x10005e74       0x34 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
+                0x10005e74                usbd_edpt_open
  .text.usbd_edpt_claim
-                0x10006018       0x28 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
-                0x10006018                usbd_edpt_claim
+                0x10005ea8       0x28 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
+                0x10005ea8                usbd_edpt_claim
  .text.usbd_edpt_release
-                0x10006040       0x28 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
-                0x10006040                usbd_edpt_release
+                0x10005ed0       0x28 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
+                0x10005ed0                usbd_edpt_release
  .text.usbd_edpt_xfer
-                0x10006068       0x4c CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
-                0x10006068                usbd_edpt_xfer
+                0x10005ef8       0x4c CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
+                0x10005ef8                usbd_edpt_xfer
  .text.tud_control_status
-                0x100060b4       0x2c CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/tinyusb/src/device/usbd_control.c.obj
-                0x100060b4                tud_control_status
+                0x10005f44       0x2c CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/tinyusb/src/device/usbd_control.c.obj
+                0x10005f44                tud_control_status
  .text.tud_control_xfer
-                0x100060e0       0xac CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/tinyusb/src/device/usbd_control.c.obj
-                0x100060e0                tud_control_xfer
+                0x10005f70       0xac CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/tinyusb/src/device/usbd_control.c.obj
+                0x10005f70                tud_control_xfer
  .text.usbd_control_reset
-                0x1000618c       0x14 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/tinyusb/src/device/usbd_control.c.obj
-                0x1000618c                usbd_control_reset
+                0x1000601c       0x14 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/tinyusb/src/device/usbd_control.c.obj
+                0x1000601c                usbd_control_reset
  .text.usbd_control_set_complete_callback
-                0x100061a0        0xc CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/tinyusb/src/device/usbd_control.c.obj
-                0x100061a0                usbd_control_set_complete_callback
+                0x10006030        0xc CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/tinyusb/src/device/usbd_control.c.obj
+                0x10006030                usbd_control_set_complete_callback
  .text.usbd_control_set_request
-                0x100061ac       0x1c CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/tinyusb/src/device/usbd_control.c.obj
-                0x100061ac                usbd_control_set_request
+                0x1000603c       0x1c CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/tinyusb/src/device/usbd_control.c.obj
+                0x1000603c                usbd_control_set_request
  .text.usbd_control_xfer_cb
-                0x100061c8       0xf4 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/tinyusb/src/device/usbd_control.c.obj
-                0x100061c8                usbd_control_xfer_cb
+                0x10006058       0xf4 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/tinyusb/src/device/usbd_control.c.obj
+                0x10006058                usbd_control_xfer_cb
  .text.tud_cdc_n_connected
-                0x100062bc       0x30 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.obj
-                0x100062bc                tud_cdc_n_connected
+                0x1000614c       0x30 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.obj
+                0x1000614c                tud_cdc_n_connected
  .text.tud_cdc_n_available
-                0x100062ec       0x18 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.obj
-                0x100062ec                tud_cdc_n_available
+                0x1000617c       0x18 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.obj
+                0x1000617c                tud_cdc_n_available
  .text.tud_cdc_n_read
-                0x10006304       0x70 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.obj
-                0x10006304                tud_cdc_n_read
+                0x10006194       0x70 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.obj
+                0x10006194                tud_cdc_n_read
  .text.tud_cdc_n_write_flush
-                0x10006374       0x78 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.obj
-                0x10006374                tud_cdc_n_write_flush
+                0x10006204       0x78 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.obj
+                0x10006204                tud_cdc_n_write_flush
  .text.tud_cdc_n_write
-                0x100063ec       0x34 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.obj
-                0x100063ec                tud_cdc_n_write
+                0x1000627c       0x34 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.obj
+                0x1000627c                tud_cdc_n_write
  .text.tud_cdc_n_write_available
-                0x10006420       0x18 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.obj
-                0x10006420                tud_cdc_n_write_available
+                0x100062b0       0x18 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.obj
+                0x100062b0                tud_cdc_n_write_available
  .text.cdcd_init
-                0x10006438       0x7c CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.obj
-                0x10006438                cdcd_init
+                0x100062c8       0x7c CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.obj
+                0x100062c8                cdcd_init
  .text.cdcd_reset
-                0x100064b4       0x2c CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.obj
-                0x100064b4                cdcd_reset
+                0x10006344       0x2c CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.obj
+                0x10006344                cdcd_reset
  .text.cdcd_open
-                0x100064e0       0xe4 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.obj
-                0x100064e0                cdcd_open
+                0x10006370       0xe4 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.obj
+                0x10006370                cdcd_open
  .text.cdcd_control_xfer_cb
-                0x100065c4       0xe4 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.obj
-                0x100065c4                cdcd_control_xfer_cb
+                0x10006454       0xe4 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.obj
+                0x10006454                cdcd_control_xfer_cb
  .text.cdcd_xfer_cb
-                0x100066a8      0x13c CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.obj
-                0x100066a8                cdcd_xfer_cb
+                0x10006538      0x13c CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.obj
+                0x10006538                cdcd_xfer_cb
  .text.tusb_init
-                0x100067e4        0xc CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/tinyusb/src/tusb.c.obj
-                0x100067e4                tusb_init
+                0x10006674        0xc CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/tinyusb/src/tusb.c.obj
+                0x10006674                tusb_init
  .text.tusb_inited
-                0x100067f0        0x8 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/tinyusb/src/tusb.c.obj
-                0x100067f0                tusb_inited
+                0x10006680        0x8 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/tinyusb/src/tusb.c.obj
+                0x10006680                tusb_inited
  .text.tu_edpt_claim
-                0x100067f8       0x50 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/tinyusb/src/tusb.c.obj
-                0x100067f8                tu_edpt_claim
+                0x10006688       0x50 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/tinyusb/src/tusb.c.obj
+                0x10006688                tu_edpt_claim
  .text.tu_edpt_release
-                0x10006848       0x38 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/tinyusb/src/tusb.c.obj
-                0x10006848                tu_edpt_release
+                0x100066d8       0x38 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/tinyusb/src/tusb.c.obj
+                0x100066d8                tu_edpt_release
  .text.tu_edpt_validate
-                0x10006880       0x7c CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/tinyusb/src/tusb.c.obj
-                0x10006880                tu_edpt_validate
+                0x10006710       0x7c CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/tinyusb/src/tusb.c.obj
+                0x10006710                tu_edpt_validate
  .text.tu_edpt_bind_driver
-                0x100068fc       0x34 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/tinyusb/src/tusb.c.obj
-                0x100068fc                tu_edpt_bind_driver
+                0x1000678c       0x34 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/tinyusb/src/tusb.c.obj
+                0x1000678c                tu_edpt_bind_driver
  .text.tu_fifo_config
-                0x10006930       0x6c CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.obj
-                0x10006930                tu_fifo_config
+                0x100067c0       0x6c CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.obj
+                0x100067c0                tu_fifo_config
  .text.tu_fifo_count
-                0x1000699c       0x2c CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.obj
-                0x1000699c                tu_fifo_count
+                0x1000682c       0x2c CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.obj
+                0x1000682c                tu_fifo_count
  .text.tu_fifo_empty
-                0x100069c8       0x10 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.obj
-                0x100069c8                tu_fifo_empty
+                0x10006858       0x10 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.obj
+                0x10006858                tu_fifo_empty
  .text.tu_fifo_remaining
-                0x100069d8       0x2c CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.obj
-                0x100069d8                tu_fifo_remaining
+                0x10006868       0x2c CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.obj
+                0x10006868                tu_fifo_remaining
  .text.tu_fifo_read
-                0x10006a04       0x9c CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.obj
-                0x10006a04                tu_fifo_read
+                0x10006894       0x9c CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.obj
+                0x10006894                tu_fifo_read
  .text.tu_fifo_read_n
-                0x10006aa0       0xe8 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.obj
-                0x10006aa0                tu_fifo_read_n
+                0x10006930       0xe8 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.obj
+                0x10006930                tu_fifo_read_n
  .text.tu_fifo_write
-                0x10006b88       0x88 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.obj
-                0x10006b88                tu_fifo_write
+                0x10006a18       0x88 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.obj
+                0x10006a18                tu_fifo_write
  .text.tu_fifo_write_n
-                0x10006c10      0x170 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.obj
-                0x10006c10                tu_fifo_write_n
+                0x10006aa0      0x170 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.obj
+                0x10006aa0                tu_fifo_write_n
  .text.tu_fifo_clear
-                0x10006d80       0x40 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.obj
-                0x10006d80                tu_fifo_clear
+                0x10006c10       0x40 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.obj
+                0x10006c10                tu_fifo_clear
  .text.tu_fifo_set_overwritable
-                0x10006dc0       0x48 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.obj
-                0x10006dc0                tu_fifo_set_overwritable
+                0x10006c50       0x48 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.obj
+                0x10006c50                tu_fifo_set_overwritable
  .text.pio_add_program
-                0x10006e08       0xf0 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_pio/pio.c.obj
-                0x10006e08                pio_add_program
+                0x10006c98       0xf0 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_pio/pio.c.obj
+                0x10006c98                pio_add_program
  .text.pio_sm_set_consecutive_pindirs
-                0x10006ef8       0xa8 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_pio/pio.c.obj
-                0x10006ef8                pio_sm_set_consecutive_pindirs
+                0x10006d88       0xa8 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_pio/pio.c.obj
+                0x10006d88                pio_sm_set_consecutive_pindirs
  .text.pio_sm_init
-                0x10006fa0       0x98 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_pio/pio.c.obj
-                0x10006fa0                pio_sm_init
- .text          0x10007038       0x5c /usr/lib/gcc/arm-none-eabi/12.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-strlen-stub.o)
-                0x10007038                strlen
+                0x10006e30       0x98 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_pio/pio.c.obj
+                0x10006e30                pio_sm_init
+ .text          0x10006ec8       0x5c /usr/lib/gcc/arm-none-eabi/12.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-strlen-stub.o)
+                0x10006ec8                strlen
  *(.fini)
- .fini          0x10007094        0x4 /usr/lib/gcc/arm-none-eabi/12.2.1/thumb/v6-m/nofp/crti.o
-                0x10007094                _fini
- .fini.__stub   0x10007098       0xc0 linker stubs
+ .fini          0x10006f24        0x4 /usr/lib/gcc/arm-none-eabi/12.2.1/thumb/v6-m/nofp/crti.o
+                0x10006f24                _fini
+ .fini.__stub   0x10006f28       0xc0 linker stubs
  *crtbegin.o(.ctors)
  *crtbegin?.o(.ctors)
  *(EXCLUDE_FILE(*crtend.o *crtend?.o) .ctors)
@@ -2092,144 +2093,141 @@ LOAD /usr/lib/gcc/arm-none-eabi/12.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nof
  *(SORT_BY_NAME(.dtors.*))
  *(.dtors)
  *(.eh_frame*)
- .eh_frame      0x10007158        0x0 /usr/lib/gcc/arm-none-eabi/12.2.1/thumb/v6-m/nofp/crtbegin.o
-                0x10007158                        . = ALIGN (0x4)
+ .eh_frame      0x10006fe8        0x0 /usr/lib/gcc/arm-none-eabi/12.2.1/thumb/v6-m/nofp/crtbegin.o
+                0x10006fe8                        . = ALIGN (0x4)
 
-.glue_7         0x10007158        0x0
- .glue_7        0x10007158        0x0 linker stubs
+.glue_7         0x10006fe8        0x0
+ .glue_7        0x10006fe8        0x0 linker stubs
 
-.glue_7t        0x10007158        0x0
- .glue_7t       0x10007158        0x0 linker stubs
+.glue_7t        0x10006fe8        0x0
+ .glue_7t       0x10006fe8        0x0 linker stubs
 
-.vfp11_veneer   0x10007158        0x0
- .vfp11_veneer  0x10007158        0x0 linker stubs
+.vfp11_veneer   0x10006fe8        0x0
+ .vfp11_veneer  0x10006fe8        0x0 linker stubs
 
-.v4_bx          0x10007158        0x0
- .v4_bx         0x10007158        0x0 linker stubs
+.v4_bx          0x10006fe8        0x0
+ .v4_bx         0x10006fe8        0x0 linker stubs
 
-.iplt           0x10007158        0x0
- .iplt          0x10007158        0x0 /usr/lib/gcc/arm-none-eabi/12.2.1/thumb/v6-m/nofp/crtbegin.o
+.iplt           0x10006fe8        0x0
+ .iplt          0x10006fe8        0x0 /usr/lib/gcc/arm-none-eabi/12.2.1/thumb/v6-m/nofp/crtbegin.o
 
-.rodata         0x10007158      0x614
+.rodata         0x10006fe8      0x59c
  *(EXCLUDE_FILE(*libm.a: *libc.a:*lib_a-mem*.o *libgcc.a:) .rodata*)
- .rodata.keyboardControl.str1.4
-                0x10007158       0x8b CMakeFiles/pwm_control.dir/main.c.obj
- *fill*         0x100071e3        0x1 
+ .rodata.main.str1.4
+                0x10006fe8       0x1d CMakeFiles/pwm_control.dir/main.c.obj
+ *fill*         0x10007005        0x3 
  .rodata.motorIndexToPins
-                0x100071e4       0x40 CMakeFiles/pwm_control.dir/main.c.obj
-                0x100071e4                motorIndexToPins
+                0x10007008       0x40 CMakeFiles/pwm_control.dir/main.c.obj
+                0x10007008                motorIndexToPins
  .rodata.quadrature_encoder_program
-                0x10007224        0x6 CMakeFiles/pwm_control.dir/main.c.obj
- *fill*         0x1000722a        0x2 
+                0x10007048        0x6 CMakeFiles/pwm_control.dir/main.c.obj
+ *fill*         0x1000704e        0x2 
  .rodata.quadrature_encoder_program_instructions
-                0x1000722c       0x30 CMakeFiles/pwm_control.dir/main.c.obj
+                0x10007050       0x30 CMakeFiles/pwm_control.dir/main.c.obj
  .rodata.spin_lock_claim_unused.str1.4
-                0x1000725c       0x1b CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj
- *fill*         0x10007277        0x1 
+                0x10007080       0x1b CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj
+ *fill*         0x1000709b        0x1 
  .rodata.user_irq_claim_unused.str1.4
-                0x10007278       0x1b CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
- *fill*         0x10007293        0x5 
- .rodata.at_the_end_of_time
-                0x10007298        0x8 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/common/pico_time/time.c.obj
-                0x10007298                at_the_end_of_time
+                0x1000709c       0x1b CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
+ *fill*         0x100070b7        0x1 
  .rodata.hardware_alarm_claim.str1.4
-                0x100072a0       0x22 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
- *fill*         0x100072c2        0x2 
+                0x100070b8       0x22 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
+ *fill*         0x100070da        0x2 
  .rodata.panic.str1.4
-                0x100072c4       0x12 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
- *fill*         0x100072d6        0x2 
+                0x100070dc       0x12 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
+ *fill*         0x100070ee        0x2 
  .rodata.hard_assertion_failure.str1.4
-                0x100072d8        0xc CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
+                0x100070f0        0xc CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
  .rodata._ftoa.str1.4
-                0x100072e4       0x15 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
- *fill*         0x100072f9        0x3 
+                0x100070fc       0x15 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
+ *fill*         0x10007111        0x3 
  .rodata._vsnprintf
-                0x100072fc      0x19c CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
+                0x10007114      0x19c CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
  .rodata.pow10.0
-                0x10007498       0x50 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
+                0x100072b0       0x50 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
  .rodata.missing_double_func_shim.str1.4
-                0x100074e8       0x18 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.obj
+                0x10007300       0x18 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.obj
  .rodata.missing_float_func_shim.str1.4
-                0x10007500       0x18 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.obj
+                0x10007318       0x18 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.obj
                                   0x1 (size before relaxing)
  .rodata.str1.4
-                0x10007500       0x40 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
+                0x10007318       0x40 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
  .rodata.__bi_81
-                0x10007540        0xc CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
+                0x10007358        0xc CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
  .rodata.__bi_75
-                0x1000754c        0xc CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
+                0x10007364        0xc CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
  .rodata.__bi_44
-                0x10007558        0xc CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
+                0x10007370        0xc CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
  .rodata.crlf_str.0
-                0x10007564        0x2 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
- *fill*         0x10007566        0x2 
+                0x1000737c        0x2 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
+ *fill*         0x1000737e        0x2 
  .rodata._resetd_driver
-                0x10007568       0x18 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.obj
+                0x10007380       0x18 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.obj
  .rodata.str1.4
-                0x10007580       0x13 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj
- *fill*         0x10007593        0x1 
+                0x10007398       0x13 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj
+ *fill*         0x100073ab        0x1 
  .rodata.__bi_182.0
-                0x10007594        0xc CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj
+                0x100073ac        0xc CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj
  .rodata.str1.4
-                0x100075a0       0x2a CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.obj
- *fill*         0x100075ca        0x2 
+                0x100073b8       0x2a CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.obj
+ *fill*         0x100073e2        0x2 
  .rodata.usbd_desc_str
-                0x100075cc       0x18 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.obj
+                0x100073e4       0x18 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.obj
  .rodata.usbd_desc_cfg
-                0x100075e4       0x54 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.obj
+                0x100073fc       0x54 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.obj
  .rodata.usbd_desc_device
-                0x10007638       0x12 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.obj
- *fill*         0x1000764a        0x2 
+                0x10007450       0x12 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.obj
+ *fill*         0x10007462        0x2 
  .rodata.str1.4
-                0x1000764c       0x14 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
+                0x10007464       0x14 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
  .rodata.str1.4
-                0x10007660       0x53 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.obj
- *fill*         0x100076b3        0x1 
+                0x10007478       0x53 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.obj
+ *fill*         0x100074cb        0x1 
  .rodata.tud_task_ext
-                0x100076b4       0x8c CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
+                0x100074cc       0x8c CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
  .rodata._usbd_driver
-                0x10007740       0x18 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
+                0x10007558       0x18 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
  .rodata.pio_add_program.str1.4
-                0x10007758       0x11 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_pio/pio.c.obj
-                0x1000776c                        . = ALIGN (0x4)
- *fill*         0x10007769        0x3 
+                0x10007570       0x11 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_pio/pio.c.obj
+                0x10007584                        . = ALIGN (0x4)
+ *fill*         0x10007581        0x3 
  *(SORT_BY_ALIGNMENT(SORT_BY_NAME(.flashdata*)))
-                0x1000776c                        . = ALIGN (0x4)
+                0x10007584                        . = ALIGN (0x4)
 
 .ARM.extab
  *(.ARM.extab* .gnu.linkonce.armextab.*)
-                0x1000776c                        __exidx_start = .
+                0x10007584                        __exidx_start = .
 
 .ARM.exidx
  *(.ARM.exidx* .gnu.linkonce.armexidx.*)
-                0x1000776c                        __exidx_end = .
-                0x1000776c                        . = ALIGN (0x4)
-                0x1000776c                        __binary_info_start = .
+                0x10007584                        __exidx_end = .
+                0x10007584                        . = ALIGN (0x4)
+                0x10007584                        __binary_info_start = .
 
-.binary_info    0x1000776c       0x20
+.binary_info    0x10007584       0x20
  *(.binary_info.keep.*)
  .binary_info.keep.__bi_ptr81
-                0x1000776c        0x4 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
+                0x10007584        0x4 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
  .binary_info.keep.__bi_ptr75
-                0x10007770        0x4 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
+                0x10007588        0x4 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
  .binary_info.keep.__bi_ptr50
-                0x10007774        0x4 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
+                0x1000758c        0x4 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
  .binary_info.keep.__bi_ptr44
-                0x10007778        0x4 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
+                0x10007590        0x4 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
  .binary_info.keep.__bi_ptr38
-                0x1000777c        0x4 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
+                0x10007594        0x4 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
  .binary_info.keep.__bi_ptr30
-                0x10007780        0x4 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
+                0x10007598        0x4 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
  .binary_info.keep.__bi_ptr22
-                0x10007784        0x4 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
+                0x1000759c        0x4 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
  *(.binary_info.*)
  .binary_info.__bi_ptr182
-                0x10007788        0x4 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj
-                0x1000778c                        __binary_info_end = .
+                0x100075a0        0x4 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj
+                0x100075a4                        __binary_info_end = .
 
-.rel.dyn        0x1000778c        0x0
- .rel.iplt      0x1000778c        0x0 /usr/lib/gcc/arm-none-eabi/12.2.1/thumb/v6-m/nofp/crtbegin.o
-                0x1000778c                        . = ALIGN (0x4)
+.rel.dyn        0x100075a4        0x0
+ .rel.iplt      0x100075a4        0x0 /usr/lib/gcc/arm-none-eabi/12.2.1/thumb/v6-m/nofp/crtbegin.o
+                0x100075a4                        . = ALIGN (0x4)
 
 .ram_vector_table
                 0x20000000       0xc0
@@ -2238,7 +2236,7 @@ LOAD /usr/lib/gcc/arm-none-eabi/12.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nof
                 0x20000000       0xc0 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
                 0x20000000                ram_vector_table
 
-.data           0x200000c0      0xe48 load address 0x1000778c
+.data           0x200000c0      0xe48 load address 0x100075a4
                 0x200000c0                        __data_start__ = .
  *(vtable)
  *(.time_critical*)
@@ -2381,36 +2379,36 @@ LOAD /usr/lib/gcc/arm-none-eabi/12.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nof
  *(.jcr)
                 0x20000f08                        . = ALIGN (0x4)
                 0x20000f08                        __data_end__ = .
-                0x1000778c                        __etext = LOADADDR (.data)
+                0x100075a4                        __etext = LOADADDR (.data)
 
 .tm_clone_table
-                0x20000f08        0x0 load address 0x100085d4
+                0x20000f08        0x0 load address 0x100083ec
  .tm_clone_table
                 0x20000f08        0x0 /usr/lib/gcc/arm-none-eabi/12.2.1/thumb/v6-m/nofp/crtbegin.o
  .tm_clone_table
                 0x20000f08        0x0 /usr/lib/gcc/arm-none-eabi/12.2.1/thumb/v6-m/nofp/crtend.o
 
-.igot.plt       0x20000f08        0x0 load address 0x100085d4
+.igot.plt       0x20000f08        0x0 load address 0x100083ec
  .igot.plt      0x20000f08        0x0 /usr/lib/gcc/arm-none-eabi/12.2.1/thumb/v6-m/nofp/crtbegin.o
 
 .uninitialized_data
-                0x20000f08        0x0 load address 0x100085d4
+                0x20000f08        0x0 load address 0x100083ec
                 0x20000f08                        . = ALIGN (0x4)
  *(.uninitialized_data*)
 
-.scratch_x      0x20040000        0x0 load address 0x100085d4
+.scratch_x      0x20040000        0x0 load address 0x100083ec
                 0x20040000                        __scratch_x_start__ = .
  *(.scratch_x.*)
                 0x20040000                        . = ALIGN (0x4)
                 0x20040000                        __scratch_x_end__ = .
-                0x100085d4                        __scratch_x_source__ = LOADADDR (.scratch_x)
+                0x100083ec                        __scratch_x_source__ = LOADADDR (.scratch_x)
 
-.scratch_y      0x20041000        0x0 load address 0x100085d4
+.scratch_y      0x20041000        0x0 load address 0x100083ec
                 0x20041000                        __scratch_y_start__ = .
  *(.scratch_y.*)
                 0x20041000                        . = ALIGN (0x4)
                 0x20041000                        __scratch_y_end__ = .
-                0x100085d4                        __scratch_y_source__ = LOADADDR (.scratch_y)
+                0x100083ec                        __scratch_y_source__ = LOADADDR (.scratch_y)
 
 .bss            0x20000f08      0xe28
                 0x20000f08                        . = ALIGN (0x4)
@@ -2554,8 +2552,8 @@ LOAD /usr/lib/gcc/arm-none-eabi/12.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nof
  *(.stack*)
  .stack         0x20041000      0x800 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_standard_link/crt0.S.obj
 
-.flash_end      0x100085d4        0x0
-                0x100085d4                        PROVIDE (__flash_binary_end = .)
+.flash_end      0x100083ec        0x0
+                0x100083ec                        PROVIDE (__flash_binary_end = .)
                 0x20040000                        __StackLimit = (ORIGIN (RAM) + LENGTH (RAM))
                 0x20041000                        __StackOneTop = (ORIGIN (SCRATCH_X) + LENGTH (SCRATCH_X))
                 0x20042000                        __StackTop = (ORIGIN (SCRATCH_Y) + LENGTH (SCRATCH_Y))
@@ -2635,7 +2633,7 @@ LOAD CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/tinyusb/src/
 LOAD CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.obj
 LOAD CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_multicore/multicore.c.obj
 LOAD CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_pio/pio.c.obj
-LOAD /tmp/cclJHjzU.o
+LOAD /tmp/cc3Su0kC.o
 LOAD /usr/lib/gcc/arm-none-eabi/12.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libstdc++.a
 LOAD /usr/lib/gcc/arm-none-eabi/12.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libm.a
 START GROUP
@@ -2753,7 +2751,7 @@ LOAD linker stubs
  .ARM.attributes
                 0x000007d8       0x2c CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_pio/pio.c.obj
  .ARM.attributes
-                0x00000804       0x22 /tmp/cclJHjzU.o
+                0x00000804       0x22 /tmp/cc3Su0kC.o
  .ARM.attributes
                 0x00000826       0x1e /usr/lib/gcc/arm-none-eabi/12.2.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
  .ARM.attributes

@@ -3,9 +3,9 @@
     "GenerationSoftware": {
       "Vendor": "KiCad",
       "Application": "Pcbnew",
-      "Version": "7.0.10-dirty"
+      "Version": "8.0.0"
     },
-    "CreationDate": "2024-02-26T22:58:58+02:00"
+    "CreationDate": "2024-03-12T20:28:28+02:00"
   },
   "GeneralSpecs": {
     "ProjectId": {
@@ -24,55 +24,55 @@
   "DesignRules": [
     {
       "Layers": "Outer",
-      "PadToPad": 0.0,
-      "PadToTrack": 0.0,
+      "PadToPad": 0.15,
+      "PadToTrack": 0.15,
       "TrackToTrack": 0.15,
       "MinLineWidth": 0.25
     }
   ],
   "FilesAttributes": [
     {
-      "Path": "fake-platka-F_Cu.gbr",
+      "Path": "fake-platka-F_Cu.gtl",
       "FileFunction": "Copper,L1,Top",
       "FilePolarity": "Positive"
     },
     {
-      "Path": "fake-platka-B_Cu.gbr",
+      "Path": "fake-platka-B_Cu.gbl",
       "FileFunction": "Copper,L2,Bot",
       "FilePolarity": "Positive"
     },
     {
-      "Path": "fake-platka-F_Paste.gbr",
+      "Path": "fake-platka-F_Paste.gtp",
       "FileFunction": "SolderPaste,Top",
       "FilePolarity": "Positive"
     },
     {
-      "Path": "fake-platka-B_Paste.gbr",
+      "Path": "fake-platka-B_Paste.gbp",
       "FileFunction": "SolderPaste,Bot",
       "FilePolarity": "Positive"
     },
     {
-      "Path": "fake-platka-F_Silkscreen.gbr",
+      "Path": "fake-platka-F_Silkscreen.gto",
       "FileFunction": "Legend,Top",
       "FilePolarity": "Positive"
     },
     {
-      "Path": "fake-platka-B_Silkscreen.gbr",
+      "Path": "fake-platka-B_Silkscreen.gbo",
       "FileFunction": "Legend,Bot",
       "FilePolarity": "Positive"
     },
     {
-      "Path": "fake-platka-F_Mask.gbr",
+      "Path": "fake-platka-F_Mask.gts",
       "FileFunction": "SolderMask,Top",
       "FilePolarity": "Negative"
     },
     {
-      "Path": "fake-platka-B_Mask.gbr",
+      "Path": "fake-platka-B_Mask.gbs",
       "FileFunction": "SolderMask,Bot",
       "FilePolarity": "Negative"
     },
     {
-      "Path": "fake-platka-Edge_Cuts.gbr",
+      "Path": "fake-platka-Edge_Cuts.gm1",
       "FileFunction": "Profile",
       "FilePolarity": "Positive"
     }

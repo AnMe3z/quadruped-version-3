@@ -145,8 +145,8 @@ void on_pwm_wrap() {
 
 //FIXME: FOR TESTING PHOTO COUPLES
 void encoderCallback(uint gpio, uint32_t events) {   
-    if (gpio == motorIndexToPins[0][2] || gpio == motorIndexToPins[0][3]){
-        if(gpio==motorIndexToPins[0][2]){
+    if (gpio == motorIndexToPins[1][2] || gpio == motorIndexToPins[1][3]){
+        if(gpio==motorIndexToPins[1][2]){
           if (events == GPIO_IRQ_EDGE_RISE){
             gpio_put(18, 1);
           }
@@ -154,7 +154,7 @@ void encoderCallback(uint gpio, uint32_t events) {
             gpio_put(18, 0);
           }
         }
-        if(gpio==motorIndexToPins[0][3]){
+        if(gpio==motorIndexToPins[1][3]){
           if (events == GPIO_IRQ_EDGE_RISE){
             gpio_put(19, 1);
           }
@@ -177,9 +177,12 @@ int main() {
         gpio_set_dir(18, GPIO_OUT);
         gpio_init(19);
         gpio_set_dir(19, GPIO_OUT);
-	//FIXME: FOR TESTING MOTOR DRIVER
-	//driveMotor(0, 100, true);
-	
+	//FIXME: MOTOR DRIVER TEST
+	driveMotor(0, 100, true);
+	//driveMotor(1, 100, true);
+	//driveMotor(2, 100, true);
+	driveMotor(3, 100, true);
+	  
 	pio_add_program(pio, &quadrature_encoder_program);
         for (int i = 0; i < 4; i++) {
                 quadrature_encoder_program_init(pio, i, motorIndexToEncoderPinAB[i], 0);
@@ -188,14 +191,18 @@ int main() {
         resetPosition();
  
     	while (true) {
+        	// FIXME: PHOTO COUPLES TEST
+        	printf("PIN 10: %d \n", gpio_get(10));
+        	printf("PIN 11: %d \n", gpio_get(11));
+        	sleep_ms(100);
+        	
+    	        // FIXME: ENCODER COUNT TEST
         	//motorIndexToPosition[0] = quadrature_encoder_get_count(pio, 0);
-
         	//printf("position %f\n", motorIndexToPosition[0]*step);
         	
-        	keyboardControl();
-        	
-        	sleep_ms(2000);
-        	//sleep_ms(100);
+        	// FIXME: KEYBOARD CONTROL TEST
+        	//keyboardControl();
+        	//sleep_ms(2000);
     	} 
 }
 
