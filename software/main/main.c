@@ -3,7 +3,9 @@
 #include "hardware/pwm.h"
 #include "hardware/irq.h"
 #include "hardware/pio.h"
+#include "hardware/timer.h"
 #include "pico/binary_info.h"
+#include "pico/cyw43_arch.h"
 
 #include "quadrature_encoder.pio.h"
 
@@ -32,6 +34,10 @@
 
 #define MAX_ANGLE 100
 #define MIN_ANGLE 0
+
+// TIMER IRQ
+#define ALARM_NUM 0
+#define ALARM_IRQ TIMER_IRQ_0
 
 //PWM 
 uint freqHz = 10000;
@@ -71,12 +77,18 @@ uint motorIndexToServoControlVariables[4][6] = {
 };
 int moving, direction, setPoint, startPoint, error, P;
 
+// Timer irq alarm interrupt handler
+static volatile bool alarm_fired;
+
 //FUNCTIONS
 //MOTOR
 void driveMotor(int motorIndex, int driveValue, bool driveEnable);
 //BASIC
 long map(long x, long in_min, long in_max, long out_min, long outmax);
-
+// Timer interrupt
+static uint64_t get_time(void);
+static void alarm_irq(void);
+static void alarm_in_us(uint32_t delay_us);
 void resetPosition();
 
 // FIXME: MANUAL ANGLE TESTING
@@ -145,16 +157,16 @@ void on_pwm_wrap() {
 
 //FIXME: FOR TESTING PHOTO COUPLES
 void encoderCallback(uint gpio, uint32_t events) {   
-    if (gpio == motorIndexToPins[1][2] || gpio == motorIndexToPins[1][3]){
-        if(gpio==motorIndexToPins[1][2]){
+    if (gpio == motorIndexToPins[3][2] || gpio == motorIndexToPins[3][3]){
+        if(gpio==motorIndexToPins[3][2]){
           if (events == GPIO_IRQ_EDGE_RISE){
-            gpio_put(18, 1);
+            gpio_put(20, 1);
           }
           else{
-            gpio_put(18, 0);
+            gpio_put(20, 0);
           }
         }
-        if(gpio==motorIndexToPins[1][3]){
+        if(gpio==motorIndexToPins[3 ][3]){
           if (events == GPIO_IRQ_EDGE_RISE){
             gpio_put(19, 1);
           }
@@ -169,17 +181,30 @@ void encoderCallback(uint gpio, uint32_t events) {
 int main() {
    	stdio_init_all();
     	sleep_ms(2000);
+    	
+    	//LED
+        //if (cyw43_arch_init()) {
+        //    printf("Wi-Fi init failed");
+        //    return -1;
+        //}
+        //cyw43_arch_gpio_put(CYW43_WL_GPIO_LED_PIN, 1);
+        
+	//gpio_init(25);
+    	//gpio_set_dir(25, GPIO_OUT);
+    	//gpio_put(25, 1);
 
 	initPins();
 	  
         //FIXME: FOR TESTING PHOTO COUPLES
-        gpio_init(18);
-        gpio_set_dir(18, GPIO_OUT);
+        gpio_init(20);
+        gpio_set_dir(20, GPIO_OUT);
         gpio_init(19);
         gpio_set_dir(19, GPIO_OUT);
 	//FIXME: MOTOR DRIVER TEST
-	driveMotor(0, 100, true);
-	//driveMotor(1, 100, true);
+	//pwm_set_chan_level(pwm_gpio_to_slice_num(0), PWM_CHAN_A, wrapP * (70/100) );
+	//pwm_set_chan_level(pwm_gpio_to_slice_num(1), PWM_CHAN_B, wrapP * (40/100) );
+	//driveMotor(0, 100, true);
+	driveMotor(1, 100, true);
 	//driveMotor(2, 100, true);
 	driveMotor(3, 100, true);
 	  
@@ -189,12 +214,27 @@ int main() {
         }
  
         resetPosition();
+        
+        // Start the timer IRQ
+        alarm_fired = false;
+        // Set alarm freq at 15 Hz
+        alarm_in_us(66667);
  
+      	//FIXME: SERVO CONTROL TEST
+	//startPoint = motorIndexToPosition[0];
+	//setPoint = startPoint + 90; 
+	//if(MAX_ANGLE > setPoint && setPoint > MIN_ANGLE){
+    	//  		moving = true;
+	//}
+        //      motorIndexToServoControlVariables[1][0] = moving;
+        //      motorIndexToServoControlVariables[1][2] = setPoint;
+        //     motorIndexToServoControlVariables[1][3] = startPoint;
+                
     	while (true) {
         	// FIXME: PHOTO COUPLES TEST
-        	printf("PIN 10: %d \n", gpio_get(10));
-        	printf("PIN 11: %d \n", gpio_get(11));
-        	sleep_ms(100);
+        	//printf("PIN 10: %d \n", gpio_get(10));
+        	//printf("PIN 11: %d \n", gpio_get(11));
+        	//sleep_ms(100);
         	
     	        // FIXME: ENCODER COUNT TEST
         	//motorIndexToPosition[0] = quadrature_encoder_get_count(pio, 0);
@@ -203,6 +243,15 @@ int main() {
         	// FIXME: KEYBOARD CONTROL TEST
         	//keyboardControl();
         	//sleep_ms(2000);
+        	
+        	// FIXME: FEMNUR TEST
+        	//driveMotor(2, -100, true);
+        	//sleep_ms(350);
+        	//driveMotor(2, 0, true);
+        	//driveMotor(2, 100, true);
+        	//sleep_ms(350);
+        	//driveMotor(2, 0, true);
+        	
     	} 
 }
 
@@ -328,4 +377,48 @@ void keyboardControl(){
                 motorIndexToServoControlVariables[0][3] = startPoint;
 	}
 	sleep_ms(1111);
+}
+//  ---------------         TIMER         ---------------
+static uint64_t get_time(void) {
+    // Reading low latches the high value
+    uint32_t lo = timer_hw->timelr;
+    uint32_t hi = timer_hw->timehr;
+    return ((uint64_t) hi << 32u) | lo;
+}
+static void alarm_in_us(uint32_t delay_us) {
+    // Enable the interrupt for our alarm (the timer outputs 4 alarm irqs)
+    hw_set_bits(&timer_hw->inte, 1u << ALARM_NUM);
+    // Set irq handler for alarm irq
+    irq_set_exclusive_handler(ALARM_IRQ, alarm_irq);
+    // Enable the alarm irq
+    irq_set_enabled(ALARM_IRQ, true);
+    // Enable interrupt in block and at processor
+
+    // Alarm is only 32 bits so if trying to delay more
+    // than that need to be careful and keep track of the upper
+    // bits
+    uint64_t target = timer_hw->timerawl + delay_us;
+
+    // Write the lower 32 bits of the target time to the alarm which
+    // will arm it
+    timer_hw->alarm[ALARM_NUM] = (uint32_t) target;
+}
+static void alarm_irq(void) {
+    // Clear the alarm irq
+    hw_clear_bits(&timer_hw->intr, 1u << ALARM_NUM);
+
+    // Assume alarm 0 has fired
+    alarm_fired = true;
+    
+    //-------------------------
+    //for (int i = 0; i < 4; i++) {
+    //        motorIndexToPosition[i] = quadrature_encoder_get_count(pio, i) * step;
+    //}
+    printf("Timer IRQ \n");
+    //-------------------------
+    
+    // Set timer again
+    alarm_fired = false;
+    // Set alarm freq at 15 Hz
+    alarm_in_us(66667);
 }

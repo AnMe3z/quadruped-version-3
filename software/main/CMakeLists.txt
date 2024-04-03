@@ -28,5 +28,6 @@ target_link_libraries(pwm_control PRIVATE
 			hardware_uart
 			pico_multicore
 			hardware_pio
+			pico_cyw43_arch_none
 			)
 

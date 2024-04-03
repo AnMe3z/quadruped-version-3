@@ -66,6 +66,16 @@ CMakeFiles/pwm_control.dir/main.c.obj: \
  /home/andrey-shefa/pico/pico-sdk/src/common/pico_binary_info/include/pico/binary_info/defs.h \
  /home/andrey-shefa/pico/pico-sdk/src/common/pico_binary_info/include/pico/binary_info/structure.h \
  /home/andrey-shefa/pico/pico-sdk/src/common/pico_binary_info/include/pico/binary_info/code.h \
+ /home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/include/pico/cyw43_arch.h \
+ /home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43.h \
+ /home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_config.h \
+ /home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_driver/include/cyw43_configport.h \
+ /home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_ll.h \
+ /usr/include/newlib/string.h /usr/include/newlib/sys/_locale.h \
+ /usr/include/newlib/strings.h /usr/include/newlib/sys/string.h \
+ /home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_country.h \
+ /home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_async_context/include/pico/async_context.h \
+ /home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/include/pico/cyw43_arch/arch_threadsafe_background.h \
  /home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/quadrature_encoder.pio.h \
  /home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_clocks/include/hardware/clocks.h \
  /home/andrey-shefa/pico/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/clocks.h \
