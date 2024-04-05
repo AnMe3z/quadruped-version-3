@@ -32,12 +32,8 @@
 #define MAX_PWM 100
 #define MIN_PWM 60
 
-#define MAX_ANGLE 100
+#define MAX_ANGLE 42 // max angle = 99.47368423
 #define MIN_ANGLE 0
-
-// TIMER IRQ
-#define ALARM_NUM 0
-#define ALARM_IRQ TIMER_IRQ_0
 
 //PWM 
 uint freqHz = 10000;
@@ -56,7 +52,9 @@ const uint motorIndexToPins[4][4] = {
 #define holes 38
 // Old * 4 + New
 //state machine
-uint8_t QEM [16] = {0,1,-1,2,-1,0,2,1,1,2,0,-1,2,-1,1,0};  // Quadrature Encoder Matrix
+int QEM [16] = {0,-1,1,2,1,0,2,-1,-1,2,0,1,2,1,-1,0};
+//uint8_t QEM [16] = {0,1,-1,2,-1,0,2,1,1,2,0,-1,2,-1,1,0};  // Quadrature Encoder Matrix
+//uint8_t QEM [16] = {0,-1,1,2,1,0,2,-1,-1,2,0,1,2,1,-1,0};  // Quadrature Encoder Matrix inverted
 //FIXME
 float step = 2.368421053;//360/(holes*4);
 	
@@ -68,7 +66,7 @@ struct axis {
         int pinB;
         
         // Counts the encoder changes in total. Can be used to calculate absolute position since start
-        uint8_t count;
+        int count;
         uint8_t oldState;
         uint8_t newState;
 
@@ -78,10 +76,11 @@ struct axis {
         uint8_t startPoint;
         uint8_t error;
         uint8_t P;
-}
+};
 // Motor index to struct
 struct axis axes[4];
 
+        struct axis *p;
 //FUNCTIONS
 //MOTOR
 void driveMotor(int motorIndex, int driveValue, bool driveEnable);
@@ -100,90 +99,67 @@ void on_pwm_wrap() {
         // Clear the interrupt flag that brought us here
         pwm_clear_irq(pwm_gpio_to_slice_num(motorIndexToPins[0][0]));
         
-        struct axis *p;
-        p->moving
+        //XXX??? DVA OTDELNI LOOPA ILI ENCODER I SERVO ZAEDNO ???
         for (int i = 0; i < 4; i++) {
                 p = axes+i;
-                  
-                oldState = newState;
-        	newState = gpio_get(motorIndexToPins[i][3])*2 + gpio_get(motorIndexToPins[i][2]);
+                
+                p->oldState = p->newState;
+        	p->newState = gpio_get(motorIndexToPins[i][3])*2 + gpio_get(motorIndexToPins[i][2]);
         	
         	//illegal case check
-        	if (QEM[ oldState*4 + newState ] == 2) {
+        	if (QEM[ p->oldState*4 + p->newState ] == 2) {
                     //brake
-                    moving = false;
+                    p->moving = false;
                     driveMotor(i, 0, true);
         	}
-        	else {
-                	position += QEM[oldState0*4+newState0];
+        	else {  
+                	p->count += QEM[p->oldState*4 + p->newState]; 
         	}
         }
         
-        // FIXME: POSITION GETTING
         for (int i = 0; i < 4; i++) {
-                int d = 0;
-                while(!pio_sm_is_rx_fifo_empty(pio, i))
-                        d +=  pio_sm_get(pio, i);
+        //XXX INTERNAL SERVO CONTROL LOOP NOW WORKS WITH COUNT NOT EXACT ANGLE POSITION
+                p = axes+i;
                 
-                //uses get blocking
-                //motorIndexToPosition[i] = quadrature_encoder_get_count(pio, i) * step;
-        }
-        
-        
-        for (int i = 0; i < 4; i++) {
-                moving = motorIndexToServoControlVariables[i][0];
-                direction = motorIndexToServoControlVariables[i][1];
-                setPoint = motorIndexToServoControlVariables[i][2];
-                startPoint = motorIndexToServoControlVariables[i][3];
-                error = motorIndexToServoControlVariables[i][4];
-                P = motorIndexToServoControlVariables[i][5];
-                
-                motorIndexToPosition[i] = quadrature_encoder_get_count(pio, i); // FIXME:
-                motorIndexToPosition[i] *= step;
-                	
-	        if (moving){
-         		direction = (setPoint-startPoint != 0) ? ((setPoint-startPoint > 0) ? 1 : -1) : 0; 
-            		if(direction!=0){
+	        if ( p->moving ){
+         		p->direction = (p->setPoint - p->startPoint != 0) ? ((p->setPoint - p->startPoint > 0) ? 1 : -1) : 0; 
+            		if(p->direction != 0){
 
-                                error = setPoint - motorIndexToPosition[0];
+                                p->error = p->setPoint - p->count;
 
-                                P = KP * error;
+                                p->P = KP * p->error;
                                 
-                                if(direction == 1){             
-                                        if(P >= setPoint-startPoint){
-                                                P = MAX_PWM;
+                                if(p->direction == 1){             
+                                        if(p->P >= p->setPoint - p->startPoint){
+                                                p->P = MAX_PWM;
                                         }
                                         else{
-                                                P = map(P,
-                                                0, setPoint-startPoint,
+                                                p->P = map(p->P,
+                                                0, p->setPoint - p->startPoint,
                                                 MIN_PWM, MAX_PWM);
                                         }
                                 }
-                                else if(direction == -1){         
-                                        if(P <= setPoint-startPoint){
-                                                P = MAX_PWM;
+                                else if(p->direction == -1){         
+                                        if(p->P <= p->setPoint - p->startPoint){
+                                                p->P = MAX_PWM;
                                         }
                                         else{
-                                                P = map(P,
-                                                0, setPoint-startPoint,
+                                                p->P = map(p->P,
+                                                0, p->setPoint - p->startPoint,
                                                 MIN_PWM, MAX_PWM);
                                         }
-                                        P*=-1;
+                                        p->P*=-1;
                                 }
-                                //(FALSE) P IS INVERTED; BECAUSE THE ENCODER SIGNALS A AND B ARE SWAPPED
-                                driveMotor(i, P, true); 
+                                driveMotor(i, p->P, true); 
 		        }
 		        else{
                           //driveMotor(i, 0, true); 
-		          moving = false;
+		          p->moving = false;
 		        }
          	}
 	        else{
-                        driveMotor(i, 0, true); 
+                        //driveMotor(i, 0, true); 
 	        }
-                motorIndexToServoControlVariables[i][1] = direction;
-                motorIndexToServoControlVariables[i][4] = error;
-                motorIndexToServoControlVariables[i][5] = P;
  	}
 }
 
@@ -238,35 +214,35 @@ int main() {
 	//driveMotor(0, 100, true);
 	//driveMotor(1, 100, true);
 	//driveMotor(2, 100, true);
-	driveMotor(3, 100, true);
-	  
-	pio_add_program(pio, &quadrature_encoder_program);
-        for (int i = 0; i < 4; i++) {
-                quadrature_encoder_program_init(pio, i, motorIndexToEncoderPinAB[i], 0);
-        }
+	//driveMotor(3, 100, true);
  
-        resetPosition();
-        
-        // Start the timer IRQ
-        alarm_fired = false;
-        // Set alarm freq at 15 Hz
-        alarm_in_us(66667);
+        //resetPosition();
  
       	//FIXME: SERVO CONTROL TEST
-	startPoint = motorIndexToPosition[0];
-	setPoint = startPoint + 90; 
-	if(MAX_ANGLE > setPoint && setPoint > MIN_ANGLE){
-    	  		moving = true;
-	}
-              motorIndexToServoControlVariables[1][0] = moving;
-              motorIndexToServoControlVariables[1][2] = setPoint;
-              motorIndexToServoControlVariables[1][3] = startPoint;
+	//startPoint = motorIndexToPosition[0];
+	//setPoint = startPoint + 90; 
+	//if(MAX_ANGLE > setPoint && setPoint > MIN_ANGLE){
+    	//  		moving = true;
+	//}
+        //      motorIndexToServoControlVariables[1][0] = moving;
+        //      motorIndexToServoControlVariables[1][2] = setPoint;
+        //      motorIndexToServoControlVariables[1][3] = startPoint;
                 
+        struct axis *p;
+        p = &axes[1];
+        
     	while (true) {
         	// FIXME: PHOTO COUPLES TEST
         	//printf("PIN 10: %d \n", gpio_get(10));
         	//printf("PIN 11: %d \n", gpio_get(11));
         	//sleep_ms(100);
+        	
+        	driveMotor(1, 100, true);
+        	sleep_ms(1000);
+        	printf("Axis [ 1 ] count: %d \n", p->count);
+        	printf("Axis [ 1 ] count: %d \n", axes[1].count);
+        	printf("QEM[p->oldState*4 + p->newState]: %d \n", QEM[p->oldState*4 + p->newState]);
+        	//sleep_ms(5000);
         	
     	        // FIXME: ENCODER COUNT TEST
         	//motorIndexToPosition[0] = quadrature_encoder_get_count(pio, 0);
@@ -326,13 +302,11 @@ long map(long x, long in_min, long in_max, long out_min, long out_max)
 
 //  ---------------       VARIABLES       ---------------
 void resetPosition(){
+        struct axis *p;
         for (int i = 0; i < 4; i++) {
-                motorIndexToPosition[i] = 0;
-        }
-        // Resets the position counts in the pio machines
-        for (int i = 0; i < 4; i++) {
+                p = axes+i;
                 // Reset the encoder count
-                reset_encoder_count(pio, i);
+                p->count = 0;
         }
 }
 
@@ -398,60 +372,15 @@ void keyboardControl(){
 
         	printf("Target angle: %d \n", input);
                 
-		startPoint = motorIndexToPosition[0];
-		setPoint = startPoint + input; 
-		if(MAX_ANGLE > setPoint && setPoint > MIN_ANGLE){
-      	  		moving = true;
-		}
+		//startPoint = motorIndexToPosition[0];
+		//setPoint = startPoint + input; 
+		//if(MAX_ANGLE > setPoint && setPoint > MIN_ANGLE){
+      	  	//	moving = true;
+		//}
 		
-                motorIndexToServoControlVariables[0][0] = moving;
-                motorIndexToServoControlVariables[0][2] = setPoint;
-                motorIndexToServoControlVariables[0][3] = startPoint;
+                //motorIndexToServoControlVariables[0][0] = moving;
+                //motorIndexToServoControlVariables[0][2] = setPoint;
+                //motorIndexToServoControlVariables[0][3] = startPoint;
 	}
 	sleep_ms(1111);
-}
-//  ---------------         TIMER         ---------------
-static uint64_t get_time(void) {
-    // Reading low latches the high value
-    uint32_t lo = timer_hw->timelr;
-    uint32_t hi = timer_hw->timehr;
-    return ((uint64_t) hi << 32u) | lo;
-}
-static void alarm_in_us(uint32_t delay_us) {
-    // Enable the interrupt for our alarm (the timer outputs 4 alarm irqs)
-    hw_set_bits(&timer_hw->inte, 1u << ALARM_NUM);
-    // Set irq handler for alarm irq
-    irq_set_exclusive_handler(ALARM_IRQ, alarm_irq);
-    // Enable the alarm irq
-    irq_set_enabled(ALARM_IRQ, true);
-    // Enable interrupt in block and at processor
-
-    // Alarm is only 32 bits so if trying to delay more
-    // than that need to be careful and keep track of the upper
-    // bits
-    uint64_t target = timer_hw->timerawl + delay_us;
-
-    // Write the lower 32 bits of the target time to the alarm which
-    // will arm it
-    timer_hw->alarm[ALARM_NUM] = (uint32_t) target;
-}
-static void alarm_irq(void) {
-    // Clear the alarm irq
-    hw_clear_bits(&timer_hw->intr, 1u << ALARM_NUM);
-
-    // Assume alarm 0 has fired
-    alarm_fired = true;
-    
-    //-------------------------
-    //for (int i = 0; i < 4; i++) {
-    //        motorIndexToPosition[i] = quadrature_encoder_get_count(pio, i) * step;
-    //}
-    //printf("front left knee angle: %f \n", motorIndexToPosition[1]);
-    //printf("Timer IRQ \n");
-    //-------------------------
-    
-    // Set timer again
-    alarm_fired = false;
-    // Set alarm freq at 15 Hz
-    alarm_in_us(66667);
 }
