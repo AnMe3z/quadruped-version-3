@@ -3387,6 +3387,7 @@ CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/pbu
   /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/include/lwip/icmp.h \
   /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/include/lwip/prot/icmp.h \
   /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/include/lwip/prot/tcp.h \
+  /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/include/lwip/inet_chksum.h \
   /usr/include/newlib/string.h \
   /usr/include/newlib/strings.h \
   /usr/include/newlib/sys/string.h

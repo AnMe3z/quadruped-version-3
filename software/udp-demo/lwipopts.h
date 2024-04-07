@@ -46,6 +46,10 @@
 #define LWIP_IPV4                   1
 #define LWIP_TCP                    1
 #define LWIP_UDP                    1
+#define UDP_TTL                     1
+#define LWIP_BROADCAST              1
+#define LWIP_CHECKSUM_ON_COPY       1
+
 #define LWIP_DNS                    1
 #define LWIP_TCP_KEEPALIVE          1
 #define LWIP_NETIF_TX_SINGLE_PBUF   1
