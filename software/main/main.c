@@ -41,6 +41,7 @@ uint wrapP = 12500;
   
 // Arrays for motor variables
 // Motor index to pin
+// TODO: TO BO ADDED TO AXIS STRUCT
 const uint motorIndexToPins[4][4] = { 
   {FRONT_FEMUR_IN1_PIN, FRONT_FEMUR_IN2_PIN, FRONT_FEMUR_EA_PIN, FRONT_FEMUR_EB_PIN}, 
   {FRONT_KNEE_IN1_PIN, FRONT_KNEE_IN2_PIN, FRONT_KNEE_EA_PIN, FRONT_KNEE_EB_PIN}, 
@@ -67,21 +68,22 @@ struct axis {
         
         // Counts the encoder changes in total. Can be used to calculate absolute position since start
         int count;
-        uint8_t oldState;
-        uint8_t newState;
+        int oldState;
+        int newState;
 
         uint8_t moving;
-        uint8_t direction;
-        uint8_t setPoint;
-        uint8_t startPoint;
-        uint8_t error;
-        uint8_t P;
+        int direction;
+        int setPoint;
+        int startPoint;
+        int error;
+        int P;
 };
 // Motor index to struct
 struct axis axes[4];
+struct axis *p;
 
-        struct axis *p;
 //FUNCTIONS
+void initPins();
 //MOTOR
 void driveMotor(int motorIndex, int driveValue, bool driveEnable);
 //BASIC
@@ -99,7 +101,6 @@ void on_pwm_wrap() {
         // Clear the interrupt flag that brought us here
         pwm_clear_irq(pwm_gpio_to_slice_num(motorIndexToPins[0][0]));
         
-        //XXX??? DVA OTDELNI LOOPA ILI ENCODER I SERVO ZAEDNO ???
         for (int i = 0; i < 4; i++) {
                 p = axes+i;
                 
@@ -153,20 +154,20 @@ void on_pwm_wrap() {
                                 driveMotor(i, p->P, true); 
 		        }
 		        else{
-                          //driveMotor(i, 0, true); 
+                          driveMotor(i, 0, true); 
 		          p->moving = false;
 		        }
          	}
 	        else{
-                        //driveMotor(i, 0, true); 
+                        driveMotor(i, 0, true); 
 	        }
  	}
 }
 
 //FIXME: FOR TESTING PHOTO COUPLES
 void encoderCallback(uint gpio, uint32_t events) {   
-    if (gpio == motorIndexToPins[1][2] || gpio == motorIndexToPins[1][3]){
-        if(gpio==motorIndexToPins[1][2]){
+    if (gpio == motorIndexToPins[0][2] || gpio == motorIndexToPins[0][3]){
+        if(gpio==motorIndexToPins[0][2]){
           if (events == GPIO_IRQ_EDGE_RISE){
             gpio_put(20, 1);
           }
@@ -174,7 +175,7 @@ void encoderCallback(uint gpio, uint32_t events) {
             gpio_put(20, 0);
           }
         }
-        if(gpio==motorIndexToPins[1][3]){
+        if(gpio==motorIndexToPins[0][3]){
           if (events == GPIO_IRQ_EDGE_RISE){
             gpio_put(19, 1);
           }
@@ -203,7 +204,7 @@ int main() {
 
 	initPins();
 	  
-        //FIXME: FOR TESTING PHOTO COUPLES
+        //FIXME: FOR TESTING PHOTO COUPLES	
         gpio_init(20);
         gpio_set_dir(20, GPIO_OUT);
         gpio_init(19);
@@ -216,37 +217,45 @@ int main() {
 	//driveMotor(2, 100, true);
 	//driveMotor(3, 100, true);
  
-        //resetPosition();
- 
-      	//FIXME: SERVO CONTROL TEST
-	//startPoint = motorIndexToPosition[0];
-	//setPoint = startPoint + 90; 
-	//if(MAX_ANGLE > setPoint && setPoint > MIN_ANGLE){
-    	//  		moving = true;
-	//}
-        //      motorIndexToServoControlVariables[1][0] = moving;
-        //      motorIndexToServoControlVariables[1][2] = setPoint;
-        //      motorIndexToServoControlVariables[1][3] = startPoint;
-                
-        struct axis *p;
-        p = &axes[1];
+        struct axis *j;
         
     	while (true) {
+    	
+            	for (int i = 0; i < 4; i++) {
+                        j = axes+i;
+                        
+            	        j->startPoint = j->count;
+                        j->setPoint = j->startPoint + 15; 
+                        if(MAX_ANGLE > j->setPoint && j->setPoint > MIN_ANGLE){
+	                          		j->moving = true;
+                        }
+                }
+                
+                sleep_ms(500);
+                
+    	        for (int i = 0; i < 4; i++) {
+                        j = axes+i;
+                        
+            	        j->startPoint = j->count;
+                        j->setPoint = j->startPoint - 15; 
+                        if(MAX_ANGLE > j->setPoint && j->setPoint > MIN_ANGLE){
+	                          		j->moving = true;
+                        }
+                }
+                
+                sleep_ms(500);
+    	
         	// FIXME: PHOTO COUPLES TEST
         	//printf("PIN 10: %d \n", gpio_get(10));
         	//printf("PIN 11: %d \n", gpio_get(11));
         	//sleep_ms(100);
         	
-        	driveMotor(1, 100, true);
-        	sleep_ms(1000);
-        	printf("Axis [ 1 ] count: %d \n", p->count);
-        	printf("Axis [ 1 ] count: %d \n", axes[1].count);
-        	printf("QEM[p->oldState*4 + p->newState]: %d \n", QEM[p->oldState*4 + p->newState]);
-        	//sleep_ms(5000);
-        	
-    	        // FIXME: ENCODER COUNT TEST
-        	//motorIndexToPosition[0] = quadrature_encoder_get_count(pio, 0);
-        	//printf("position %f\n", motorIndexToPosition[0]*step);
+        	// FIXME: ENCODER COUNT TEST
+      	        //printf("Axis [ 0 ] count: %d \n", axes[0].count);
+      	        //printf("Axis [ 1 ] count: %d \n", axes[1].count);
+      	        //printf("Axis [ 2 ] count: %d \n", axes[2].count);
+      	        //printf("Axis [ 3 ] count: %d \n", axes[3].count);
+        	//sleep_ms(100);
         	
         	// FIXME: KEYBOARD CONTROL TEST
         	//keyboardControl();
@@ -353,34 +362,34 @@ void initPins(){
 
 void keyboardControl(){
         int input = 0;
-        printf("Enter angle motor index [0 || 1]: \n");
+        
+        printf("Axis [ 1 ] count: %d \n", axes[1].count);
+        printf("Error: %d \n", axes[1].error);
+        printf("P: %d \n", axes[1].P);
+        printf("Axis [ 1 ] count: %d \n", axes[1].count);
+
+        printf("Enter direction [0 || 1] (1 = -1): \n");
         input = getchar() - 48;
+        input = (input == 0 || input == 1) ? ((input == 0) ? 1 : -1) : 0; 
 
-	if (input == 0) {
-        	printf("FEMUR \n");
-        		
-		printf("Enter direction [0 || 1] (1 = -1): \n");
-        	input = getchar() - 48;
-		
- 		input = (input == 0 || input == 1) ? ((input == 0) ? 1 : -1) : 0; 
-	
-		printf("Enter angle Xx: \n");
-        	input = input*(getchar() - 48)*10;
-        	
-        	printf("Enter angle xX: \n");
-        	input += getchar() - 48;
+        printf("Enter target count Xx: \n");
+        input = input*(getchar() - 48)*10;
+        printf("Enter target count xX: \n");
+        input += getchar() - 48;
+        printf("Target count: %d \n", input);
 
-        	printf("Target angle: %d \n", input);
-                
-		//startPoint = motorIndexToPosition[0];
-		//setPoint = startPoint + input; 
-		//if(MAX_ANGLE > setPoint && setPoint > MIN_ANGLE){
-      	  	//	moving = true;
-		//}
-		
-                //motorIndexToServoControlVariables[0][0] = moving;
-                //motorIndexToServoControlVariables[0][2] = setPoint;
-                //motorIndexToServoControlVariables[0][3] = startPoint;
-	}
-	sleep_ms(1111);
+        axes[1].startPoint = axes[1].count;
+        axes[1].setPoint = axes[1].startPoint + input; 
+        if(MAX_ANGLE > axes[1].setPoint && axes[1].setPoint > MIN_ANGLE){
+	          		axes[1].moving = true;
+        }
+        sleep_ms(1000);
+        
+        //printf("Enter angle motor index [0 || 1]: \n");
+        //input = getchar() - 48;
+
+	//if (input == 0) {
+        //	printf("FEMUR \n");
+	//}
+	//sleep_ms(1111);
 }
