@@ -22,6 +22,8 @@ pico_enable_stdio_usb(pwm_control 1)
 pico_enable_stdio_uart(pwm_control 0)
 pico_add_extra_outputs(pwm_control)
 
+target_include_directories(pwm_control PRIVATE ${CMAKE_CURRENT_LIST_DIR} )
+
 target_link_libraries(pwm_control PRIVATE 
 			pico_stdlib 
 			hardware_pwm 
@@ -29,5 +31,6 @@ target_link_libraries(pwm_control PRIVATE
 			pico_multicore
 			hardware_pio
 			pico_cyw43_arch_none
+			pico_cyw43_arch_lwip_threadsafe_background
 			)
 

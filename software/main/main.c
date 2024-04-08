@@ -6,6 +6,8 @@
 #include "hardware/timer.h"
 #include "pico/binary_info.h"
 #include "pico/cyw43_arch.h"
+#include "lwip/udp.h"
+#include "lwip/ip_addr.h"
 
 #include "quadrature_encoder.pio.h"
 
@@ -93,6 +95,73 @@ void resetPosition();
 
 // FIXME: MANUAL ANGLE TESTING
 void keyboardControl();
+
+#define UDP_SERVER_PORT 12345
+
+#define UDP_PORT 4444
+#define BEACON_MSG_LEN_MAX 127
+#define BEACON_TARGET "255.255.255.255"
+#define BEACON_INTERVAL_MS 1000
+
+#define DEVICE_ID 0 // or 1
+
+int led;
+
+int input_data[18];
+
+void process_data(){
+        int dir;
+        struct axis *j;
+        if (DEVICE_ID == 0) {
+                for (int i = 0; i < 4; i++) {
+                        dir = (input_data[(i*3) + 1] == 1) ? -1 : 1; 
+                
+                        j = axes+i;
+                        
+            	        j->startPoint = j->count;
+                        j->setPoint = j->startPoint + (dir * (10*input_data[(i*3) + 2] + input_data[(i*3) + 3])); 
+                        if(MAX_ANGLE > j->setPoint && j->setPoint > MIN_ANGLE){
+	                          		j->moving = true;
+                        }
+                        printf("dir * (10*input_data[(i*3) + 2] + input_data[(i*3) + 3]) %d ", dir * (10*input_data[(i*3) + 2] + input_data[(i*3) + 3]));
+                }
+        }
+        else {
+        }
+        
+}
+
+void udp_receive_callback(void *arg, struct udp_pcb *pcb, struct pbuf *p, const ip_addr_t *addr, u16_t port) {
+        if (p != NULL) {
+                // Received packet buffer 'p' is not NULL
+                // You can process the packet here
+                char *packet_data = (char *)p->payload;
+                printf("Received UDP message: %s\n", packet_data);
+                
+                if (strlen(packet_data) == 52) {
+                        int i;
+                        
+                        while (packet_data[i] != '\0' && packet_data[i+1] != '\0') {
+                                input_data[i/2] = ((packet_data[i] - '0') * 10 + (packet_data[i+1] - '0')) - 30;
+                                printf("%d\n", input_data[i/2]);
+                                i += 2;
+                        }
+                        
+                        process_data();
+                }
+                else {
+                        printf("ERROR: Message is not 52 characters long\n");
+                }
+
+                //return 0;
+                
+                led = led ^ 1;
+                cyw43_arch_gpio_put(CYW43_WL_GPIO_LED_PIN, led);
+
+                // Don't forget to free the packet buffer
+                pbuf_free(p);
+        }
+}
 
 void on_pwm_wrap() {
 //NO PRINT F INSIDE OF THIS FUNCTION!
@@ -189,18 +258,40 @@ void encoderCallback(uint gpio, uint32_t events) {
 
 int main() {
    	stdio_init_all();
-    	sleep_ms(2000);
     	
-    	//LED
-        //if (cyw43_arch_init()) {
-        //    printf("Wi-Fi init failed");
-        //    return -1;
-        //}
-        //cyw43_arch_gpio_put(CYW43_WL_GPIO_LED_PIN, 1);
-        
-	//gpio_init(25);
-    	//gpio_set_dir(25, GPIO_OUT);
-    	//gpio_put(25, 1);
+    	if (cyw43_arch_init()) {
+                printf("failed to initialise\n");
+                return 1;
+        }
+
+        cyw43_arch_enable_sta_mode();
+
+        printf("Connecting to Wi-Fi...\n");
+        if (cyw43_arch_wifi_connect_timeout_ms("andrey_shefa", "andreyshefa1", CYW43_AUTH_WPA2_AES_PSK, 30000)) {
+                printf("failed to connect.\n");
+                return 1;
+        } else {
+                printf("Connected.\n");
+                led = led ^ 1;
+                cyw43_arch_gpio_put(CYW43_WL_GPIO_LED_PIN, led);
+        }
+
+        struct udp_pcb *udp_server_pcb = udp_new();
+        if (udp_server_pcb == NULL) {
+                printf("Failed to create new UDP PCB.\n");
+                return -1;
+        }
+
+        ip_addr_t ipaddr;
+        IP4_ADDR(&ipaddr, 255,255,255,255); // Broadcast address
+
+        err_t err = udp_bind(udp_server_pcb, &ipaddr, UDP_SERVER_PORT);
+        if (err != ERR_OK) {
+                printf("Failed to bind UDP server PCB.\n");
+                return -1;
+        }
+
+        udp_recv(udp_server_pcb, udp_receive_callback, NULL);
 
 	initPins();
 	  
@@ -219,31 +310,8 @@ int main() {
  
         struct axis *j;
         
+    	sleep_ms(2000);
     	while (true) {
-    	
-            	for (int i = 0; i < 4; i++) {
-                        j = axes+i;
-                        
-            	        j->startPoint = j->count;
-                        j->setPoint = j->startPoint + 15; 
-                        if(MAX_ANGLE > j->setPoint && j->setPoint > MIN_ANGLE){
-	                          		j->moving = true;
-                        }
-                }
-                
-                sleep_ms(500);
-                
-    	        for (int i = 0; i < 4; i++) {
-                        j = axes+i;
-                        
-            	        j->startPoint = j->count;
-                        j->setPoint = j->startPoint - 15; 
-                        if(MAX_ANGLE > j->setPoint && j->setPoint > MIN_ANGLE){
-	                          		j->moving = true;
-                        }
-                }
-                
-                sleep_ms(500);
     	
         	// FIXME: PHOTO COUPLES TEST
         	//printf("PIN 10: %d \n", gpio_get(10));
@@ -270,6 +338,9 @@ int main() {
         	//driveMotor(2, 0, true);
         	
     	} 
+    	
+        cyw43_arch_deinit();
+        return 0;
 }
 
 void driveMotor(int motorIndex, int driveValue, bool driveEnable){

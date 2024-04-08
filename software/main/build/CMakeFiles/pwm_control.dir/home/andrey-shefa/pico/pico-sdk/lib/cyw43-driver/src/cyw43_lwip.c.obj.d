@@ -55,5 +55,49 @@ CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/
  /usr/include/newlib/sys/timespec.h /usr/include/newlib/sys/_timespec.h \
  /usr/include/newlib/sys/_pthreadtypes.h /usr/include/newlib/sys/sched.h \
  /usr/include/newlib/machine/types.h /usr/include/newlib/sys/stdio.h \
+ /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/include/lwip/netif.h \
+ /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/include/lwip/opt.h \
+ /home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/lwipopts.h \
+ /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/include/lwip/debug.h \
+ /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/include/lwip/arch.h \
+ /home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_lwip/include/arch/cc.h \
+ /usr/include/newlib/sys/time.h /usr/include/newlib/time.h \
+ /usr/include/newlib/machine/time.h /usr/include/newlib/machine/_time.h \
+ /home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_rand/include/pico/rand.h \
+ /usr/include/newlib/stdlib.h /usr/include/newlib/machine/stdlib.h \
+ /usr/include/newlib/alloca.h /usr/include/newlib/inttypes.h \
+ /usr/include/newlib/sys/_intsup.h \
+ /usr/lib/gcc/arm-none-eabi/12.2.1/include-fixed/limits.h \
+ /usr/include/newlib/ctype.h \
+ /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/include/lwip/err.h \
+ /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/include/lwip/ip_addr.h \
+ /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/include/lwip/def.h \
+ /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/include/lwip/ip4_addr.h \
+ /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/include/lwip/ip6_addr.h \
+ /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/include/lwip/def.h \
+ /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/include/lwip/pbuf.h \
+ /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/include/lwip/stats.h \
+ /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/include/lwip/mem.h \
+ /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/include/lwip/memp.h \
+ /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/include/lwip/priv/memp_std.h \
+ /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/include/lwip/priv/memp_priv.h \
+ /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/include/lwip/priv/mem_priv.h \
+ /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/include/lwip/dhcp.h \
+ /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/include/lwip/udp.h \
+ /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/include/lwip/ip.h \
+ /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/include/lwip/ip4.h \
+ /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/include/lwip/prot/ip4.h \
+ /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/include/lwip/ip6.h \
+ /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/include/lwip/prot/ip.h \
+ /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/include/lwip/prot/udp.h \
  /home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_ll.h \
- /home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_stats.h
+ /home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_stats.h \
+ /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/include/lwip/etharp.h \
+ /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/include/lwip/prot/ethernet.h \
+ /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/include/lwip/prot/ieee.h \
+ /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/include/lwip/prot/etharp.h \
+ /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/include/lwip/ethip6.h \
+ /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/include/lwip/dns.h \
+ /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/include/lwip/igmp.h \
+ /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/include/lwip/tcpip.h \
+ /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/include/netif/ethernet.h
