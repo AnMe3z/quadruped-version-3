@@ -34,9 +34,6 @@
 #define MAX_PWM 100
 #define MIN_PWM 60
 
-#define MAX_ANGLE 42 // max angle = 99.47368423
-#define MIN_ANGLE 0
-
 //PWM 
 uint freqHz = 10000;
 uint wrapP = 12500;
@@ -105,6 +102,13 @@ void keyboardControl();
 
 #define DEVICE_ID 0 // or 1
 
+#if DEVICE_ID == 0
+        #define MAX_ANGLE -42
+#else
+        #define MAX_ANGLE 42 // max angle = 99.47368423
+#endif
+#define MIN_ANGLE 0
+
 int led;
 
 int input_data[18];
@@ -113,6 +117,27 @@ void process_data(){
         int dir;
         struct axis *j;
         if (DEVICE_ID == 0) {
+                for (int i = 0; i < 4; i++) {
+                        //direction on the left side is inverted
+                        //level inner servo
+                        dir = (input_data[(i*3) + 1] == 1) ? 1 : -1; 
+                        
+                        printf("dir %d \n", dir);
+                
+                        j = axes+i;
+                        
+            	        j->startPoint = j->count;
+                        j->setPoint = j->startPoint + (dir * (10*input_data[(i*3) + 2] + input_data[(i*3) + 3])); 
+                        printf("dir * (10*input_data[(i*3) + 2] + input_data[(i*3) + 3]) %d \n", dir * (10*input_data[(i*3) + 2] + input_data[(i*3) + 3]) );
+                        printf("j->setPoint %d \n", j->setPoint);
+                        //direction on the left side is inverted
+                        if(MAX_ANGLE < j->setPoint && j->setPoint < MIN_ANGLE){
+	                          		j->moving = true;
+                                printf("moving \n");
+                        }
+                }
+        }
+        else {
                 for (int i = 0; i < 4; i++) {
                         dir = (input_data[(i*3) + 1] == 1) ? -1 : 1; 
                 
@@ -125,8 +150,6 @@ void process_data(){
                         }
                         printf("dir * (10*input_data[(i*3) + 2] + input_data[(i*3) + 3]) %d ", dir * (10*input_data[(i*3) + 2] + input_data[(i*3) + 3]));
                 }
-        }
-        else {
         }
         
 }
@@ -143,7 +166,7 @@ void udp_receive_callback(void *arg, struct udp_pcb *pcb, struct pbuf *p, const 
                         
                         while (packet_data[i] != '\0' && packet_data[i+1] != '\0') {
                                 input_data[i/2] = ((packet_data[i] - '0') * 10 + (packet_data[i+1] - '0')) - 30;
-                                printf("%d\n", input_data[i/2]);
+                                //printf("%d\n", input_data[i/2]);
                                 i += 2;
                         }
                         
