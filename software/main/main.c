@@ -61,6 +61,29 @@ float step = 2.368421053;//360/(holes*4);
 //SERVO CONTROL
 #define KP 5
 
+//RUNTIME DEBUG
+struct options {
+        int mainLoopSleep;
+        // Default values are 0 / false
+        uint8_t disableMovement; // bool | disable only the active movement; the brakes are not affected
+        uint8_t encoderDebug; // bool
+        // Directly prints to the console
+        uint8_t verbose;
+        uint8_t verboseDataRCV;
+        uint8_t verboseAxis; 
+        // Captures changes incrementally on a variable
+        uint8_t captureEncoderERR; // bool
+        uint8_t encoderTotalERR;
+        uint8_t captureEncoderSTAT; // bool
+        uint8_t encoderSuccessSTAT;
+};
+struct options opt;
+struct error {
+        char* message;
+        int time;
+        int flag;
+};	
+
 struct axis {
         // Physical number of slits on the physical encoder disk
         int slits;
@@ -124,18 +147,25 @@ void process_data(){
                         //level inner servo
                         dir = (input_data[(i*3) + 1] == 1) ? 1 : -1; 
                         
-                        printf("dir %d \n", dir);
+                        // DEBUG
+                        if ( opt.verbose && opt.verboseDataRCV){ printf("dir %d \n", dir); }
                 
                         j = axes+i;
                         
             	        j->startPoint = j->count;
                         j->setPoint = j->startPoint + (dir * (10*input_data[(i*3) + 2] + input_data[(i*3) + 3])); 
-                        printf("dir * (10*input_data[(i*3) + 2] + input_data[(i*3) + 3]) %d \n", dir * (10*input_data[(i*3) + 2] + input_data[(i*3) + 3]) );
-                        printf("j->setPoint %d \n", j->setPoint);
+                        
+                        // DEBUG
+                        if ( opt.verbose && opt.verboseDataRCV){ 
+                                printf("dir * (10*input_data[(i*3) + 2] + input_data[(i*3) + 3]) %d \n", dir * (10*input_data[(i*3) + 2] + input_data[(i*3) + 3]) );
+                                printf("j->setPoint %d \n", j->setPoint);
+                        }
                         //direction on the left side is inverted
                         if(MAX_ANGLE < j->setPoint && j->setPoint < MIN_ANGLE){
-	                          		j->moving = true;
-                                printf("moving \n");
+	                        j->moving = true;
+                                // DEBUG
+                                if ( opt.verbose && opt.verboseDataRCV){ printf("moving \n"); }
+                                
                         }
                 }
         }
@@ -150,7 +180,9 @@ void process_data(){
                         if(MAX_ANGLE > j->setPoint && j->setPoint > MIN_ANGLE){
 	                          		j->moving = true;
                         }
-                        printf("dir * (10*input_data[(i*3) + 2] + input_data[(i*3) + 3]) %d ", dir * (10*input_data[(i*3) + 2] + input_data[(i*3) + 3]));
+                        // DEBUG
+                        if ( opt.verbose && opt.verboseDataRCV){ printf("dir * (10*input_data[(i*3) + 2] + input_data[(i*3) + 3]) %d ", dir * (10*input_data[(i*3) + 2] + input_data[(i*3) + 3])); }
+                        
                 }
         }
         
@@ -161,26 +193,30 @@ void udp_receive_callback(void *arg, struct udp_pcb *pcb, struct pbuf *p, const 
                 // Received packet buffer 'p' is not NULL
                 // You can process the packet here
                 char *packet_data = (char *)p->payload;
-                printf("Received UDP message: %s\n", packet_data);
+                // DEBUG
+                if ( opt.verbose && opt.verboseDataRCV){ printf("Received UDP message: %s\n", packet_data); }
                 
                 if (strlen(packet_data) == 52) {
                         int i;
                         
                         while (packet_data[i] != '\0' && packet_data[i+1] != '\0') {
                                 input_data[i/2] = ((packet_data[i] - '0') * 10 + (packet_data[i+1] - '0')) - 30;
-                                //printf("%d\n", input_data[i/2]);
+                                // DEBUG
+                                if ( opt.verbose && opt.verboseDataRCV){ printf("%d\n", input_data[i/2]); }
                                 i += 2;
                         }
                         
                         process_data();
                 }
                 else {
-                        printf("ERROR: Message is not 52 characters long\n");
-                        printf("MESSAGE LENGTH %d\n", strlen(packet_data));
+                        // DEBUG
+                        if ( opt.verbose && opt.verboseDataRCV){ 
+                                printf("ERROR: Message is not 52 characters long\n");
+                                printf("MESSAGE LENGTH %d\n", strlen(packet_data));
+                        }
                 }
-
-                //return 0;
                 
+                // Toggle led
                 led = led ^ 1;
                 cyw43_arch_gpio_put(CYW43_WL_GPIO_LED_PIN, led);
 
@@ -204,12 +240,16 @@ void on_pwm_wrap() {
         	
         	//illegal case check
         	if (QEM[ p->oldState*4 + p->newState ] == 2) {
-                    //brake
-                    p->moving = false;
-                    driveMotor(i, 0, true);
+                        //brake
+                        p->moving = false;
+                        driveMotor(i, 0, true);
+                        //DEBUG
+                        if ( opt.encoderDebug && opt.captureEncoderERR){ opt.encoderTotalERR++; }
         	}
         	else {  
                 	p->count += QEM[p->oldState*4 + p->newState]; 
+                        //DEBUG
+                        if ( opt.encoderDebug && opt.captureEncoderSTAT){ opt.encoderSuccessSTAT++; }
         	}
         }
         
@@ -246,7 +286,9 @@ void on_pwm_wrap() {
                                         }
                                         p->P*=-1;
                                 }
-                                driveMotor(i, p->P, true); 
+                                if ( !opt.disableMovement ){
+                                        driveMotor(i, p->P, true); 
+                                }
 		        }
 		        else{
                           driveMotor(i, 0, true); 
@@ -336,32 +378,12 @@ int main() {
  
         struct axis *j;
         
-    	sleep_ms(2000);
+        opt.mainLoopSleep = 1000;
+        
+        sleep_ms(2222);
     	while (true) {
     	
-        	// FIXME: PHOTO COUPLES TEST
-        	//printf("PIN 10: %d \n", gpio_get(10));
-        	//printf("PIN 11: %d \n", gpio_get(11));
-        	//sleep_ms(100);
-        	
-        	// FIXME: ENCODER COUNT TEST
-      	        //printf("Axis [ 0 ] count: %d \n", axes[0].count);
-      	        //printf("Axis [ 1 ] count: %d \n", axes[1].count);
-      	        //printf("Axis [ 2 ] count: %d \n", axes[2].count);
-      	        //printf("Axis [ 3 ] count: %d \n", axes[3].count);
-        	//sleep_ms(100);
-        	
-        	// FIXME: KEYBOARD CONTROL TEST
-        	//keyboardControl();
-        	//sleep_ms(2000);
-        	
-        	// FIXME: FEMNUR TEST
-        	//driveMotor(2, -100, true);
-        	//sleep_ms(350);
-        	//driveMotor(2, 0, true);
-        	//driveMotor(2, 100, true);
-        	//sleep_ms(350);
-        	//driveMotor(2, 0, true);
+        	sleep_ms(opt.mainLoopSleep);
         	
     	} 
     	
