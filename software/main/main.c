@@ -100,7 +100,7 @@ void keyboardControl();
 #define BEACON_TARGET "255.255.255.255"
 #define BEACON_INTERVAL_MS 1000
 
-#define DEVICE_ID 0 // or 1
+#define DEVICE_ID 1 // or 1
 
 #if DEVICE_ID == 0
         #define MAX_ANGLE -42
@@ -174,6 +174,7 @@ void udp_receive_callback(void *arg, struct udp_pcb *pcb, struct pbuf *p, const 
                 }
                 else {
                         printf("ERROR: Message is not 52 characters long\n");
+                        printf("MESSAGE LENGTH %d\n", strlen(packet_data));
                 }
 
                 //return 0;
