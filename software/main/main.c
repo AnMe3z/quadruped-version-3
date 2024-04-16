@@ -62,6 +62,8 @@ float step = 2.368421053;//360/(holes*4);
 #define KP 5
 
 struct axis {
+        // Physical number of slits on the physical encoder disk
+        int slits;
         int pinA;
         int pinB;
         
