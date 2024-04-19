@@ -65,17 +65,17 @@ float step = 2.368421053;//360/(holes*4);
 struct options {
         int mainLoopSleep;
         // Default values are 0 / false
-        uint8_t disableMovement; // bool | disable only the active movement; the brakes are not affected
-        uint8_t encoderDebug; // bool
+        bool disableMovement; // disable only the active movement; the brakes are not affected
+        bool encoderDebug;
         // Directly prints to the console
-        uint8_t verbose;
-        uint8_t verboseDataRCV;
-        uint8_t verboseAxis; 
+        bool verbose;
+        bool verboseDataRCV;
+        bool verboseAxis; 
         // Captures changes incrementally on a variable
-        uint8_t captureEncoderERR; // bool
-        uint8_t encoderTotalERR;
-        uint8_t captureEncoderSTAT; // bool
-        uint8_t encoderSuccessSTAT;
+        bool captureEncoderERR;
+        int encoderTotalERR;
+        bool captureEncoderSTAT;
+        int encoderSuccessSTAT;
 };
 struct options opt;
 struct error {
@@ -83,6 +83,9 @@ struct error {
         int time;
         int flag;
 };	
+//DEBUG
+int input = 0;
+void debug();
 
 struct axis {
         // Physical number of slits on the physical encoder disk
@@ -378,13 +381,18 @@ int main() {
  
         struct axis *j;
         
-        opt.mainLoopSleep = 1000;
+    	opt.mainLoopSleep = 1000;
         
         sleep_ms(2222);
+        
+        printf(" \n");
+        printf(" \n");
+        printf(" \n");
+        printf("WELCOME TO THE RUNTIME DEBUG CONSOLE! \n");
+        printf(" \n");
+        
     	while (true) {
-    	
-        	sleep_ms(opt.mainLoopSleep);
-        	
+    	        debug();
     	} 
     	
         cyw43_arch_deinit();
@@ -511,4 +519,171 @@ void keyboardControl(){
         //	printf("FEMUR \n");
 	//}
 	//sleep_ms(1111);
+}
+
+void debug() {
+        EXIT:
+        printf("COMMAND LIST: \n");
+        printf("1 - Verbose Settings \n");
+        printf("2 - Encoder Debug \n");
+        printf("3 - Enable MOVEMENT \n");
+        //TODO:
+        //MOTOR TESTS
+        //AXIS DEBUG
+        //KEYBOARD CONTROL
+        //ERRORS
+        printf("7 - Main Loop SLEEP TIME Adjust \n");
+        printf("8 - PRINT CURRENT OPTIONS \n");
+        
+        printf("Enter a command: \n");
+        input = getchar() - 48;
+        
+        if(input == 1){
+                printf(" \n");
+                printf("VERBOSE SETTINGS \n");
+                printf(" \n");
+                
+                printf("verbose: %d \n", opt.verbose);
+                printf("verboseDataRCV: %d \n", opt.verboseDataRCV);
+                printf("verboseAxis: %d \n", opt.verboseAxis);
+                printf(" \n");
+                
+                printf("1 - Toggle VERBOSE \n");
+                printf("2 - Toggle DATA RCV \n");
+                printf("3 - Toggle AXIS \n");
+                printf("0 - EXIT \n");
+                printf(" \n");
+                printf("--------------------\n");
+                printf(" \n");
+                
+                printf(">verbose> ");
+                printf("Enter a command: \n");
+                input = getchar() - 48;
+                
+                if(input == 0){
+                        goto EXIT;
+                }
+                else if(input == 1){
+                        printf("Toggle VERBOSE \n");
+                        if ( opt.verbose ) { opt.verbose = false; }
+                        else { opt.verbose = true; }
+                        printf("verbose: %d \n", opt.verbose);
+                }
+                else if(input == 2){
+                        printf("Toggle DATA RCV \n");
+                        if ( opt.verboseDataRCV ) { opt.verboseDataRCV = false; }
+                        else { opt.verboseDataRCV = true; }
+                        printf("verboseDataRCV: %d \n", opt.verboseDataRCV);
+                }
+                else if(input == 3){
+                        printf("Toggle AXIS \n");
+                        if ( opt.verboseAxis ) { opt.verboseAxis = false; }
+                        else { opt.verboseAxis = true; }
+                        printf("verboseAxis: %d \n", opt.verboseAxis);
+                }
+        }
+        else if(input == 2){
+                printf(" \n");
+                printf("ENCODER SETTINGS \n");
+                printf(" \n");
+                
+                
+                printf("encoderDebug: %d \n", opt.encoderDebug);
+                printf("captureEncoderERR: %d \n", opt.captureEncoderERR);
+                printf("encoderTotalERR: %d \n", opt.encoderTotalERR);
+                printf("captureEncoderSTAT: %d \n", opt.captureEncoderSTAT);
+                printf("encoderSuccessSTAT: %d \n", opt.encoderSuccessSTAT);
+                printf(" \n");
+                
+                printf(" \n");
+                printf("--------------------\n");
+                printf(" \n");
+                
+                printf("1 - Toggle ENCODER DEBUIG \n");
+                printf("2 - Toggle ENCODER ERR \n");
+                printf("3 - Toggle ENCODER TOTAL ERR \n");
+                printf("4 - Toggle ENCODER STAT \n");
+                printf("5 - Toggle SUCCESS STAT \n");
+                printf("0 - EXIT \n");
+                
+                printf(">encoder> ");
+                
+                printf("Enter a command: \n");
+                input = getchar() - 48;
+                
+                if(input == 0){
+                        goto EXIT;
+                }
+                else if(input == 1){
+                        printf("Toggle ENCODER DEBUG \n");
+                        if ( opt.encoderDebug ) { opt.encoderDebug = false; }
+                        else { opt.encoderDebug = true; }
+                        printf("encoderDebug: %d \n", opt.encoderDebug);
+                }
+                else if(input == 2){
+                        printf("Toggle ENCODER ERR \n");
+                        if ( opt.captureEncoderERR ) { opt.captureEncoderERR = false; }
+                        else { opt.captureEncoderERR = true; }
+                        printf("captureEncoderERR: %d \n", opt.captureEncoderERR);
+                }
+                else if(input == 3){
+                        printf("Toggle ENCODER TOTAL ERR \n");
+                        if ( opt.encoderTotalERR ) { opt.encoderTotalERR = false; }
+                        else { opt.encoderTotalERR = true; }
+                        printf("encoderTotalERR: %d \n", opt.encoderTotalERR);
+                }
+                else if(input == 4){
+                        printf("Toggle ENCODER STAT \n");
+                        if ( opt.encoderTotalERR ) { opt.encoderTotalERR = false; }
+                        else { opt.encoderTotalERR = true; }
+                        printf("encoderTotalERR: %d \n", opt.encoderTotalERR);
+                }
+                else if(input == 5){
+                        printf("Toggle SUCCESS STAT \n");
+                        if ( opt.encoderTotalERR ) { opt.encoderTotalERR = false; }
+                        else { opt.encoderTotalERR = true; }
+                        printf("encoderTotalERR: %d \n", opt.encoderTotalERR);
+                }
+                
+        }
+        else if(input == 3){
+                printf(" \n");
+                printf("DISABLE MOVEMENT SETTINGS \n");
+                printf(" \n");
+                
+                printf("disableMovement: %d \n", opt.disableMovement);
+                printf(" \n");
+                
+                printf(" \n");
+                printf("--------------------\n");
+                printf(" \n");
+                
+                printf("1 - Toggle MOVEMENT \n");
+                printf("0 - EXIT \n");
+                
+                printf(">encoder> ");
+                
+                printf("Enter a command: \n");
+                input = getchar() - 48;
+                
+                if(input == 0){
+                        goto EXIT;
+                }
+                else if(input == 1){
+                        printf("Toggle DISABLE MOVEMENT \n");
+                        if ( opt.disableMovement ) { opt.disableMovement = false; }
+                        else { opt.disableMovement = true; }
+                        printf("disableMovement: %d \n", opt.disableMovement);
+                }
+        }
+        else if(input == 8){
+                printf("CURRENT OPTIONS \n");
+                printf("Enter a command: \n");
+                input = getchar() - 48;
+        }
+        
+        printf(" \n");
+        printf("---------- END ----------\n");
+        printf(" \n");
+	sleep_ms(opt.mainLoopSleep);
 }
