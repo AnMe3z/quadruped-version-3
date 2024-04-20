@@ -33,8 +33,7 @@ def draw_line(angle1, angle2):
     fig.subplots_adjust(wspace=0.5, hspace=0.5)
 
     canvas.draw()
-        
-#        ax.set_title(f'Angle 1: {180-angle1}°, Angle 2: {angle2}°')
+
 def update_angle(val):
     draw_line(float(180-slider1.get()), float(-(180-slider2.get())))
 
@@ -44,21 +43,18 @@ root.wm_title("Angle Slider")
 fig = Figure(figsize=(7, 6), dpi=100)
 canvas = FigureCanvasTkAgg(fig, master=root)
 canvas.draw()
-canvas.get_tk_widget().grid(row=0, column=0)  # Changed column to 0
+canvas.get_tk_widget().grid(row=0, column=0)
 
-# Create variables to hold the state of the check buttons
 graph_states = [tk.BooleanVar() for _ in range(4)]
 all_graphs_state = tk.BooleanVar(value=True)
 check_button_frame = tk.Frame(root)
-check_button_frame.grid(row=0, column=3, rowspan=2)  # Adjust the row and column as needed
+check_button_frame.grid(row=0, column=3, rowspan=2)
 
-# Create a function to update the state of all check buttons
 def update_all_graphs_state():
     state = all_graphs_state.get()
     for graph_state in graph_states:
         graph_state.set(state)
 
-# Create the check buttons
 for i in range(4):
     check_button = tk.Checkbutton(check_button_frame, text=str(i+1), variable=graph_states[i])
     check_button.pack(side=tk.TOP)
@@ -66,43 +62,73 @@ for i in range(4):
 all_graphs_check_button = tk.Checkbutton(check_button_frame, text="All", variable=all_graphs_state, command=update_all_graphs_state)
 all_graphs_check_button.pack(side=tk.TOP)
 
-slider1 = tk.Scale(root, from_=0, to=180, orient=tk.VERTICAL, length=300, command=update_angle)  # Changed HORIZONTAL to VERTICAL
-slider1.set(45)  # Set initial value to 0
-slider1.grid(row=0, column=1)  # Changed column to 1
+slider1 = tk.Scale(root, from_=0, to=180, orient=tk.VERTICAL, length=300, command=update_angle)
+slider1.set(45)
+slider1.grid(row=0, column=1)
 
-slider2 = tk.Scale(root, from_=0, to=180, orient=tk.VERTICAL, length=300, command=update_angle)  # Changed HORIZONTAL to VERTICAL
-slider2.set(45)  # Set initial value to 0
-slider2.grid(row=0, column=2)  # No change
+slider2 = tk.Scale(root, from_=0, to=180, orient=tk.VERTICAL, length=300, command=update_angle)
+slider2.set(45)
+slider2.grid(row=0, column=2)
 
 # Create a new frame for the new UI elements
 new_frame = tk.Frame(root)
 new_frame.grid(row=2, column=0, columnspan=4)  # Adjust the row and column as needed
 
 # Create a title
-title = tk.Label(new_frame, text="New Section", font=("Arial", 20))
+title = tk.Label(new_frame, text="MESSAGE GENERATOR", font=("Arial", 20))
 title.pack()
 
-# Create 8 2-digit prompts
-entries = []
-for i in range(10):
-    entry = tk.Entry(new_frame, width=2)
+dropdowns = []
+text_inputs = []
+disabled_inputs = []
+
+# Create a new frame for the inputs
+input_frame = tk.Frame(new_frame)
+input_frame.pack()
+
+for j in range(2):  # Loop twice to create two sets of inputs
+    entry = tk.Entry(input_frame, width=1)
+    entry.insert(0, str(j))
+    entry.config(state='disabled')
     entry.pack(side=tk.LEFT)
-    entries.append(entry)
+    disabled_inputs.append(entry)
 
-# Function to update the large text prompt
-def update_text_prompt():
-    text_prompt.delete(1.0, tk.END)
-    text_prompt.insert(tk.END, ''.join(entry.get() for entry in entries))
+    for i in range(4):
+        var = tk.StringVar(input_frame)
+        var.set('0')
+        dropdown = tk.OptionMenu(input_frame, var, '0', '1')
+        dropdown.pack(side=tk.LEFT)
+        dropdowns.append(var)
 
-# Create a button to update the large text prompt
-button = tk.Button(new_frame, text="Update", command=update_text_prompt)
-button.pack()
-
-# Create the large text prompt
-text_prompt = tk.Text(new_frame, width=16, height=4)
-text_prompt.pack()
+        text_input = tk.Entry(input_frame, width=2)
+        text_input.pack(side=tk.LEFT)
+        text_inputs.append(text_input)
 
 
-draw_line(180, 0)  # Draw lines at initial angles
+def generate():
+    combined_text = disabled_inputs[0].get()
+    combined_text += ''.join([dropdowns[i].get() + text_inputs[i].get().zfill(2) for i in range(0*4, 0*4+4)])
+    combined_text += disabled_inputs[1].get()
+    combined_text += ''.join([dropdowns[i].get() + text_inputs[i].get().zfill(2) for i in range(1*4, 1*4+4)])
+
+    large_entry.delete(0, tk.END)
+    large_entry.insert(0, combined_text)
+
+generate_button = tk.Button(input_frame, text="Generate", command=generate)
+generate_button.pack(side=tk.LEFT)
+
+large_input_frame = tk.Frame(new_frame)
+large_input_frame.pack()
+
+large_entry = tk.Entry(large_input_frame, width=40)
+large_entry.pack(side=tk.LEFT)
+
+def send():
+    pass
+
+send_button = tk.Button(large_input_frame, text="Send", command=send)
+send_button.pack(side=tk.LEFT)
+
+draw_line(180, 0)
 tk.mainloop()
 
