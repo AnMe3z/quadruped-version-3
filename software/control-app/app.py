@@ -3,6 +3,14 @@ from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 from matplotlib.figure import Figure
 import numpy as np
 
+# leg setup
+femur_start_deg = 5
+knee_start_deg = 15
+
+# angle calculations
+disk_holes = 38
+res = 360 / (38*4)
+
 def draw_line(angle1, angle2):
     fig.clear()
     rad1 = np.deg2rad(angle1)  # Convert angle1 to radians
@@ -36,6 +44,18 @@ def draw_line(angle1, angle2):
 
 def update_angle(val):
     draw_line(float(180-slider1.get()), float(-(180-slider2.get())))
+    
+    femur = round(slider1.get()/res)
+    knee = round(slider2.get()/res)
+    
+    
+    for i in range(4):
+        print(i)
+    # Update the text inputs with the new slider values
+    text_inputs[0].delete(0, tk.END)
+    text_inputs[0].insert(0, str(femur))
+    text_inputs[1].delete(0, tk.END)
+    text_inputs[1].insert(0, str(knee))
 
 root = tk.Tk()
 root.wm_title("Angle Slider")
@@ -63,11 +83,11 @@ all_graphs_check_button = tk.Checkbutton(check_button_frame, text="All", variabl
 all_graphs_check_button.pack(side=tk.TOP)
 
 slider1 = tk.Scale(root, from_=0, to=180, orient=tk.VERTICAL, length=300, command=update_angle)
-slider1.set(45)
+slider1.set(femur_start_deg)
 slider1.grid(row=0, column=1)
 
 slider2 = tk.Scale(root, from_=0, to=180, orient=tk.VERTICAL, length=300, command=update_angle)
-slider2.set(45)
+slider2.set(knee_start_deg)
 slider2.grid(row=0, column=2)
 
 # Create a new frame for the new UI elements
