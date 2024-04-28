@@ -2037,9 +2037,9 @@ Discarded input sections
  .comment       0x00000000       0x27 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/polarssl/sha1.c.obj
  .ARM.attributes
                 0x00000000       0x2c CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/polarssl/sha1.c.obj
- .text          0x00000000        0x0 /tmp/cc4EpwHU.o
- .data          0x00000000        0x0 /tmp/cc4EpwHU.o
- .bss           0x00000000        0x0 /tmp/cc4EpwHU.o
+ .text          0x00000000        0x0 /tmp/cc6DVM6a.o
+ .data          0x00000000        0x0 /tmp/cc6DVM6a.o
+ .bss           0x00000000        0x0 /tmp/cc6DVM6a.o
  .data          0x00000000        0x0 /usr/lib/gcc/arm-none-eabi/12.2.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
  .bss           0x00000000        0x0 /usr/lib/gcc/arm-none-eabi/12.2.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
  .text          0x00000000       0x10 /usr/lib/gcc/arm-none-eabi/12.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-atexit.o)
@@ -2241,7 +2241,7 @@ LOAD /usr/lib/gcc/arm-none-eabi/12.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nof
 .boot2          0x10000000      0x100
                 0x10000000                        __boot2_start__ = .
  *(.boot2)
- .boot2         0x10000000      0x100 /tmp/cc4EpwHU.o
+ .boot2         0x10000000      0x100 /tmp/cc6DVM6a.o
                 0x10000100                        __boot2_end__ = .
                 0x00000001                        ASSERT (((__boot2_end__ - __boot2_start__) == 0x100), ERROR: Pico second stage bootloader must be 256 bytes in size)
 
@@ -5024,7 +5024,7 @@ LOAD CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/net
 LOAD CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/polarssl/md4.c.obj
 LOAD CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/polarssl/md5.c.obj
 LOAD CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/polarssl/sha1.c.obj
-LOAD /tmp/cc4EpwHU.o
+LOAD /tmp/cc6DVM6a.o
 LOAD /usr/lib/gcc/arm-none-eabi/12.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libstdc++.a
 LOAD /usr/lib/gcc/arm-none-eabi/12.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libm.a
 START GROUP
@@ -5214,7 +5214,7 @@ LOAD linker stubs
  .ARM.attributes
                 0x00000e08       0x2c CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ethernet.c.obj
  .ARM.attributes
-                0x00000e34       0x22 /tmp/cc4EpwHU.o
+                0x00000e34       0x22 /tmp/cc6DVM6a.o
  .ARM.attributes
                 0x00000e56       0x1e /usr/lib/gcc/arm-none-eabi/12.2.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
  .ARM.attributes

@@ -1,7 +1,9 @@
+
 import tkinter as tk
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 from matplotlib.figure import Figure
 import numpy as np
+import subprocess
 
 # leg setup
 femur_start_deg = 5
@@ -45,17 +47,21 @@ def draw_line(angle1, angle2):
 def update_angle(val):
     draw_line(float(180-slider1.get()), float(-(180-slider2.get())))
     
-    femur = round(slider1.get()/res)
-    knee = round(slider2.get()/res)
-    
+    femur = 0
+    knee = 0
     
     for i in range(4):
-        print(i)
-    # Update the text inputs with the new slider values
-    text_inputs[0].delete(0, tk.END)
-    text_inputs[0].insert(0, str(femur))
-    text_inputs[1].delete(0, tk.END)
-    text_inputs[1].insert(0, str(knee))
+        if graph_states[i].get():
+            femur = round(slider1.get()/res)
+            knee = round(slider2.get()/res)
+        else:
+            femur = 0
+            knee = 0
+        # Update the text inputs with the new slider values
+        text_inputs[i*2].delete(0, tk.END)
+        text_inputs[i*2].insert(0, str(femur))
+        text_inputs[i*2+1].delete(0, tk.END)
+        text_inputs[i*2+1].insert(0, str(knee))      
 
 root = tk.Tk()
 root.wm_title("Angle Slider")
@@ -144,7 +150,15 @@ large_entry = tk.Entry(large_input_frame, width=40)
 large_entry.pack(side=tk.LEFT)
 
 def send():
-    pass
+    # Use subprocess.run() to execute the command
+    result = subprocess.run("./udp-send-command.sh " + str(large_entry.get()), shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+
+    # You can get the output of the command from result.stdout
+    # Be sure to decode it from bytes to a string
+    output = result.stdout.decode()
+
+    print("Output:")
+    print(output)
 
 send_button = tk.Button(large_input_frame, text="Send", command=send)
 send_button.pack(side=tk.LEFT)
