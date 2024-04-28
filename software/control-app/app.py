@@ -1,9 +1,11 @@
 
 import tkinter as tk
+from tkinter import ttk, scrolledtext
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 from matplotlib.figure import Figure
 import numpy as np
 import subprocess
+import time
 
 # leg setup
 femur_start_deg = 5
@@ -162,6 +164,154 @@ def send():
 
 send_button = tk.Button(large_input_frame, text="Send", command=send)
 send_button.pack(side=tk.LEFT)
+
+def decode_message(message):
+    # Subtract the direction from each half
+    first_half = message[1:13]
+    second_half = message[14:]
+
+    # Split each half into 4 3-digit numbers
+    first_half_numbers = [first_half[i:i+3] for i in range(0, len(first_half), 3)]
+    second_half_numbers = [second_half[i:i+3] for i in range(0, len(second_half), 3)]
+
+    # Decode each 3-digit number
+    def decode_number(num):
+        sign = '+' if num[0] == '0' else '-'
+        value = int(num[1:])
+        return (sign, value)
+
+    first_half_decoded = [decode_number(num) for num in first_half_numbers]
+    second_half_decoded = [decode_number(num) for num in second_half_numbers]
+
+    return first_half_decoded, second_half_decoded
+
+def compare_messages(message1, message2):
+    # Decode the messages
+    first_half1, second_half1 = decode_message(message1)
+    first_half2, second_half2 = decode_message(message2)
+
+    # Calculate the differences
+    def calculate_difference(half1, half2):
+        difference = []
+        for num1, num2 in zip(half1, half2):
+            sign1, value1 = num1
+            sign2, value2 = num2
+            diff_value = value2 - value1 if sign1 == sign2 else value2 + value1
+            diff_sign = '0' if diff_value >= 0 else '1'
+            difference.append(f'{diff_sign}{abs(diff_value):02d}')
+        return difference
+
+    first_half_diff = calculate_difference(first_half1, first_half2)
+    second_half_diff = calculate_difference(second_half1, second_half2)
+
+    # Construct the third message
+    third_message = '0' + ''.join(first_half_diff) + '1' + ''.join(second_half_diff)
+    return third_message
+
+last_command = 0;
+
+def add_text_from_gen():
+    text = "Empty! ERROR!"
+    global last_command
+    if last_command == 0:
+        last_command = large_entry.get()
+        text = large_entry.get()
+    else:
+        text = compare_messages(last_command, large_entry.get())
+
+    # Get the text from the entry
+    
+    # Add the text to the list
+    texts.append(text)
+    # Clear the entry
+    text_entry.delete(0, tk.END)
+    # Create a new frame for the text
+    text_frame = tk.Frame(new_functionality_frame)
+    text_frame.pack(side=tk.TOP)
+    # Create a label with the text and pack it in the frame
+    text_label = tk.Label(text_frame, text=text)
+    text_label.pack()
+    
+add_send_button = tk.Button(large_input_frame, text="Add to Q", command=add_text_from_gen)
+add_send_button.pack(side=tk.LEFT)
+
+# ... (Your existing code remains unchanged here)
+
+# New functionality
+new_functionality_frame = tk.Frame(root)
+new_functionality_frame.grid(row=0, column=5, rowspan=3, padx=20)  # Added some padding to create distance
+entry_button_frame = tk.Frame(new_functionality_frame)
+entry_button_frame.pack(side=tk.TOP)
+
+# Create a list to store the texts
+texts = []
+
+def add_text():
+    # Get the text from the entry
+    text = text_entry.get()
+    # Add the text to the list
+    texts.append(text)
+    # Clear the entry
+    text_entry.delete(0, tk.END)
+    # Create a new frame for the text
+    text_frame = tk.Frame(new_functionality_frame)
+    text_frame.pack(side=tk.TOP)
+    # Create a label with the text and pack it in the frame
+    text_label = tk.Label(text_frame, text=text)
+    text_label.pack()
+
+# Move the text entry and the "Add" button to this frame
+text_entry = tk.Entry(entry_button_frame, width=20)
+text_entry.pack(side=tk.LEFT)
+add_button = tk.Button(entry_button_frame, text="Add to Q", command=add_text)
+add_button.pack(side=tk.LEFT)
+
+def delete_all():
+    # Loop over all children of new_functionality_frame
+    for widget in new_functionality_frame.winfo_children():
+        # If the widget is a Frame and it's not one of the frames we want to keep
+        if isinstance(widget, tk.Frame) and widget not in [entry_button_frame, delete_button_frame, delay_button_frame]:
+            widget.destroy()
+    # Clear the texts list
+    texts.clear()
+    
+    last_command = 0;
+
+
+# Create a frame for the "Delete All" button
+delete_button_frame = tk.Frame(new_functionality_frame)
+delete_button_frame.pack(side=tk.TOP)
+
+# Move the "Delete All" button to this frame
+delete_all_button = tk.Button(delete_button_frame, text="Delete All", command=delete_all)
+delete_all_button.pack(side=tk.TOP)
+
+def send_q():
+    for command in texts:
+        com_q.append([command, delay_entry.get()])
+        
+        result = subprocess.run("./udp-send-command.sh " + str(command), shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        output = result.stdout.decode()
+        print("Output:")
+        print(output)
+        
+        time.sleep(int(delay_entry.get())*0.001)
+
+    
+    print(com_q)
+    
+    
+delay_button_frame = tk.Frame(new_functionality_frame)
+delay_button_frame.pack(side=tk.TOP)
+delay_entry = tk.Entry(delay_button_frame, width=20)
+delay_entry.pack(side=tk.LEFT)
+delay_entry.insert(0, "500")
+add_button = tk.Button(delay_button_frame, text="Send Q", command=send_q)
+add_button.pack(side=tk.LEFT)
+
+com_q = []
+
+# ... (Your existing code remains unchanged here)
 
 draw_line(180, 0)
 tk.mainloop()
