@@ -39,7 +39,7 @@ def draw_line(angle1, angle2):
             ax.set_xlim(-2, 2)  # Set x limits
             ax.set_ylim(2, -2)  # Set y limits (reversed)
             
-            ax.set_title(titles[i]+f' FEMUR: {180-angle1}°, KNEE: {50+(180-angle2)}°')
+            ax.set_title(titles[i]+f' FEMUR: {round(180-angle1, 2)}°, KNEE: {round(50+(180-angle2), 2)}°')
 
     # Adjust the spacing between the subplots
     fig.subplots_adjust(wspace=0.5, hspace=0.5)
@@ -56,14 +56,36 @@ def update_angle(val):
         if graph_states[i].get():
             femur = round( (slider1.get() - femur_start_deg) / res)
             knee = round( (slider2.get() - knee_start_deg) / res)
-        else:
-            femur = 0
-            knee = 0
         # Update the text inputs with the new slider values
         text_inputs[i*2].delete(0, tk.END)
         text_inputs[i*2].insert(0, str(femur))
         text_inputs[i*2+1].delete(0, tk.END)
-        text_inputs[i*2+1].insert(0, str(knee))      
+        text_inputs[i*2+1].insert(0, str(knee))  
+        
+side_l = 10
+
+def angle_from_cosine_theorem(a, b, c):
+    C_rad = np.arccos((a**2 + b**2 - c**2) / (2*a*b))  # Compute angle in radians
+    C_deg = np.rad2deg(C_rad)  # Convert angle from radians to degrees
+    return C_deg
+
+def ik_update_angle(val):
+    femur = 90 - angle_from_cosine_theorem(side_l, ik_slider.get(), side_l)
+    knee = angle_from_cosine_theorem(side_l, side_l, ik_slider.get())
+    femur = 180 - femur
+    knee = 70 + (180 - knee )
+    
+    draw_line(float(femur), float(knee))
+    
+    for i in range(4):
+        if graph_states[i].get():
+            femur = round( ( 0 ) / res)
+            knee = round( ( 0 ) / res)
+        # Update the text inputs with the new slider values
+        text_inputs[i*2].delete(0, tk.END)
+        text_inputs[i*2].insert(0, str(femur))
+        text_inputs[i*2+1].delete(0, tk.END)
+        text_inputs[i*2+1].insert(0, str(knee))  
 
 root = tk.Tk()
 root.wm_title("Angle Slider")
@@ -76,7 +98,7 @@ canvas.get_tk_widget().grid(row=0, column=0)
 graph_states = [tk.BooleanVar() for _ in range(4)]
 all_graphs_state = tk.BooleanVar(value=True)
 check_button_frame = tk.Frame(root)
-check_button_frame.grid(row=0, column=3, rowspan=2)
+check_button_frame.grid(row=0, column=4, rowspan=2)
 
 def update_all_graphs_state():
     state = all_graphs_state.get()
@@ -90,13 +112,17 @@ for i in range(4):
 all_graphs_check_button = tk.Checkbutton(check_button_frame, text="All", variable=all_graphs_state, command=update_all_graphs_state)
 all_graphs_check_button.pack(side=tk.TOP)
 
-slider1 = tk.Scale(root, from_=femur_start_deg, to=100, orient=tk.VERTICAL, length=300, command=update_angle)
+slider1 = tk.Scale(root, from_=femur_start_deg, to=100, orient=tk.VERTICAL, length=500, command=update_angle)
 slider1.set(femur_start_deg)
 slider1.grid(row=0, column=1)
 
-slider2 = tk.Scale(root, from_=knee_start_deg, to=100, orient=tk.VERTICAL, length=300, command=update_angle)
+slider2 = tk.Scale(root, from_=knee_start_deg, to=100, orient=tk.VERTICAL, length=500, command=update_angle)
 slider2.set(knee_start_deg)
 slider2.grid(row=0, column=2)
+
+ik_slider = tk.Scale(root, from_=2, to=15, orient=tk.VERTICAL, length=500, command=ik_update_angle)
+ik_slider.set(2)
+ik_slider.grid(row=0, column=3)
 
 # Create a new frame for the new UI elements
 new_frame = tk.Frame(root)
