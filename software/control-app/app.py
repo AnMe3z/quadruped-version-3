@@ -114,8 +114,6 @@ def ik_update_angle(val):
         text_inputs[i*2+1].delete(0, tk.END)
         text_inputs[i*2+1].insert(0, str(knee))  
         
-    kcoef = 20
-    
     draw_graphs()
     #draw_line_o(0, float(180 - fik), float(70 + (180 - kik ))) 
         
@@ -284,19 +282,37 @@ def compare_messages(message1, message2):
     # Construct the third message
     third_message = '0' + ''.join(first_half_diff) + '1' + ''.join(second_half_diff)
     return third_message
+    
+def compare_all_messages(messages):
+    # Initialize an empty list to store the results
+    results = []
 
+    # Loop over the messages
+    for i in range(1, len(messages)):
+        # Compare the current message with each of the previous ones
+        for j in range(i):
+            # Use the compare_messages function to compare the two messages
+            result = compare_messages(messages[j], messages[i])
+            # Add the result to the results list
+            results.append(result)
+
+    # Return the results
+    print("compare_all_messages results" + str(results))
+    return results
+        
 last_command = 0;
 
 def add_text_from_gen():
     text = "Empty! ERROR!"
+    
+    #messages.append(large_entry.get())
+    
     global last_command
     if last_command == 0:
         last_command = large_entry.get()
         text = large_entry.get()
     else:
         text = compare_messages(last_command, large_entry.get())
-
-    # Get the text from the entry
     
     # Add the text to the list
     texts.append(text)
@@ -308,6 +324,8 @@ def add_text_from_gen():
     # Create a label with the text and pack it in the frame
     text_label = tk.Label(text_frame, text=text)
     text_label.pack()
+    
+    last_command = large_entry.get()
     
 add_send_button = tk.Button(large_input_frame, text="Add to Q", command=add_text_from_gen)
 add_send_button.pack(side=tk.LEFT)
