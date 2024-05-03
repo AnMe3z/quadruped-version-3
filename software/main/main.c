@@ -61,32 +61,6 @@ float step = 2.368421053;//360/(holes*4);
 //SERVO CONTROL
 #define KP 5
 
-//RUNTIME DEBUG
-struct options {
-        int mainLoopSleep;
-        // Default values are 0 / false
-        bool disableMovement; // disable only the active movement; the brakes are not affected
-        bool encoderDebug;
-        // Directly prints to the console
-        bool verbose;
-        bool verboseDataRCV;
-        bool verboseAxis; 
-        // Captures changes incrementally on a variable
-        bool captureEncoderERR;
-        int encoderTotalERR;
-        bool captureEncoderSTAT;
-        int encoderSuccessSTAT;
-};
-struct options opt;
-struct error {
-        char* message;
-        int time;
-        int flag;
-};	
-//DEBUG
-int input = 0;
-void debug();
-
 struct axis {
         // Physical number of slits on the physical encoder disk
         int slits;
@@ -128,7 +102,7 @@ void keyboardControl();
 #define BEACON_TARGET "255.255.255.255"
 #define BEACON_INTERVAL_MS 1000
 
-#define DEVICE_ID 1 // or 1
+#define DEVICE_ID 0 // or 1
 
 #if DEVICE_ID == 0
         #define MAX_ANGLE -42
@@ -146,12 +120,12 @@ void process_data(){
         struct axis *j;
         if (DEVICE_ID == 0) {
                 for (int i = 0; i < 4; i++) {
-                        //direction on the left side is inverted
+                        //direction on the left side is  inverted
                         //level inner servo
                         dir = (input_data[(i*3) + 1] == 1) ? 1 : -1; 
                         
                         // DEBUG
-                        if ( opt.verbose && opt.verboseDataRCV){ printf("dir %d \n", dir); }
+                        //if ( opt.verbose && opt.verboseDataRCV){ printf("dir %d \n", dir); }
                 
                         j = axes+i;
                         
@@ -159,15 +133,15 @@ void process_data(){
                         j->setPoint = j->startPoint + (dir * (10*input_data[(i*3) + 2] + input_data[(i*3) + 3])); 
                         
                         // DEBUG
-                        if ( opt.verbose && opt.verboseDataRCV){ 
+                        //if ( opt.verbose && opt.verboseDataRCV){ 
                                 printf("dir * (10*input_data[(i*3) + 2] + input_data[(i*3) + 3]) %d \n", dir * (10*input_data[(i*3) + 2] + input_data[(i*3) + 3]) );
                                 printf("j->setPoint %d \n", j->setPoint);
-                        }
+                        //}
                         //direction on the left side is inverted
                         if(MAX_ANGLE < j->setPoint && j->setPoint < MIN_ANGLE){
 	                        j->moving = true;
                                 // DEBUG
-                                if ( opt.verbose && opt.verboseDataRCV){ printf("moving \n"); }
+                                //if ( opt.verbose && opt.verboseDataRCV){ printf("moving \n"); }
                                 
                         }
                 }
@@ -184,7 +158,7 @@ void process_data(){
 	                          		j->moving = true;
                         }
                         // DEBUG
-                        if ( opt.verbose && opt.verboseDataRCV){ printf("dir * (10*input_data[(i*3) + 2] + input_data[(i*3) + 3]) %d ", dir * (10*input_data[(i*3) + 2] + input_data[(i*3) + 3])); }
+                        //if ( opt.verbose && opt.verboseDataRCV){ printf("dir * (10*input_data[(i*3) + 2] + input_data[(i*3) + 3]) %d ", dir * (10*input_data[(i*3) + 2] + input_data[(i*3) + 3])); }
                         
                 }
         }
@@ -197,7 +171,7 @@ void udp_receive_callback(void *arg, struct udp_pcb *pcb, struct pbuf *p, const 
                 // You can process the packet here
                 char *packet_data = (char *)p->payload;
                 // DEBUG
-                if ( opt.verbose && opt.verboseDataRCV){ printf("Received UDP message: %s\n", packet_data); }
+                 printf("Received UDP message: %s\n", packet_data); 
                 
                 if (strlen(packet_data) == 52) {
                         int i;
@@ -205,7 +179,7 @@ void udp_receive_callback(void *arg, struct udp_pcb *pcb, struct pbuf *p, const 
                         while (packet_data[i] != '\0' && packet_data[i+1] != '\0') {
                                 input_data[i/2] = ((packet_data[i] - '0') * 10 + (packet_data[i+1] - '0')) - 30;
                                 // DEBUG
-                                if ( opt.verbose && opt.verboseDataRCV){ printf("%d\n", input_data[i/2]); }
+                                //if ( opt.verbose && opt.verboseDataRCV){ printf("%d\n", input_data[i/2]); }
                                 i += 2;
                         }
                         
@@ -213,10 +187,10 @@ void udp_receive_callback(void *arg, struct udp_pcb *pcb, struct pbuf *p, const 
                 }
                 else {
                         // DEBUG
-                        if ( opt.verbose && opt.verboseDataRCV){ 
+                        //if ( opt.verbose && opt.verboseDataRCV){ 
                                 printf("ERROR: Message is not 52 characters long\n");
                                 printf("MESSAGE LENGTH %d\n", strlen(packet_data));
-                        }
+                        //}
                 }
                 
                 // Toggle led
@@ -247,12 +221,12 @@ void on_pwm_wrap() {
                         p->moving = false;
                         driveMotor(i, 0, true);
                         //DEBUG
-                        if ( opt.encoderDebug && opt.captureEncoderERR){ opt.encoderTotalERR++; }
+                        //if ( opt.encoderDebug && opt.captureEncoderERR){ opt.encoderTotalERR++; }
         	}
         	else {  
                 	p->count += QEM[p->oldState*4 + p->newState]; 
                         //DEBUG
-                        if ( opt.encoderDebug && opt.captureEncoderSTAT){ opt.encoderSuccessSTAT++; }
+                        //if ( opt.encoderDebug && opt.captureEncoderSTAT){ opt.encoderSuccessSTAT++; }
         	}
         }
         
@@ -289,9 +263,9 @@ void on_pwm_wrap() {
                                         }
                                         p->P*=-1;
                                 }
-                                if ( !opt.disableMovement ){
+                                //if ( !opt.disableMovement ){
                                         driveMotor(i, p->P, true); 
-                                }
+                                //}
 		        }
 		        else{
                           driveMotor(i, 0, true); 
@@ -381,18 +355,18 @@ int main() {
  
         struct axis *j;
         
-    	opt.mainLoopSleep = 1000;
+    	//opt.mainLoopSleep = 1000;
         
         sleep_ms(2222);
         
-        printf(" \n");
-        printf(" \n");
-        printf(" \n");
-        printf("WELCOME TO THE RUNTIME DEBUG CONSOLE! \n");
-        printf(" \n");
+        //printf(" \n");
+        //printf(" \n");
+        //printf(" \n");
+        //printf("WELCOME TO THE RUNTIME DEBUG CONSOLE! \n");
+        //printf(" \n");
         
     	while (true) {
-    	        debug();
+    	        //debug();
     	} 
     	
         cyw43_arch_deinit();
@@ -519,171 +493,4 @@ void keyboardControl(){
         //	printf("FEMUR \n");
 	//}
 	//sleep_ms(1111);
-}
-
-void debug() {
-        EXIT:
-        printf("COMMAND LIST: \n");
-        printf("1 - Verbose Settings \n");
-        printf("2 - Encoder Debug \n");
-        printf("3 - Enable MOVEMENT \n");
-        //TODO:
-        //MOTOR TESTS
-        //AXIS DEBUG
-        //KEYBOARD CONTROL
-        //ERRORS
-        printf("7 - Main Loop SLEEP TIME Adjust \n");
-        printf("8 - PRINT CURRENT OPTIONS \n");
-        
-        printf("Enter a command: \n");
-        input = getchar() - 48;
-        
-        if(input == 1){
-                printf(" \n");
-                printf("VERBOSE SETTINGS \n");
-                printf(" \n");
-                
-                printf("verbose: %d \n", opt.verbose);
-                printf("verboseDataRCV: %d \n", opt.verboseDataRCV);
-                printf("verboseAxis: %d \n", opt.verboseAxis);
-                printf(" \n");
-                
-                printf("1 - Toggle VERBOSE \n");
-                printf("2 - Toggle DATA RCV \n");
-                printf("3 - Toggle AXIS \n");
-                printf("0 - EXIT \n");
-                printf(" \n");
-                printf("--------------------\n");
-                printf(" \n");
-                
-                printf(">verbose> ");
-                printf("Enter a command: \n");
-                input = getchar() - 48;
-                
-                if(input == 0){
-                        goto EXIT;
-                }
-                else if(input == 1){
-                        printf("Toggle VERBOSE \n");
-                        if ( opt.verbose ) { opt.verbose = false; }
-                        else { opt.verbose = true; }
-                        printf("verbose: %d \n", opt.verbose);
-                }
-                else if(input == 2){
-                        printf("Toggle DATA RCV \n");
-                        if ( opt.verboseDataRCV ) { opt.verboseDataRCV = false; }
-                        else { opt.verboseDataRCV = true; }
-                        printf("verboseDataRCV: %d \n", opt.verboseDataRCV);
-                }
-                else if(input == 3){
-                        printf("Toggle AXIS \n");
-                        if ( opt.verboseAxis ) { opt.verboseAxis = false; }
-                        else { opt.verboseAxis = true; }
-                        printf("verboseAxis: %d \n", opt.verboseAxis);
-                }
-        }
-        else if(input == 2){
-                printf(" \n");
-                printf("ENCODER SETTINGS \n");
-                printf(" \n");
-                
-                
-                printf("encoderDebug: %d \n", opt.encoderDebug);
-                printf("captureEncoderERR: %d \n", opt.captureEncoderERR);
-                printf("encoderTotalERR: %d \n", opt.encoderTotalERR);
-                printf("captureEncoderSTAT: %d \n", opt.captureEncoderSTAT);
-                printf("encoderSuccessSTAT: %d \n", opt.encoderSuccessSTAT);
-                printf(" \n");
-                
-                printf(" \n");
-                printf("--------------------\n");
-                printf(" \n");
-                
-                printf("1 - Toggle ENCODER DEBUIG \n");
-                printf("2 - Toggle ENCODER ERR \n");
-                printf("3 - Toggle ENCODER TOTAL ERR \n");
-                printf("4 - Toggle ENCODER STAT \n");
-                printf("5 - Toggle SUCCESS STAT \n");
-                printf("0 - EXIT \n");
-                
-                printf(">encoder> ");
-                
-                printf("Enter a command: \n");
-                input = getchar() - 48;
-                
-                if(input == 0){
-                        goto EXIT;
-                }
-                else if(input == 1){
-                        printf("Toggle ENCODER DEBUG \n");
-                        if ( opt.encoderDebug ) { opt.encoderDebug = false; }
-                        else { opt.encoderDebug = true; }
-                        printf("encoderDebug: %d \n", opt.encoderDebug);
-                }
-                else if(input == 2){
-                        printf("Toggle ENCODER ERR \n");
-                        if ( opt.captureEncoderERR ) { opt.captureEncoderERR = false; }
-                        else { opt.captureEncoderERR = true; }
-                        printf("captureEncoderERR: %d \n", opt.captureEncoderERR);
-                }
-                else if(input == 3){
-                        printf("Toggle ENCODER TOTAL ERR \n");
-                        if ( opt.encoderTotalERR ) { opt.encoderTotalERR = false; }
-                        else { opt.encoderTotalERR = true; }
-                        printf("encoderTotalERR: %d \n", opt.encoderTotalERR);
-                }
-                else if(input == 4){
-                        printf("Toggle ENCODER STAT \n");
-                        if ( opt.encoderTotalERR ) { opt.encoderTotalERR = false; }
-                        else { opt.encoderTotalERR = true; }
-                        printf("encoderTotalERR: %d \n", opt.encoderTotalERR);
-                }
-                else if(input == 5){
-                        printf("Toggle SUCCESS STAT \n");
-                        if ( opt.encoderTotalERR ) { opt.encoderTotalERR = false; }
-                        else { opt.encoderTotalERR = true; }
-                        printf("encoderTotalERR: %d \n", opt.encoderTotalERR);
-                }
-                
-        }
-        else if(input == 3){
-                printf(" \n");
-                printf("DISABLE MOVEMENT SETTINGS \n");
-                printf(" \n");
-                
-                printf("disableMovement: %d \n", opt.disableMovement);
-                printf(" \n");
-                
-                printf(" \n");
-                printf("--------------------\n");
-                printf(" \n");
-                
-                printf("1 - Toggle MOVEMENT \n");
-                printf("0 - EXIT \n");
-                
-                printf(">encoder> ");
-                
-                printf("Enter a command: \n");
-                input = getchar() - 48;
-                
-                if(input == 0){
-                        goto EXIT;
-                }
-                else if(input == 1){
-                        printf("Toggle DISABLE MOVEMENT \n");
-                        if ( opt.disableMovement ) { opt.disableMovement = false; }
-                        else { opt.disableMovement = true; }
-                        printf("disableMovement: %d \n", opt.disableMovement);
-                }
-        }
-        else if(input == 8){
-                printf("CURRENT OPTIONS \n");
-                printf("Enter a command: \n");
-                input = getchar() - 48;
-        }
-        
-        printf(" \n");
-        printf("---------- END ----------\n");
-        printf(" \n");
-	sleep_ms(opt.mainLoopSleep);
 }

@@ -32,14 +32,14 @@ def draw_line(angle1, angle2):
             ax.plot(x1, y1, 'r')  # 'r' for red color
 
             # Second line
-            x2 = np.linspace(np.cos(rad1), np.cos(rad1) + np.cos(rad1 + rad2), 100)
-            y2 = np.linspace(np.sin(rad1), np.sin(rad1) + np.sin(rad1 + rad2), 100)
+            x2 = np.linspace(np.cos(rad1), np.cos(rad1) + np.cos(180-rad2), 100)
+            y2 = np.linspace(np.sin(rad1), np.sin(rad1) + np.sin(180-rad2), 100)
             ax.plot(x2, y2, 'b')  # 'b' for blue color
             
-            ax.set_title(titles[i]+f' FEMUR: {180-angle1}°, KNEE: {-(180-angle2)}°')
-
             ax.set_xlim(-2, 2)  # Set x limits
             ax.set_ylim(2, -2)  # Set y limits (reversed)
+            
+            ax.set_title(titles[i]+f' FEMUR: {180-angle1}°, KNEE: {50+(180-angle2)}°')
 
     # Adjust the spacing between the subplots
     fig.subplots_adjust(wspace=0.5, hspace=0.5)
@@ -47,15 +47,15 @@ def draw_line(angle1, angle2):
     canvas.draw()
 
 def update_angle(val):
-    draw_line(float(180-slider1.get()), float(-(180-slider2.get())))
+    draw_line(float(180-slider1.get()), float(50+(180-slider2.get())))
     
     femur = 0
     knee = 0
     
     for i in range(4):
         if graph_states[i].get():
-            femur = round(slider1.get()/res)
-            knee = round(slider2.get()/res)
+            femur = round( (slider1.get() - femur_start_deg) / res)
+            knee = round( (slider2.get() - knee_start_deg) / res)
         else:
             femur = 0
             knee = 0
@@ -90,11 +90,11 @@ for i in range(4):
 all_graphs_check_button = tk.Checkbutton(check_button_frame, text="All", variable=all_graphs_state, command=update_all_graphs_state)
 all_graphs_check_button.pack(side=tk.TOP)
 
-slider1 = tk.Scale(root, from_=0, to=180, orient=tk.VERTICAL, length=300, command=update_angle)
+slider1 = tk.Scale(root, from_=femur_start_deg, to=100, orient=tk.VERTICAL, length=300, command=update_angle)
 slider1.set(femur_start_deg)
 slider1.grid(row=0, column=1)
 
-slider2 = tk.Scale(root, from_=0, to=180, orient=tk.VERTICAL, length=300, command=update_angle)
+slider2 = tk.Scale(root, from_=knee_start_deg, to=100, orient=tk.VERTICAL, length=300, command=update_angle)
 slider2.set(knee_start_deg)
 slider2.grid(row=0, column=2)
 
