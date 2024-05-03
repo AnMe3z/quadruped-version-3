@@ -1,5 +1,7 @@
 
 import tkinter as tk
+from tkinter import *
+
 from tkinter import ttk, scrolledtext
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 from matplotlib.figure import Figure
@@ -15,10 +17,15 @@ knee_start_deg = 15
 disk_holes = 38
 res = 360 / (38*4)
 
-def draw_line(angle1, angle2):
+pitch = 0;
+ 
+fik = [None, None, None, None]
+kik = [None, None, None, None]
+
+def draw_graphs():
+    global fik, kik
+
     fig.clear()
-    rad1 = np.deg2rad(angle1)  # Convert angle1 to radians
-    rad2 = np.deg2rad(angle2)  # Convert angle2 to radians
 
     # Create a 2x2 grid of Axes objects
     axs = fig.subplots(2, 2)
@@ -26,6 +33,8 @@ def draw_line(angle1, angle2):
     titles = ['FL', 'FR', 'BL', 'BR']
     for i, ax in enumerate(axs.flat):
         if graph_states[i].get():
+            rad1 = np.deg2rad(fik[i])  # Convert angle1 to radians
+            rad2 = np.deg2rad(kik[i])  # Convert angle2 to radians
             # First line
             x1 = np.linspace(0, np.cos(rad1), 100)
             y1 = np.linspace(0, np.sin(rad1), 100)
@@ -39,7 +48,7 @@ def draw_line(angle1, angle2):
             ax.set_xlim(-2, 2)  # Set x limits
             ax.set_ylim(2, -2)  # Set y limits (reversed)
             
-            ax.set_title(titles[i]+f' FEMUR: {round(180-angle1, 2)}°, KNEE: {round(50+(180-angle2), 2)}°')
+            ax.set_title(str(i) + titles[i]+f' FEMUR: {round(180-fik[i], 2)}°, KNEE: {round(50+(180-kik[i]), 2)}°')
 
     # Adjust the spacing between the subplots
     fig.subplots_adjust(wspace=0.5, hspace=0.5)
@@ -47,20 +56,32 @@ def draw_line(angle1, angle2):
     canvas.draw()
 
 def update_angle(val):
-    draw_line(float(180-slider1.get()), float(50+(180-slider2.get())))
+    global fik, kik
+    global pitch
+    lp = pitch
     
     femur = 0
     knee = 0
     
+    # message generator values
     for i in range(4):
         if graph_states[i].get():
             femur = round( (slider1.get() - femur_start_deg) / res)
             knee = round( (slider2.get() - knee_start_deg) / res)
+            
+            # add to global positions
+            fik[i] = 180 - slider1.get()
+            kik[i] = 50 + (180-slider2.get())
+            # draw_line(float(180-slider1.get()), float(50+(180-slider2.get())))
+            
         # Update the text inputs with the new slider values
         text_inputs[i*2].delete(0, tk.END)
         text_inputs[i*2].insert(0, str(femur))
         text_inputs[i*2+1].delete(0, tk.END)
         text_inputs[i*2+1].insert(0, str(knee))  
+        
+        
+    draw_graphs()
         
 side_l = 10
 def angle_from_cosine_theorem(a, b, c):
@@ -68,24 +89,41 @@ def angle_from_cosine_theorem(a, b, c):
     C_deg = np.rad2deg(C_rad)  # Convert angle from radians to degrees
     return C_deg
 def ik_update_angle(val):
-    fik = 90 - angle_from_cosine_theorem(side_l, ik_slider.get(), side_l)
-    kik = angle_from_cosine_theorem(side_l, side_l, ik_slider.get())
+    global fik, kik
+    global pitch
+    lp = pitch
     kcoef = 20
     
-    draw_line(float(180 - fik), float(70 + (180 - kik )))
-    
+    # message generator values
     femur = 0
     knee = 0
-    
     for i in range(4):
         if graph_states[i].get():
-            femur = round( (fik - femur_start_deg) / res)
-            knee = round( (kik - ( knee_start_deg + kcoef )) / res)
+            femur = round( (90 - angle_from_cosine_theorem(side_l, ( ik_slider.get() + lp ) , side_l) - femur_start_deg) / res)
+            knee = round( ( angle_from_cosine_theorem(side_l, side_l, ( ik_slider.get() + lp )) - ( knee_start_deg + kcoef )) / res)
+            
+            if i < 2: lp = -pitch
+            else: lp = pitch
+            
+            fik[i] = 180 - (90 - angle_from_cosine_theorem(side_l, ( ik_slider.get() + lp ) , side_l))
+            kik[i] = 70 + (180 - ( angle_from_cosine_theorem(side_l, side_l, ( ik_slider.get() + lp )) ) )
+        
         # Update the text inputs with the new slider values
         text_inputs[i*2].delete(0, tk.END)
         text_inputs[i*2].insert(0, str(femur))
         text_inputs[i*2+1].delete(0, tk.END)
         text_inputs[i*2+1].insert(0, str(knee))  
+        
+    kcoef = 20
+    
+    draw_graphs()
+    #draw_line_o(0, float(180 - fik), float(70 + (180 - kik ))) 
+        
+
+def pitch_update(val):
+    global pitch
+    pitch = p_slider.get()
+    ik_update_angle(val)
 
 root = tk.Tk()
 root.wm_title("Angle Slider")
@@ -96,9 +134,9 @@ canvas.draw()
 canvas.get_tk_widget().grid(row=0, column=0)
 
 graph_states = [tk.BooleanVar() for _ in range(4)]
-all_graphs_state = tk.BooleanVar(value=True)
+all_graphs_state = tk.BooleanVar(value=False)
 check_button_frame = tk.Frame(root)
-check_button_frame.grid(row=0, column=4, rowspan=2)
+check_button_frame.grid(row=0, column=5, rowspan=2)
 
 def update_all_graphs_state():
     state = all_graphs_state.get()
@@ -112,17 +150,30 @@ for i in range(4):
 all_graphs_check_button = tk.Checkbutton(check_button_frame, text="All", variable=all_graphs_state, command=update_all_graphs_state)
 all_graphs_check_button.pack(side=tk.TOP)
 
+
 slider1 = tk.Scale(root, from_=femur_start_deg, to=100, orient=tk.VERTICAL, length=500, command=update_angle)
 slider1.set(femur_start_deg)
-slider1.grid(row=0, column=1)
+slider1.grid(row=0, column=1, rowspan=2)
+ls1 = Label(root, text = "      F")
+ls1.grid(row=1, column=1)
 
 slider2 = tk.Scale(root, from_=knee_start_deg, to=100, orient=tk.VERTICAL, length=500, command=update_angle)
 slider2.set(knee_start_deg)
-slider2.grid(row=0, column=2)
+slider2.grid(row=0, column=2, rowspan=2)
+ls2 = Label(root, text = "      K")
+ls2.grid(row=1, column=2)
 
-ik_slider = tk.Scale(root, from_=2, to=15, orient=tk.VERTICAL, length=500, command=ik_update_angle)
-ik_slider.set(2)
-ik_slider.grid(row=0, column=3)
+ik_slider = tk.Scale(root, from_=5, to=17, orient=tk.VERTICAL, length=500, command=ik_update_angle)
+ik_slider.set(5)
+ik_slider.grid(row=0, column=3, rowspan=2)
+ls3 = Label(root, text = "     IK")
+ls3.grid(row=1, column=3)
+
+p_slider = tk.Scale(root, from_=-5, to=5, orient=tk.VERTICAL, length=500, command=pitch_update)
+p_slider.set(0)
+p_slider.grid(row=0, column=4, rowspan=2)
+ls4 = Label(root, text = "     Pi")
+ls4.grid(row=1, column=4)
 
 # Create a new frame for the new UI elements
 new_frame = tk.Frame(root)
@@ -265,7 +316,7 @@ add_send_button.pack(side=tk.LEFT)
 
 # New functionality
 new_functionality_frame = tk.Frame(root)
-new_functionality_frame.grid(row=0, column=5, rowspan=3, padx=20)  # Added some padding to create distance
+new_functionality_frame.grid(row=0, column=6, rowspan=3, padx=20)  # Added some padding to create distance
 entry_button_frame = tk.Frame(new_functionality_frame)
 entry_button_frame.pack(side=tk.TOP)
 
@@ -339,6 +390,6 @@ com_q = []
 
 # ... (Your existing code remains unchanged here)
 
-draw_line(180, 0)
+#draw_graphs(180, 0)
 tk.mainloop()
 
