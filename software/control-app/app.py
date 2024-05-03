@@ -63,24 +63,24 @@ def update_angle(val):
         text_inputs[i*2+1].insert(0, str(knee))  
         
 side_l = 10
-
 def angle_from_cosine_theorem(a, b, c):
     C_rad = np.arccos((a**2 + b**2 - c**2) / (2*a*b))  # Compute angle in radians
     C_deg = np.rad2deg(C_rad)  # Convert angle from radians to degrees
     return C_deg
-
 def ik_update_angle(val):
-    femur = 90 - angle_from_cosine_theorem(side_l, ik_slider.get(), side_l)
-    knee = angle_from_cosine_theorem(side_l, side_l, ik_slider.get())
-    femur = 180 - femur
-    knee = 70 + (180 - knee )
+    fik = 90 - angle_from_cosine_theorem(side_l, ik_slider.get(), side_l)
+    kik = angle_from_cosine_theorem(side_l, side_l, ik_slider.get())
+    kcoef = 20
     
-    draw_line(float(femur), float(knee))
+    draw_line(float(180 - fik), float(70 + (180 - kik )))
+    
+    femur = 0
+    knee = 0
     
     for i in range(4):
         if graph_states[i].get():
-            femur = round( ( 0 ) / res)
-            knee = round( ( 0 ) / res)
+            femur = round( (fik - femur_start_deg) / res)
+            knee = round( (kik - ( knee_start_deg + kcoef )) / res)
         # Update the text inputs with the new slider values
         text_inputs[i*2].delete(0, tk.END)
         text_inputs[i*2].insert(0, str(femur))
