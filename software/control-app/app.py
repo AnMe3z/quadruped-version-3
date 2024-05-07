@@ -18,6 +18,8 @@ disk_holes = 38
 res = 360 / (38*4)
 
 pitch = 0;
+
+xpiv = 0;
  
 fik = [None, None, None, None]
 kik = [None, None, None, None]
@@ -91,22 +93,24 @@ def angle_from_cosine_theorem(a, b, c):
 def ik_update_angle(val):
     global fik, kik
     global pitch
+    global xpiv
     lp = pitch
-    kcoef = 20
+    kcoef = 0
     
     # message generator values
     femur = 0
     knee = 0
     for i in range(4):
         if graph_states[i].get():
-            femur = round( (90 - angle_from_cosine_theorem(side_l, ( ik_slider.get() + lp ) , side_l) - femur_start_deg) / res)
+            femur = round( (90 - angle_from_cosine_theorem(side_l, ( ik_slider.get() + lp ) , side_l) - femur_start_deg - xpiv) / res)
             knee = round( ( angle_from_cosine_theorem(side_l, side_l, ( ik_slider.get() + lp )) - ( knee_start_deg + kcoef )) / res)
             
             if i < 2: lp = -pitch
             else: lp = pitch
             
-            fik[i] = 180 - (90 - angle_from_cosine_theorem(side_l, ( ik_slider.get() + lp ) , side_l))
-            kik[i] = 70 + (180 - ( angle_from_cosine_theorem(side_l, side_l, ( ik_slider.get() + lp )) ) )
+            # draw to graph
+            fik[i] = 180 - (90 - angle_from_cosine_theorem(side_l, ( ik_slider.get() + lp ) , side_l) - xpiv)
+            kik[i] = 70 + (180 - ( angle_from_cosine_theorem(side_l, side_l, ( ik_slider.get() + lp )) - ( knee_start_deg + kcoef ) ) )
         
         # Update the text inputs with the new slider values
         text_inputs[i*2].delete(0, tk.END)
@@ -117,10 +121,23 @@ def ik_update_angle(val):
     draw_graphs()
     #draw_line_o(0, float(180 - fik), float(70 + (180 - kik ))) 
         
-
 def pitch_update(val):
     global pitch
     pitch = p_slider.get()
+    ik_update_angle(val)
+    
+def pitagor(a, b):
+    return np.sqrt(a**2 + b**2)
+
+def x_pivot_update(val):
+    global xpiv
+    ik = ik_slider.get()
+    x = val
+    nik = round( pitagor(int(ik), int(x)), 2 )
+    # pitch angle
+    pa = round( np.rad2deg(np.arcsin(( float( x ) ) / ( float( nik ) ))), 2 )
+    xpiv = pa
+    
     ik_update_angle(val)
 
 root = tk.Tk()
@@ -134,7 +151,7 @@ canvas.get_tk_widget().grid(row=0, column=0)
 graph_states = [tk.BooleanVar() for _ in range(4)]
 all_graphs_state = tk.BooleanVar(value=False)
 check_button_frame = tk.Frame(root)
-check_button_frame.grid(row=0, column=5, rowspan=2)
+check_button_frame.grid(row=0, column=6, rowspan=2)
 
 def update_all_graphs_state():
     state = all_graphs_state.get()
@@ -167,11 +184,17 @@ ik_slider.grid(row=0, column=3, rowspan=2)
 ls3 = Label(root, text = "     IK")
 ls3.grid(row=1, column=3)
 
+x_slider = tk.Scale(root, from_=-15, to=15, orient=tk.VERTICAL, length=500, command=x_pivot_update)
+x_slider.set(0)
+x_slider.grid(row=0, column=4, rowspan=2)
+ls5 = Label(root, text = "     X")
+ls5.grid(row=1, column=4)
+
 p_slider = tk.Scale(root, from_=-5, to=5, orient=tk.VERTICAL, length=500, command=pitch_update)
 p_slider.set(0)
-p_slider.grid(row=0, column=4, rowspan=2)
+p_slider.grid(row=0, column=5, rowspan=2)
 ls4 = Label(root, text = "     Pi")
-ls4.grid(row=1, column=4)
+ls4.grid(row=1, column=5)
 
 # Create a new frame for the new UI elements
 new_frame = tk.Frame(root)
@@ -334,7 +357,7 @@ add_send_button.pack(side=tk.LEFT)
 
 # New functionality
 new_functionality_frame = tk.Frame(root)
-new_functionality_frame.grid(row=0, column=6, rowspan=3, padx=20)  # Added some padding to create distance
+new_functionality_frame.grid(row=0, column=7, rowspan=3, padx=20)  # Added some padding to create distance
 entry_button_frame = tk.Frame(new_functionality_frame)
 entry_button_frame.pack(side=tk.TOP)
 
