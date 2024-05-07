@@ -118,8 +118,8 @@ def ik_update_angle(val):
             else: lp = pitch
             
             # draw to graph
-            fik[i] = 180 - (90 - angle_from_cosine_theorem(side_l, ( ik_slider.get() + lp ) , side_l) - xpiv)
-            kik[i] = 80 + (180 - ( angle_from_cosine_theorem(side_l, side_l, ( ik_slider.get() + lp )) ) )
+            fik[i] = round( 90 - angle_from_cosine_theorem(side_l, ( ik_slider.get() + lp ) , side_l) - xpiv , 2)
+            kik[i] = round( angle_from_cosine_theorem(side_l, side_l, ( ik_slider.get() + lp )) - fik[i]     , 2)
             #                                                                                                   15        + 20
             #kik[i] = 70 + (180 - ( angle_from_cosine_theorem(side_l, side_l, ( ik_slider.get() + lp )) - ( knee_start_deg + kcoef ) ) )
         
