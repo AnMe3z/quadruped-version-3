@@ -59,8 +59,8 @@ def draw_graphs():
             ax.set_ylim(2, -2)  # Set y limits (reversed)
             
             ax.set_title(str(i) + titles[i]+f' FEMUR: {fik[i]}°, KNEEr: {kik[i]}°')
-            #print(f"KNEEreal: {kik[i]}°")
-            #print(f"KNEEideal: {fik[i] + kik[i]}°")
+            print(f"KNEEreal: {kik[i]}°")
+            print(f"KNEEideal: {fik[i] + kik[i]}°")
             #print("draw_graph fik[i] kik[i] " + str(fik[i]) + " " + str(kik[i]))   
 
     # Adjust the spacing between the subplots
@@ -108,15 +108,12 @@ def ik_update_angle(val):
     global pitch
     global xpiv
     lp = pitch
-    kcoef = 20
     
     # message generator values
     femur = 0
     knee = 0
     for i in range(4):
         if graph_states[i].get():
-            femur = round( (90 - angle_from_cosine_theorem(side_l, ( float(val) + lp ) , side_l) - femur_start_deg + xpiv) / res)
-            knee = round( ( angle_from_cosine_theorem(side_l, side_l, ( float(val) + lp )) - ( knee_start_deg + kcoef )) / res)
             
             if i < 2: lp = -pitch
             else: lp = pitch
@@ -126,6 +123,9 @@ def ik_update_angle(val):
             kik[i] = round( angle_from_cosine_theorem(side_l, side_l, ( float(val) + lp )) - fik[i]     , 2)
             #print(f'femur nik angle {90 - angle_from_cosine_theorem(side_l, ( float(val) + lp ) , side_l)}')
             #print(f'pivot angle {xpiv}')
+            
+            femur = ( ( fik[i] - femur_start_deg) / res)
+            knee = ( ( kik[i] - knee_start_deg) / res)
         
         # Update the text inputs with the new slider values
         text_inputs[i*2].delete(0, tk.END)
