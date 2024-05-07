@@ -102,7 +102,7 @@ void keyboardControl();
 #define BEACON_TARGET "255.255.255.255"
 #define BEACON_INTERVAL_MS 1000
 
-#define DEVICE_ID 0 // or 1
+#define DEVICE_ID 1 // or 1
 
 #if DEVICE_ID == 0
         #define MAX_ANGLE -42
@@ -113,11 +113,21 @@ void keyboardControl();
 
 int led;
 
-int input_data[18];
+int input_data[26];
 
 void process_data(){
         int dir;
         struct axis *j;
+        
+        int b;
+
+        // Assuming the array is already filled with data
+        // If not, you need to fill it before printing
+
+        for(b = 0; b < 26; b++) {
+            printf("%d ", input_data[b]);
+        }
+        
         if (DEVICE_ID == 0) {
                 for (int i = 0; i < 4; i++) {
                         //direction on the left side is  inverted
@@ -142,23 +152,27 @@ void process_data(){
 	                        j->moving = true;
                                 // DEBUG
                                 //if ( opt.verbose && opt.verboseDataRCV){ printf("moving \n"); }
-                                
+                                printf("moving \n");
                         }
                 }
         }
         else {
                 for (int i = 0; i < 4; i++) {
-                        dir = (input_data[(i*3) + 1] == 1) ? -1 : 1; 
+                        
+                        dir = (input_data[(i*3) + 1 + 13] == 1) ? -1 : 1; 
                 
                         j = axes+i;
                         
             	        j->startPoint = j->count;
-                        j->setPoint = j->startPoint + (dir * (10*input_data[(i*3) + 2] + input_data[(i*3) + 3])); 
+                        j->setPoint = j->startPoint + (dir * (10*input_data[(i*3) + 2 + 13] + input_data[(i*3) + 3 + 13])); 
+                        
+                        printf("dir * (10*input_data[(i*3) + 2 + 13] + input_data[(i*3) + 3 + 13]) %d \n", dir * (10*input_data[(i*3) + 2 + 13] + input_data[(i*3) + 3 + 13]) );
+                        printf("j->setPoint %d \n", j->setPoint);
+                                
                         if(MAX_ANGLE > j->setPoint && j->setPoint > MIN_ANGLE){
-	                          		j->moving = true;
+                                j->moving = true;
+                                printf("moving \n");
                         }
-                        // DEBUG
-                        //if ( opt.verbose && opt.verboseDataRCV){ printf("dir * (10*input_data[(i*3) + 2] + input_data[(i*3) + 3]) %d ", dir * (10*input_data[(i*3) + 2] + input_data[(i*3) + 3])); }
                         
                 }
         }
@@ -180,6 +194,7 @@ void udp_receive_callback(void *arg, struct udp_pcb *pcb, struct pbuf *p, const 
                                 input_data[i/2] = ((packet_data[i] - '0') * 10 + (packet_data[i+1] - '0')) - 30;
                                 // DEBUG
                                 //if ( opt.verbose && opt.verboseDataRCV){ printf("%d\n", input_data[i/2]); }
+                                printf("%d\n", input_data[i/2]);
                                 i += 2;
                         }
                         

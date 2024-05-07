@@ -184,13 +184,13 @@ ik_slider.grid(row=0, column=3, rowspan=2)
 ls3 = Label(root, text = "     IK")
 ls3.grid(row=1, column=3)
 
-x_slider = tk.Scale(root, from_=-15, to=15, orient=tk.VERTICAL, length=500, command=x_pivot_update)
+x_slider = tk.Scale(root, from_=-15, to=15, resolution=0.25, orient=tk.VERTICAL, length=500, command=x_pivot_update)
 x_slider.set(0)
 x_slider.grid(row=0, column=4, rowspan=2)
 ls5 = Label(root, text = "     X")
 ls5.grid(row=1, column=4)
 
-p_slider = tk.Scale(root, from_=-5, to=5, orient=tk.VERTICAL, length=500, command=pitch_update)
+p_slider = tk.Scale(root, from_=-5, to=5, resolution=0.25, orient=tk.VERTICAL, length=500, command=pitch_update)
 p_slider.set(0)
 p_slider.grid(row=0, column=5, rowspan=2)
 ls4 = Label(root, text = "     Pi")
@@ -242,6 +242,14 @@ def generate():
 
 generate_button = tk.Button(input_frame, text="Generate", command=generate)
 generate_button.pack(side=tk.LEFT)
+
+def invert():
+    for var in dropdowns:
+        # Convert the string to an integer, negate it, then convert back to a string
+        var.set(str(1 - int(var.get())))
+
+invert_button = tk.Button(input_frame, text="Invert", command=invert)
+invert_button.pack(side=tk.LEFT)
 
 large_input_frame = tk.Frame(new_frame)
 large_input_frame.pack()
