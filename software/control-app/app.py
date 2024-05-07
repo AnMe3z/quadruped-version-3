@@ -100,6 +100,7 @@ def angle_from_cosine_theorem(a, b, c):
     C_deg = np.rad2deg(C_rad)  # Convert angle from radians to degrees
     return C_deg
 def ik_update_angle(val):
+    print(val)
     global fik, kik
     global pitch
     global xpiv
@@ -111,15 +112,17 @@ def ik_update_angle(val):
     knee = 0
     for i in range(4):
         if graph_states[i].get():
-            femur = round( (90 - angle_from_cosine_theorem(side_l, ( ik_slider.get() + lp ) , side_l) - femur_start_deg - xpiv) / res)
-            knee = round( ( angle_from_cosine_theorem(side_l, side_l, ( ik_slider.get() + lp )) - ( knee_start_deg + kcoef )) / res)
+            femur = round( (90 - angle_from_cosine_theorem(side_l, ( float(val) + lp ) , side_l) - femur_start_deg + xpiv) / res)
+            knee = round( ( angle_from_cosine_theorem(side_l, side_l, ( float(val) + lp )) - ( knee_start_deg + kcoef )) / res)
             
             if i < 2: lp = -pitch
             else: lp = pitch
             
             # draw to graph
-            fik[i] = round( 90 - angle_from_cosine_theorem(side_l, ( ik_slider.get() + lp ) , side_l) - xpiv , 2)
-            kik[i] = round( angle_from_cosine_theorem(side_l, side_l, ( ik_slider.get() + lp )) - fik[i]     , 2)
+            print(f'femur nik angle {90 - angle_from_cosine_theorem(side_l, ( float(val) + lp ) , side_l)}')
+            print(f'pivot angle {xpiv}')
+            fik[i] = round( (90 - angle_from_cosine_theorem(side_l, ( float(val) + lp ) , side_l)) + xpiv , 2)
+            kik[i] = round( angle_from_cosine_theorem(side_l, side_l, ( float(val) + lp )) - fik[i]     , 2)
             #                                                                                                   15        + 20
             #kik[i] = 70 + (180 - ( angle_from_cosine_theorem(side_l, side_l, ( ik_slider.get() + lp )) - ( knee_start_deg + kcoef ) ) )
         
@@ -144,12 +147,12 @@ def x_pivot_update(val):
     global xpiv
     ik = ik_slider.get()
     x = val
-    nik = round( pitagor(int(ik), int(float(x))), 2 )
-    # pitch angle
+    nik = round( pitagor( int(ik), int(float(x)) ), 2 )
+    # pivot angle
     pa = round( np.rad2deg(np.arcsin(( float( x ) ) / ( float( nik ) ))), 2 )
     xpiv = pa
     
-    ik_update_angle(val)
+    ik_update_angle(nik)
 
 root = tk.Tk()
 root.wm_title("Angle Slider")
@@ -189,7 +192,7 @@ slider2.grid(row=0, column=2, rowspan=2)
 ls2 = Label(root, text = "      K")
 ls2.grid(row=1, column=2)
 
-ik_slider = tk.Scale(root, from_=7, to=17, orient=tk.VERTICAL, length=500, command=ik_update_angle)
+ik_slider = tk.Scale(root, from_=2, to=17, orient=tk.VERTICAL, length=500, command=ik_update_angle)
 ik_slider.set(5)
 ik_slider.grid(row=0, column=3, rowspan=2)
 ls3 = Label(root, text = "     IK")
