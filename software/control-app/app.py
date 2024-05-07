@@ -17,6 +17,8 @@ knee_start_deg = 0
 disk_holes = 38
 res = 360 / (38*4)
 
+ik = 0;
+
 pitch = 0;
 
 xpiv = 0;
@@ -57,8 +59,8 @@ def draw_graphs():
             ax.set_ylim(2, -2)  # Set y limits (reversed)
             
             ax.set_title(str(i) + titles[i]+f' FEMUR: {fik[i]}°, KNEEr: {kik[i]}°')
-            print(f"KNEEreal: {kik[i]}°")
-            print(f"KNEEideal: {fik[i] + kik[i]}°")
+            #print(f"KNEEreal: {kik[i]}°")
+            #print(f"KNEEideal: {fik[i] + kik[i]}°")
             #print("draw_graph fik[i] kik[i] " + str(fik[i]) + " " + str(kik[i]))   
 
     # Adjust the spacing between the subplots
@@ -100,7 +102,8 @@ def angle_from_cosine_theorem(a, b, c):
     C_deg = np.rad2deg(C_rad)  # Convert angle from radians to degrees
     return C_deg
 def ik_update_angle(val):
-    print(val)
+    global ik
+    ik = val
     global fik, kik
     global pitch
     global xpiv
@@ -119,12 +122,10 @@ def ik_update_angle(val):
             else: lp = pitch
             
             # draw to graph
-            print(f'femur nik angle {90 - angle_from_cosine_theorem(side_l, ( float(val) + lp ) , side_l)}')
-            print(f'pivot angle {xpiv}')
             fik[i] = round( (90 - angle_from_cosine_theorem(side_l, ( float(val) + lp ) , side_l)) + xpiv , 2)
             kik[i] = round( angle_from_cosine_theorem(side_l, side_l, ( float(val) + lp )) - fik[i]     , 2)
-            #                                                                                                   15        + 20
-            #kik[i] = 70 + (180 - ( angle_from_cosine_theorem(side_l, side_l, ( ik_slider.get() + lp )) - ( knee_start_deg + kcoef ) ) )
+            #print(f'femur nik angle {90 - angle_from_cosine_theorem(side_l, ( float(val) + lp ) , side_l)}')
+            #print(f'pivot angle {xpiv}')
         
         # Update the text inputs with the new slider values
         text_inputs[i*2].delete(0, tk.END)
@@ -138,7 +139,7 @@ def ik_update_angle(val):
 def pitch_update(val):
     global pitch
     pitch = p_slider.get()
-    ik_update_angle(val)
+    ik_update_angle(ik)
     
 def pitagor(a, b):
     return np.sqrt(a**2 + b**2)
