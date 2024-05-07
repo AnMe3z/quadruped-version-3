@@ -11,7 +11,7 @@ import time
 
 # leg setup
 femur_start_deg = 5
-knee_start_deg = 15
+knee_start_deg = 0
 
 # angle calculations
 disk_holes = 38
@@ -35,22 +35,31 @@ def draw_graphs():
     titles = ['FL', 'FR', 'BL', 'BR']
     for i, ax in enumerate(axs.flat):
         if graph_states[i].get():
-            rad1 = np.deg2rad(fik[i])  # Convert angle1 to radians
+            # rad1 must be mirrored 180  deg
+            rad1 = np.deg2rad(180 - fik[i])  #Convert angle1 to radians
             rad2 = np.deg2rad(kik[i])  # Convert angle2 to radians
             # First line
             x1 = np.linspace(0, np.cos(rad1), 100)
             y1 = np.linspace(0, np.sin(rad1), 100)
-            ax.plot(x1, y1, 'r')  # 'r' for red color
+            ax.plot(x1, y1, 'r', linewidth=2)  # 'r' for red color
 
             # Second line
-            x2 = np.linspace(np.cos(rad1), np.cos(rad1) + np.cos(180-rad2), 100)
-            y2 = np.linspace(np.sin(rad1), np.sin(rad1) + np.sin(180-rad2), 100)
-            ax.plot(x2, y2, 'b')  # 'b' for blue color
+            x2 = np.linspace(np.cos(rad1), np.cos(rad1) + np.cos(rad2), 100)
+            y2 = np.linspace(np.sin(rad1), np.sin(rad1) + np.sin(rad2), 100)
+            ax.plot(x2, y2, 'b', linewidth=2)  # 'b' for blue color
+            
+            # Knee line
+            x3 = np.linspace(np.cos(rad1), np.cos(rad1) + np.cos(0), 100)
+            y3 = np.linspace(np.sin(rad1), np.sin(rad1) + np.sin(0), 100)
+            ax.plot(x3, y3, 'g', linewidth=1)  # 'b' for blue color
             
             ax.set_xlim(-2, 2)  # Set x limits
             ax.set_ylim(2, -2)  # Set y limits (reversed)
             
-            ax.set_title(str(i) + titles[i]+f' FEMUR: {round(180-fik[i], 2)}°, KNEE: {round(50+(180-kik[i]), 2)}°')
+            ax.set_title(str(i) + titles[i]+f' FEMUR: {fik[i]}°, KNEEr: {kik[i]}°')
+            print(f"KNEEreal: {kik[i]}°")
+            print(f"KNEEideal: {fik[i] + kik[i]}°")
+            #print("draw_graph fik[i] kik[i] " + str(fik[i]) + " " + str(kik[i]))   
 
     # Adjust the spacing between the subplots
     fig.subplots_adjust(wspace=0.5, hspace=0.5)
@@ -72,8 +81,8 @@ def update_angle(val):
             knee = round( (slider2.get() - knee_start_deg) / res)
             
             # add to global positions
-            fik[i] = 180 - slider1.get()
-            kik[i] = 50 + (180-slider2.get())
+            fik[i] = slider1.get()
+            kik[i] = slider2.get()
             # draw_line(float(180-slider1.get()), float(50+(180-slider2.get())))
             
         # Update the text inputs with the new slider values
@@ -95,7 +104,7 @@ def ik_update_angle(val):
     global pitch
     global xpiv
     lp = pitch
-    kcoef = 0
+    kcoef = 20
     
     # message generator values
     femur = 0
@@ -110,7 +119,9 @@ def ik_update_angle(val):
             
             # draw to graph
             fik[i] = 180 - (90 - angle_from_cosine_theorem(side_l, ( ik_slider.get() + lp ) , side_l) - xpiv)
-            kik[i] = 70 + (180 - ( angle_from_cosine_theorem(side_l, side_l, ( ik_slider.get() + lp )) - ( knee_start_deg + kcoef ) ) )
+            kik[i] = 80 + (180 - ( angle_from_cosine_theorem(side_l, side_l, ( ik_slider.get() + lp )) ) )
+            #                                                                                                   15        + 20
+            #kik[i] = 70 + (180 - ( angle_from_cosine_theorem(side_l, side_l, ( ik_slider.get() + lp )) - ( knee_start_deg + kcoef ) ) )
         
         # Update the text inputs with the new slider values
         text_inputs[i*2].delete(0, tk.END)
@@ -133,7 +144,7 @@ def x_pivot_update(val):
     global xpiv
     ik = ik_slider.get()
     x = val
-    nik = round( pitagor(int(ik), int(x)), 2 )
+    nik = round( pitagor(int(ik), int(float(x))), 2 )
     # pitch angle
     pa = round( np.rad2deg(np.arcsin(( float( x ) ) / ( float( nik ) ))), 2 )
     xpiv = pa
@@ -178,7 +189,7 @@ slider2.grid(row=0, column=2, rowspan=2)
 ls2 = Label(root, text = "      K")
 ls2.grid(row=1, column=2)
 
-ik_slider = tk.Scale(root, from_=5, to=17, orient=tk.VERTICAL, length=500, command=ik_update_angle)
+ik_slider = tk.Scale(root, from_=7, to=17, orient=tk.VERTICAL, length=500, command=ik_update_angle)
 ik_slider.set(5)
 ik_slider.grid(row=0, column=3, rowspan=2)
 ls3 = Label(root, text = "     IK")
