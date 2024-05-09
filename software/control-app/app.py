@@ -87,11 +87,11 @@ def update_angle(val):
             kik[i] = slider2.get()
             # draw_line(float(180-slider1.get()), float(50+(180-slider2.get())))
             
-        # Update the text inputs with the new slider values
-        text_inputs[i*2].delete(0, tk.END)
-        text_inputs[i*2].insert(0, str(femur))
-        text_inputs[i*2+1].delete(0, tk.END)
-        text_inputs[i*2+1].insert(0, str(knee))  
+            # Update the text inputs with the new slider values
+            text_inputs[i*2].delete(0, tk.END)
+            text_inputs[i*2].insert(0, str(femur))
+            text_inputs[i*2+1].delete(0, tk.END)
+            text_inputs[i*2+1].insert(0, str(knee))  
         
         
     draw_graphs()
@@ -101,6 +101,10 @@ def angle_from_cosine_theorem(a, b, c):
     C_rad = np.arccos((a**2 + b**2 - c**2) / (2*a*b))  # Compute angle in radians
     C_deg = np.rad2deg(C_rad)  # Convert angle from radians to degrees
     return C_deg
+    
+#                       0, 1, 2, 3
+iToTextIdRemapMatrix = [0, 2, 1, 3]
+    
 def ik_update_angle(val):
     global ik
     ik = val
@@ -124,14 +128,14 @@ def ik_update_angle(val):
             #print(f'femur nik angle {90 - angle_from_cosine_theorem(side_l, ( float(val) + lp ) , side_l)}')
             #print(f'pivot angle {xpiv}')
             
-            femur = ( ( fik[i] - femur_start_deg) / res)
-            knee = ( ( kik[i] - knee_start_deg) / res)
+            femur = round( ( ( fik[i] - femur_start_deg) / res) )
+            knee = round( ( ( kik[i] - knee_start_deg) / res) )
         
-        # Update the text inputs with the new slider values
-        text_inputs[i*2].delete(0, tk.END)
-        text_inputs[i*2].insert(0, str(femur))
-        text_inputs[i*2+1].delete(0, tk.END)
-        text_inputs[i*2+1].insert(0, str(knee))  
+            # Update the text inputs with the new slider values
+            text_inputs[iToTextIdRemapMatrix[i]*2].delete(0, tk.END)
+            text_inputs[iToTextIdRemapMatrix[i]*2].insert(0, str(femur))
+            text_inputs[iToTextIdRemapMatrix[i]*2+1].delete(0, tk.END)
+            text_inputs[iToTextIdRemapMatrix[i]*2+1].insert(0, str(knee))  
         
     draw_graphs()
     #draw_line_o(0, float(180 - fik), float(70 + (180 - kik ))) 
@@ -199,13 +203,13 @@ ik_slider.grid(row=0, column=3, rowspan=2)
 ls3 = Label(root, text = "     IK")
 ls3.grid(row=1, column=3)
 
-x_slider = tk.Scale(root, from_=-15, to=15, resolution=0.25, orient=tk.VERTICAL, length=500, command=x_pivot_update)
+x_slider = tk.Scale(root, from_=-15, to=15, resolution=1, orient=tk.VERTICAL, length=500, command=x_pivot_update)
 x_slider.set(0)
 x_slider.grid(row=0, column=4, rowspan=2)
 ls5 = Label(root, text = "     X")
 ls5.grid(row=1, column=4)
 
-p_slider = tk.Scale(root, from_=-5, to=5, resolution=0.25, orient=tk.VERTICAL, length=500, command=pitch_update)
+p_slider = tk.Scale(root, from_=-5, to=5, resolution=1, orient=tk.VERTICAL, length=500, command=pitch_update)
 p_slider.set(0)
 p_slider.grid(row=0, column=5, rowspan=2)
 ls4 = Label(root, text = "     Pi")
