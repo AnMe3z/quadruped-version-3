@@ -59,8 +59,8 @@ def draw_graphs():
             ax.set_ylim(2, -2)  # Set y limits (reversed)
             
             ax.set_title(str(i) + titles[i]+f' FEMUR: {fik[i]}°, KNEEr: {kik[i]}°')
-            print(f"KNEEreal: {kik[i]}°")
-            print(f"KNEEideal: {fik[i] + kik[i]}°")
+            #print(f"KNEEreal: {kik[i]}°")
+            #print(f"KNEEideal: {fik[i] + kik[i]}°")
             #print("draw_graph fik[i] kik[i] " + str(fik[i]) + " " + str(kik[i]))   
 
     # Adjust the spacing between the subplots
@@ -404,6 +404,20 @@ def add_text():
     # Create a label with the text and pack it in the frame
     text_label = tk.Label(text_frame, text=text)
     text_label.pack()
+    
+def add_text_from_var(var):
+    # Get the text from the entry
+    text = var
+    # Add the text to the list
+    texts.append(text)
+    # Clear the entry
+    text_entry.delete(0, tk.END)
+    # Create a new frame for the text
+    text_frame = tk.Frame(new_functionality_frame)
+    text_frame.pack(side=tk.TOP)
+    # Create a label with the text and pack it in the frame
+    text_label = tk.Label(text_frame, text=text)
+    text_label.pack()
 
 # Move the text entry and the "Add" button to this frame
 text_entry = tk.Entry(entry_button_frame, width=20)
@@ -431,7 +445,14 @@ delete_button_frame.pack(side=tk.TOP)
 delete_all_button = tk.Button(delete_button_frame, text="Delete All", command=delete_all)
 delete_all_button.pack(side=tk.TOP)
 
+cons_state = tk.BooleanVar(value=False)
+
+cons_button = tk.Checkbutton(delete_button_frame, text="consider", variable=cons_state)
+cons_button.pack(side=tk.TOP)
+
 def send_q():
+    global texts
+    new_texts = [] 
     for command in texts:
         com_q.append([command, delay_entry.get()])
         
@@ -440,9 +461,22 @@ def send_q():
         print("Output:")
         print(output)
         
+        if cons_state.get():
+            print('cons_state')
+            for c in texts:
+                if c != command:
+                    new_texts.append(c)
+            break
+            
         time.sleep(int(delay_entry.get())*0.001)
-
     
+    delete_all()
+    
+    for t in new_texts:
+        add_text_from_var(t)
+    
+    #texts.append(text)
+    print(new_texts)
     print(com_q)
     
     
