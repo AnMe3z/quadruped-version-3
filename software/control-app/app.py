@@ -425,7 +425,14 @@ text_entry.pack(side=tk.LEFT)
 add_button = tk.Button(entry_button_frame, text="Add to Q", command=add_text)
 add_button.pack(side=tk.LEFT)
 
+def delete_and_reset():
+    global last_command
+    last_command = 0
+    
+    delete_all()
+
 def delete_all():
+    
     # Loop over all children of new_functionality_frame
     for widget in new_functionality_frame.winfo_children():
         # If the widget is a Frame and it's not one of the frames we want to keep
@@ -442,7 +449,7 @@ delete_button_frame = tk.Frame(new_functionality_frame)
 delete_button_frame.pack(side=tk.TOP)
 
 # Move the "Delete All" button to this frame
-delete_all_button = tk.Button(delete_button_frame, text="Delete All", command=delete_all)
+delete_all_button = tk.Button(delete_button_frame, text="Delete All", command=delete_and_reset)
 delete_all_button.pack(side=tk.TOP)
 
 cons_state = tk.BooleanVar(value=False)
@@ -470,10 +477,11 @@ def send_q():
             
         time.sleep(int(delay_entry.get())*0.001)
     
-    delete_all()
-    
-    for t in new_texts:
-        add_text_from_var(t)
+    if cons_state.get():
+        delete_all()
+        
+        for t in new_texts:
+            add_text_from_var(t)
     
     #texts.append(text)
     print(new_texts)
