@@ -123,9 +123,19 @@ def ik_update_angle(val):
             else: lp = pitch
             
             # draw to graph
-            fik[i] = round( (90 - angle_from_cosine_theorem(side_l, ( float(val) + lp ) , side_l)) + xpiv , 2)
-            kik[i] = round( angle_from_cosine_theorem(side_l, side_l, ( float(val) + lp )) - fik[i]     , 2)
-            #print(f'femur nik angle {90 - angle_from_cosine_theorem(side_l, ( float(val) + lp ) , side_l)}')
+            if not x_front_state.get():
+                fik[i] = round( (90 - angle_from_cosine_theorem(side_l, ( float(val) + lp ) , side_l)) , 2)
+                fik[i] = round( fik[i] + xpiv , 2)
+                kik[i] = round( angle_from_cosine_theorem(side_l, side_l, ( float(val) + lp )) - fik[i]     , 2)
+            elif i < 2:
+                fik[i] = round( (90 - angle_from_cosine_theorem(side_l, ( float(val) + lp ) , side_l)) , 2)
+                fik[i] = round( fik[i] + xpiv , 2)
+                kik[i] = round( angle_from_cosine_theorem(side_l, side_l, ( float(val) + lp )) - fik[i]     , 2)
+            else:
+                fik[i] = round( (90 - angle_from_cosine_theorem(side_l, ( float(ik_slider.get()) + lp ) , side_l)) , 2)
+                kik[i] = round( angle_from_cosine_theorem(side_l, side_l, ( float(ik_slider.get()) + lp )) - fik[i]     , 2)
+                
+            
             #print(f'pivot angle {xpiv}')
             
             femur = round( ( ( fik[i] - femur_start_deg) / res) )
@@ -203,6 +213,9 @@ ik_slider.grid(row=0, column=3, rowspan=2)
 ls3 = Label(root, text = "     IK")
 ls3.grid(row=1, column=3)
 
+x_front_state = tk.BooleanVar(value=False)
+x_front = tk.Checkbutton(root, text="X front", variable=x_front_state)
+x_front.grid(row=1, column=4, rowspan=2)
 x_slider = tk.Scale(root, from_=-15, to=15, resolution=1, orient=tk.VERTICAL, length=500, command=x_pivot_update)
 x_slider.set(0)
 x_slider.grid(row=0, column=4, rowspan=2)
