@@ -1052,234 +1052,10 @@ CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardwa
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_pio/pio.c.s"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_pio/pio.c -o CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_pio/pio.c.s
 
-CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch.c.obj: CMakeFiles/pwm_control.dir/flags.make
-CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch.c.obj: /home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch.c
-CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch.c.obj: CMakeFiles/pwm_control.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_72) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch.c.obj"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch.c.obj -MF CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch.c.obj.d -o CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch.c.obj -c /home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch.c
-
-CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch.c.i"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch.c > CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch.c.i
-
-CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch.c.s"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch.c -o CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch.c.s
-
-CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_poll.c.obj: CMakeFiles/pwm_control.dir/flags.make
-CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_poll.c.obj: /home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_poll.c
-CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_poll.c.obj: CMakeFiles/pwm_control.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_73) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_poll.c.obj"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_poll.c.obj -MF CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_poll.c.obj.d -o CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_poll.c.obj -c /home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_poll.c
-
-CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_poll.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_poll.c.i"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_poll.c > CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_poll.c.i
-
-CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_poll.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_poll.c.s"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_poll.c -o CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_poll.c.s
-
-CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_threadsafe_background.c.obj: CMakeFiles/pwm_control.dir/flags.make
-CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_threadsafe_background.c.obj: /home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_threadsafe_background.c
-CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_threadsafe_background.c.obj: CMakeFiles/pwm_control.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_74) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_threadsafe_background.c.obj"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_threadsafe_background.c.obj -MF CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_threadsafe_background.c.obj.d -o CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_threadsafe_background.c.obj -c /home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_threadsafe_background.c
-
-CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_threadsafe_background.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_threadsafe_background.c.i"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_threadsafe_background.c > CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_threadsafe_background.c.i
-
-CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_threadsafe_background.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_threadsafe_background.c.s"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_threadsafe_background.c -o CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_threadsafe_background.c.s
-
-CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_freertos.c.obj: CMakeFiles/pwm_control.dir/flags.make
-CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_freertos.c.obj: /home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_freertos.c
-CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_freertos.c.obj: CMakeFiles/pwm_control.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_75) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_freertos.c.obj"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_freertos.c.obj -MF CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_freertos.c.obj.d -o CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_freertos.c.obj -c /home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_freertos.c
-
-CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_freertos.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_freertos.c.i"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_freertos.c > CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_freertos.c.i
-
-CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_freertos.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_freertos.c.s"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_freertos.c -o CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_freertos.c.s
-
-CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_driver/cyw43_bus_pio_spi.c.obj: CMakeFiles/pwm_control.dir/flags.make
-CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_driver/cyw43_bus_pio_spi.c.obj: /home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_driver/cyw43_bus_pio_spi.c
-CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_driver/cyw43_bus_pio_spi.c.obj: CMakeFiles/pwm_control.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_76) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_driver/cyw43_bus_pio_spi.c.obj"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_driver/cyw43_bus_pio_spi.c.obj -MF CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_driver/cyw43_bus_pio_spi.c.obj.d -o CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_driver/cyw43_bus_pio_spi.c.obj -c /home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_driver/cyw43_bus_pio_spi.c
-
-CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_driver/cyw43_bus_pio_spi.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_driver/cyw43_bus_pio_spi.c.i"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_driver/cyw43_bus_pio_spi.c > CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_driver/cyw43_bus_pio_spi.c.i
-
-CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_driver/cyw43_bus_pio_spi.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_driver/cyw43_bus_pio_spi.c.s"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_driver/cyw43_bus_pio_spi.c -o CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_driver/cyw43_bus_pio_spi.c.s
-
-CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_ll.c.obj: CMakeFiles/pwm_control.dir/flags.make
-CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_ll.c.obj: /home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_ll.c
-CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_ll.c.obj: CMakeFiles/pwm_control.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_77) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_ll.c.obj"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_ll.c.obj -MF CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_ll.c.obj.d -o CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_ll.c.obj -c /home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_ll.c
-
-CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_ll.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_ll.c.i"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_ll.c > CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_ll.c.i
-
-CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_ll.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_ll.c.s"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_ll.c -o CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_ll.c.s
-
-CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_stats.c.obj: CMakeFiles/pwm_control.dir/flags.make
-CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_stats.c.obj: /home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_stats.c
-CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_stats.c.obj: CMakeFiles/pwm_control.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_78) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_stats.c.obj"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_stats.c.obj -MF CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_stats.c.obj.d -o CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_stats.c.obj -c /home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_stats.c
-
-CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_stats.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_stats.c.i"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_stats.c > CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_stats.c.i
-
-CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_stats.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_stats.c.s"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_stats.c -o CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_stats.c.s
-
-CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_lwip.c.obj: CMakeFiles/pwm_control.dir/flags.make
-CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_lwip.c.obj: /home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_lwip.c
-CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_lwip.c.obj: CMakeFiles/pwm_control.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_79) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_lwip.c.obj"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_lwip.c.obj -MF CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_lwip.c.obj.d -o CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_lwip.c.obj -c /home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_lwip.c
-
-CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_lwip.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_lwip.c.i"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_lwip.c > CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_lwip.c.i
-
-CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_lwip.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_lwip.c.s"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_lwip.c -o CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_lwip.c.s
-
-CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_ctrl.c.obj: CMakeFiles/pwm_control.dir/flags.make
-CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_ctrl.c.obj: /home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_ctrl.c
-CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_ctrl.c.obj: CMakeFiles/pwm_control.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_80) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_ctrl.c.obj"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_ctrl.c.obj -MF CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_ctrl.c.obj.d -o CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_ctrl.c.obj -c /home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_ctrl.c
-
-CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_ctrl.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_ctrl.c.i"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_ctrl.c > CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_ctrl.c.i
-
-CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_ctrl.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_ctrl.c.s"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_ctrl.c -o CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_ctrl.c.s
-
-CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus.c.obj: CMakeFiles/pwm_control.dir/flags.make
-CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus.c.obj: /home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus.c
-CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus.c.obj: CMakeFiles/pwm_control.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_81) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus.c.obj"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus.c.obj -MF CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus.c.obj.d -o CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus.c.obj -c /home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus.c
-
-CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus.c.i"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus.c > CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus.c.i
-
-CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus.c.s"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus.c -o CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus.c.s
-
-CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus_driver.c.obj: CMakeFiles/pwm_control.dir/flags.make
-CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus_driver.c.obj: /home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus_driver.c
-CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus_driver.c.obj: CMakeFiles/pwm_control.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_82) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus_driver.c.obj"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus_driver.c.obj -MF CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus_driver.c.obj.d -o CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus_driver.c.obj -c /home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus_driver.c
-
-CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus_driver.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus_driver.c.i"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus_driver.c > CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus_driver.c.i
-
-CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus_driver.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus_driver.c.s"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus_driver.c -o CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus_driver.c.s
-
-CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_dma/dma.c.obj: CMakeFiles/pwm_control.dir/flags.make
-CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_dma/dma.c.obj: /home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_dma/dma.c
-CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_dma/dma.c.obj: CMakeFiles/pwm_control.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_83) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_dma/dma.c.obj"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_dma/dma.c.obj -MF CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_dma/dma.c.obj.d -o CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_dma/dma.c.obj -c /home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_dma/dma.c
-
-CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_dma/dma.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_dma/dma.c.i"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_dma/dma.c > CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_dma/dma.c.i
-
-CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_dma/dma.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_dma/dma.c.s"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_dma/dma.c -o CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_dma/dma.c.s
-
-CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_exception/exception.c.obj: CMakeFiles/pwm_control.dir/flags.make
-CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_exception/exception.c.obj: /home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_exception/exception.c
-CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_exception/exception.c.obj: CMakeFiles/pwm_control.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_84) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_exception/exception.c.obj"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_exception/exception.c.obj -MF CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_exception/exception.c.obj.d -o CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_exception/exception.c.obj -c /home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_exception/exception.c
-
-CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_exception/exception.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_exception/exception.c.i"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_exception/exception.c > CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_exception/exception.c.i
-
-CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_exception/exception.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_exception/exception.c.s"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_exception/exception.c -o CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_exception/exception.c.s
-
-CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_driver/cyw43_driver.c.obj: CMakeFiles/pwm_control.dir/flags.make
-CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_driver/cyw43_driver.c.obj: /home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_driver/cyw43_driver.c
-CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_driver/cyw43_driver.c.obj: CMakeFiles/pwm_control.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_85) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_driver/cyw43_driver.c.obj"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_driver/cyw43_driver.c.obj -MF CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_driver/cyw43_driver.c.obj.d -o CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_driver/cyw43_driver.c.obj -c /home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_driver/cyw43_driver.c
-
-CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_driver/cyw43_driver.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_driver/cyw43_driver.c.i"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_driver/cyw43_driver.c > CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_driver/cyw43_driver.c.i
-
-CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_driver/cyw43_driver.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_driver/cyw43_driver.c.s"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_driver/cyw43_driver.c -o CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_driver/cyw43_driver.c.s
-
-CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_async_context/async_context_threadsafe_background.c.obj: CMakeFiles/pwm_control.dir/flags.make
-CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_async_context/async_context_threadsafe_background.c.obj: /home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_async_context/async_context_threadsafe_background.c
-CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_async_context/async_context_threadsafe_background.c.obj: CMakeFiles/pwm_control.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_86) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_async_context/async_context_threadsafe_background.c.obj"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_async_context/async_context_threadsafe_background.c.obj -MF CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_async_context/async_context_threadsafe_background.c.obj.d -o CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_async_context/async_context_threadsafe_background.c.obj -c /home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_async_context/async_context_threadsafe_background.c
-
-CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_async_context/async_context_threadsafe_background.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_async_context/async_context_threadsafe_background.c.i"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_async_context/async_context_threadsafe_background.c > CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_async_context/async_context_threadsafe_background.c.i
-
-CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_async_context/async_context_threadsafe_background.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_async_context/async_context_threadsafe_background.c.s"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_async_context/async_context_threadsafe_background.c -o CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_async_context/async_context_threadsafe_background.c.s
-
-CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_async_context/async_context_base.c.obj: CMakeFiles/pwm_control.dir/flags.make
-CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_async_context/async_context_base.c.obj: /home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_async_context/async_context_base.c
-CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_async_context/async_context_base.c.obj: CMakeFiles/pwm_control.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_87) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_async_context/async_context_base.c.obj"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_async_context/async_context_base.c.obj -MF CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_async_context/async_context_base.c.obj.d -o CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_async_context/async_context_base.c.obj -c /home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_async_context/async_context_base.c
-
-CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_async_context/async_context_base.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_async_context/async_context_base.c.i"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_async_context/async_context_base.c > CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_async_context/async_context_base.c.i
-
-CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_async_context/async_context_base.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_async_context/async_context_base.c.s"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_async_context/async_context_base.c -o CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_async_context/async_context_base.c.s
-
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_lwip/lwip_nosys.c.obj: CMakeFiles/pwm_control.dir/flags.make
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_lwip/lwip_nosys.c.obj: /home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_lwip/lwip_nosys.c
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_lwip/lwip_nosys.c.obj: CMakeFiles/pwm_control.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_88) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_lwip/lwip_nosys.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_72) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_lwip/lwip_nosys.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_lwip/lwip_nosys.c.obj -MF CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_lwip/lwip_nosys.c.obj.d -o CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_lwip/lwip_nosys.c.obj -c /home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_lwip/lwip_nosys.c
 
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_lwip/lwip_nosys.c.i: cmake_force
@@ -1290,10 +1066,24 @@ CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_l
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_lwip/lwip_nosys.c.s"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_lwip/lwip_nosys.c -o CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_lwip/lwip_nosys.c.s
 
+CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_async_context/async_context_base.c.obj: CMakeFiles/pwm_control.dir/flags.make
+CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_async_context/async_context_base.c.obj: /home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_async_context/async_context_base.c
+CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_async_context/async_context_base.c.obj: CMakeFiles/pwm_control.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_73) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_async_context/async_context_base.c.obj"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_async_context/async_context_base.c.obj -MF CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_async_context/async_context_base.c.obj.d -o CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_async_context/async_context_base.c.obj -c /home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_async_context/async_context_base.c
+
+CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_async_context/async_context_base.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_async_context/async_context_base.c.i"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_async_context/async_context_base.c > CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_async_context/async_context_base.c.i
+
+CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_async_context/async_context_base.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_async_context/async_context_base.c.s"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_async_context/async_context_base.c -o CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_async_context/async_context_base.c.s
+
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_rand/rand.c.obj: CMakeFiles/pwm_control.dir/flags.make
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_rand/rand.c.obj: /home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_rand/rand.c
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_rand/rand.c.obj: CMakeFiles/pwm_control.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_89) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_rand/rand.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_74) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_rand/rand.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_rand/rand.c.obj -MF CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_rand/rand.c.obj.d -o CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_rand/rand.c.obj -c /home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_rand/rand.c
 
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_rand/rand.c.i: cmake_force
@@ -1307,7 +1097,7 @@ CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_r
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/init.c.obj: CMakeFiles/pwm_control.dir/flags.make
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/init.c.obj: /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/init.c
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/init.c.obj: CMakeFiles/pwm_control.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_90) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/init.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_75) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/init.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/init.c.obj -MF CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/init.c.obj.d -o CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/init.c.obj -c /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/init.c
 
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/init.c.i: cmake_force
@@ -1321,7 +1111,7 @@ CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ini
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/def.c.obj: CMakeFiles/pwm_control.dir/flags.make
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/def.c.obj: /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/def.c
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/def.c.obj: CMakeFiles/pwm_control.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_91) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/def.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_76) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/def.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/def.c.obj -MF CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/def.c.obj.d -o CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/def.c.obj -c /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/def.c
 
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/def.c.i: cmake_force
@@ -1335,7 +1125,7 @@ CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/def
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/dns.c.obj: CMakeFiles/pwm_control.dir/flags.make
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/dns.c.obj: /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/dns.c
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/dns.c.obj: CMakeFiles/pwm_control.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_92) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/dns.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_77) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/dns.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/dns.c.obj -MF CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/dns.c.obj.d -o CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/dns.c.obj -c /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/dns.c
 
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/dns.c.i: cmake_force
@@ -1349,7 +1139,7 @@ CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/dns
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/inet_chksum.c.obj: CMakeFiles/pwm_control.dir/flags.make
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/inet_chksum.c.obj: /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/inet_chksum.c
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/inet_chksum.c.obj: CMakeFiles/pwm_control.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_93) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/inet_chksum.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_78) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/inet_chksum.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/inet_chksum.c.obj -MF CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/inet_chksum.c.obj.d -o CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/inet_chksum.c.obj -c /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/inet_chksum.c
 
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/inet_chksum.c.i: cmake_force
@@ -1363,7 +1153,7 @@ CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ine
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ip.c.obj: CMakeFiles/pwm_control.dir/flags.make
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ip.c.obj: /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ip.c
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ip.c.obj: CMakeFiles/pwm_control.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_94) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ip.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_79) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ip.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ip.c.obj -MF CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ip.c.obj.d -o CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ip.c.obj -c /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ip.c
 
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ip.c.i: cmake_force
@@ -1377,7 +1167,7 @@ CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ip.
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/mem.c.obj: CMakeFiles/pwm_control.dir/flags.make
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/mem.c.obj: /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/mem.c
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/mem.c.obj: CMakeFiles/pwm_control.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_95) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/mem.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_80) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/mem.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/mem.c.obj -MF CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/mem.c.obj.d -o CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/mem.c.obj -c /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/mem.c
 
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/mem.c.i: cmake_force
@@ -1391,7 +1181,7 @@ CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/mem
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/memp.c.obj: CMakeFiles/pwm_control.dir/flags.make
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/memp.c.obj: /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/memp.c
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/memp.c.obj: CMakeFiles/pwm_control.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_96) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/memp.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_81) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/memp.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/memp.c.obj -MF CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/memp.c.obj.d -o CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/memp.c.obj -c /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/memp.c
 
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/memp.c.i: cmake_force
@@ -1405,7 +1195,7 @@ CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/mem
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/netif.c.obj: CMakeFiles/pwm_control.dir/flags.make
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/netif.c.obj: /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/netif.c
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/netif.c.obj: CMakeFiles/pwm_control.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_97) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/netif.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_82) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/netif.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/netif.c.obj -MF CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/netif.c.obj.d -o CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/netif.c.obj -c /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/netif.c
 
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/netif.c.i: cmake_force
@@ -1419,7 +1209,7 @@ CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/net
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/pbuf.c.obj: CMakeFiles/pwm_control.dir/flags.make
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/pbuf.c.obj: /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/pbuf.c
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/pbuf.c.obj: CMakeFiles/pwm_control.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_98) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/pbuf.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_83) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/pbuf.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/pbuf.c.obj -MF CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/pbuf.c.obj.d -o CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/pbuf.c.obj -c /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/pbuf.c
 
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/pbuf.c.i: cmake_force
@@ -1433,7 +1223,7 @@ CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/pbu
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/raw.c.obj: CMakeFiles/pwm_control.dir/flags.make
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/raw.c.obj: /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/raw.c
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/raw.c.obj: CMakeFiles/pwm_control.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_99) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/raw.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_84) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/raw.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/raw.c.obj -MF CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/raw.c.obj.d -o CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/raw.c.obj -c /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/raw.c
 
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/raw.c.i: cmake_force
@@ -1447,7 +1237,7 @@ CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/raw
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/stats.c.obj: CMakeFiles/pwm_control.dir/flags.make
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/stats.c.obj: /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/stats.c
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/stats.c.obj: CMakeFiles/pwm_control.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_100) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/stats.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_85) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/stats.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/stats.c.obj -MF CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/stats.c.obj.d -o CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/stats.c.obj -c /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/stats.c
 
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/stats.c.i: cmake_force
@@ -1461,7 +1251,7 @@ CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/sta
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/sys.c.obj: CMakeFiles/pwm_control.dir/flags.make
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/sys.c.obj: /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/sys.c
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/sys.c.obj: CMakeFiles/pwm_control.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_101) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/sys.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_86) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/sys.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/sys.c.obj -MF CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/sys.c.obj.d -o CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/sys.c.obj -c /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/sys.c
 
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/sys.c.i: cmake_force
@@ -1475,7 +1265,7 @@ CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/sys
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/altcp.c.obj: CMakeFiles/pwm_control.dir/flags.make
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/altcp.c.obj: /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/altcp.c
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/altcp.c.obj: CMakeFiles/pwm_control.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_102) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/altcp.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_87) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/altcp.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/altcp.c.obj -MF CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/altcp.c.obj.d -o CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/altcp.c.obj -c /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/altcp.c
 
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/altcp.c.i: cmake_force
@@ -1489,7 +1279,7 @@ CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/alt
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/altcp_alloc.c.obj: CMakeFiles/pwm_control.dir/flags.make
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/altcp_alloc.c.obj: /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/altcp_alloc.c
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/altcp_alloc.c.obj: CMakeFiles/pwm_control.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_103) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/altcp_alloc.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_88) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/altcp_alloc.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/altcp_alloc.c.obj -MF CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/altcp_alloc.c.obj.d -o CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/altcp_alloc.c.obj -c /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/altcp_alloc.c
 
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/altcp_alloc.c.i: cmake_force
@@ -1503,7 +1293,7 @@ CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/alt
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/altcp_tcp.c.obj: CMakeFiles/pwm_control.dir/flags.make
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/altcp_tcp.c.obj: /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/altcp_tcp.c
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/altcp_tcp.c.obj: CMakeFiles/pwm_control.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_104) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/altcp_tcp.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_89) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/altcp_tcp.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/altcp_tcp.c.obj -MF CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/altcp_tcp.c.obj.d -o CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/altcp_tcp.c.obj -c /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/altcp_tcp.c
 
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/altcp_tcp.c.i: cmake_force
@@ -1517,7 +1307,7 @@ CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/alt
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/tcp.c.obj: CMakeFiles/pwm_control.dir/flags.make
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/tcp.c.obj: /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/tcp.c
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/tcp.c.obj: CMakeFiles/pwm_control.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_105) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/tcp.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_90) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/tcp.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/tcp.c.obj -MF CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/tcp.c.obj.d -o CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/tcp.c.obj -c /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/tcp.c
 
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/tcp.c.i: cmake_force
@@ -1531,7 +1321,7 @@ CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/tcp
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/tcp_in.c.obj: CMakeFiles/pwm_control.dir/flags.make
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/tcp_in.c.obj: /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/tcp_in.c
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/tcp_in.c.obj: CMakeFiles/pwm_control.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_106) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/tcp_in.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_91) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/tcp_in.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/tcp_in.c.obj -MF CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/tcp_in.c.obj.d -o CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/tcp_in.c.obj -c /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/tcp_in.c
 
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/tcp_in.c.i: cmake_force
@@ -1545,7 +1335,7 @@ CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/tcp
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/tcp_out.c.obj: CMakeFiles/pwm_control.dir/flags.make
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/tcp_out.c.obj: /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/tcp_out.c
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/tcp_out.c.obj: CMakeFiles/pwm_control.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_107) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/tcp_out.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_92) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/tcp_out.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/tcp_out.c.obj -MF CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/tcp_out.c.obj.d -o CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/tcp_out.c.obj -c /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/tcp_out.c
 
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/tcp_out.c.i: cmake_force
@@ -1559,7 +1349,7 @@ CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/tcp
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/timeouts.c.obj: CMakeFiles/pwm_control.dir/flags.make
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/timeouts.c.obj: /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/timeouts.c
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/timeouts.c.obj: CMakeFiles/pwm_control.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_108) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/timeouts.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_93) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/timeouts.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/timeouts.c.obj -MF CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/timeouts.c.obj.d -o CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/timeouts.c.obj -c /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/timeouts.c
 
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/timeouts.c.i: cmake_force
@@ -1573,7 +1363,7 @@ CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/tim
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/udp.c.obj: CMakeFiles/pwm_control.dir/flags.make
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/udp.c.obj: /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/udp.c
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/udp.c.obj: CMakeFiles/pwm_control.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_109) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/udp.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_94) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/udp.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/udp.c.obj -MF CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/udp.c.obj.d -o CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/udp.c.obj -c /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/udp.c
 
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/udp.c.i: cmake_force
@@ -1587,7 +1377,7 @@ CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/udp
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv4/autoip.c.obj: CMakeFiles/pwm_control.dir/flags.make
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv4/autoip.c.obj: /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv4/autoip.c
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv4/autoip.c.obj: CMakeFiles/pwm_control.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_110) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv4/autoip.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_95) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv4/autoip.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv4/autoip.c.obj -MF CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv4/autoip.c.obj.d -o CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv4/autoip.c.obj -c /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv4/autoip.c
 
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv4/autoip.c.i: cmake_force
@@ -1601,7 +1391,7 @@ CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv4/dhcp.c.obj: CMakeFiles/pwm_control.dir/flags.make
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv4/dhcp.c.obj: /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv4/dhcp.c
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv4/dhcp.c.obj: CMakeFiles/pwm_control.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_111) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv4/dhcp.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_96) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv4/dhcp.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv4/dhcp.c.obj -MF CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv4/dhcp.c.obj.d -o CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv4/dhcp.c.obj -c /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv4/dhcp.c
 
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv4/dhcp.c.i: cmake_force
@@ -1615,7 +1405,7 @@ CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv4/etharp.c.obj: CMakeFiles/pwm_control.dir/flags.make
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv4/etharp.c.obj: /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv4/etharp.c
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv4/etharp.c.obj: CMakeFiles/pwm_control.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_112) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv4/etharp.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_97) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv4/etharp.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv4/etharp.c.obj -MF CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv4/etharp.c.obj.d -o CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv4/etharp.c.obj -c /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv4/etharp.c
 
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv4/etharp.c.i: cmake_force
@@ -1629,7 +1419,7 @@ CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv4/icmp.c.obj: CMakeFiles/pwm_control.dir/flags.make
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv4/icmp.c.obj: /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv4/icmp.c
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv4/icmp.c.obj: CMakeFiles/pwm_control.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_113) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv4/icmp.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_98) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv4/icmp.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv4/icmp.c.obj -MF CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv4/icmp.c.obj.d -o CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv4/icmp.c.obj -c /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv4/icmp.c
 
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv4/icmp.c.i: cmake_force
@@ -1643,7 +1433,7 @@ CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv4/igmp.c.obj: CMakeFiles/pwm_control.dir/flags.make
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv4/igmp.c.obj: /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv4/igmp.c
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv4/igmp.c.obj: CMakeFiles/pwm_control.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_114) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv4/igmp.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_99) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv4/igmp.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv4/igmp.c.obj -MF CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv4/igmp.c.obj.d -o CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv4/igmp.c.obj -c /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv4/igmp.c
 
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv4/igmp.c.i: cmake_force
@@ -1657,7 +1447,7 @@ CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv4/ip4_frag.c.obj: CMakeFiles/pwm_control.dir/flags.make
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv4/ip4_frag.c.obj: /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv4/ip4_frag.c
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv4/ip4_frag.c.obj: CMakeFiles/pwm_control.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_115) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv4/ip4_frag.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_100) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv4/ip4_frag.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv4/ip4_frag.c.obj -MF CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv4/ip4_frag.c.obj.d -o CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv4/ip4_frag.c.obj -c /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv4/ip4_frag.c
 
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv4/ip4_frag.c.i: cmake_force
@@ -1671,7 +1461,7 @@ CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv4/ip4.c.obj: CMakeFiles/pwm_control.dir/flags.make
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv4/ip4.c.obj: /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv4/ip4.c
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv4/ip4.c.obj: CMakeFiles/pwm_control.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_116) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv4/ip4.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_101) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv4/ip4.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv4/ip4.c.obj -MF CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv4/ip4.c.obj.d -o CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv4/ip4.c.obj -c /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv4/ip4.c
 
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv4/ip4.c.i: cmake_force
@@ -1685,7 +1475,7 @@ CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv4/ip4_addr.c.obj: CMakeFiles/pwm_control.dir/flags.make
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv4/ip4_addr.c.obj: /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv4/ip4_addr.c
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv4/ip4_addr.c.obj: CMakeFiles/pwm_control.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_117) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv4/ip4_addr.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_102) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv4/ip4_addr.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv4/ip4_addr.c.obj -MF CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv4/ip4_addr.c.obj.d -o CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv4/ip4_addr.c.obj -c /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv4/ip4_addr.c
 
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv4/ip4_addr.c.i: cmake_force
@@ -1699,7 +1489,7 @@ CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv4/acd.c.obj: CMakeFiles/pwm_control.dir/flags.make
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv4/acd.c.obj: /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv4/acd.c
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv4/acd.c.obj: CMakeFiles/pwm_control.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_118) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv4/acd.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_103) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv4/acd.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv4/acd.c.obj -MF CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv4/acd.c.obj.d -o CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv4/acd.c.obj -c /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv4/acd.c
 
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv4/acd.c.i: cmake_force
@@ -1713,7 +1503,7 @@ CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv6/dhcp6.c.obj: CMakeFiles/pwm_control.dir/flags.make
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv6/dhcp6.c.obj: /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv6/dhcp6.c
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv6/dhcp6.c.obj: CMakeFiles/pwm_control.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_119) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv6/dhcp6.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_104) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv6/dhcp6.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv6/dhcp6.c.obj -MF CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv6/dhcp6.c.obj.d -o CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv6/dhcp6.c.obj -c /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv6/dhcp6.c
 
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv6/dhcp6.c.i: cmake_force
@@ -1727,7 +1517,7 @@ CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv6/ethip6.c.obj: CMakeFiles/pwm_control.dir/flags.make
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv6/ethip6.c.obj: /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv6/ethip6.c
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv6/ethip6.c.obj: CMakeFiles/pwm_control.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_120) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv6/ethip6.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_105) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv6/ethip6.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv6/ethip6.c.obj -MF CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv6/ethip6.c.obj.d -o CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv6/ethip6.c.obj -c /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv6/ethip6.c
 
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv6/ethip6.c.i: cmake_force
@@ -1741,7 +1531,7 @@ CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv6/icmp6.c.obj: CMakeFiles/pwm_control.dir/flags.make
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv6/icmp6.c.obj: /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv6/icmp6.c
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv6/icmp6.c.obj: CMakeFiles/pwm_control.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_121) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv6/icmp6.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_106) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv6/icmp6.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv6/icmp6.c.obj -MF CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv6/icmp6.c.obj.d -o CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv6/icmp6.c.obj -c /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv6/icmp6.c
 
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv6/icmp6.c.i: cmake_force
@@ -1755,7 +1545,7 @@ CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv6/inet6.c.obj: CMakeFiles/pwm_control.dir/flags.make
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv6/inet6.c.obj: /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv6/inet6.c
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv6/inet6.c.obj: CMakeFiles/pwm_control.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_122) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv6/inet6.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_107) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv6/inet6.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv6/inet6.c.obj -MF CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv6/inet6.c.obj.d -o CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv6/inet6.c.obj -c /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv6/inet6.c
 
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv6/inet6.c.i: cmake_force
@@ -1769,7 +1559,7 @@ CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv6/ip6.c.obj: CMakeFiles/pwm_control.dir/flags.make
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv6/ip6.c.obj: /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv6/ip6.c
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv6/ip6.c.obj: CMakeFiles/pwm_control.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_123) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv6/ip6.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_108) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv6/ip6.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv6/ip6.c.obj -MF CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv6/ip6.c.obj.d -o CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv6/ip6.c.obj -c /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv6/ip6.c
 
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv6/ip6.c.i: cmake_force
@@ -1783,7 +1573,7 @@ CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv6/ip6_addr.c.obj: CMakeFiles/pwm_control.dir/flags.make
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv6/ip6_addr.c.obj: /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv6/ip6_addr.c
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv6/ip6_addr.c.obj: CMakeFiles/pwm_control.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_124) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv6/ip6_addr.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_109) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv6/ip6_addr.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv6/ip6_addr.c.obj -MF CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv6/ip6_addr.c.obj.d -o CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv6/ip6_addr.c.obj -c /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv6/ip6_addr.c
 
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv6/ip6_addr.c.i: cmake_force
@@ -1797,7 +1587,7 @@ CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv6/ip6_frag.c.obj: CMakeFiles/pwm_control.dir/flags.make
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv6/ip6_frag.c.obj: /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv6/ip6_frag.c
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv6/ip6_frag.c.obj: CMakeFiles/pwm_control.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_125) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv6/ip6_frag.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_110) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv6/ip6_frag.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv6/ip6_frag.c.obj -MF CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv6/ip6_frag.c.obj.d -o CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv6/ip6_frag.c.obj -c /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv6/ip6_frag.c
 
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv6/ip6_frag.c.i: cmake_force
@@ -1811,7 +1601,7 @@ CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv6/mld6.c.obj: CMakeFiles/pwm_control.dir/flags.make
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv6/mld6.c.obj: /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv6/mld6.c
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv6/mld6.c.obj: CMakeFiles/pwm_control.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_126) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv6/mld6.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_111) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv6/mld6.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv6/mld6.c.obj -MF CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv6/mld6.c.obj.d -o CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv6/mld6.c.obj -c /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv6/mld6.c
 
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv6/mld6.c.i: cmake_force
@@ -1825,7 +1615,7 @@ CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv6/nd6.c.obj: CMakeFiles/pwm_control.dir/flags.make
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv6/nd6.c.obj: /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv6/nd6.c
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv6/nd6.c.obj: CMakeFiles/pwm_control.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_127) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv6/nd6.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_112) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv6/nd6.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv6/nd6.c.obj -MF CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv6/nd6.c.obj.d -o CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv6/nd6.c.obj -c /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv6/nd6.c
 
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv6/nd6.c.i: cmake_force
@@ -1839,7 +1629,7 @@ CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/ipv
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/api/api_lib.c.obj: CMakeFiles/pwm_control.dir/flags.make
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/api/api_lib.c.obj: /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/api/api_lib.c
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/api/api_lib.c.obj: CMakeFiles/pwm_control.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_128) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/api/api_lib.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_113) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/api/api_lib.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/api/api_lib.c.obj -MF CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/api/api_lib.c.obj.d -o CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/api/api_lib.c.obj -c /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/api/api_lib.c
 
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/api/api_lib.c.i: cmake_force
@@ -1853,7 +1643,7 @@ CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/api/api_
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/api/api_msg.c.obj: CMakeFiles/pwm_control.dir/flags.make
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/api/api_msg.c.obj: /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/api/api_msg.c
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/api/api_msg.c.obj: CMakeFiles/pwm_control.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_129) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/api/api_msg.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_114) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/api/api_msg.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/api/api_msg.c.obj -MF CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/api/api_msg.c.obj.d -o CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/api/api_msg.c.obj -c /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/api/api_msg.c
 
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/api/api_msg.c.i: cmake_force
@@ -1867,7 +1657,7 @@ CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/api/api_
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/api/err.c.obj: CMakeFiles/pwm_control.dir/flags.make
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/api/err.c.obj: /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/api/err.c
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/api/err.c.obj: CMakeFiles/pwm_control.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_130) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/api/err.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_115) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/api/err.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/api/err.c.obj -MF CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/api/err.c.obj.d -o CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/api/err.c.obj -c /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/api/err.c
 
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/api/err.c.i: cmake_force
@@ -1881,7 +1671,7 @@ CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/api/err.
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/api/if_api.c.obj: CMakeFiles/pwm_control.dir/flags.make
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/api/if_api.c.obj: /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/api/if_api.c
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/api/if_api.c.obj: CMakeFiles/pwm_control.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_131) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/api/if_api.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_116) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/api/if_api.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/api/if_api.c.obj -MF CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/api/if_api.c.obj.d -o CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/api/if_api.c.obj -c /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/api/if_api.c
 
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/api/if_api.c.i: cmake_force
@@ -1895,7 +1685,7 @@ CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/api/if_a
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/api/netbuf.c.obj: CMakeFiles/pwm_control.dir/flags.make
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/api/netbuf.c.obj: /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/api/netbuf.c
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/api/netbuf.c.obj: CMakeFiles/pwm_control.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_132) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/api/netbuf.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_117) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/api/netbuf.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/api/netbuf.c.obj -MF CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/api/netbuf.c.obj.d -o CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/api/netbuf.c.obj -c /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/api/netbuf.c
 
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/api/netbuf.c.i: cmake_force
@@ -1909,7 +1699,7 @@ CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/api/netb
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/api/netdb.c.obj: CMakeFiles/pwm_control.dir/flags.make
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/api/netdb.c.obj: /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/api/netdb.c
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/api/netdb.c.obj: CMakeFiles/pwm_control.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_133) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/api/netdb.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_118) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/api/netdb.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/api/netdb.c.obj -MF CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/api/netdb.c.obj.d -o CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/api/netdb.c.obj -c /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/api/netdb.c
 
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/api/netdb.c.i: cmake_force
@@ -1923,7 +1713,7 @@ CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/api/netd
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/api/netifapi.c.obj: CMakeFiles/pwm_control.dir/flags.make
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/api/netifapi.c.obj: /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/api/netifapi.c
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/api/netifapi.c.obj: CMakeFiles/pwm_control.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_134) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/api/netifapi.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_119) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/api/netifapi.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/api/netifapi.c.obj -MF CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/api/netifapi.c.obj.d -o CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/api/netifapi.c.obj -c /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/api/netifapi.c
 
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/api/netifapi.c.i: cmake_force
@@ -1937,7 +1727,7 @@ CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/api/neti
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/api/sockets.c.obj: CMakeFiles/pwm_control.dir/flags.make
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/api/sockets.c.obj: /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/api/sockets.c
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/api/sockets.c.obj: CMakeFiles/pwm_control.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_135) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/api/sockets.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_120) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/api/sockets.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/api/sockets.c.obj -MF CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/api/sockets.c.obj.d -o CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/api/sockets.c.obj -c /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/api/sockets.c
 
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/api/sockets.c.i: cmake_force
@@ -1951,7 +1741,7 @@ CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/api/sock
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/api/tcpip.c.obj: CMakeFiles/pwm_control.dir/flags.make
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/api/tcpip.c.obj: /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/api/tcpip.c
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/api/tcpip.c.obj: CMakeFiles/pwm_control.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_136) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/api/tcpip.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_121) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/api/tcpip.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/api/tcpip.c.obj -MF CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/api/tcpip.c.obj.d -o CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/api/tcpip.c.obj -c /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/api/tcpip.c
 
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/api/tcpip.c.i: cmake_force
@@ -1965,7 +1755,7 @@ CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/api/tcpi
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ethernet.c.obj: CMakeFiles/pwm_control.dir/flags.make
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ethernet.c.obj: /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ethernet.c
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ethernet.c.obj: CMakeFiles/pwm_control.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_137) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ethernet.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_122) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ethernet.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ethernet.c.obj -MF CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ethernet.c.obj.d -o CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ethernet.c.obj -c /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ethernet.c
 
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ethernet.c.i: cmake_force
@@ -1979,7 +1769,7 @@ CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/et
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/bridgeif.c.obj: CMakeFiles/pwm_control.dir/flags.make
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/bridgeif.c.obj: /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/bridgeif.c
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/bridgeif.c.obj: CMakeFiles/pwm_control.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_138) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/bridgeif.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_123) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/bridgeif.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/bridgeif.c.obj -MF CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/bridgeif.c.obj.d -o CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/bridgeif.c.obj -c /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/bridgeif.c
 
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/bridgeif.c.i: cmake_force
@@ -1993,7 +1783,7 @@ CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/br
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/bridgeif_fdb.c.obj: CMakeFiles/pwm_control.dir/flags.make
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/bridgeif_fdb.c.obj: /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/bridgeif_fdb.c
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/bridgeif_fdb.c.obj: CMakeFiles/pwm_control.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_139) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/bridgeif_fdb.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_124) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/bridgeif_fdb.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/bridgeif_fdb.c.obj -MF CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/bridgeif_fdb.c.obj.d -o CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/bridgeif_fdb.c.obj -c /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/bridgeif_fdb.c
 
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/bridgeif_fdb.c.i: cmake_force
@@ -2007,7 +1797,7 @@ CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/br
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/slipif.c.obj: CMakeFiles/pwm_control.dir/flags.make
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/slipif.c.obj: /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/slipif.c
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/slipif.c.obj: CMakeFiles/pwm_control.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_140) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/slipif.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_125) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/slipif.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/slipif.c.obj -MF CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/slipif.c.obj.d -o CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/slipif.c.obj -c /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/slipif.c
 
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/slipif.c.i: cmake_force
@@ -2021,7 +1811,7 @@ CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/sl
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/lowpan6_common.c.obj: CMakeFiles/pwm_control.dir/flags.make
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/lowpan6_common.c.obj: /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/lowpan6_common.c
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/lowpan6_common.c.obj: CMakeFiles/pwm_control.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_141) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/lowpan6_common.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_126) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/lowpan6_common.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/lowpan6_common.c.obj -MF CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/lowpan6_common.c.obj.d -o CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/lowpan6_common.c.obj -c /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/lowpan6_common.c
 
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/lowpan6_common.c.i: cmake_force
@@ -2035,7 +1825,7 @@ CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/lo
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/lowpan6.c.obj: CMakeFiles/pwm_control.dir/flags.make
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/lowpan6.c.obj: /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/lowpan6.c
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/lowpan6.c.obj: CMakeFiles/pwm_control.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_142) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/lowpan6.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_127) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/lowpan6.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/lowpan6.c.obj -MF CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/lowpan6.c.obj.d -o CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/lowpan6.c.obj -c /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/lowpan6.c
 
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/lowpan6.c.i: cmake_force
@@ -2049,7 +1839,7 @@ CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/lo
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/lowpan6_ble.c.obj: CMakeFiles/pwm_control.dir/flags.make
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/lowpan6_ble.c.obj: /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/lowpan6_ble.c
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/lowpan6_ble.c.obj: CMakeFiles/pwm_control.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_143) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/lowpan6_ble.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_128) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/lowpan6_ble.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/lowpan6_ble.c.obj -MF CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/lowpan6_ble.c.obj.d -o CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/lowpan6_ble.c.obj -c /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/lowpan6_ble.c
 
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/lowpan6_ble.c.i: cmake_force
@@ -2063,7 +1853,7 @@ CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/lo
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/zepif.c.obj: CMakeFiles/pwm_control.dir/flags.make
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/zepif.c.obj: /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/zepif.c
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/zepif.c.obj: CMakeFiles/pwm_control.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_144) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/zepif.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_129) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/zepif.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/zepif.c.obj -MF CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/zepif.c.obj.d -o CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/zepif.c.obj -c /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/zepif.c
 
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/zepif.c.i: cmake_force
@@ -2077,7 +1867,7 @@ CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ze
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/auth.c.obj: CMakeFiles/pwm_control.dir/flags.make
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/auth.c.obj: /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/auth.c
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/auth.c.obj: CMakeFiles/pwm_control.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_145) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/auth.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_130) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/auth.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/auth.c.obj -MF CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/auth.c.obj.d -o CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/auth.c.obj -c /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/auth.c
 
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/auth.c.i: cmake_force
@@ -2091,7 +1881,7 @@ CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/pp
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/ccp.c.obj: CMakeFiles/pwm_control.dir/flags.make
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/ccp.c.obj: /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/ccp.c
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/ccp.c.obj: CMakeFiles/pwm_control.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_146) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/ccp.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_131) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/ccp.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/ccp.c.obj -MF CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/ccp.c.obj.d -o CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/ccp.c.obj -c /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/ccp.c
 
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/ccp.c.i: cmake_force
@@ -2105,7 +1895,7 @@ CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/pp
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/chap-md5.c.obj: CMakeFiles/pwm_control.dir/flags.make
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/chap-md5.c.obj: /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/chap-md5.c
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/chap-md5.c.obj: CMakeFiles/pwm_control.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_147) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/chap-md5.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_132) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/chap-md5.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/chap-md5.c.obj -MF CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/chap-md5.c.obj.d -o CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/chap-md5.c.obj -c /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/chap-md5.c
 
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/chap-md5.c.i: cmake_force
@@ -2119,7 +1909,7 @@ CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/pp
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/chap_ms.c.obj: CMakeFiles/pwm_control.dir/flags.make
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/chap_ms.c.obj: /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/chap_ms.c
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/chap_ms.c.obj: CMakeFiles/pwm_control.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_148) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/chap_ms.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_133) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/chap_ms.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/chap_ms.c.obj -MF CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/chap_ms.c.obj.d -o CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/chap_ms.c.obj -c /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/chap_ms.c
 
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/chap_ms.c.i: cmake_force
@@ -2133,7 +1923,7 @@ CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/pp
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/chap-new.c.obj: CMakeFiles/pwm_control.dir/flags.make
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/chap-new.c.obj: /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/chap-new.c
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/chap-new.c.obj: CMakeFiles/pwm_control.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_149) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/chap-new.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_134) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/chap-new.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/chap-new.c.obj -MF CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/chap-new.c.obj.d -o CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/chap-new.c.obj -c /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/chap-new.c
 
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/chap-new.c.i: cmake_force
@@ -2147,7 +1937,7 @@ CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/pp
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/demand.c.obj: CMakeFiles/pwm_control.dir/flags.make
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/demand.c.obj: /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/demand.c
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/demand.c.obj: CMakeFiles/pwm_control.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_150) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/demand.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_135) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/demand.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/demand.c.obj -MF CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/demand.c.obj.d -o CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/demand.c.obj -c /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/demand.c
 
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/demand.c.i: cmake_force
@@ -2161,7 +1951,7 @@ CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/pp
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/eap.c.obj: CMakeFiles/pwm_control.dir/flags.make
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/eap.c.obj: /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/eap.c
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/eap.c.obj: CMakeFiles/pwm_control.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_151) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/eap.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_136) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/eap.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/eap.c.obj -MF CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/eap.c.obj.d -o CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/eap.c.obj -c /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/eap.c
 
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/eap.c.i: cmake_force
@@ -2175,7 +1965,7 @@ CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/pp
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/ecp.c.obj: CMakeFiles/pwm_control.dir/flags.make
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/ecp.c.obj: /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/ecp.c
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/ecp.c.obj: CMakeFiles/pwm_control.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_152) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/ecp.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_137) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/ecp.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/ecp.c.obj -MF CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/ecp.c.obj.d -o CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/ecp.c.obj -c /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/ecp.c
 
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/ecp.c.i: cmake_force
@@ -2189,7 +1979,7 @@ CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/pp
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/eui64.c.obj: CMakeFiles/pwm_control.dir/flags.make
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/eui64.c.obj: /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/eui64.c
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/eui64.c.obj: CMakeFiles/pwm_control.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_153) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/eui64.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_138) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/eui64.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/eui64.c.obj -MF CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/eui64.c.obj.d -o CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/eui64.c.obj -c /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/eui64.c
 
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/eui64.c.i: cmake_force
@@ -2203,7 +1993,7 @@ CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/pp
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/fsm.c.obj: CMakeFiles/pwm_control.dir/flags.make
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/fsm.c.obj: /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/fsm.c
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/fsm.c.obj: CMakeFiles/pwm_control.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_154) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/fsm.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_139) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/fsm.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/fsm.c.obj -MF CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/fsm.c.obj.d -o CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/fsm.c.obj -c /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/fsm.c
 
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/fsm.c.i: cmake_force
@@ -2217,7 +2007,7 @@ CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/pp
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/ipcp.c.obj: CMakeFiles/pwm_control.dir/flags.make
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/ipcp.c.obj: /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/ipcp.c
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/ipcp.c.obj: CMakeFiles/pwm_control.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_155) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/ipcp.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_140) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/ipcp.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/ipcp.c.obj -MF CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/ipcp.c.obj.d -o CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/ipcp.c.obj -c /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/ipcp.c
 
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/ipcp.c.i: cmake_force
@@ -2231,7 +2021,7 @@ CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/pp
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/ipv6cp.c.obj: CMakeFiles/pwm_control.dir/flags.make
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/ipv6cp.c.obj: /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/ipv6cp.c
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/ipv6cp.c.obj: CMakeFiles/pwm_control.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_156) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/ipv6cp.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_141) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/ipv6cp.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/ipv6cp.c.obj -MF CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/ipv6cp.c.obj.d -o CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/ipv6cp.c.obj -c /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/ipv6cp.c
 
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/ipv6cp.c.i: cmake_force
@@ -2245,7 +2035,7 @@ CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/pp
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/lcp.c.obj: CMakeFiles/pwm_control.dir/flags.make
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/lcp.c.obj: /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/lcp.c
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/lcp.c.obj: CMakeFiles/pwm_control.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_157) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/lcp.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_142) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/lcp.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/lcp.c.obj -MF CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/lcp.c.obj.d -o CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/lcp.c.obj -c /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/lcp.c
 
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/lcp.c.i: cmake_force
@@ -2259,7 +2049,7 @@ CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/pp
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/magic.c.obj: CMakeFiles/pwm_control.dir/flags.make
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/magic.c.obj: /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/magic.c
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/magic.c.obj: CMakeFiles/pwm_control.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_158) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/magic.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_143) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/magic.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/magic.c.obj -MF CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/magic.c.obj.d -o CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/magic.c.obj -c /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/magic.c
 
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/magic.c.i: cmake_force
@@ -2273,7 +2063,7 @@ CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/pp
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/mppe.c.obj: CMakeFiles/pwm_control.dir/flags.make
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/mppe.c.obj: /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/mppe.c
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/mppe.c.obj: CMakeFiles/pwm_control.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_159) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/mppe.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_144) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/mppe.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/mppe.c.obj -MF CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/mppe.c.obj.d -o CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/mppe.c.obj -c /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/mppe.c
 
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/mppe.c.i: cmake_force
@@ -2287,7 +2077,7 @@ CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/pp
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/multilink.c.obj: CMakeFiles/pwm_control.dir/flags.make
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/multilink.c.obj: /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/multilink.c
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/multilink.c.obj: CMakeFiles/pwm_control.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_160) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/multilink.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_145) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/multilink.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/multilink.c.obj -MF CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/multilink.c.obj.d -o CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/multilink.c.obj -c /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/multilink.c
 
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/multilink.c.i: cmake_force
@@ -2301,7 +2091,7 @@ CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/pp
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/ppp.c.obj: CMakeFiles/pwm_control.dir/flags.make
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/ppp.c.obj: /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/ppp.c
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/ppp.c.obj: CMakeFiles/pwm_control.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_161) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/ppp.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_146) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/ppp.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/ppp.c.obj -MF CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/ppp.c.obj.d -o CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/ppp.c.obj -c /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/ppp.c
 
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/ppp.c.i: cmake_force
@@ -2315,7 +2105,7 @@ CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/pp
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/pppapi.c.obj: CMakeFiles/pwm_control.dir/flags.make
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/pppapi.c.obj: /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/pppapi.c
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/pppapi.c.obj: CMakeFiles/pwm_control.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_162) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/pppapi.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_147) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/pppapi.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/pppapi.c.obj -MF CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/pppapi.c.obj.d -o CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/pppapi.c.obj -c /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/pppapi.c
 
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/pppapi.c.i: cmake_force
@@ -2329,7 +2119,7 @@ CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/pp
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/pppcrypt.c.obj: CMakeFiles/pwm_control.dir/flags.make
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/pppcrypt.c.obj: /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/pppcrypt.c
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/pppcrypt.c.obj: CMakeFiles/pwm_control.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_163) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/pppcrypt.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_148) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/pppcrypt.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/pppcrypt.c.obj -MF CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/pppcrypt.c.obj.d -o CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/pppcrypt.c.obj -c /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/pppcrypt.c
 
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/pppcrypt.c.i: cmake_force
@@ -2343,7 +2133,7 @@ CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/pp
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/pppoe.c.obj: CMakeFiles/pwm_control.dir/flags.make
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/pppoe.c.obj: /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/pppoe.c
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/pppoe.c.obj: CMakeFiles/pwm_control.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_164) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/pppoe.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_149) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/pppoe.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/pppoe.c.obj -MF CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/pppoe.c.obj.d -o CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/pppoe.c.obj -c /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/pppoe.c
 
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/pppoe.c.i: cmake_force
@@ -2357,7 +2147,7 @@ CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/pp
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/pppol2tp.c.obj: CMakeFiles/pwm_control.dir/flags.make
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/pppol2tp.c.obj: /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/pppol2tp.c
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/pppol2tp.c.obj: CMakeFiles/pwm_control.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_165) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/pppol2tp.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_150) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/pppol2tp.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/pppol2tp.c.obj -MF CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/pppol2tp.c.obj.d -o CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/pppol2tp.c.obj -c /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/pppol2tp.c
 
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/pppol2tp.c.i: cmake_force
@@ -2371,7 +2161,7 @@ CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/pp
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/pppos.c.obj: CMakeFiles/pwm_control.dir/flags.make
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/pppos.c.obj: /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/pppos.c
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/pppos.c.obj: CMakeFiles/pwm_control.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_166) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/pppos.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_151) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/pppos.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/pppos.c.obj -MF CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/pppos.c.obj.d -o CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/pppos.c.obj -c /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/pppos.c
 
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/pppos.c.i: cmake_force
@@ -2385,7 +2175,7 @@ CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/pp
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/upap.c.obj: CMakeFiles/pwm_control.dir/flags.make
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/upap.c.obj: /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/upap.c
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/upap.c.obj: CMakeFiles/pwm_control.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_167) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/upap.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_152) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/upap.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/upap.c.obj -MF CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/upap.c.obj.d -o CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/upap.c.obj -c /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/upap.c
 
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/upap.c.i: cmake_force
@@ -2399,7 +2189,7 @@ CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/pp
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/utils.c.obj: CMakeFiles/pwm_control.dir/flags.make
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/utils.c.obj: /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/utils.c
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/utils.c.obj: CMakeFiles/pwm_control.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_168) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/utils.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_153) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/utils.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/utils.c.obj -MF CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/utils.c.obj.d -o CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/utils.c.obj -c /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/utils.c
 
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/utils.c.i: cmake_force
@@ -2413,7 +2203,7 @@ CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/pp
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/vj.c.obj: CMakeFiles/pwm_control.dir/flags.make
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/vj.c.obj: /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/vj.c
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/vj.c.obj: CMakeFiles/pwm_control.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_169) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/vj.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_154) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/vj.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/vj.c.obj -MF CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/vj.c.obj.d -o CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/vj.c.obj -c /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/vj.c
 
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/vj.c.i: cmake_force
@@ -2427,7 +2217,7 @@ CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/pp
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/polarssl/arc4.c.obj: CMakeFiles/pwm_control.dir/flags.make
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/polarssl/arc4.c.obj: /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/polarssl/arc4.c
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/polarssl/arc4.c.obj: CMakeFiles/pwm_control.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_170) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/polarssl/arc4.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_155) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/polarssl/arc4.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/polarssl/arc4.c.obj -MF CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/polarssl/arc4.c.obj.d -o CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/polarssl/arc4.c.obj -c /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/polarssl/arc4.c
 
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/polarssl/arc4.c.i: cmake_force
@@ -2441,7 +2231,7 @@ CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/pp
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/polarssl/des.c.obj: CMakeFiles/pwm_control.dir/flags.make
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/polarssl/des.c.obj: /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/polarssl/des.c
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/polarssl/des.c.obj: CMakeFiles/pwm_control.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_171) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/polarssl/des.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_156) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/polarssl/des.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/polarssl/des.c.obj -MF CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/polarssl/des.c.obj.d -o CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/polarssl/des.c.obj -c /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/polarssl/des.c
 
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/polarssl/des.c.i: cmake_force
@@ -2455,7 +2245,7 @@ CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/pp
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/polarssl/md4.c.obj: CMakeFiles/pwm_control.dir/flags.make
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/polarssl/md4.c.obj: /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/polarssl/md4.c
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/polarssl/md4.c.obj: CMakeFiles/pwm_control.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_172) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/polarssl/md4.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_157) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/polarssl/md4.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/polarssl/md4.c.obj -MF CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/polarssl/md4.c.obj.d -o CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/polarssl/md4.c.obj -c /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/polarssl/md4.c
 
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/polarssl/md4.c.i: cmake_force
@@ -2469,7 +2259,7 @@ CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/pp
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/polarssl/md5.c.obj: CMakeFiles/pwm_control.dir/flags.make
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/polarssl/md5.c.obj: /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/polarssl/md5.c
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/polarssl/md5.c.obj: CMakeFiles/pwm_control.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_173) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/polarssl/md5.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_158) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/polarssl/md5.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/polarssl/md5.c.obj -MF CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/polarssl/md5.c.obj.d -o CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/polarssl/md5.c.obj -c /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/polarssl/md5.c
 
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/polarssl/md5.c.i: cmake_force
@@ -2483,7 +2273,7 @@ CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/pp
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/polarssl/sha1.c.obj: CMakeFiles/pwm_control.dir/flags.make
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/polarssl/sha1.c.obj: /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/polarssl/sha1.c
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/polarssl/sha1.c.obj: CMakeFiles/pwm_control.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_174) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/polarssl/sha1.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_159) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/polarssl/sha1.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/polarssl/sha1.c.obj -MF CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/polarssl/sha1.c.obj.d -o CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/polarssl/sha1.c.obj -c /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/polarssl/sha1.c
 
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/polarssl/sha1.c.i: cmake_force
@@ -2493,6 +2283,216 @@ CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/pp
 CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/polarssl/sha1.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/polarssl/sha1.c.s"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/polarssl/sha1.c -o CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/polarssl/sha1.c.s
+
+CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch.c.obj: CMakeFiles/pwm_control.dir/flags.make
+CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch.c.obj: /home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch.c
+CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch.c.obj: CMakeFiles/pwm_control.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_160) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch.c.obj"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch.c.obj -MF CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch.c.obj.d -o CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch.c.obj -c /home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch.c
+
+CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch.c.i"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch.c > CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch.c.i
+
+CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch.c.s"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch.c -o CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch.c.s
+
+CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_poll.c.obj: CMakeFiles/pwm_control.dir/flags.make
+CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_poll.c.obj: /home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_poll.c
+CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_poll.c.obj: CMakeFiles/pwm_control.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_161) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_poll.c.obj"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_poll.c.obj -MF CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_poll.c.obj.d -o CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_poll.c.obj -c /home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_poll.c
+
+CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_poll.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_poll.c.i"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_poll.c > CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_poll.c.i
+
+CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_poll.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_poll.c.s"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_poll.c -o CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_poll.c.s
+
+CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_threadsafe_background.c.obj: CMakeFiles/pwm_control.dir/flags.make
+CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_threadsafe_background.c.obj: /home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_threadsafe_background.c
+CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_threadsafe_background.c.obj: CMakeFiles/pwm_control.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_162) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_threadsafe_background.c.obj"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_threadsafe_background.c.obj -MF CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_threadsafe_background.c.obj.d -o CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_threadsafe_background.c.obj -c /home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_threadsafe_background.c
+
+CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_threadsafe_background.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_threadsafe_background.c.i"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_threadsafe_background.c > CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_threadsafe_background.c.i
+
+CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_threadsafe_background.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_threadsafe_background.c.s"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_threadsafe_background.c -o CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_threadsafe_background.c.s
+
+CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_freertos.c.obj: CMakeFiles/pwm_control.dir/flags.make
+CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_freertos.c.obj: /home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_freertos.c
+CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_freertos.c.obj: CMakeFiles/pwm_control.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_163) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_freertos.c.obj"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_freertos.c.obj -MF CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_freertos.c.obj.d -o CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_freertos.c.obj -c /home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_freertos.c
+
+CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_freertos.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_freertos.c.i"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_freertos.c > CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_freertos.c.i
+
+CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_freertos.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_freertos.c.s"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_freertos.c -o CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_freertos.c.s
+
+CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_driver/cyw43_bus_pio_spi.c.obj: CMakeFiles/pwm_control.dir/flags.make
+CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_driver/cyw43_bus_pio_spi.c.obj: /home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_driver/cyw43_bus_pio_spi.c
+CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_driver/cyw43_bus_pio_spi.c.obj: CMakeFiles/pwm_control.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_164) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_driver/cyw43_bus_pio_spi.c.obj"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_driver/cyw43_bus_pio_spi.c.obj -MF CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_driver/cyw43_bus_pio_spi.c.obj.d -o CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_driver/cyw43_bus_pio_spi.c.obj -c /home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_driver/cyw43_bus_pio_spi.c
+
+CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_driver/cyw43_bus_pio_spi.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_driver/cyw43_bus_pio_spi.c.i"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_driver/cyw43_bus_pio_spi.c > CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_driver/cyw43_bus_pio_spi.c.i
+
+CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_driver/cyw43_bus_pio_spi.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_driver/cyw43_bus_pio_spi.c.s"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_driver/cyw43_bus_pio_spi.c -o CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_driver/cyw43_bus_pio_spi.c.s
+
+CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_ll.c.obj: CMakeFiles/pwm_control.dir/flags.make
+CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_ll.c.obj: /home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_ll.c
+CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_ll.c.obj: CMakeFiles/pwm_control.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_165) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_ll.c.obj"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_ll.c.obj -MF CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_ll.c.obj.d -o CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_ll.c.obj -c /home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_ll.c
+
+CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_ll.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_ll.c.i"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_ll.c > CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_ll.c.i
+
+CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_ll.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_ll.c.s"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_ll.c -o CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_ll.c.s
+
+CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_stats.c.obj: CMakeFiles/pwm_control.dir/flags.make
+CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_stats.c.obj: /home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_stats.c
+CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_stats.c.obj: CMakeFiles/pwm_control.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_166) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_stats.c.obj"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_stats.c.obj -MF CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_stats.c.obj.d -o CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_stats.c.obj -c /home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_stats.c
+
+CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_stats.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_stats.c.i"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_stats.c > CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_stats.c.i
+
+CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_stats.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_stats.c.s"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_stats.c -o CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_stats.c.s
+
+CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_lwip.c.obj: CMakeFiles/pwm_control.dir/flags.make
+CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_lwip.c.obj: /home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_lwip.c
+CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_lwip.c.obj: CMakeFiles/pwm_control.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_167) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_lwip.c.obj"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_lwip.c.obj -MF CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_lwip.c.obj.d -o CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_lwip.c.obj -c /home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_lwip.c
+
+CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_lwip.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_lwip.c.i"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_lwip.c > CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_lwip.c.i
+
+CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_lwip.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_lwip.c.s"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_lwip.c -o CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_lwip.c.s
+
+CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_ctrl.c.obj: CMakeFiles/pwm_control.dir/flags.make
+CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_ctrl.c.obj: /home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_ctrl.c
+CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_ctrl.c.obj: CMakeFiles/pwm_control.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_168) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_ctrl.c.obj"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_ctrl.c.obj -MF CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_ctrl.c.obj.d -o CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_ctrl.c.obj -c /home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_ctrl.c
+
+CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_ctrl.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_ctrl.c.i"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_ctrl.c > CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_ctrl.c.i
+
+CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_ctrl.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_ctrl.c.s"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_ctrl.c -o CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_ctrl.c.s
+
+CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus.c.obj: CMakeFiles/pwm_control.dir/flags.make
+CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus.c.obj: /home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus.c
+CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus.c.obj: CMakeFiles/pwm_control.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_169) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus.c.obj"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus.c.obj -MF CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus.c.obj.d -o CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus.c.obj -c /home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus.c
+
+CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus.c.i"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus.c > CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus.c.i
+
+CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus.c.s"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus.c -o CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus.c.s
+
+CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus_driver.c.obj: CMakeFiles/pwm_control.dir/flags.make
+CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus_driver.c.obj: /home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus_driver.c
+CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus_driver.c.obj: CMakeFiles/pwm_control.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_170) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus_driver.c.obj"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus_driver.c.obj -MF CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus_driver.c.obj.d -o CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus_driver.c.obj -c /home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus_driver.c
+
+CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus_driver.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus_driver.c.i"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus_driver.c > CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus_driver.c.i
+
+CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus_driver.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus_driver.c.s"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus_driver.c -o CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus_driver.c.s
+
+CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_dma/dma.c.obj: CMakeFiles/pwm_control.dir/flags.make
+CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_dma/dma.c.obj: /home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_dma/dma.c
+CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_dma/dma.c.obj: CMakeFiles/pwm_control.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_171) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_dma/dma.c.obj"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_dma/dma.c.obj -MF CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_dma/dma.c.obj.d -o CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_dma/dma.c.obj -c /home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_dma/dma.c
+
+CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_dma/dma.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_dma/dma.c.i"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_dma/dma.c > CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_dma/dma.c.i
+
+CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_dma/dma.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_dma/dma.c.s"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_dma/dma.c -o CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_dma/dma.c.s
+
+CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_exception/exception.c.obj: CMakeFiles/pwm_control.dir/flags.make
+CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_exception/exception.c.obj: /home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_exception/exception.c
+CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_exception/exception.c.obj: CMakeFiles/pwm_control.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_172) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_exception/exception.c.obj"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_exception/exception.c.obj -MF CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_exception/exception.c.obj.d -o CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_exception/exception.c.obj -c /home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_exception/exception.c
+
+CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_exception/exception.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_exception/exception.c.i"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_exception/exception.c > CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_exception/exception.c.i
+
+CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_exception/exception.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_exception/exception.c.s"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_exception/exception.c -o CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_exception/exception.c.s
+
+CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_driver/cyw43_driver.c.obj: CMakeFiles/pwm_control.dir/flags.make
+CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_driver/cyw43_driver.c.obj: /home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_driver/cyw43_driver.c
+CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_driver/cyw43_driver.c.obj: CMakeFiles/pwm_control.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_173) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_driver/cyw43_driver.c.obj"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_driver/cyw43_driver.c.obj -MF CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_driver/cyw43_driver.c.obj.d -o CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_driver/cyw43_driver.c.obj -c /home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_driver/cyw43_driver.c
+
+CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_driver/cyw43_driver.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_driver/cyw43_driver.c.i"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_driver/cyw43_driver.c > CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_driver/cyw43_driver.c.i
+
+CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_driver/cyw43_driver.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_driver/cyw43_driver.c.s"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_driver/cyw43_driver.c -o CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_driver/cyw43_driver.c.s
+
+CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_async_context/async_context_poll.c.obj: CMakeFiles/pwm_control.dir/flags.make
+CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_async_context/async_context_poll.c.obj: /home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_async_context/async_context_poll.c
+CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_async_context/async_context_poll.c.obj: CMakeFiles/pwm_control.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_174) "Building C object CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_async_context/async_context_poll.c.obj"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_async_context/async_context_poll.c.obj -MF CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_async_context/async_context_poll.c.obj.d -o CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_async_context/async_context_poll.c.obj -c /home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_async_context/async_context_poll.c
+
+CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_async_context/async_context_poll.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_async_context/async_context_poll.c.i"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_async_context/async_context_poll.c > CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_async_context/async_context_poll.c.i
+
+CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_async_context/async_context_poll.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_async_context/async_context_poll.c.s"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_async_context/async_context_poll.c -o CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_async_context/async_context_poll.c.s
 
 # Object files for target pwm_control
 pwm_control_OBJECTS = \
@@ -2567,23 +2567,8 @@ pwm_control_OBJECTS = \
 "CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.obj" \
 "CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_multicore/multicore.c.obj" \
 "CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_pio/pio.c.obj" \
-"CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch.c.obj" \
-"CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_poll.c.obj" \
-"CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_threadsafe_background.c.obj" \
-"CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_freertos.c.obj" \
-"CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_driver/cyw43_bus_pio_spi.c.obj" \
-"CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_ll.c.obj" \
-"CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_stats.c.obj" \
-"CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_lwip.c.obj" \
-"CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_ctrl.c.obj" \
-"CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus.c.obj" \
-"CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus_driver.c.obj" \
-"CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_dma/dma.c.obj" \
-"CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_exception/exception.c.obj" \
-"CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_driver/cyw43_driver.c.obj" \
-"CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_async_context/async_context_threadsafe_background.c.obj" \
-"CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_async_context/async_context_base.c.obj" \
 "CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_lwip/lwip_nosys.c.obj" \
+"CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_async_context/async_context_base.c.obj" \
 "CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_rand/rand.c.obj" \
 "CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/init.c.obj" \
 "CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/def.c.obj" \
@@ -2669,7 +2654,22 @@ pwm_control_OBJECTS = \
 "CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/polarssl/des.c.obj" \
 "CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/polarssl/md4.c.obj" \
 "CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/polarssl/md5.c.obj" \
-"CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/polarssl/sha1.c.obj"
+"CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/polarssl/sha1.c.obj" \
+"CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch.c.obj" \
+"CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_poll.c.obj" \
+"CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_threadsafe_background.c.obj" \
+"CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_freertos.c.obj" \
+"CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_driver/cyw43_bus_pio_spi.c.obj" \
+"CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_ll.c.obj" \
+"CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_stats.c.obj" \
+"CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_lwip.c.obj" \
+"CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_ctrl.c.obj" \
+"CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus.c.obj" \
+"CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus_driver.c.obj" \
+"CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_dma/dma.c.obj" \
+"CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_exception/exception.c.obj" \
+"CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_driver/cyw43_driver.c.obj" \
+"CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_async_context/async_context_poll.c.obj"
 
 # External object files for target pwm_control
 pwm_control_EXTERNAL_OBJECTS =
@@ -2745,23 +2745,8 @@ pwm_control.elf: CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/
 pwm_control.elf: CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.obj
 pwm_control.elf: CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_multicore/multicore.c.obj
 pwm_control.elf: CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_pio/pio.c.obj
-pwm_control.elf: CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch.c.obj
-pwm_control.elf: CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_poll.c.obj
-pwm_control.elf: CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_threadsafe_background.c.obj
-pwm_control.elf: CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_freertos.c.obj
-pwm_control.elf: CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_driver/cyw43_bus_pio_spi.c.obj
-pwm_control.elf: CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_ll.c.obj
-pwm_control.elf: CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_stats.c.obj
-pwm_control.elf: CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_lwip.c.obj
-pwm_control.elf: CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_ctrl.c.obj
-pwm_control.elf: CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus.c.obj
-pwm_control.elf: CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus_driver.c.obj
-pwm_control.elf: CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_dma/dma.c.obj
-pwm_control.elf: CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_exception/exception.c.obj
-pwm_control.elf: CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_driver/cyw43_driver.c.obj
-pwm_control.elf: CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_async_context/async_context_threadsafe_background.c.obj
-pwm_control.elf: CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_async_context/async_context_base.c.obj
 pwm_control.elf: CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_lwip/lwip_nosys.c.obj
+pwm_control.elf: CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_async_context/async_context_base.c.obj
 pwm_control.elf: CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_rand/rand.c.obj
 pwm_control.elf: CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/init.c.obj
 pwm_control.elf: CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/core/def.c.obj
@@ -2848,6 +2833,21 @@ pwm_control.elf: CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/
 pwm_control.elf: CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/polarssl/md4.c.obj
 pwm_control.elf: CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/polarssl/md5.c.obj
 pwm_control.elf: CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/lwip/src/netif/ppp/polarssl/sha1.c.obj
+pwm_control.elf: CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch.c.obj
+pwm_control.elf: CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_poll.c.obj
+pwm_control.elf: CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_threadsafe_background.c.obj
+pwm_control.elf: CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_freertos.c.obj
+pwm_control.elf: CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_driver/cyw43_bus_pio_spi.c.obj
+pwm_control.elf: CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_ll.c.obj
+pwm_control.elf: CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_stats.c.obj
+pwm_control.elf: CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_lwip.c.obj
+pwm_control.elf: CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_ctrl.c.obj
+pwm_control.elf: CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus.c.obj
+pwm_control.elf: CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_driver/cybt_shared_bus/cybt_shared_bus_driver.c.obj
+pwm_control.elf: CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_dma/dma.c.obj
+pwm_control.elf: CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_exception/exception.c.obj
+pwm_control.elf: CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_driver/cyw43_driver.c.obj
+pwm_control.elf: CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_async_context/async_context_poll.c.obj
 pwm_control.elf: CMakeFiles/pwm_control.dir/build.make
 pwm_control.elf: pico-sdk/src/rp2_common/boot_stage2/bs2_default_padded_checksummed.S
 pwm_control.elf: CMakeFiles/pwm_control.dir/link.txt

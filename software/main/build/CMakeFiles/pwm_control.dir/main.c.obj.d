@@ -111,7 +111,7 @@ CMakeFiles/pwm_control.dir/main.c.obj: \
  /usr/include/newlib/sys/string.h \
  /home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_country.h \
  /home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_async_context/include/pico/async_context.h \
- /home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/include/pico/cyw43_arch/arch_threadsafe_background.h \
+ /home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/include/pico/cyw43_arch/arch_poll.h \
  /home/andrey-shefa/Documents/repos/quadruped-version-3/software/main/build/quadrature_encoder.pio.h \
  /home/andrey-shefa/pico/pico-sdk/src/rp2_common/hardware_clocks/include/hardware/clocks.h \
  /home/andrey-shefa/pico/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/clocks.h \

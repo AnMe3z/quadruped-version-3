@@ -94,6 +94,6 @@ CMakeFiles/pwm_control.dir/home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_c
  /home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/include/pico/cyw43_arch.h \
  /home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_country.h \
  /home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_async_context/include/pico/async_context.h \
- /home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/include/pico/cyw43_arch/arch_threadsafe_background.h \
+ /home/andrey-shefa/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/include/pico/cyw43_arch/arch_poll.h \
  /home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_ll.h \
  /home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_stats.h
