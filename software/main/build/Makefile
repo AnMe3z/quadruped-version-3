@@ -130,19 +130,6 @@ pwm_control/fast:
 .PHONY : pwm_control/fast
 
 #=============================================================================
-# Target rules for targets named pwm_control_quadrature_encoder_pio_h
-
-# Build rule for target.
-pwm_control_quadrature_encoder_pio_h: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 pwm_control_quadrature_encoder_pio_h
-.PHONY : pwm_control_quadrature_encoder_pio_h
-
-# fast build rule for target.
-pwm_control_quadrature_encoder_pio_h/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/pwm_control_quadrature_encoder_pio_h.dir/build.make CMakeFiles/pwm_control_quadrature_encoder_pio_h.dir/build
-.PHONY : pwm_control_quadrature_encoder_pio_h/fast
-
-#=============================================================================
 # Target rules for targets named ELF2UF2Build
 
 # Build rule for target.
@@ -4233,7 +4220,6 @@ help:
 	@echo "... bs2_default_bin"
 	@echo "... bs2_default_padded_checksummed_asm"
 	@echo "... cyw43_driver_picow_cyw43_bus_pio_spi_pio_h"
-	@echo "... pwm_control_quadrature_encoder_pio_h"
 	@echo "... bs2_default"
 	@echo "... pwm_control"
 	@echo "... home/andrey-shefa/pico/pico-sdk/lib/cyw43-driver/src/cyw43_ctrl.obj"
