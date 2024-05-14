@@ -381,7 +381,12 @@ int init_wireless(){
 
         udp_recv(udp_server_pcb, udp_receive_callback, NULL);
 }
+/* int main()
+/brief starts the program, calls /c stdio_init_all(), /c init_wireless(), /c initPins()
 
+the main loop is with the lowest computing priority. it's function is to non-stop loop the /c cyw43_arch_poll() function which polls the wireless. 
+the main loop has no constant 'polling rate' because of its low priority and therefore it uses all left processor time from the high priority code in the PWM IRQ 
+*/
 int main() {
    	stdio_init_all();
     	
@@ -391,8 +396,6 @@ int main() {
 	
     	while (true) {
                 cyw43_arch_poll();
-                // polling rate @ 10Hz
-                sleep_ms(100);
     	} 
     	
         cyw43_arch_deinit();
