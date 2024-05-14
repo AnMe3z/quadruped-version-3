@@ -9,6 +9,14 @@ import numpy as np
 import subprocess
 import time
 
+# leg safety
+safety_margin = 0.05
+max_angle = 120
+femur_min_safe = np.deg2rad(180 - (max_angle * safety_margin))
+femur_max_safe = np.deg2rad(max_angle - (max_angle * safety_margin))
+knee_min_safe = np.deg2rad((max_angle * safety_margin))
+knee_max_safe = np.deg2rad(max_angle - (max_angle * safety_margin))
+            
 # leg setup
 femur_start_deg = 5
 knee_start_deg = 0
@@ -37,23 +45,29 @@ def draw_graphs():
     titles = ['FL', 'FR', 'BL', 'BR']
     for i, ax in enumerate(axs.flat):
         if graph_states[i].get():
+        
+            #   -   -   -   -   -   -   -   -   -   -   -   -   -   -   
+            # Safety lines
+            x_femur_mix = np.linspace(0, np.cos(femur_min_safe), 100)
+            y_femur_mix = np.linspace(0, np.sin(femur_min_safe), 100)
+            ax.plot(x_femur_mix, y_femur_mix, 'y', linewidth=1) 
+            x_femur_max = np.linspace(0, np.cos(femur_max_safe), 100)
+            y_femur_max = np.linspace(0, np.sin(femur_max_safe), 100)
+            ax.plot(x_femur_max, y_femur_max, 'y', linewidth=1) 
+            #   -   -   -   -   -   -   -   -   -   -   -   -   -   -   
+            
             # rad1 must be mirrored 180  deg
             rad1 = np.deg2rad(180 - fik[i])  #Convert angle1 to radians
             rad2 = np.deg2rad(kik[i])  # Convert angle2 to radians
             # First line
             x1 = np.linspace(0, np.cos(rad1), 100)
             y1 = np.linspace(0, np.sin(rad1), 100)
-            ax.plot(x1, y1, 'r', linewidth=2)  # 'r' for red color
+            ax.plot(x1, y1, 'r', linewidth=3)  # 'r' for red color
 
             # Second line
             x2 = np.linspace(np.cos(rad1), np.cos(rad1) + np.cos(rad2), 100)
             y2 = np.linspace(np.sin(rad1), np.sin(rad1) + np.sin(rad2), 100)
-            ax.plot(x2, y2, 'b', linewidth=2)  # 'b' for blue color
-            
-            # Knee line
-            x3 = np.linspace(np.cos(rad1), np.cos(rad1) + np.cos(0), 100)
-            y3 = np.linspace(np.sin(rad1), np.sin(rad1) + np.sin(0), 100)
-            ax.plot(x3, y3, 'g', linewidth=1)  # 'b' for blue color
+            ax.plot(x2, y2, 'b', linewidth=3)  # 'b' for blue color
             
             ax.set_xlim(-2, 2)  # Set x limits
             ax.set_ylim(2, -2)  # Set y limits (reversed)
@@ -62,6 +76,21 @@ def draw_graphs():
             #print(f"KNEEreal: {kik[i]}°")
             #print(f"KNEEideal: {fik[i] + kik[i]}°")
             #print("draw_graph fik[i] kik[i] " + str(fik[i]) + " " + str(kik[i]))   
+            
+            #   -   -   -   -   -   -   -   -   -   -   -   -   -   -   
+            # Knee line
+            x_knee_zero = np.linspace(np.cos(rad1), np.cos(rad1) + np.cos(0), 100)
+            y_knee_zero = np.linspace(np.sin(rad1), np.sin(rad1) + np.sin(0), 100)
+            ax.plot(x_knee_zero, y_knee_zero, 'g', linewidth=1) 
+            #   -   -   -   -   -   -   -   -   -   -   -   -   -   -   
+            # Safety lines
+            x_knee_mix = np.linspace(np.cos(rad1), np.cos(rad1) + np.cos(knee_min_safe), 100)
+            y_knee_mix = np.linspace(np.sin(rad1), np.sin(rad1) + np.sin(knee_min_safe), 100)
+            ax.plot(x_knee_mix, y_knee_mix, 'y', linewidth=1) 
+            x_knee_max = np.linspace(np.cos(rad1), np.cos(rad1) + np.cos(knee_max_safe), 100)
+            y_knee_max = np.linspace(np.sin(rad1), np.sin(rad1) + np.sin(knee_max_safe), 100)
+            ax.plot(x_knee_max, y_knee_max, 'y', linewidth=1)  
+            #   -   -   -   -   -   -   -   -   -   -   -   -   -   -   
 
     # Adjust the spacing between the subplots
     fig.subplots_adjust(wspace=0.5, hspace=0.5)
