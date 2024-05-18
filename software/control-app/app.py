@@ -538,6 +538,27 @@ delay_entry.insert(0, "500")
 add_button = tk.Button(delay_button_frame, text="Send Q", command=send_q)
 add_button.pack(side=tk.LEFT)
 
+def send_seq():
+    text = seq_entry.get("1.0", "end-1c")
+    lines = text.split("\n")
+    for line in lines:
+        print(line)
+        
+        result = subprocess.run("./udp-send-command.sh " + str(line), shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        output = result.stdout.decode()
+        print("Output:")
+        print(output)
+        
+        time.sleep(int(delay_entry.get())*0.001)
+        
+seq_frame = tk.Frame(new_functionality_frame)
+seq_frame.pack(side=tk.TOP)
+seq_entry = tk.Text(seq_frame, width=20, height=10)
+seq_entry.pack(side=tk.LEFT)
+seq_send = tk.Button(seq_frame, text="Send SEQ", command=send_seq)
+seq_send.pack(side=tk.LEFT)
+
+
 com_q = []
 
 # ... (Your existing code remains unchanged here)
