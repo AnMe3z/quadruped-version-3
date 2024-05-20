@@ -1,3 +1,0 @@
-/home/andrey-shefa/Documents/repos/quadruped-version-3/software/motor-test/build/pioasm/CMakeFiles/pioasm.dir
-/home/andrey-shefa/Documents/repos/quadruped-version-3/software/motor-test/build/pioasm/CMakeFiles/edit_cache.dir
-/home/andrey-shefa/Documents/repos/quadruped-version-3/software/motor-test/build/pioasm/CMakeFiles/rebuild_cache.dir

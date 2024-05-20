@@ -1,3 +1,9 @@
+/*
+ *
+ * Copyright (c) 2024 Andrey Ezhkov
+ *
+ */
+
 #include <stdio.h>
 #include "pico/stdlib.h"
 #include "hardware/pwm.h"
@@ -32,48 +38,8 @@
 #define MAX_PWM 100
 #define MIN_PWM 60
 
-//PWM 
-// freqHz = 10000;
-uint wrapP = 12500;
-  
-// Arrays for motor variables
-// Motor index to pin
-// TODO: TO BO ADDED TO AXIS STRUCT
-const uint motorIndexToPins[4][4] = { 
-  {FRONT_FEMUR_IN1_PIN, FRONT_FEMUR_IN2_PIN, FRONT_FEMUR_EA_PIN, FRONT_FEMUR_EB_PIN}, 
-  {FRONT_KNEE_IN1_PIN, FRONT_KNEE_IN2_PIN, FRONT_KNEE_EA_PIN, FRONT_KNEE_EB_PIN}, 
-  {BACK_FEMUR_IN1_PIN, BACK_FEMUR_IN2_PIN, BACK_FEMUR_EA_PIN, BACK_FEMUR_EB_PIN}, 
-  {BACK_KNEE_IN1_PIN, BACK_KNEE_IN2_PIN, BACK_KNEE_EA_PIN, BACK_KNEE_EB_PIN}
-};
-
-//ENCODERS
-#define holes 38
-int QEM [16] = {0,-1,1,2,1,0,2,-1,-1,2,0,1,2,1,-1,0}; // Quadrature Encoder Matrix // Old * 4 + New //state machine
-	
 //SERVO CONTROL
 #define KP 5
-
-struct axis {
-        // Physical number of slits on the physical encoder disk
-        int slits;
-        int pinA;
-        int pinB;
-        
-        // Counts the encoder changes in total. Can be used to calculate absolute position since start
-        int count;
-        int oldState;
-        int newState;
-
-        uint8_t moving;
-        int direction;
-        int setPoint;
-        int startPoint;
-        int error;
-        int P;
-};
-// Motor index to struct
-struct axis axes[4];
-struct axis *p;
 
 #define UDP_SERVER_PORT 12345
 #define BEACON_MSG_LEN_MAX 127
@@ -88,16 +54,64 @@ struct axis *p;
         #define MAX_ANGLE 42 // max angle = 99.47368423
 #endif
 #define MIN_ANGLE 0
+//PWM 
+uint wrapP = 12500;
+  
+// Arrays for motor variables
+// Motor index to pin
+const uint motorIndexToPins[4][4] = { 
+  {FRONT_FEMUR_IN1_PIN, FRONT_FEMUR_IN2_PIN, FRONT_FEMUR_EA_PIN, FRONT_FEMUR_EB_PIN}, 
+  {FRONT_KNEE_IN1_PIN, FRONT_KNEE_IN2_PIN, FRONT_KNEE_EA_PIN, FRONT_KNEE_EB_PIN}, 
+  {BACK_FEMUR_IN1_PIN, BACK_FEMUR_IN2_PIN, BACK_FEMUR_EA_PIN, BACK_FEMUR_EB_PIN}, 
+  {BACK_KNEE_IN1_PIN, BACK_KNEE_IN2_PIN, BACK_KNEE_EA_PIN, BACK_KNEE_EB_PIN}
+};
+
+//ENCODERS
+int QEM [16] = {0,-1,1,2,1,0,2,-1,-1,2,0,1,2,1,-1,0}; // Quadrature Encoder Matrix // Old * 4 + New //state machine
+
+/* struct axis
+ * /brief handles variable for a motor
+ *
+ * keeps track of its position via count. keeps track of its P control variables via 6 variables
+ *
+ */
+struct axis {
+        // Counts the encoder changes in total. Can be used to calculate absolute position since start
+        int count;
+        int oldState;
+        int newState;
+
+        // P control
+        uint8_t moving;
+        int direction;
+        int setPoint;
+        int startPoint;
+        int error;
+        int P;
+};
+// Motor index to struct
+struct axis axes[4];
+struct axis *p;
 
 int led;
-
 int input_data[26]; 
 
+/* long map()
+ * /brief basic map function
+ * 
+ */
 long map(long x, long in_min, long in_max, long out_min, long out_max)
 {
   	return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
 } 
 
+
+/* void driveMotor()
+ * /brief controls a motor based on 3 inputs
+ * 
+ * this function decides the target motor, considers the enable value and calculates output PWM signals that are then written to the output control pins
+ * 
+ */
 void driveMotor(int motorIndex, int driveValue, bool driveEnable){
         // Get target PWM slices
        	uint femurSlice = pwm_gpio_to_slice_num(motorIndexToPins[motorIndex][0]);
@@ -120,48 +134,34 @@ void driveMotor(int motorIndex, int driveValue, bool driveEnable){
                         pwmIn2 = driveValue*-1;
                 }
                 // Write to pins
-		//printf("pwmIn1: %d \n", pwmIn1);
-		//printf("pwmIn2: %d \n", pwmIn2);
                 // pwmIn1
-                //TODO: use pwm_set_gpio_level()
 		pwm_set_chan_level(femurSlice, PWM_CHAN_A, wrapP * (pwmIn1/100) );
                 // pwmIn2
 		pwm_set_chan_level(kneeSlice, PWM_CHAN_B, wrapP * (pwmIn2/100) );
         }
 }
 
+/* void process_data()
+ * /brief decodes the message into tasks for the motors
+ * 
+ * based on the control message structure this code decodes the input_data[] array (received data) into instructions for each motor
+ * 
+ */
 void process_data(){
         int dir;
         struct axis *j;
-        
-        int b;
-
-        // Assuming the array is already filled with data
-        // If not, you need to fill it before printing
-
-        for(b = 0; b < 26; b++) {
-            printf("%d ", input_data[b]);
-        }
         
         if (DEVICE_ID == 0) {
                 for (int i = 0; i < 4; i++) {
                         //direction on the left side is  inverted
                         //level inner servo
                         dir = (input_data[(i*3) + 1] == 1) ? 1 : -1; 
-                        
-                        // DEBUG
-                        //if ( opt.verbose && opt.verboseDataRCV){ printf("dir %d \n", dir); }
                 
                         j = axes+i;
                         
             	        j->startPoint = j->count;
                         j->setPoint = j->startPoint + (dir * (10*input_data[(i*3) + 2] + input_data[(i*3) + 3])); 
                         
-                        // DEBUG
-                        //if ( opt.verbose && opt.verboseDataRCV){ 
-                                printf("dir * (10*input_data[(i*3) + 2] + input_data[(i*3) + 3]) %d \n", dir * (10*input_data[(i*3) + 2] + input_data[(i*3) + 3]) );
-                                printf("j->setPoint %d \n", j->setPoint);
-                        //}
                         //direction on the left side is inverted
                         if(MAX_ANGLE < j->setPoint && j->setPoint < MIN_ANGLE){
 	                        j->moving = true;
@@ -194,33 +194,29 @@ void process_data(){
         
 }
 
+/* void udp_receive_callback()
+ * /brief handles the received data from UDP
+ * 
+ * this function is being called every time the poll has detected anything sent via UDP
+ * checks if the message is the right length. parses it to an array input_data[]. then switches the state of a LED and frees the buffer
+ * 
+ */
 void udp_receive_callback(void *arg, struct udp_pcb *pcb, struct pbuf *p, const ip_addr_t *addr, u16_t port) {
         if (p != NULL) {
                 // Received packet buffer 'p' is not NULL
                 // You can process the packet here
                 char *packet_data = (char *)p->payload;
-                // DEBUG
-                 printf("Received UDP message: %s\n", packet_data); 
                 
                 if (strlen(packet_data) == 52) {
                         int i;
                         
                         while (packet_data[i] != '\0' && packet_data[i+1] != '\0') {
                                 input_data[i/2] = ((packet_data[i] - '0') * 10 + (packet_data[i+1] - '0')) - 30;
-                                // DEBUG
-                                //if ( opt.verbose && opt.verboseDataRCV){ printf("%d\n", input_data[i/2]); }
                                 printf("%d\n", input_data[i/2]);
                                 i += 2;
                         }
                         
                         process_data();
-                }
-                else {
-                        // DEBUG
-                        //if ( opt.verbose && opt.verboseDataRCV){ 
-                                printf("ERROR: Message is not 52 characters long\n");
-                                printf("MESSAGE LENGTH %d\n", strlen(packet_data));
-                        //}
                 }
                 
                 // Toggle led
@@ -232,6 +228,16 @@ void udp_receive_callback(void *arg, struct udp_pcb *pcb, struct pbuf *p, const 
         }
 }
 
+/* void on_pwm_wrap()
+ * /brief inner control loop and encoder assesment
+ * 
+ * this function is being called with the frequency of the PWM (10KHz)
+ * firstly it clears the interrupt flag
+ * then it runs a for loop for the each of the 4 encoders. inside it calculates if there are any changes to the recorded position via the encoder matrix
+ * then it runs a for loop for the each of the 4 motors. this is the P control. inside it calculates if there are any changes to the set point of the motor and if
+ * it calculates a error and P change which is being sent to the motor via PWM
+ * 
+ */
 void on_pwm_wrap() {
 //NO PRINT F INSIDE OF THIS FUNCTION!
 //there is not enough time to execute and clogs the program!
@@ -250,13 +256,9 @@ void on_pwm_wrap() {
                         //brake
                         p->moving = false;
                         driveMotor(i, 0, true);
-                        //DEBUG
-                        //if ( opt.encoderDebug && opt.captureEncoderERR){ opt.encoderTotalERR++; }
         	}
         	else {  
                 	p->count += QEM[p->oldState*4 + p->newState]; 
-                        //DEBUG
-                        //if ( opt.encoderDebug && opt.captureEncoderSTAT){ opt.encoderSuccessSTAT++; }
         	}
         }
         
@@ -307,7 +309,14 @@ void on_pwm_wrap() {
 	        }
  	}
 }
-//  ---------------          INIT          ---------------
+
+/* void initPins()
+ * /brief initializes the pins
+ * 
+ * the function runs a for loop 4 times as for the number of motors. for each motor initializes 2 pins with 10KHz PWM for output control. then initializes 2 more pins as input for the encoder
+ * at last creates a PWM interrupt that fires on the PWM frequency and appoints on_pwm_wrap() to be executed on each IRQ
+ * 
+ */
 void initPins(){
 
         for (int i = 0; i < 4; i++) {
@@ -319,7 +328,7 @@ void initPins(){
                 // Set wrap point
                 pwm_set_wrap(pwm_gpio_to_slice_num(motorIndexToPins[i][0]), wrapP);
                 
-                // Set up pwm on GPIO pin for IN1
+                // Set up pwm on GPIO pin for IN2
                 gpio_set_function(motorIndexToPins[i][1], GPIO_FUNC_PWM);
                 // Enable PWM on that channel
                 pwm_set_enabled(pwm_gpio_to_slice_num(motorIndexToPins[i][1]), true);
@@ -330,11 +339,9 @@ void initPins(){
                 // Set up the reading pin CHAN A
                 gpio_init(motorIndexToPins[i][2]);
                 gpio_set_dir(motorIndexToPins[i][2], GPIO_IN);
-                //gpio_set_irq_enabled_with_callback(motorIndexToPins[i][2], GPIO_IRQ_EDGE_RISE | GPIO_IRQ_EDGE_FALL, true, &encoderCallback);
                 // Set up the reading pin CHAN B
                 gpio_init(motorIndexToPins[i][3]);
                 gpio_set_dir(motorIndexToPins[i][3], GPIO_IN);
-                //gpio_set_irq_enabled_with_callback(motorIndexToPins[i][3], GPIO_IRQ_EDGE_RISE | GPIO_IRQ_EDGE_FALL, true, &encoderCallback);
         }
     
         //servo control interrupt 
@@ -346,6 +353,15 @@ void initPins(){
         pwm_config config = pwm_get_default_config();
 }
 
+/* int init_wireless()
+ * /brief initializes the wireless interface
+ * 
+ * calls cyw43_arch_init() which inits the wireless hardware and returns an error code. 
+ * then enables the wireless ap via cyw43_arch_enable_sta_mode(). cyw43_arch_wifi_connect_timeout_ms() tries to connect to a wifi network with a name and a password.
+ * an LED lights up if its connected. the code then creates an udp instance via udp_new().
+ * finally a connection is made to broadcast (255.255.255.255) and the protocol is being binded. udp_receive_callback() is being appointed to be called when there is udp activity.
+ * 
+ */
 int init_wireless(){
         if (cyw43_arch_init()) {
                 printf("failed to initialise\n");
@@ -354,19 +370,15 @@ int init_wireless(){
 
         cyw43_arch_enable_sta_mode();
 
-        printf("Connecting to Wi-Fi...\n");
-        if (cyw43_arch_wifi_connect_timeout_ms("andrey_shefa", "andreyshefa1", CYW43_AUTH_WPA2_AES_PSK, 30000)) {
-                printf("failed to connect.\n");
+        if (cyw43_arch_wifi_connect_timeout_ms("andrey_shefa", WIFI_PASSWORD, CYW43_AUTH_WPA2_AES_PSK, 30000)) {
                 return 1;
         } else {
-                printf("Connected.\n");
                 led = led ^ 1;
                 cyw43_arch_gpio_put(CYW43_WL_GPIO_LED_PIN, led);
         }
 
         struct udp_pcb *udp_server_pcb = udp_new();
         if (udp_server_pcb == NULL) {
-                printf("Failed to create new UDP PCB.\n");
                 return -1;
         }
 
@@ -381,12 +393,13 @@ int init_wireless(){
 
         udp_recv(udp_server_pcb, udp_receive_callback, NULL);
 }
-/* int main()
-/brief starts the program, calls /c stdio_init_all(), /c init_wireless(), /c initPins()
 
-the main loop is with the lowest computing priority. it's function is to non-stop loop the /c cyw43_arch_poll() function which polls the wireless. 
-the main loop has no constant 'polling rate' because of its low priority and therefore it uses all left processor time from the high priority code in the PWM IRQ 
-*/
+/* int main()
+ * /brief starts the program, calls stdio_init_all(), init_wireless(), initPins()
+ * 
+ * the main loop is with the lowest computing priority. it's function is to non-stop loop the cyw43_arch_poll() function which polls the wireless. 
+ * the main loop has no constant 'polling rate' because of its low priority and therefore it uses all left processor time from the high priority code in the PWM IRQ 
+ */
 int main() {
    	stdio_init_all();
     	
